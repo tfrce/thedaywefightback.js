@@ -11,13 +11,12 @@ body {
 img {
     border: none;
 }
-
-.footer {
-  background: #262626;
-  color: #444;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  left: 0;
-  height: 40px;
+#banner-container {
+    height: 300px;
+}
+/* See http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/#Height if we start having problems*/
+.abs-centered {
+    margin: auto;
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
 }
