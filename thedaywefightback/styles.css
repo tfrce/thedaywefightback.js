@@ -51,7 +51,10 @@ span.important {
 .email-form {
   margin-top: 50px;
 }
-
+.call-form .form-group,
+.email-form .form-group{
+  margin-bottom: 0;
+}
 .call-form label,
 .email-form label {
   color: #fff;
@@ -78,6 +81,15 @@ span.important {
   height: 50px;
 }
 
+.call-form input[type="submit"],
+.email-form input[type="submit"] {
+  border: 0;
+  background: none;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 10px 10px 10px 0;
+}
 
 .footer {
   background: #262626;
@@ -87,6 +99,13 @@ span.important {
   width: 100%;
   left: 0;
   height: 40px;
+}
+.footer-notice {
+  line-height: 40px;
+  height: 40px;
+  color: #efefef;
+  letter-spacing: 1px;
+  font-weight: bold;
 }
 #banner-container {
     height: 300px;
