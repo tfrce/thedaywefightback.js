@@ -146,16 +146,21 @@
 
     var ele = document.getElementById("call-form");
     if (ele.addEventListener) {
-        ele.addEventListener("submit", onFormSubmit, false); //Cool modern browser!
+        //ele.addEventListener("submit", onFormSubmit, false); //Cool modern browser!
     } else if (ele.attachEvent) {
-        ele.attachEvent('onsubmit', onFormSubmit); //The evil IE needs extra
+        //ele.attachEvent('onsubmit', onFormSubmit); //The evil IE needs extra
     }
     setTimeout(function() {
         $('#first-slide').fadeOut(400, function() {
             $('#second-slide').fadeIn(300);
             $('.footer').fadeIn(300);
+
         })
     }, 1000);
+    $('.call-form').on('submit', function (ev) {
+      console.log('asdas');
+      return false;
+    })
     </script>
 </body>
 
