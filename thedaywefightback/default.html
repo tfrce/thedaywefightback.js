@@ -12,43 +12,43 @@
 </head>
 
 <body>
-    <div id="tfrce-rally-widget-bottom-large-banner">
+    <div class="first-slide">
         <img src="imgs/first.jpg" class="first" />
-        <div id="tfrce-content" style="display: none;">
-            <div class="row">
-                <div class="col-md-6"></div>
-                <div class="col-md-3">
-                    <p class="tfrce-body">
-                        <p>Call</p>
-                        <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal">
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-offset-1 control-label" for="userPhone">Phone Number</label>
-                                <div class="col-sm-9">
-                                    <input type="tel" name="userPhone" class="form-control" id="userPhone">
-                                </div>
+    </div>
+    <div class="second-slide" style="display: none;">
+        <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-3">
+                <p>
+                    <p>Call</p>
+                    <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-offset-1 control-label" for="userPhone">Phone Number</label>
+                            <div class="col-sm-9">
+                                <input type="tel" name="userPhone" class="form-control" id="userPhone">
                             </div>
-                            <input type="hidden" value="restrict-nsa" name="campaignId">
-                            <span id="error-text"></span>
-                            <input id="submit" type="Submit" value="Call Now" class="btn col-sm-12 col-xs-12 col-sm-offset-1 btn-primary">
-                        </form>
-                    </p>
-                </div>
-                <div class="col-md-3">
-                    <p class="tfrce-body">
-                        <p>Email</p>
-                        <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal">
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-offset-1 control-label" for="userPhone">Phone Number</label>
-                                <div class="col-sm-9">
-                                    <input type="tel" name="userPhone" class="form-control" id="userPhone">
-                                </div>
+                        </div>
+                        <input type="hidden" value="restrict-nsa" name="campaignId">
+                        <span id="error-text"></span>
+                        <input id="submit" type="Submit" value="Call Now" class="btn col-sm-12 col-xs-12 col-sm-offset-1 btn-primary">
+                    </form>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <p>
+                    <p>Email</p>
+                    <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-offset-1 control-label" for="userPhone">Phone Number</label>
+                            <div class="col-sm-9">
+                                <input type="tel" name="userPhone" class="form-control" id="userPhone">
                             </div>
-                            <input type="hidden" value="restrict-nsa" name="campaignId">
-                            <span id="error-text"></span>
-                            <input id="submit" type="Submit" value="Call Now" class="btn col-sm-12 col-xs-12 col-sm-offset-1 btn-primary">
-                        </form>
-                    </p>
-                </div>
+                        </div>
+                        <input type="hidden" value="restrict-nsa" name="campaignId">
+                        <span id="error-text"></span>
+                        <input id="submit" type="Submit" value="Call Now" class="btn col-sm-12 col-xs-12 col-sm-offset-1 btn-primary">
+                    </form>
+                </p>
             </div>
         </div>
     </div>
@@ -127,8 +127,8 @@
         ele.attachEvent('onsubmit', onFormSubmit); //The evil IE needs extra
     }
     setTimeout(function() {
-        $('.first').fadeOut(400, function() {
-            $('#tfrce-content').fadeIn(300);
+        $('.first-slide').fadeOut(400, function() {
+            $('.second-slide').fadeIn(300);
         })
     }, 1000);
     </script>
