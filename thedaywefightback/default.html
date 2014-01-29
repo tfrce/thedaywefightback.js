@@ -13,11 +13,12 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="first-slide">
-          <img src="imgs/splash.png" id="splash" />
+
+    <div id="banner-container" class="container">
+        <div id="first-slide">
+            <img src="imgs/splash.png" class="img-responsive abs-centered" id="splash" />
         </div>
-        <div class="second-slide" style="display: none;">
+        <div id="second-slide" style="display: none;">
             <div class="row">
                 <div class="col-md-6"></div>
                 <div class="col-md-3">
@@ -133,8 +134,8 @@
         ele.attachEvent('onsubmit', onFormSubmit); //The evil IE needs extra
     }
     setTimeout(function() {
-        $('.first-slide').fadeOut(400, function() {
-            $('.second-slide').fadeIn(300);
+        $('#first-slide').fadeOut(400, function() {
+            $('#second-slide').fadeIn(300);
         })
     }, 1000);
     </script>
