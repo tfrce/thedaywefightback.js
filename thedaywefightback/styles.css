@@ -11,3 +11,13 @@ body {
 img {
     border: none;
 }
+
+.footer {
+  background: #262626;
+  color: #444;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  height: 40px;
+}
