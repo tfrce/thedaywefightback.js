@@ -1,14 +1,14 @@
-# Project Megaphone
+# thedaywefightback.js
 
-Saturday October 26th is the 12th anniversary of the PATRIOT Act. 
+thedaywefightback.js is a javascript snippet that automatically activates at midnight of February 11th and adds a banner to your site for 24 hours in support of [thedaywefightback.org](https://thedaywefightback.org).
 
-To mark the law's anniversary, the EFF, ACLU, Demand Progress, Free Press and dozens of other public advocacy groups in the StopWatching.us coalition are planning [a rally to protest mass surveilance](https://rally.stopwatching.us) in Washington, DC. We've spent countless hours organizing buses to transport people from nearby cities, assembled a great lineup of speakers, and filed the relevant permits. 
+You can add it to your site now, it won't be activated until the day of and will only make one small html call before its activated 02/11. You can also host the files locally.
 
 **If you own a website, no matter how big or small, we need your help.**
 
-Mass surveillance is a grave challenge to privacy on the Internet, and threatens our ability to communicate and conduct transactions privately online. **This is a critical moment:** If we don't convince Congress to make meaningful change now, while Snowden's leaks have the public's attention, we may never have another chance.
+Mass surveillance is a grave challenge to privacy on the Internet, and threatens our ability to communicate and conduct transactions privately online.
 
-## How Project Megaphone works
+## How thedaywefightback.js works
 
 Project Megaphone is a simple script that you can add to your site. The script checks the IP of each visitor, and if they are within a 700km radius of Washington, D.C., displays a banner informing the user of the rally.
 
