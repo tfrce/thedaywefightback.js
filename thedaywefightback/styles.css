@@ -40,6 +40,7 @@ body {
     padding: 0;
     background: #000;
     font-family: 'brandon_grotesque';
+    -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -62,22 +63,13 @@ span.important {
   display: block;
   text-align: justify !important;
   letter-spacing: 1px;
-  height: 20px;
   line-height: 20px;
   padding: 0 !important;
 }
 
-/* hack to make justifying work */
-.email-form label:after,
-.call-form label:after {
-    content: "";
-    display: inline-block;
-    width: 100%;    
-}
-
 .call-form input.form-control,
 .email-form input.form-control {
-  margin-top: 10px;
+  margin-top: 8px;
   border-radius: 0 !important;
   height: 50px;
 }
