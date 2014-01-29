@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'brandon_grotesque_black_italic';
+    font-family: 'brandon_grotesque';
     src: url('brandongrotesque-blackitalic-webfont.eot');
     src: url('brandongrotesque-blackitalic-webfont.eot?#iefix') format('embedded-opentype'),
          url('brandongrotesque-blackitalic-webfont.woff') format('woff'),
@@ -10,7 +10,7 @@
 }
 
 @font-face {
-    font-family: 'brandon_grotesque_medium_italic';
+    font-family: 'brandon_grotesque';
     src: url('brandongrotesque-mediumitalic-webfont.eot');
     src: url('brandongrotesque-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
          url('brandongrotesque-mediumitalic-webfont.woff') format('woff'),
@@ -21,7 +21,7 @@
 }
 
 @font-face {
-    font-family: 'brandon_grotesque_regular';
+    font-family: 'brandon_grotesque';
     src: url('brandongrotesque-regular-webfont.eot');
     src: url('brandongrotesque-regular-webfont.eot?#iefix') format('embedded-opentype'),
          url('brandongrotesque-regular-webfont.woff') format('woff'),
