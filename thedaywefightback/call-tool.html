@@ -10,55 +10,33 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/call-tool.css" />
 </head>
 
 <body>
 
-    <div id="banner-container" class="container">
-        <div id="first-slide">
-            <img src="imgs/splash.png" class="img-responsive abs-centered" id="splash" />
-        </div>
-        <div id="second-slide" style="display: none;">
+    <div class="container">
+        <div>
             <div class="row">
-                <div class="col-md-6"></div>
-                <div class="col-md-6">
-                    <div class="col-md-5">
-                        <form method="get" action="http://call.taskforce.is/create" class="call-form" role="form">
-                            <div class="form-group">
-                                <label class=" control-label" for="userPhone">
-                                    <img src="imgs/call-your-legislators.png" alt="Call your legislators!"/>
-                                </label>
-                                <div class="c">
-                                    <input type="tel" placeholder="YOUR PHONE NUMBER" name="userPhone" class="form-control " id="userPhone">
-                                </div>
-                            </div>
-                            <span id="error-text"></span>
-                            <div class="form-group">
-                              <input id="submit" type="submit" value="CONTINUE >>" class="">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-5">
-                        <form method="get" action="http://call.taskforce.is/create" class="email-form" role="form" >
-                            <div class="form-group">
-                                <label class=" control-label" for="userEmail">
-                                    <img src="imgs/email-your-legislators.png" alt="Email your legislators!"/>
-                                </label>
-                                <div class="c">
-                                    <input type="tel" placeholder="YOUR EMAIL ADDRESS" name="userEmail" class="form-control" id="userEmail">
-                                </div>
-                            </div>
-                            <span id="error-text"></span>
-                            <div class="form-group">
-                              <input id="submit" type="submit" value="CONTINUE >>" class="">
-                            </div>
-                        </form>
-                    </div>
+                <h1>CALL TOOL</h1>
+                <h2>TODAY WE FIGHT BACK</h2>
+                <h3>WWW.THEDAYWEFIGHTBACK.COM</h3>
+
+                <div class="col-md-6 col-sm-56 col-xs-6">
+                    <p>We're about  to place a call to your phone. We'll ask you a few questions, like your ZIP code, and then connect you to your legislator. Once you're connectedd, you'll be able to leave a messa and tell them that you oppose the <span class="important">FISA Improvements Act and support the USA freedom Act.</span></p>
                 </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                <ul style="padding: 0; margin: 0;">
+                    <li><span class="important">Talking point one</span>. Lorem ipsum dolar sit amet, consectueur adipicising elit, sed diam nonummy nibh euismood tincident ut loreet dolore magna aliquam erat volutpat.</li>
+                    <li><span class="important">Talking point one</span>. Lorem ipsum dolar sit amet, consectueur adipicising elit, sed diam nonummy nibh euismood tincident ut loreet dolore magna aliquam erat volutpat.</li>
+                    <li><span class="important">Talking point one</span>. Lorem ipsum dolar sit amet, consectueur adipicising elit, sed diam nonummy nibh euismood tincident ut loreet dolore magna aliquam erat volutpat.</li>
+                    <li><span class="important">Talking point one</span>. Lorem ipsum dolar sit amet, consectueur adipicising elit, sed diam nonummy nibh euismood tincident ut loreet dolore magna aliquam erat volutpat.</li>
+                </div>
+                  
             </div>
         </div>
     </div>
-    <div class="footer" style="display: none;">
+    <div class="footer" >
       <div class="container">
         <div class="col-md-3">
           <span class="footer-notice">
@@ -146,23 +124,12 @@
 
     // Attach listener to call form
 
-    var ele = document.getElementById("call-form");
-    if (ele.addEventListener) {
+    //var ele = document.getElementById("call-form");
+    //if (ele.addEventListener) {
         //ele.addEventListener("submit", onFormSubmit, false); //Cool modern browser!
-    } else if (ele.attachEvent) {
+    //} else if (ele.attachEvent) {
         //ele.attachEvent('onsubmit', onFormSubmit); //The evil IE needs extra
-    }
-    setTimeout(function() {
-        $('#first-slide').fadeOut(00, function() {
-            $('#second-slide').fadeIn(00);
-            $('.footer').fadeIn(000);
-        })
-    }, 000);
-    $('.call-form').on('submit', function (ev) {
-      console.log('asdas');
-      window.open('call-tool.html',"Share on Facebook","width=650,height=500");
-      return false;
-    })
+    //}
     </script>
 </body>
 
