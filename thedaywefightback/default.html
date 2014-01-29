@@ -1,8 +1,10 @@
 <!-- Bootstrap core CSS -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css" />
 <div id="tfrce-rally-widget-bottom-large-banner">
-    <div id="tfrce-content">
+<img src="imgs/first.jpg" class="first" />
+    <div id="tfrce-content" style="display: none;">
         <p class="tfrce-body">
      <h1>Call Your Representative</h1>
         <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal">
@@ -108,4 +110,9 @@ if(ele.addEventListener){
 } else if (ele.attachEvent){
     ele.attachEvent('onsubmit', onFormSubmit);          //The evil IE needs extra
 }     
+setTimeout(function(){
+  $('.first').slideUp(400, function() {
+    $('#tfrce-content').slideDown(200);
+  })
+}, 1000);
 </script>
