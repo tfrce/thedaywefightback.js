@@ -1,0 +1,109 @@
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<div id="tfrce-rally-widget-bottom-large-banner">
+    <div id="tfrce-content">
+        <p class="tfrce-body">
+     <h1>Call Your Representative</h1>
+        <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-2 col-sm-offset-1 control-label" for="userZip">Zip Code</label>
+                <div class="col-sm-9">
+                    <input type="text" name="userZip" class="form-control" id="userZip">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 col-sm-offset-1 control-label" for="userPhone">Phone Number</label>
+                <div class="col-sm-9">
+                    <input type="tel" name="userPhone" class="form-control" id="userPhone">
+                </div>
+            </div>
+            <input type="hidden" value="restrict-nsa" name="campaignId">
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <label for="signup">
+                        <input type="checkbox" name="signup" id="signup"> Sign up for SMS alerts for future actions
+                    </label>
+                </div>
+            </div>
+            <span id="error-text"></span>
+        <input id="submit" type="Submit" value="Call Now" class="btn col-sm-12 col-xs-12 col-sm-offset-1 btn-primary">
+        </form>
+        </p>
+    
+    </div>
+</div>
+<script type="text/javascript">
+
+function isValidPhoneNumber(value) {
+    if (!value) return false;
+    var count = value.replace(/[^0-9]/g, "").length;
+
+    return count == 10 || count == 11;
+}
+
+function isValidZipCode(value) {
+    if (!value) return false;
+    var count = value.replace(/[^0-9]/g, "").length;
+
+    return count == 5;
+}
+
+
+var zipCodeError = function (el) {
+  document.getElementById("error-text").innerHTML += "Invalid Zip";
+
+};
+
+var phoneError = function (el) {
+  document.getElementById("error-text").innerHTML += "Invalid Phone";
+};
+
+
+// On form submit, validate fields
+
+var onFormSubmit = function (e) {
+  document.getElementById("error-text").innerHTML = "";
+  e.preventDefault();
+  var userZip = document.getElementById("userZip");
+  var userPhone = document.getElementById("userPhone");
+
+  console.log(isValidZipCode(userZip.value), isValidPhoneNumber(userPhone.value));
+
+  var errors = false;
+
+  // Valid Zip?
+  if(!isValidZipCode(userZip.value)) {
+    zipCodeError(userZip);
+    errors = true;
+  }
+
+  // Valid Phone?
+  if(!isValidPhoneNumber(userPhone.value)) {
+    phoneError(userPhone);
+    errors = true;
+  }
+
+  if(errors) {
+    return false;
+  }
+
+
+  // Instead of sending an ajax request, lets just assume success and create an iframe to do the call
+  var iframe = document.createElement('iframe');
+  iframe.style.display = "none";
+  iframe.src = 'http://call.taskforce.is/create';
+  document.body.appendChild(iframe);
+
+  // Hide form etc below here;
+
+  return false;
+}
+
+// Attach listener to call form
+
+var ele= document.getElementById("call-form");
+if(ele.addEventListener){
+    ele.addEventListener("submit", onFormSubmit, false);  //Cool modern browser!
+} else if (ele.attachEvent){
+    ele.attachEvent('onsubmit', onFormSubmit);          //The evil IE needs extra
+}     
+</script>

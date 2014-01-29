@@ -1,0 +1,13 @@
+html {
+    overflow: hidden;
+}
+body {
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    background: #ccc;
+}
+
+img {
+    border: none;
+}
