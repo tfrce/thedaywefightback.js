@@ -114,8 +114,8 @@
         ele.attachEvent('onsubmit', onFormSubmit); //The evil IE needs extra
     }
     setTimeout(function() {
-        $('.first').slideUp(400, function() {
-            $('#tfrce-content').slideDown(200);
+        $('.first').fadeOut(400, function() {
+            $('#tfrce-content').fadeIn(300);
         })
     }, 1000);
     </script>
