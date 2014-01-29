@@ -1,41 +1,55 @@
-<!-- Bootstrap core CSS -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="styles.css" />
-<div id="tfrce-rally-widget-bottom-large-banner">
-    <img src="imgs/splash.png" class="img-responsive" id="splash" />
-    <div id="tfrce-content" style="display: none;">
-        <div class="row">
-            <div class="col-md-6"></div>
-            <div class="col-md-6">
-                <p class="tfrce-body">
-                    <h1>Call Your Representative</h1>
-                    <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal">
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-offset-1 control-label" for="userZip">Zip Code</label>
-                            <div class="col-sm-9">
-                                <input type="text" name="userZip" class="form-control" id="userZip">
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <!-- Bootstrap core CSS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+    <div id="tfrce-rally-widget-bottom-large-banner">
+        <img src="imgs/splash.png" id="splash" />
+        <div id="tfrce-content" style="display: none;">
+            <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-3">
+                    <p class="tfrce-body">
+                        <p>Call</p>
+                        <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-offset-1 control-label" for="userPhone">Phone Number</label>
+                                <div class="col-sm-9">
+                                    <input type="tel" name="userPhone" class="form-control" id="userPhone">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-offset-1 control-label" for="userPhone">Phone Number</label>
-                            <div class="col-sm-9">
-                                <input type="tel" name="userPhone" class="form-control" id="userPhone">
+                            <input type="hidden" value="restrict-nsa" name="campaignId">
+                            <span id="error-text"></span>
+                            <input id="submit" type="Submit" value="Call Now" class="btn col-sm-12 col-xs-12 col-sm-offset-1 btn-primary">
+                        </form>
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p class="tfrce-body">
+                        <p>Email</p>
+                        <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-offset-1 control-label" for="userPhone">Phone Number</label>
+                                <div class="col-sm-9">
+                                    <input type="tel" name="userPhone" class="form-control" id="userPhone">
+                                </div>
                             </div>
-                        </div>
-                        <input type="hidden" value="restrict-nsa" name="campaignId">
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <label for="signup">
-                                    <input type="checkbox" name="signup" id="signup">Sign up for SMS alerts for future actions
-                       
-                                </label>
-                            </div>
-                        </div>
-                        <span id="error-text"></span>
-                        <input id="submit" type="Submit" value="Call Now" class="btn col-sm-12 col-xs-12 col-sm-offset-1 btn-primary">
-                    </form>
-                </p>
+                            <input type="hidden" value="restrict-nsa" name="campaignId">
+                            <span id="error-text"></span>
+                            <input id="submit" type="Submit" value="Call Now" class="btn col-sm-12 col-xs-12 col-sm-offset-1 btn-primary">
+                        </form>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -119,3 +133,6 @@
         })
     }, 1000);
     </script>
+</body>
+
+</html>
