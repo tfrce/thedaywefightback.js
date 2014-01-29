@@ -21,11 +21,13 @@
         <div id="second-slide" style="display: none;">
             <div class="row">
                 <div class="col-md-6"></div>
-                <div class="col-md-3">
-                    <p>
-                        <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal col-sm-10 col-md-10 col-md-offset-1 call-form">
+                <div class="col-md-6">
+                    <div class="col-md-5">
+                        <form method="get" action="http://call.taskforce.is/create" class="call-form" role="form">
                             <div class="form-group">
-                                <label class=" control-label" for="userPhone"><span class="important">CALL</span> YOUR LEGISLATOR!</label>
+                                <label class=" control-label" for="userPhone">
+                                    <img src="imgs/call-your-legislators.png" alt="Call your legislators!"/>
+                                </label>
                                 <div class="c">
                                     <input type="tel" placeholder="YOUR PHONE NUMBER" name="userPhone" class="form-control " id="userPhone">
                                 </div>
@@ -35,15 +37,15 @@
                               <input id="submit" type="submit" value="CONTINUE >>" class="">
                             </div>
                         </form>
-                    </p>
-                </div>
-                <div class="col-md-3">
-                    <p>
-                        <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal  col-sm-10 col-md-10 col-md-offset-1 email-form">
+                    </div>
+                    <div class="col-md-5">
+                        <form method="get" action="http://call.taskforce.is/create" class="email-form" role="form" >
                             <div class="form-group">
-                                <label class=" control-label" for="userPhone"><span class="important">EMAIL</span> YOUR LEGISLATOR!</label>
-                                <div class="">
-                                    <input type="tel" placeholder="YOUR EMAIL ADDRESS" name="userPhone" class="form-control" id="userPhone">
+                                <label class=" control-label" for="userEmail">
+                                    <img src="imgs/email-your-legislators.png" alt="Email your legislators!"/>
+                                </label>
+                                <div class="c">
+                                    <input type="tel" placeholder="YOUR EMAIL ADDRESS" name="userEmail" class="form-control" id="userEmail">
                                 </div>
                             </div>
                             <span id="error-text"></span>
@@ -51,7 +53,7 @@
                               <input id="submit" type="submit" value="CONTINUE >>" class="">
                             </div>
                         </form>
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -77,6 +79,7 @@
       </div>
     </div>
     <script type="text/javascript" src="js/main.js"></script>
+
 </body>
 
 </html>
