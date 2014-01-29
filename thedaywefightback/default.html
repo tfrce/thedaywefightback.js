@@ -3,7 +3,7 @@
 <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="styles.css" />
 <div id="tfrce-rally-widget-bottom-large-banner">
-    <img src="imgs/first.jpg" class="first" />
+    <img src="imgs/splash.png" class="img-responsive" id="splash" />
     <div id="tfrce-content" style="display: none;">
         <div class="row">
             <div class="col-md-6"></div>
@@ -114,7 +114,7 @@
         ele.attachEvent('onsubmit', onFormSubmit); //The evil IE needs extra
     }
     setTimeout(function() {
-        $('.first').fadeOut(400, function() {
+        $('#splash').fadeOut(400, function() {
             $('#tfrce-content').fadeIn(300);
         })
     }, 1000);
