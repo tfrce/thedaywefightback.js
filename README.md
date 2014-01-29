@@ -2,7 +2,7 @@
 
 thedaywefightback.js is a javascript snippet that automatically activates at midnight of February 11th and adds a banner to your site for 24 hours in support of [thedaywefightback.org](https://thedaywefightback.org).
 
-You can add it to your site now, it won't be activated until the day of and will only make one small html call before 02/11. You can also host the files locally.
+You can add it to your site now, it won't be activated until the day of and will only make one small html call before its activated 02/11. You can also host the files locally.
 
 **If you own a website, no matter how big or small, we need your help.**
 
