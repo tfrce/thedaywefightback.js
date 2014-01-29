@@ -7,16 +7,10 @@
     <div id="tfrce-content" style="display: none;">
         <div class="row">
             <div class="col-md-6"></div>
-            <div class="col-md-6">
+            <div class="col-md-3">
                 <p class="tfrce-body">
-                    <h1>Call Your Representative</h1>
+                <p>Call</p>
                     <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal">
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-offset-1 control-label" for="userZip">Zip Code</label>
-                            <div class="col-sm-9">
-                                <input type="text" name="userZip" class="form-control" id="userZip">
-                            </div>
-                        </div>
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-offset-1 control-label" for="userPhone">Phone Number</label>
                             <div class="col-sm-9">
@@ -24,14 +18,22 @@
                             </div>
                         </div>
                         <input type="hidden" value="restrict-nsa" name="campaignId">
+                        <span id="error-text"></span>
+                        <input id="submit" type="Submit" value="Call Now" class="btn col-sm-12 col-xs-12 col-sm-offset-1 btn-primary">
+                    </form>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <p class="tfrce-body">
+                <p>Email</p>
+                    <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal">
                         <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <label for="signup">
-                                    <input type="checkbox" name="signup" id="signup">Sign up for SMS alerts for future actions
-                       
-                                </label>
+                            <label class="col-sm-2 col-sm-offset-1 control-label" for="userPhone">Phone Number</label>
+                            <div class="col-sm-9">
+                                <input type="tel" name="userPhone" class="form-control" id="userPhone">
                             </div>
                         </div>
+                        <input type="hidden" value="restrict-nsa" name="campaignId">
                         <span id="error-text"></span>
                         <input id="submit" type="Submit" value="Call Now" class="btn col-sm-12 col-xs-12 col-sm-offset-1 btn-primary">
                     </form>
@@ -119,3 +121,4 @@
         })
     }, 1000);
     </script>
+<div style="width: 50px;height: 50px; background: #00ff00; position: absolute; top: -25px; left: 0;"></div>
