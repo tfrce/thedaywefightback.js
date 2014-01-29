@@ -1,0 +1,4 @@
+thedaywefightback.js
+====================
+
+A banner
