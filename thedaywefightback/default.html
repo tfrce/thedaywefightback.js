@@ -13,52 +13,50 @@
 </head>
 
 <body>
-    <div id="#pt-main">
-        <div class="pt-page" id="firstslide">
-            <img src="imgs/splash.png" id="splash" />
+    <div class="container">
+        <div class="first-slide">
+          <img src="imgs/splash.png" id="splash" />
         </div>
-        <div class="pt-page" id="secondslide" style="display: none;">
+        <div class="second-slide" style="display: none;">
             <div class="row">
                 <div class="col-md-6"></div>
                 <div class="col-md-3">
                     <p>
-                        <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal">
+                        <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal col-sm-10 col-md-10 col-md-offset-1 call-form">
                             <div class="form-group">
-                                <label class=" control-label" for="userPhone">CALL YOUR LEGISLATOR!</label>
-                                <br />
+                                <label class=" control-label" for="userPhone"><span class="important">CALL</span> YOUR LEGISLATOR!</label>
                                 <div class="c">
-                                    <input type="tel" name="userPhone" class="form-control" id="userPhone">
+                                    <input type="tel" placeholder="YOUR PHONE NUMBER" name="userPhone" class="form-control " id="userPhone">
                                 </div>
                             </div>
                             <input type="hidden" value="restrict-nsa" name="campaignId">
                             <span id="error-text"></span>
-                            <input id="submit" type="Submit" value="Call Now" class="btn  btn-primary">
+                            <input id="submit" type="Submit" value="Continue >>" class="">
                         </form>
                     </p>
                 </div>
                 <div class="col-md-3">
                     <p>
-                        <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal">
+                        <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal  col-sm-10 col-md-10 col-md-offset-1 email-form">
                             <div class="form-group">
-                                <label class=" control-label" for="userPhone">EMAIL YOUR LEGISLATOR!</label>
-                                <br />
+                                <label class=" control-label" for="userPhone"><span class="important">EMAIL</span> YOUR LEGISLATOR!</label>
                                 <div class="">
-                                    <input type="tel" name="userPhone" class="form-control" id="userPhone">
+                                    <input type="tel" placeholder="YOUR EMAIL ADDRESS" name="userPhone" class="form-control" id="userPhone">
                                 </div>
                             </div>
                             <input type="hidden" value="restrict-nsa" name="campaignId">
                             <span id="error-text"></span>
-                            <input id="submit" type="Submit" value="Call Now" class="btn  btn-primary">
+                            <input id="submit" type="Submit" value="Continue >>" class="">
                         </form>
                     </p>
                 </div>
             </div>
-            <div class="footer">
-            <div class="container">
-                <p>Outside the US?
-                </p></div>
-            </div>
         </div>
+    </div>
+    <div class="footer">
+    <div class="container">
+        <p>Outside the US?
+        </p></div>
     </div>
     <script type="text/javascript">
     function isValidPhoneNumber(value) {

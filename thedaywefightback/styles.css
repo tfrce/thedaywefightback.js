@@ -11,6 +11,40 @@ body {
 img {
     border: none;
 }
+span.important {
+  color: #f3c550;
+}
+.call-form,
+.email-form {
+  margin-top: 50px;
+}
+
+.call-form label,
+.email-form label {
+  color: #fff;
+  display: block;
+  text-align: justify !important;
+  letter-spacing: 1px;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 !important;
+}
+
+/* hack to make justifying work */
+.email-form label:after,
+.call-form label:after {
+    content: "";
+    display: inline-block;
+    width: 100%;    
+}
+
+.call-form input.form-control,
+.email-form input.form-control {
+  margin-top: 10px;
+  border-radius: 0 !important;
+  height: 50px;
+}
+
 
 .footer {
   background: #262626;
