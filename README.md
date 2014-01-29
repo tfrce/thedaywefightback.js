@@ -6,7 +6,7 @@ You can add it to your site now, it won't be activated until the day of and will
 
 **If you own a website, no matter how big or small, we need your help.**
 
-Mass surveillance is a grave challenge to privacy on the Internet, and threatens our ability to communicate and conduct transactions privately online. **This is a critical moment:** If we don't convince Congress to make meaningful change now, while Snowden's leaks have the public's attention, we may never have another chance.
+Mass surveillance is a grave challenge to privacy on the Internet, and threatens our ability to communicate and conduct transactions privately online.
 
 ## How thedaywefightback.js works
 
