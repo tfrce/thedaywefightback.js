@@ -2,6 +2,8 @@
 
 thedaywefightback.js is a javascript snippet that automatically activates at midnight of February 11th and adds a banner to your site for 24 hours in support of [thedaywefightback.org](https://thedaywefightback.org).
 
+You can add it to your site now, it won't be activated until the day of and will only make one small html call before 02/11. You can also host the files locally.
+
 **If you own a website, no matter how big or small, we need your help.**
 
 Mass surveillance is a grave challenge to privacy on the Internet, and threatens our ability to communicate and conduct transactions privately online. **This is a critical moment:** If we don't convince Congress to make meaningful change now, while Snowden's leaks have the public's attention, we may never have another chance.
