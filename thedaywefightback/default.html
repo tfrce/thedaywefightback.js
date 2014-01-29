@@ -13,13 +13,15 @@
 </head>
 
 <body>
-    <div id="tfrce-rally-widget-bottom-large-banner">
-        <img src="imgs/splash.png" id="splash" />
-        <div id="tfrce-content" style="display: none;">
+    <div class="container">
+        <div class="first-slide">
+          <img src="imgs/splash.png" id="splash" />
+        </div>
+        <div class="second-slide" style="display: none;">
             <div class="row">
                 <div class="col-md-6"></div>
                 <div class="col-md-3">
-                    <p class="tfrce-body">
+                    <p>
                         <p>Call</p>
                         <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal">
                             <div class="form-group">
@@ -35,7 +37,7 @@
                     </p>
                 </div>
                 <div class="col-md-3">
-                    <p class="tfrce-body">
+                    <p>
                         <p>Email</p>
                         <form method="get" action="http://call.taskforce.is/create" id="call-form" role="form" class="form-horizontal">
                             <div class="form-group">
@@ -52,6 +54,11 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="footer">
+    <div class="container">
+        <p>Outside the US?
+        </p></div>
     </div>
     <script type="text/javascript">
     function isValidPhoneNumber(value) {
@@ -128,8 +135,8 @@
         ele.attachEvent('onsubmit', onFormSubmit); //The evil IE needs extra
     }
     setTimeout(function() {
-        $('#splash').fadeOut(400, function() {
-            $('#tfrce-content').fadeIn(300);
+        $('.first-slide').fadeOut(400, function() {
+            $('.second-slide').fadeIn(300);
         })
     }, 1000);
     </script>
