@@ -46,13 +46,35 @@ body {
 img {
     border: none;
 }
-span.important {
-  color: #f3c550;
+
+/* Call and email forms */
+
+.phone-container, .email-container {
+    width: 190px;
+    float:left;
 }
+.phone-container {
+    margin-right: 50px;
+}
+
 .call-form,
 .email-form {
   margin-top: 50px;
 }
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #999 !important;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #999 !important;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #999 !important;
+}
+
 .call-form .form-group,
 .email-form .form-group{
   margin-bottom: 0;
