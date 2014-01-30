@@ -37,5 +37,5 @@ $.ajax('http://dczwo4qqyofa4.cloudfront.net/count', {
     },
     dataType: 'jsonp',
     cache         : true,
-    jsonpCallback : 'myCallback'
+    jsonpCallback : 'ccc'
 });
