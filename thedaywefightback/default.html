@@ -15,11 +15,10 @@
 <body>
 
     <div id="banner-container">
-        <div id="first-slide">
+        <!--<div id="first-slide">
             <img src="imgs/splash.png" class="img-responsive abs-centered" id="splash" />
-        </div>
-        <div id="second-slide"  style="display: none;">
-            <div class="row ">
+        </div>-->
+        <div id="second-slide"> <!-- style="display: none;">-->
                 <div class="col-sm-6 leftside">
                     <div class="leftsidecontainer">
                         <div class="scrolling-banner-text">
@@ -39,10 +38,10 @@
                         <form method="get" action="http://call.taskforce.is/create" class="call-form" role="form">
                             <div class="form-group">
                                 <label class="control-label" for="userPhone">
-                                    <img src="imgs/call-your-legislators.png" alt="Call your legislators!"/>
+                                    <img src="imgs/call-your-legislators.png" alt="Call your legislators!" class="img-responsive"/>
                                 </label>
                                 <div class="c">
-                                    <input type="tel" placeholder="YOUR PHONE NUMBER" name="userPhone" class="form-control " id="userPhone">
+                                    <input type="phone" placeholder="YOUR PHONE NUMBER" name="userPhone" class="form-control " id="userPhone" autocomplete="on">
                                 </div>
                             </div>
                             <span id="error-text"></span>
@@ -55,7 +54,7 @@
                         <form method="get" action="http://call.taskforce.is/create" class="email-form" role="form" >
                             <div class="form-group">
                                 <label class=" control-label" for="userEmail">
-                                    <img src="imgs/email-your-legislators.png" alt="Email your legislators!"/>
+                                    <img src="imgs/email-your-legislators.png" alt="Email your legislators!" class="img-responsive"/>
                                 </label>
                                 <div class="c">
                                     <input type="tel" placeholder="YOUR EMAIL ADDRESS" name="userEmail" class="form-control" id="userEmail">

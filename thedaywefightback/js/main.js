@@ -4,17 +4,13 @@ function countUp(a,b,c,d,e){for(var f=0,g=["webkit","moz","ms"],h=0;h<g.length&&
 /* jRumble v1.3 - http://jackrugile.com/jrumble - MIT License */
 (function(f){f.fn.jrumble=function(g){var a=f.extend({x:2,y:2,rotation:1,speed:15,opacity:false,opacityMin:0.5},g);return this.each(function(){var b=f(this),h=a.x*2,i=a.y*2,k=a.rotation*2,g=a.speed===0?1:a.speed,m=a.opacity,n=a.opacityMin,l,j,o=function(){var e=Math.floor(Math.random()*(h+1))-h/2,a=Math.floor(Math.random()*(i+1))-i/2,c=Math.floor(Math.random()*(k+1))-k/2,d=m?Math.random()+n:1,e=e===0&&h!==0?Math.random()<0.5?1:-1:e,a=a===0&&i!==0?Math.random()<0.5?1:-1:a;b.css("display")==="inline"&&(l=true,b.css("display","inline-block"));b.css({position:"relative",left:e+"px",top:a+"px","-ms-filter":"progid:DXImageTransform.Microsoft.Alpha(Opacity="+d*100+")",filter:"alpha(opacity="+d*100+")","-moz-opacity":d,"-khtml-opacity":d,opacity:d,"-webkit-transform":"rotate("+c+"deg)","-moz-transform":"rotate("+c+"deg)","-ms-transform":"rotate("+c+"deg)","-o-transform":"rotate("+c+"deg)",transform:"rotate("+c+"deg)"})},p={left:0,top:0,"-ms-filter":"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)",filter:"alpha(opacity=100)","-moz-opacity":1,"-khtml-opacity":1,opacity:1,"-webkit-transform":"rotate(0deg)","-moz-transform":"rotate(0deg)","-ms-transform":"rotate(0deg)","-o-transform":"rotate(0deg)",transform:"rotate(0deg)"};b.bind({startRumble:function(a){a.stopPropagation();clearInterval(j);j=setInterval(o,g)},stopRumble:function(a){a.stopPropagation();clearInterval(j);l&&b.css("display","inline");b.css(p)}})})}})(jQuery);
 
+// setTimeout(function() {
+//     $('#first-slide').fadeOut(50, function() {
+//         $('#second-slide').fadeIn(50);
+//         $('.footer').fadeIn(50);
 
-
-
-
-setTimeout(function() {
-    $('#first-slide').fadeOut(50, function() {
-        $('#second-slide').fadeIn(50);
-        $('.footer').fadeIn(50);
-
-    })
-}, 1000);
+//     })
+// }, 1000);
 
 $('.call-form').on('submit', function(ev) {
     var form = $(ev.currentTarget);
@@ -90,3 +86,73 @@ $.ajax('http://dczwo4qqyofa4.cloudfront.net/count', {
     cache         : true,
     jsonpCallback : 'ccc'
 });
+
+
+// jQuery.phone
+
+(function() {
+  var $, formatBackPhoneNumber, formatPhoneNumber,
+    __slice = [].slice;
+  $ = jQuery;
+  $.telephone = {};
+  $.telephone.fn = {};
+  $.fn.telephone = function() {
+    var args, method;
+    method = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
+    return $.telephone.fn[method].apply(this, args);
+  };
+
+  formatPhoneNumber = function(e) {
+    var $target, digit, is_backspace, is_digit, length, unformatted_number, value;
+    e.preventDefault();
+    $target = $(e.currentTarget);
+    value = $target.val();
+    digit = String.fromCharCode(e.which);
+    is_digit = /^\d+$/.test(digit);
+    is_backspace = e.which === 8;
+    if (!is_digit && !is_backspace) {
+      return;
+    }
+    if (e.which === 8) {
+      unformatted_number = value.replace('+1', '').replace(/\D/g, '').replace('+', '');
+      unformatted_number = unformatted_number.substring(0, unformatted_number.length - 1);
+    } else {
+      unformatted_number = value.replace('+1', '').replace(/\D/g, '') + digit;
+      length = unformatted_number.length;
+    }
+    if (unformatted_number === '') {
+      return $target.val('');
+    } else if (length <= 3) {
+      return $target.val('+1 (' + unformatted_number + ')');
+    } else if (length <= 10) {
+      return $target.val('+1 (' + unformatted_number.slice(0, 3) + ')' + ' ' + unformatted_number.slice(3, 6) + ' ' + unformatted_number.slice(6, 10));
+    } else {
+      return $target.val(unformatted_number.substr(0, characters));
+    }
+  };
+
+  formatBackPhoneNumber = function(e) {
+    var $target, value;
+    $target = $(e.currentTarget);
+    value = $target.val();
+    if (e.meta) {
+      return;
+    }
+    if (($target.prop('selectionStart') != null) && $target.prop('selectionStart') !== value.length) {
+      return;
+    }
+    if (e.which === 8 && /\s\d?$/.test(value)) {
+      e.preventDefault();
+      return $target.val(value.replace(/\s\d?$/, ''));
+    }
+  };
+
+  $.telephone.fn.formatPhoneNumber = function() {
+    this.on('keypress', formatPhoneNumber);
+    this.on('paste', formatPhoneNumber);
+    this.on('keydown', formatBackPhoneNumber);
+    return this;
+  };
+
+}).call(this);
+$("#userPhone").telephone("formatPhoneNumber");
