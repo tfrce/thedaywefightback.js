@@ -29,3 +29,13 @@ $.ajax('http://dznh7un1y2etk.cloudfront.net/count', {
     cache         : true,
     jsonpCallback : 'myCallback'
 });
+$.ajax('http://dczwo4qqyofa4.cloudfront.net/count', {
+    success: function(res, err) {
+    	var demo = new countUp("call-count", 0, res.count, 0, 2);
+		demo.start();
+        //$('.email-count').text(res.count);
+    },
+    dataType: 'jsonp',
+    cache         : true,
+    jsonpCallback : 'myCallback'
+});
