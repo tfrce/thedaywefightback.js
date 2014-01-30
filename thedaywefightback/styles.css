@@ -125,9 +125,6 @@ img {
         width: 42.5%;
     }
 }
-.phone-container img, .email-container img {
-    margin-bottom:8px;
-}
 .call-form, .email-form {
   margin-top: 87px;
 }
@@ -165,7 +162,15 @@ img {
   letter-spacing: 1px;
   line-height: 20px;
   padding: 0 !important;
+  height: 59px;
+  position:relative;
 }
+.call-form label img,
+.email-form label img {
+    position:absolute;
+    bottom:10px;
+}
+
 .call-form input.form-control,
 .email-form input.form-control {
   margin-top: 8px;
@@ -175,6 +180,11 @@ img {
 @media (max-width: 900px){
    .form-control {
     font-size: 13px;
+    }
+    .call-form label img,
+    .email-form label img {
+        position:absolute;
+        bottom:5px;
     }
 }
 .call-form input[type="submit"],
