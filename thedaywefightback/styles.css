@@ -67,11 +67,14 @@ img {
 }
 
 .leftsidecontainer {
-    margin-top:82px;
     width: 85.75%;
     margin: 82px auto 0 auto;
     margin-left: 9.5%;
     margin-right: 4.75%;
+}
+
+.footer .leftsidecontainer {
+  margin: 0 auto;
 }
 
 .scrolling-banner-text {
