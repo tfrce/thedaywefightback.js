@@ -52,15 +52,26 @@ img {
     margin: 0 auto;
 }
 
-/* ===============================*/
+@media (min-width: 1080px){
+    #second-slide {
+        max-width: 1080px;
+    }
+}
+
+/* =====================================*/
 /* Left side of banner */
-/* ===============================*/
+/* =====================================*/
+
+.leftside, .rightside {
+    padding:0;
+}
 
 .leftsidecontainer {
     margin-top:82px;
-    width: 90%;
+    width: 85.75%;
     margin: 82px auto 0 auto;
-    padding-left: 43px;
+    margin-left: 9.5%;
+    margin-right: 4.75%;
 }
 
 .scrolling-banner-text {
@@ -75,6 +86,14 @@ img {
     height: 50px;
 }
 
+
+@media (max-width: 900px){
+    .scrolling-banner-text {
+        font-size: 20px;
+        padding-top: 8px;
+    }
+}
+
 .scrolling-banner-text a {
     color: #f2c45a;
 }
@@ -86,27 +105,32 @@ img {
     margin-top:25px;
 }
 
-/* ===============================*/
+/* =====================================*/
 /* Call and email forms */
-/* ===============================*/
-
+/* =====================================*/
 .phone-container, .email-container {
-    width: 190px;
+    width: 35.85%;
     float:left;
 }
 .phone-container {
-    margin-right: 50px;
-    margin-left:35px;
+    margin-right: 9.43%;
+    margin-left:9.43%;
 }
-
+@media (max-width: 900px){
+    .phone-container {
+        margin-left: 3%;
+        margin-right: 5%;
+    }
+    .phone-container, .email-container {
+        width: 42.5%;
+    }
+}
 .phone-container img, .email-container img {
     margin-bottom:8px;
 }
-
 .call-form, .email-form {
   margin-top: 87px;
 }
-
 ::-webkit-input-placeholder { /* WebKit browsers */
     color:    #9e9e9e;
     font-style:italic;
@@ -123,14 +147,12 @@ img {
     color:    #9e9e9e !important;
     font-style:italic !important;
     font-weight: 500 !important;
-
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color:    #9e9e9e !important;
     font-style:italic !important;
     font-weight: 500 !important;
 }
-
 .call-form .form-group,
 .email-form .form-group{
   margin-bottom: 0;
@@ -144,14 +166,17 @@ img {
   line-height: 20px;
   padding: 0 !important;
 }
-
 .call-form input.form-control,
 .email-form input.form-control {
   margin-top: 8px;
   border-radius: 0 !important;
   height: 50px;
 }
-
+@media (max-width: 900px){
+   .form-control {
+    font-size: 13px;
+    }
+}
 .call-form input[type="submit"],
 .email-form input[type="submit"] {
   border: 0;
