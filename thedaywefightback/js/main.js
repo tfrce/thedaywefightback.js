@@ -50,7 +50,7 @@ $('.email-form').on('submit', function(ev) {
 
     var form = $(ev.currentTarget);
     var userEmailEl = $('#userEmail', form);
-    var userEmail = userEmailEl.val().replace(/[^\d.]/g, '');
+    var userEmail = userEmailEl.val();
     if(isValidEmail(userEmail)) {
         window.open('email-tool.html', "Share on Facebook", "width=800,height=800");
     } else {
