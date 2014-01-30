@@ -67,14 +67,10 @@ img {
 }
 
 .leftsidecontainer {
-    width: 85.75%;
+    width: 84.75%;
     margin: 82px auto 0 auto;
     margin-left: 9.5%;
-    margin-right: 4.75%;
-}
-
-.footer .leftsidecontainer {
-  margin: 0 auto;
+    margin-right: 5.75%;
 }
 
 .scrolling-banner-text {
@@ -108,9 +104,6 @@ img {
     margin-top:25px;
 }
 
-.important { 
-  color: #f2c45a;
-}
 
 /* =====================================*/
 /* Call and email forms */
@@ -132,6 +125,12 @@ img {
         width: 42.5%;
     }
 }
+@media (max-width: 800px){
+    .rightside {
+      position: relative;
+      top: -7px;
+    }
+  }
 .call-form, .email-form {
   margin-top: 87px;
 }
@@ -207,29 +206,56 @@ img {
     -webkit-font-smoothing: antialiased;
 }
 
-.footer {
-  background: #262626;
-  color: #444;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  left: 0;
-  height: 50px;
+.footer .leftsidecontainer {
+  margin: 0 auto;
+  margin-left: 9.5%;
+  margin-right: 5.7%;
 }
-.footer-notice {
+.footer .rightsidecontainer {
+  margin-right: 9.4%;
+}
+
+.footer-wrapper {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width: 100%;
+  height: 50px;
+  background: #262626;
+}
+.calls-counter, .emails-counter, .footer .org-logo-slider  {
   line-height: 50px;
   height: 40px;
   color: #efefef;
   letter-spacing: 1px;
   font-weight: bold;
 }
-.emails-sent {
-    text-align: right;
+.calls-counter {
+  width: 50%;
+  float:left;
 }
-
+.emails-counter {
+  width: 50%;
+    text-align: right;
+    float:right;
+}
+.footer .org-logo-slider {
+  text-align: right;
+}
+.emails-counter span, .calls-counter span { 
+  color: #f2c45a;
+}
 #banner-container {
     height: 300px;
 }
+@media (max-width: 900px){
+  .calls-counter, .emails-counter, .footer .org-logo-slider  {
+    font-size:12px;
+    letter-spacing:0.5px;
+  }
+
+}
+
 /* See http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/#Height if we start having problems*/
 .abs-centered {
     margin: auto;
