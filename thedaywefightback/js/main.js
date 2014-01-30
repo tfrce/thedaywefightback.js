@@ -4,6 +4,12 @@ function countUp(a,b,c,d,e){for(var f=0,g=["webkit","moz","ms"],h=0;h<g.length&&
 /* jRumble v1.3 - http://jackrugile.com/jrumble - MIT License */
 (function(f){f.fn.jrumble=function(g){var a=f.extend({x:2,y:2,rotation:1,speed:15,opacity:false,opacityMin:0.5},g);return this.each(function(){var b=f(this),h=a.x*2,i=a.y*2,k=a.rotation*2,g=a.speed===0?1:a.speed,m=a.opacity,n=a.opacityMin,l,j,o=function(){var e=Math.floor(Math.random()*(h+1))-h/2,a=Math.floor(Math.random()*(i+1))-i/2,c=Math.floor(Math.random()*(k+1))-k/2,d=m?Math.random()+n:1,e=e===0&&h!==0?Math.random()<0.5?1:-1:e,a=a===0&&i!==0?Math.random()<0.5?1:-1:a;b.css("display")==="inline"&&(l=true,b.css("display","inline-block"));b.css({position:"relative",left:e+"px",top:a+"px","-ms-filter":"progid:DXImageTransform.Microsoft.Alpha(Opacity="+d*100+")",filter:"alpha(opacity="+d*100+")","-moz-opacity":d,"-khtml-opacity":d,opacity:d,"-webkit-transform":"rotate("+c+"deg)","-moz-transform":"rotate("+c+"deg)","-ms-transform":"rotate("+c+"deg)","-o-transform":"rotate("+c+"deg)",transform:"rotate("+c+"deg)"})},p={left:0,top:0,"-ms-filter":"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)",filter:"alpha(opacity=100)","-moz-opacity":1,"-khtml-opacity":1,opacity:1,"-webkit-transform":"rotate(0deg)","-moz-transform":"rotate(0deg)","-ms-transform":"rotate(0deg)","-o-transform":"rotate(0deg)",transform:"rotate(0deg)"};b.bind({startRumble:function(a){a.stopPropagation();clearInterval(j);j=setInterval(o,g)},stopRumble:function(a){a.stopPropagation();clearInterval(j);l&&b.css("display","inline");b.css(p)}})})}})(jQuery);
 
+/* Modified phone number formatting script */
+/* via BootstrapFormHelpers - https://github.com/vlamanna/BootstrapFormHelpers - Apache License, Version 2.0 */
+$('#userPhone').focus(function(){
++function(e){"use strict";function n(e,t){var n,r,i,s;n="";t=String(t).replace(/\D/g,"");for(r=0,i=0;r<e.length;r=r+1){if(/\d/g.test(e.charAt(r))){if(e.charAt(r)===t.charAt(i)){n+=t.charAt(i);i=i+1}else{n+=e.charAt(r)}}else if(e.charAt(r)!=="d"){if(t.charAt(i)!==""||e.charAt(r)==="+"){n+=e.charAt(r)}}else{if(t.charAt(i)===""){n+=""}else{n+=t.charAt(i);i=i+1}}}s=e.charAt(n.length);if(s!=="d"){n+=s}return n}function r(e){var t=0,n;if(document.selection){e.focus();n=document.selection.createRange();n.moveStart("character",-e.value.length);t=n.text.length}else if(e.selectionStart||e.selectionStart===0){t=e.selectionStart}return t}function i(e,t){var n;if(document.selection){e.focus();n=document.selection.createRange();n.moveStart("character",-e.value.length);n.moveStart("character",t);n.moveEnd("character",0);n.select()}else if(e.selectionStart||e.selectionStart===0){e.selectionStart=t;e.selectionEnd=t;e.focus()}}var t=function(t,n){this.options=e.extend({},e.fn.bfhphone.defaults,n);this.$element=e(t);if(this.$element.is('input[type="text"]')||this.$element.is('input[type="tel"]')){this.addFormatter()}if(this.$element.is("span")){this.displayFormatter()}};t.prototype={constructor:t,addFormatter:function(){var n;if(this.options.country!==""){n=e(document).find("#"+this.options.country);if(n.length!==0){this.options.format=BFHPhoneFormatList[n.val()];n.on("change",{phone:this},this.changeCountry)}else{this.options.format=BFHPhoneFormatList[this.options.country]}}this.$element.on("keyup.bfhphone.data-api",t.prototype.change);this.loadFormatter()},loadFormatter:function(){var e;e=n(this.options.format,this.$element.val());this.$element.val(e)},displayFormatter:function(){var e;if(this.options.country!==""){this.options.format=BFHPhoneFormatList[this.options.country]}e=n(this.options.format,this.options.number);this.$element.html(e)},changeCountry:function(t){var n,r;n=e(this);r=t.data.phone;r.$element.val(String(r.$element.val()).replace(/\+\d*/g,""));r.options.format=BFHPhoneFormatList[n.val()];r.loadFormatter()},change:function(t){var s,o,u,a;s=e(this).data("bfhphone");if(s.$element.is(".disabled")||s.$element.attr("disabled")!==undefined){return true}o=r(s.$element[0]);u=false;if(o===s.$element.val().length){u=true}if(t.which===8&&s.options.format.charAt(s.$element.val().length)!=="d"){s.$element.val(String(s.$element.val()).substring(0,s.$element.val().length-1))}a=n(s.options.format,s.$element.val());if(a===s.$element.val()){return true}s.$element.val(a);if(u){o=s.$element.val().length}i(s.$element[0],o);return true}};var s=e.fn.bfhphone;e.fn.bfhphone=function(n){return this.each(function(){var r,i,s;r=e(this);i=r.data("bfhphone");s=typeof n==="object"&&n;if(!i){r.data("bfhphone",i=new t(this,s))}if(typeof n==="string"){i[n].call(r)}})};e.fn.bfhphone.Constructor=t;e.fn.bfhphone.defaults={format:"",number:"",country:""};e.fn.bfhphone.noConflict=function(){e.fn.bfhphone=s;return this};e(document).ready(function(){e('form input[type="text"].bfh-phone, form input[type="tel"].bfh-phone, span.bfh-phone').each(function(){var t;t=e(this);t.bfhphone(t.data())})})}(window.jQuery)
+});
+
 // setTimeout(function() {
 //     $('#first-slide').fadeOut(50, function() {
 //         $('#second-slide').fadeIn(50);
@@ -86,73 +92,3 @@ $.ajax('http://dczwo4qqyofa4.cloudfront.net/count', {
     cache         : true,
     jsonpCallback : 'ccc'
 });
-
-
-// jQuery.phone
-
-(function() {
-  var $, formatBackPhoneNumber, formatPhoneNumber,
-    __slice = [].slice;
-  $ = jQuery;
-  $.telephone = {};
-  $.telephone.fn = {};
-  $.fn.telephone = function() {
-    var args, method;
-    method = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
-    return $.telephone.fn[method].apply(this, args);
-  };
-
-  formatPhoneNumber = function(e) {
-    var $target, digit, is_backspace, is_digit, length, unformatted_number, value;
-    e.preventDefault();
-    $target = $(e.currentTarget);
-    value = $target.val();
-    digit = String.fromCharCode(e.which);
-    is_digit = /^\d+$/.test(digit);
-    is_backspace = e.which === 8;
-    if (!is_digit && !is_backspace) {
-      return;
-    }
-    if (e.which === 8) {
-      unformatted_number = value.replace('+1', '').replace(/\D/g, '').replace('+', '');
-      unformatted_number = unformatted_number.substring(0, unformatted_number.length - 1);
-    } else {
-      unformatted_number = value.replace('+1', '').replace(/\D/g, '') + digit;
-      length = unformatted_number.length;
-    }
-    if (unformatted_number === '') {
-      return $target.val('');
-    } else if (length <= 3) {
-      return $target.val('+1 (' + unformatted_number + ')');
-    } else if (length <= 10) {
-      return $target.val('+1 (' + unformatted_number.slice(0, 3) + ')' + ' ' + unformatted_number.slice(3, 6) + ' ' + unformatted_number.slice(6, 10));
-    } else {
-      return $target.val(unformatted_number.substr(0, characters));
-    }
-  };
-
-  formatBackPhoneNumber = function(e) {
-    var $target, value;
-    $target = $(e.currentTarget);
-    value = $target.val();
-    if (e.meta) {
-      return;
-    }
-    if (($target.prop('selectionStart') != null) && $target.prop('selectionStart') !== value.length) {
-      return;
-    }
-    if (e.which === 8 && /\s\d?$/.test(value)) {
-      e.preventDefault();
-      return $target.val(value.replace(/\s\d?$/, ''));
-    }
-  };
-
-  $.telephone.fn.formatPhoneNumber = function() {
-    this.on('keypress', formatPhoneNumber);
-    this.on('paste', formatPhoneNumber);
-    this.on('keydown', formatBackPhoneNumber);
-    return this;
-  };
-
-}).call(this);
-$("#userPhone").telephone("formatPhoneNumber");
