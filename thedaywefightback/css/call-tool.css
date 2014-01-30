@@ -1,3 +1,35 @@
 h1,h2,h3 {
+	font-weight: bold;
+    font-family: 'brandon_grotesque';
+    -webkit-font-smoothing: antialiased;
+}
+html {
+	height: 800px;
+	overflow: hidden;
+}
+body {
+	border: 12px solid #262626;
+	height: 800px;
+	overflow: hidden;
 	color: #fff;
+
+    font-family: 'brandon_grotesque';
+    -webkit-font-smoothing: antialiased;
+}
+.container {
+	height: 800px;
+}
+.footer { 
+	position: fixed;
+}
+.main-message {
+	font-size: 20px;
+
+}
+li {
+	font-size: 16px;
+	margin-bottom: 15px;
+}
+.talking-point {
+	font-weight: bold;
 }
