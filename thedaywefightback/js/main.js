@@ -10,14 +10,17 @@ $('#userPhone').focus(function(){
 +function(e){"use strict";function n(e,t){var n,r,i,s;n="";t=String(t).replace(/\D/g,"");for(r=0,i=0;r<e.length;r=r+1){if(/\d/g.test(e.charAt(r))){if(e.charAt(r)===t.charAt(i)){n+=t.charAt(i);i=i+1}else{n+=e.charAt(r)}}else if(e.charAt(r)!=="d"){if(t.charAt(i)!==""||e.charAt(r)==="+"){n+=e.charAt(r)}}else{if(t.charAt(i)===""){n+=""}else{n+=t.charAt(i);i=i+1}}}s=e.charAt(n.length);if(s!=="d"){n+=s}return n}function r(e){var t=0,n;if(document.selection){e.focus();n=document.selection.createRange();n.moveStart("character",-e.value.length);t=n.text.length}else if(e.selectionStart||e.selectionStart===0){t=e.selectionStart}return t}function i(e,t){var n;if(document.selection){e.focus();n=document.selection.createRange();n.moveStart("character",-e.value.length);n.moveStart("character",t);n.moveEnd("character",0);n.select()}else if(e.selectionStart||e.selectionStart===0){e.selectionStart=t;e.selectionEnd=t;e.focus()}}var t=function(t,n){this.options=e.extend({},e.fn.bfhphone.defaults,n);this.$element=e(t);if(this.$element.is('input[type="text"]')||this.$element.is('input[type="tel"]')){this.addFormatter()}if(this.$element.is("span")){this.displayFormatter()}};t.prototype={constructor:t,addFormatter:function(){var n;if(this.options.country!==""){n=e(document).find("#"+this.options.country);if(n.length!==0){this.options.format=BFHPhoneFormatList[n.val()];n.on("change",{phone:this},this.changeCountry)}else{this.options.format=BFHPhoneFormatList[this.options.country]}}this.$element.on("keyup.bfhphone.data-api",t.prototype.change);this.loadFormatter()},loadFormatter:function(){var e;e=n(this.options.format,this.$element.val());this.$element.val(e)},displayFormatter:function(){var e;if(this.options.country!==""){this.options.format=BFHPhoneFormatList[this.options.country]}e=n(this.options.format,this.options.number);this.$element.html(e)},changeCountry:function(t){var n,r;n=e(this);r=t.data.phone;r.$element.val(String(r.$element.val()).replace(/\+\d*/g,""));r.options.format=BFHPhoneFormatList[n.val()];r.loadFormatter()},change:function(t){var s,o,u,a;s=e(this).data("bfhphone");if(s.$element.is(".disabled")||s.$element.attr("disabled")!==undefined){return true}o=r(s.$element[0]);u=false;if(o===s.$element.val().length){u=true}if(t.which===8&&s.options.format.charAt(s.$element.val().length)!=="d"){s.$element.val(String(s.$element.val()).substring(0,s.$element.val().length-1))}a=n(s.options.format,s.$element.val());if(a===s.$element.val()){return true}s.$element.val(a);if(u){o=s.$element.val().length}i(s.$element[0],o);return true}};var s=e.fn.bfhphone;e.fn.bfhphone=function(n){return this.each(function(){var r,i,s;r=e(this);i=r.data("bfhphone");s=typeof n==="object"&&n;if(!i){r.data("bfhphone",i=new t(this,s))}if(typeof n==="string"){i[n].call(r)}})};e.fn.bfhphone.Constructor=t;e.fn.bfhphone.defaults={format:"",number:"",country:""};e.fn.bfhphone.noConflict=function(){e.fn.bfhphone=s;return this};e(document).ready(function(){e('form input[type="text"].bfh-phone, form input[type="tel"].bfh-phone, span.bfh-phone').each(function(){var t;t=e(this);t.bfhphone(t.data())})})}(window.jQuery)
 });
 
-    // $.ajax({
-    //     type: "GET",
-    //     url: 'https://thedaywefightback.org/blank.html',
-    //     success: function(data, status, xhr) {
-    //         var serverDateTime = (xhr.getResponseHeader('Date'));
-    //         serverDate = new Date(serverDateTime);
-    //         liveDate = new Date(Date.UTC(2014, 1, 12, 8, 0));
-    //         var diff = liveDate - serverDate;
+     $.ajax({
+         type: "GET",
+         url: 'https://thedaywefightback.org/blank.html',
+         success: function(data, status, xhr) {
+             var serverDateTime = (xhr.getResponseHeader('Date'));
+             serverDate = new Date(serverDateTime);
+             liveDate = new Date(Date.UTC(2014, 1, 12, 8, 0));
+             var diff = liveDate - serverDate;
+            console.log(diff);
+         }
+     });
 
     //         timeDiffObj = splitTime(diff);
     //         updateTimeOnSite(timeDiffObj);
@@ -40,13 +43,7 @@ $('#userPhone').focus(function(){
 
 $('.call-form').on('submit', function(ev) {
     var form = $(ev.currentTarget);
-    var phoneNumberEl = $('#userPhone', form);
-    var phoneNumber = phoneNumberEl.val().replace(/[^\d.]/g, '');
-    function isValidPhoneNumber(value) {
-        if (!value) return false;
-        var count = value.length;
-        return count == 10 || count == 11;
-    }
+
     if(isValidPhoneNumber(phoneNumber)) {
         window.open('call-tool.html', "Share on Facebook", "width=800,height=800");
 
@@ -63,34 +60,72 @@ phoneNumberEl.css('border', 'none');
     return false;
 })
 $('.email-form').on('submit', function(ev) {
-    function isValidEmail(email) { 
-        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-    } 
 
-    var form = $(ev.currentTarget);
-    var userEmailEl = $('#userEmail', form);
-    var userEmail = userEmailEl.val();
+
     if(isValidEmail(userEmail)) {
         window.open('email-tool.html', "Share on Facebook", "width=800,height=800");
     } else {
 
-        userEmailEl.css('border', '1px solid #ff0000');
-        userEmailEl.jrumble({})
-        userEmailEl.trigger('startRumble');
-        demoTimeout = setTimeout(function(){userEmailEl.trigger('stopRumble');
-userEmailEl.css('border', 'none');
-    }, 500)
+
 
     }
     return false;
 })
 
+function rumbleEl(el) {
+    el.css('border', '1px solid #ff0000');
+    el.jrumble({})
+    el.trigger('startRumble');
+    var demoTimeout = setTimeout(function(){el.trigger('stopRumble');
+        el.css('border', 'none');
+    }, 500) 
+}
+
+function isValidPhoneNumber(value) {
+    if (!value) return false;
+    var count = value.length;
+    return count == 10 || count == 11;
+}
+function isValidEmail(email) { 
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+} 
+$('.call-and-email-form').on('submit', function(ev) {
+    var form = $(ev.currentTarget);
+
+    var phoneNumberEl = $('#userPhone', form);
+    var phoneNumber = phoneNumberEl.val().replace(/[^\d.]/g, '');
+
+    var userEmailEl = $('#userEmail', form);
+    var userEmail = userEmailEl.val();
+
+
+    // Ugly thomas logic
+    if(userEmail === '' && phoneNumber === '') {
+        rumbleEl(phoneNumberEl);
+        rumbleEl(userEmailEl);
+        return false;
+    }
+    var errors = false;
+    if(userEmail !== '' && !isValidEmail(userEmail)){
+        errors = true;
+        rumbleEl(userEmailEl);
+    }
+    if(phoneNumber !== '' && !isValidPhoneNumber(phoneNumber)){
+        errors = true;
+        rumbleEl(phoneNumberEl);
+    }
+    if(errors) {
+        return false;
+    }
+    if(isValidEmail(userEmail) && isValidPhoneNumber(phoneNumber)) {
+        window.open('call-and-email.html', "Share on Facebook", "width=800,height=800");
+    }
+    return false;
+});
+
+
 // Call and email counters
-
-
-
-
 
 $.ajax('http://dznh7un1y2etk.cloudfront.net/count', {
     success: function(res, err) {

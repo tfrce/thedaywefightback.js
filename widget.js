@@ -60,7 +60,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
     ASSET_URL = '../thedaywefightback/';
     COOKIE_TIMEOUT = 20;
   } else {
-    ASSET_URL = '//d1ux67szpr7bp0.cloudfront.net/project-megaphone/thedaywefightback/';
+    ASSET_URL = '//d1agz031tafz8n.cloudfront.net/thedaywefightback.js/';
     COOKIE_TIMEOUT = widget_config.cookieTimeout;
   }
 
@@ -130,7 +130,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
           campaign_container: 'background: #000;position:fixed;width:100%;bottom:0;left:0;z-index:100000; padding: 0;-webkit-box-sizing: border-box; -moz-box-sizing: border-box;',
           iframe_container: 'position: relative; height: 350px; width:100%; margin: 0; background: #000; ',
           iframe: 'width: 100%;height: 100%;border: 0;margin:0;padding:0; background: #000;',
-          closeButton: 'border: 0;height: 28px;width: 28px;cursor: pointer;position: absolute;top:33px;right:20px;background: url("' + ASSET_URL +'images/close-button.png");'
+          closeButton: 'border: 0;height: 28px;width: 28px;cursor: pointer;position: absolute;top:33px;right:20px;background: url("' + ASSET_URL +'imgs/close-button.png");'
         }
       },
       show: function () {

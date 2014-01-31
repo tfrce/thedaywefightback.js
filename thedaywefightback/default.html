@@ -34,8 +34,8 @@
                     </div>
                 </div>
                 <div class="col-sm-6 rightside">
+                        <form method="get" action="http://call.taskforce.is/create" class="call-and-email-form" role="form" autocomplete="on">
                     <div class="phone-container">
-                        <form method="get" action="http://call.taskforce.is/create" class="call-form" role="form" autocomplete="on">
                             <div class="form-group">
                                 <label class="control-label" for="userPhone">
                                     <img src="imgs/call-your-legislators.png" alt="Call your legislators!" class="img-responsive"/>
@@ -44,28 +44,22 @@
                                     <input type="text"  data-format="+1 (ddd) ddd-dddd" placeholder="YOUR PHONE NUMBER" name="phone" class="form-control bfh-phone" id="userPhone" x-autocompletetype="phone">
                                 </div>
                             </div>
-                            <span id="error-text"></span>
-                            <div class="form-group">
-                              <input id="submit" type="submit" value="CONTINUE >>" class="">
-                            </div>
-                        </form>
                     </div>
                     <div class="email-container">
-                        <form method="get" action="http://call.taskforce.is/create" class="email-form" role="form"  autocomplete="on">
                             <div class="form-group">
                                 <label class=" control-label" for="userEmail">
                                     <img src="imgs/email-your-legislators.png" alt="Email your legislators!" class="img-responsive"/>
                                 </label>
                                 <div class="c">
-                                    <input type="email" placeholder="YOUR EMAIL ADDRESS" name="email" class="form-control" id="userEmail"  x-autocompletetype="email">
+                                    <input type="text" placeholder="YOUR EMAIL ADDRESS" name="email" class="form-control" id="userEmail"  x-autocompletetype="email" value="">
                                 </div>
                             </div>
-                            <span id="error-text"></span>
                             <div class="form-group">
                               <input id="submit" type="submit" value="CONTINUE >>" class="">
                             </div>
-                        </form>
                     </div>
+                        </form>
+                    
                 </div>
             </div>
         </div>
