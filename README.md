@@ -6,84 +6,62 @@ thedaywefightback.js is a javascript snippet that automatically activates at mid
 
 You can add it to your site now - it won't be activated until midnight EST on February 11th. You can also host the files locally.
 
-**If you own a website, no matter how big or small, we need your help.**
+**If you own a website, no matter how big or small, you can be part of this.**
 
-Mass surveillance is a grave challenge to privacy on the Internet, and threatens our ability to communicate and conduct transactions privately online.
+## Some things to know
+* If users are outside the US, a different version of the banner will be shown with appropriate actions.
 
-## How thedaywefightback.js works
+## Other ways to install
 
-Project Megaphone is a simple script that you can add to your site. The script checks the IP of each visitor, and if they are within a 700km radius of Washington, D.C., displays a banner informing the user of the rally.
-
-A few important notes:
-
-* The banners are not displayed on mobile devices.
-* The script automatically stops displaying the banner after 12pm on October 26th.
-* The script and geolocation server have been thoroughly load-tested and can handle millions of hits per day.
-
-
-## Banner styles
-
-The "view example page" links below display the banners even if you're not near D.C.
-
-**Strip** - <a href="http://tfrce.github.io/project-megaphone/example/strip.html" target="_blank">view example page</a><br />
-<img src="screenshots/strip.png" alt="modal"width="280" />
-
-## WordPress Plugin
-
-Installing the script is now super easy with our WordPress plugin. Search for 'Project Megaphone Banner' in your WordPress plugins area, download it and activate it, that's it!
-
-http://wordpress.org/plugins/project-megaphone-banner/
+* Cloudflare app
+* Wordpress pluging
+* Drupal plugin
 
 ## Getting started
 
-Simply copy and paste the code below into your website.
+Simply copy and paste the code below into your website, right above the closing <body> tag.
 
 _Place the code below before `</body>` tag. The script loads asynchronously and won't affect page load times._
 
 ```html
 <!--[if !(lte IE 8)]><!-->
 <script> 
+  // @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt GPL-v3-or-Later
   (function(){
     var e = document.createElement('script'); e.type='text/javascript'; e.async = true;
-    e.src = document.location.protocol + '//d1ux67szpr7bp0.cloudfront.net/project-megaphone/widget.min.js';
+    e.src = document.location.protocol + '//d1agz031tafz8n.cloudfront.net/thedaywefightback.js/widget.min.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);
   })();
+  // @license-end
 </script>
 <!--<![endif]-->
 ```
 
-## Script defaults
-
-* The script will run between the date that you add it to your site and 12pm on October 26th.
-* We only display the widget for people in 700km radius of Washington DC, based off their IP address.
-* If a user clicks to close the banner, the banner will not be shown to them for another 48 hours.
-* We only display banners to desktop computers; mobile devices won't see it.
-
-## Configuration
-
+## Customize the banner
 
 You can choose a different banner style and customize the preferences using a javascript object:
+
 ```html
 <!--[if !(lte IE 8)]><!-->
 <script> 
-  var tfrce_config = {
-    show_style: 'default', // The three available styles are 'default', 'modal', and 'strip' .
-
-    disableGeo: false, // If true, will show to all visitors not just those around Washington DC
-    cookieTimeout: 172800 // This is the amount of time before the banner will be shown to a user again. Default value is 172800 (two days)
+  // @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt GPL-v3-or-Later
+  var tdwfb_config = {
+    custom_salution: 'Dear reddit:', // Sets the salutation at the top left. Default is "Dear Internet Users:"
+    letter_to_community: '<p>The NSA’s actions undermine online privacy and tilt the balance of power away from the people.</p> <p>Our rights won’t defend themselves — we have to step up. Join us in calling and emailing Congress to demand they pass good laws to defend privacy.</p>' // Changes the default text on the left hand side of the banner. Accepts HTML.
   };
   (function(){
     var e = document.createElement('script'); e.type='text/javascript'; e.async = true;
-    e.src = document.location.protocol + '//d1ux67szpr7bp0.cloudfront.net/project-megaphone/widget.min.js';
+    e.src = document.location.protocol + '//d1agz031tafz8n.cloudfront.net/thedaywefightback.js/widget.min.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);
   })();
+  // @license-end
 </script>
 <!--<![endif]-->
 ```
 
-Please feel free to fork and submit pull requests for any bugs or quirks you might find.  Project Megaphone's code is licensed under the terms of the [GNU Affero General Public License](https://gnu.org/licenses/agpl) version 3, or, at your option, any later version (See [./COPYING].)
+Please feel free to fork and submit pull requests for any bugs or quirks you might find. thedaywefightback.js's code is licensed under the terms of the [GNU Affero General Public License](https://gnu.org/licenses/agpl) version 3, or, at your option, any later version (See [./COPYING].)
 
-Built by [Taskforce.is](http://taskforce.is) members [Braunson Yager](https://twitter.com/braunshizzle), [Thomas Davis](https://twitter.com/neutralthoughts), [Tyler Morgan](https://twitter.com/digismack), [Beau Gunderson](https://twitter.com/beaugunderson) and [Sina Khanifar](https://twitter.com/sinak).
+Built by [Taskforce.is](http://taskforce.is) members [Thomas Davis](https://twitter.com/neutralthoughts) and [Sina Khanifar](https://twitter.com/sinak).
 
 ## List of participating sites:
 
@@ -105,4 +83,4 @@ Built by [Taskforce.is](http://taskforce.is) members [Braunson Yager](https://tw
 - [Restore the Fourth SF](http://restorethefourthsf.com)
 - [flood.firetree.net](http://flood.firetree.net)
 - [RubbingAlcoholic](http://blog.rubbingalcoholic.com)
-- Submit a pull request, <a href="https://twitter.com/home?status=@sinak Please add our XXX to the list of sites participating in Project Megaphone" target="_blank">tweet</a> or <a href="mailto:sina.khanifar@gmail.com" target="_blank">email us</a> to be added here.
+- Submit a pull request or <a href="https://twitter.com/home?status=@sinak Please add our XXX to the list of sites participating in Project Megaphone" target="_blank">tweet</a> to be added here.
