@@ -4,7 +4,7 @@ thedaywefightback.js is a javascript snippet that automatically activates at mid
 
 <img src="screenshots/tdwfb-banner.jpg" alt="banner" />
 
-You can add it to your site now, it won't be activated until the day of and will only make one small html call before its activated 02/11. You can also host the files locally.
+You can add it to your site now - it won't be activated until midnight EST on February 11th. You can also host the files locally.
 
 **If you own a website, no matter how big or small, we need your help.**
 
