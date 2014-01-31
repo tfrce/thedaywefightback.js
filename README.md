@@ -63,6 +63,8 @@ Please feel free to fork and submit pull requests for any bugs or quirks you mig
 
 Built by [Taskforce.is](http://taskforce.is) members [Thomas Davis](https://twitter.com/neutralthoughts) and [Sina Khanifar](https://twitter.com/sinak).
 
+**A big thank you to [Twilio](https://www.twilio.com/) for sponsoring calls and [Rob Spectre](https://twitter.com/dN0t) for all his help.**
+
 ## List of participating sites:
 
 - [cdnjs](http://cdnjs.com)
