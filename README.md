@@ -47,7 +47,8 @@ You can choose a different banner style and customize the preferences using a ja
   // @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt GPL-v3-or-Later
   var tdwfb_config = {
     custom_salution: 'Dear reddit:', // Sets the salutation at the top left. Default is "Dear Internet Users:"
-    letter_to_community: '<p>The NSA’s actions undermine online privacy and tilt the balance of power away from the people.</p> <p>Our rights won’t defend themselves — we have to step up. Join us in calling and emailing Congress to demand they pass good laws to defend privacy.</p>' // Changes the default text on the left hand side of the banner. Accepts HTML.
+    letter_to_community: '<p>The NSA’s actions undermine online privacy and tilt the balance of power away from the people.</p> <p>Our rights won’t defend themselves — we have to step up. Join us in calling and emailing Congress to demand they pass good laws to defend privacy.</p>', // Changes the default text on the left hand side of the banner. Accepts HTML.
+    debug_mode: false // If true, the banner shows even if the date is not yet 02/11/2014
   };
   (function(){
     var e = document.createElement('script'); e.type='text/javascript'; e.async = true;
