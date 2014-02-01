@@ -1,3 +1,27 @@
+@font-face {
+  font-family: 'brandon_grotesque';
+  src: url("../fonts/brandongrotesque-blackitalic-webfont.eot");
+  src: url("../fonts/brandongrotesque-blackitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/brandongrotesque-blackitalic-webfont.woff") format("woff"), url("../fonts/brandongrotesque-blackitalic-webfont.ttf") format("truetype"), url("../fonts/brandongrotesque-blackitalic-webfont.svg#brandon_grotesqueblack_italic") format("svg");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'brandon_grotesque';
+  src: url("../fonts/brandongrotesque-mediumitalic-webfont.eot");
+  src: url("../fonts/brandongrotesque-mediumitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/brandongrotesque-mediumitalic-webfont.woff") format("woff"), url("../fonts/brandongrotesque-mediumitalic-webfont.ttf") format("truetype"), url("../fonts/brandongrotesque-mediumitalic-webfont.svg#brandon_grotesqueMdIt") format("svg");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'brandon_grotesque';
+  src: url("../fonts/brandongrotesque-regular-webfont.eot");
+  src: url("../fonts/brandongrotesque-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/brandongrotesque-regular-webfont.woff") format("woff"), url("../fonts/brandongrotesque-regular-webfont.ttf") format("truetype"), url("../fonts/brandongrotesque-regular-webfont.svg#brandon_grotesque_regularRg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
@@ -67,22 +91,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 50, ../sass/styles.scss */
+/* line 82, ../sass/styles.scss */
 body {
   width: 100%;
   *zoom: 1;
 }
-/* line 36, ../sass/styles.scss */
+/* line 68, ../sass/styles.scss */
 body:before, body:after {
   content: "";
   display: table;
 }
-/* line 40, ../sass/styles.scss */
+/* line 72, ../sass/styles.scss */
 body:after {
   clear: both;
 }
 
-/* line 82, ../sass/styles.scss */
+/* line 114, ../sass/styles.scss */
 html {
   overflow: hidden;
   width: 100%;
@@ -90,7 +114,7 @@ html {
   background: #000;
 }
 
-/* line 88, ../sass/styles.scss */
+/* line 120, ../sass/styles.scss */
 body {
   margin: 0 auto;
   overflow: hidden;
@@ -100,40 +124,41 @@ body {
   width: 100%;
   height: 100%;
   font-size: 18px;
-  font-family: 'Quattrocento Sans', Helvetica, Arial, sans-serif;
+  font-family: "brandon_grotesque", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.5em;
 }
 
-/* line 100, ../sass/styles.scss */
+/* line 133, ../sass/styles.scss */
 div.container {
   width: 600px;
   margin: 0 auto;
   background: #000;
 }
 
-/* line 105, ../sass/styles.scss */
+/* line 138, ../sass/styles.scss */
 a {
   color: #f2c45a;
   text-decoration: none;
 }
-/* line 108, ../sass/styles.scss */
+/* line 141, ../sass/styles.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 112, ../sass/styles.scss */
+/* line 145, ../sass/styles.scss */
 strong {
   color: #f2c45a;
 }
 
-/* line 116, ../sass/styles.scss */
+/* line 149, ../sass/styles.scss */
 img {
   border: none;
   width: 100%;
   height: auto;
 }
 
-/* line 122, ../sass/styles.scss */
+/* line 155, ../sass/styles.scss */
 input {
   border: 4px solid #f2c45a;
   background: none;
@@ -146,62 +171,68 @@ input {
   margin: 1em auto;
   display: block;
 }
-/* line 133, ../sass/styles.scss */
+/* line 166, ../sass/styles.scss */
 input:focus, input:active {
   background: #FFF;
   color: #333;
   font-style: normal;
 }
-/* line 138, ../sass/styles.scss */
+/* line 171, ../sass/styles.scss */
 input#submit {
   background: #f2c45a;
   font-style: normal;
-  font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
+  font-family: "brandon_grotesque", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  letter-spacing: 0.2em;
   font-weight: bold;
   color: #333;
 }
 
-/* line 150, ../sass/styles.scss */
+/* line 185, ../sass/styles.scss */
 h2 {
-  font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
+  font-family: "brandon_grotesque", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   text-align: center;
+  font-weight: 500;
   font-size: 1.5em;
   border-bottom: 1px solid #FFF;
   padding-bottom: 1em;
   margin-bottom: 1em;
+  font-style: italic;
+  letter-spacing: 0.2em;
 }
-/* line 158, ../sass/styles.scss */
+/* line 196, ../sass/styles.scss */
 h2 a {
   display: block;
 }
 
-/* line 166, ../sass/styles.scss */
+/* line 204, ../sass/styles.scss */
 #slides .slide {
   padding-top: 3em;
   display: block;
   width: 102.08333%;
   margin: 0 -1.04167%;
   *zoom: 1;
+  max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
 }
-/* line 36, ../sass/styles.scss */
+/* line 68, ../sass/styles.scss */
 #slides .slide:before, #slides .slide:after {
   content: "";
   display: table;
 }
-/* line 40, ../sass/styles.scss */
+/* line 72, ../sass/styles.scss */
 #slides .slide:after {
   clear: both;
 }
 
-/* line 174, ../sass/styles.scss */
+/* line 213, ../sass/styles.scss */
 form {
   display: block;
 }
-/* line 176, ../sass/styles.scss */
+/* line 215, ../sass/styles.scss */
 form div {
   display: inline;
   float: left;
@@ -210,7 +241,7 @@ form div {
   text-align: center;
 }
 
-/* line 181, ../sass/styles.scss */
+/* line 220, ../sass/styles.scss */
 #header {
   display: inline;
   float: left;
@@ -219,7 +250,7 @@ form div {
   margin-right: 5.20833%;
 }
 
-/* line 188, ../sass/styles.scss */
+/* line 227, ../sass/styles.scss */
 #footer {
   background: #262626;
   position: absolute;
@@ -227,24 +258,26 @@ form div {
   left: 0;
   width: 100%;
   z-index: 10;
-  font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
+  font-family: "brandon_grotesque", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.9em;
+  font-style: italic;
+  letter-spacing: 0.1em;
 }
-/* line 199, ../sass/styles.scss */
+/* line 240, ../sass/styles.scss */
 #footer ul {
   text-align: justify;
   padding: 1em 2em;
   padding-bottom: 0;
 }
-/* line 203, ../sass/styles.scss */
+/* line 244, ../sass/styles.scss */
 #footer ul li {
   display: inline-block;
   text-align: left;
   line-height: 1em;
 }
-/* line 207, ../sass/styles.scss */
+/* line 248, ../sass/styles.scss */
 #footer ul li.break {
   width: 100%;
   height: 0px;
@@ -253,7 +286,7 @@ form div {
 }
 
 @media (min-width: 1080px) {
-  /* line 219, ../sass/styles.scss */
+  /* line 260, ../sass/styles.scss */
   #second-slide {
     max-width: 1080px;
   }

@@ -8,36 +8,40 @@ html {
 body {
   border: 12px solid #262626;
   height: 800px;
+  width: auto;
+  height: auto;
   overflow: hidden;
+  font-size: 16px;
+  line-height: 1.5em;
 }
 
-/* line 10, ../sass/call-tool.scss */
+/* line 14, ../sass/call-tool.scss */
 img.icon {
   width: auto;
 }
 
-/* line 13, ../sass/call-tool.scss */
+/* line 17, ../sass/call-tool.scss */
 .container {
   height: 800px;
 }
 
-/* line 16, ../sass/call-tool.scss */
+/* line 20, ../sass/call-tool.scss */
 .footer {
   position: fixed;
 }
 
-/* line 19, ../sass/call-tool.scss */
+/* line 23, ../sass/call-tool.scss */
 .main-message {
   font-size: 20px;
 }
 
-/* line 23, ../sass/call-tool.scss */
+/* line 27, ../sass/call-tool.scss */
 li {
   font-size: 16px;
   margin-bottom: 15px;
 }
 
-/* line 27, ../sass/call-tool.scss */
+/* line 31, ../sass/call-tool.scss */
 .talking-point {
   font-weight: bold;
 }

@@ -5,7 +5,11 @@ html {
 body {
 	border: 12px solid #262626;
 	height: 800px;
+	width: auto;
+	height: auto;
 	overflow: hidden;
+	font-size: 16px;
+	line-height: 1.5em;
 }
 img.icon {
 	width: auto;
