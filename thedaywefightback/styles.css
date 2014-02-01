@@ -146,7 +146,7 @@ a {
   font-family: "open sans", sans-serif;
   font-size: 15px;
   font-weight:normal;
-  margin:10px 0;
+  margin:5px 0;
   color:white;
 }
 
@@ -163,7 +163,9 @@ a {
   font-size:11px;
   background: #262626;
   padding:7px;
+  margin: 22px 0;
 }
+
 .leftsidecontainer .facts p {
   margin:0;
 }
@@ -208,6 +210,7 @@ h1 {
   font-weight:900;
   text-transform: uppercase;
   color:white;
+  margin-bottom:0;
 }
 
 
@@ -219,18 +222,14 @@ h1 {
   margin: 0 50px 0 33px;
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
- .rightsidecontainer {
-    margin: 0 25px 0 15px;
-  } 
-}
+
 .rightsidecontainer h2 {
   font-size:20px;
   font-weight:900;
   text-transform: uppercase;
   letter-spacing: .5px;
   color:#f2c45a;
-  margin: 20px 0 0 0;
+  margin: 15px 0 0 0;
 }
 
 .rightsidecontainer h3 {
@@ -251,6 +250,30 @@ h1 {
   font-size:12px;
   color:white;
   margin-bottom:5px;
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+ .rightsidecontainer {
+    margin: 0 25px 0 15px;
+  } 
+}
+
+@media (min-width: 979px) {
+  .rightsidecontainer h2 {
+    font-size:25px;
+    font-weight:900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .rightsidecontainer h3 {
+    font-size:17px;
+    letter-spacing:1px;
+    text-align: center;
+  }
+
+
 }
 
 /* =====================================*/
