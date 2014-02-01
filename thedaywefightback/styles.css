@@ -58,6 +58,7 @@
     font-weight: 900;
     font-style: italic;
 }
+
 html {
     overflow: hidden;
 }
@@ -72,6 +73,11 @@ body {
 
 img {
     border: none;
+}
+
+
+a {
+    color: #f2c45a;
 }
 
 #banner-container {
@@ -101,6 +107,7 @@ img {
     width: 172px;
     height: 19px;
     background-position: -1px -25px;
+    margin-top:13px;
 }
 
 .i-call {
@@ -127,10 +134,28 @@ img {
 }
 
 .leftsidecontainer {
-    width: 84.75%;
-    margin: 82px auto 0 auto;
-    margin-left: 9.5%;
-    margin-right: 5.75%;
+  margin: 0 33px 0 50px;
+}
+@media (min-width: 768px) and (max-width: 979px) {
+ .leftsidecontainer {
+    margin: 0 15px 0 25px;
+  } 
+}
+
+.leftsidecontainer p {
+  font-family: "open sans", sans-serif;
+  font-size: 15px;
+  font-weight:normal;
+  margin:10px 0;
+  color:white;
+}
+
+.leftsidecontainer h2 {
+  font-size:16px;
+  font-weight:900;
+  font-style: italic;
+  text-transform: uppercase;
+  color:white;
 }
 
 .scrolling-banner-text {
@@ -153,9 +178,6 @@ img {
     }
 }
 
-.scrolling-banner-text a {
-    color: #f2c45a;
-}
 .leftsidecontainer .divider {
     border-bottom: 1px solid #fff;
     margin-top: 22px;
@@ -165,13 +187,106 @@ img {
 }
 
 h1 {
-
+  font-size:24px;
+  font-weight:900;
+  text-transform: uppercase;
+  color:white;
 }
 
 
 /* =====================================*/
+/* Right side of banner */
+/* =====================================*/
+
+.rightsidecontainer {
+  margin: 0 50px 0 33px;
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+ .rightsidecontainer {
+    margin: 0 25px 0 15px;
+  } 
+}
+.rightsidecontainer h2 {
+  font-size:20px;
+  font-weight:900;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color:#f2c45a;
+  margin: 20px 0 0 0;
+}
+
+.rightsidecontainer h3 {
+  font-size:14px;
+  font-weight:900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:white;
+  margin:0;   
+}
+
+.rightsidecontainer ul {
+  padding-left:15px;
+}
+
+.rightsidecontainer li {
+  font-family: "open sans", sans-serif;
+  font-size:12px;
+  color:white;
+  margin-bottom:5px;
+}
+
+/* =====================================*/
 /* Call and email forms */
 /* =====================================*/
+
+.formtable {
+  display:table;
+  width:100%;
+  height:90px;
+}
+.formcell {
+  display:table-cell;
+  vertical-align: top;
+}
+
+.labels {
+  width:172px;
+  height:100%;
+}
+
+.forminputs {
+  padding-left:15px;
+  width:100%;
+  height:100%;
+}
+
+.forminputs input {
+  width:100%;
+  height:40px;
+  border:none;
+  margin:4px 0;
+  padding:0 0 0 5px;
+}
+
+.call-and-email-form {
+  margin-top:20px;
+}
+
+.cta-button {
+  height: 40px;
+  width:150px;
+  background: #f2c45a;
+  border:none;
+  font-size:16px;
+  font-weight:900;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top:15px;
+}
+
+
 .phone-container, .email-container {
     width: 35.85%;
     float:left;
@@ -269,7 +384,7 @@ h1 {
   font-size: 14px;
     -webkit-font-smoothing: antialiased;
 }
-
+/*
 .footer .leftsidecontainer {
   margin: 0 auto;
   margin-left: 9.5%;
@@ -277,7 +392,7 @@ h1 {
 }
 .footer .rightsidecontainer {
   margin-right: 9.4%;
-}
+}*/
 
 .footer-wrapper {
   position:fixed;
@@ -287,13 +402,20 @@ h1 {
   height: 50px;
   background: #262626;
 }
+
 .calls-counter, .emails-counter, .footer .org-logo-slider  {
   line-height: 50px;
   height: 40px;
   color: #efefef;
   letter-spacing: 1px;
-  font-weight: bold;
+  font-weight: normal;
 }
+
+#call-count, #email-count {
+  color:white;
+  font-weight:900;
+}
+
 .calls-counter {
   width: 50%;
   float:left;
@@ -306,12 +428,11 @@ h1 {
 .footer .org-logo-slider {
   text-align: right;
 }
-.emails-counter span, .calls-counter span { 
-  color: #f2c45a;
-}
+
 #banner-container {
     height: 300px;
 }
+
 @media (max-width: 900px){
   .calls-counter, .emails-counter, .footer .org-logo-slider  {
     font-size:12px;
