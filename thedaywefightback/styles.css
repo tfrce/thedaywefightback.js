@@ -157,6 +157,23 @@ a {
   text-transform: uppercase;
   color:white;
 }
+.leftsidecontainer .facts {
+  min-height:50px;
+  font-family: "open sans", sans-serif;
+  font-size:11px;
+  background: #262626;
+  padding:7px;
+}
+.leftsidecontainer .facts p {
+  margin:0;
+}
+
+.leftsidecontainer .facts span {
+  font-weight:900;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #f2c45a;
+}
 
 .scrolling-banner-text {
     color: #fff;
@@ -284,6 +301,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top:15px;
+  float:right;
 }
 
 
