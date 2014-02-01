@@ -1,35 +1,43 @@
-h1,h2,h3 {
-	font-weight: bold;
-    font-family: 'brandon_grotesque';
-    -webkit-font-smoothing: antialiased;
-}
+/* line 1, ../sass/call-tool.scss */
 html {
-	height: 800px;
-	overflow: hidden;
+  height: 800px;
+  overflow: hidden;
 }
+
+/* line 5, ../sass/call-tool.scss */
 body {
-	border: 12px solid #262626;
-	height: 800px;
-	overflow: hidden;
-	color: #fff;
-
-    font-family: 'brandon_grotesque';
-    -webkit-font-smoothing: antialiased;
+  border: 12px solid #262626;
+  height: 800px;
+  overflow: hidden;
 }
+
+/* line 10, ../sass/call-tool.scss */
+img.icon {
+  width: auto;
+}
+
+/* line 13, ../sass/call-tool.scss */
 .container {
-	height: 800px;
+  height: 800px;
 }
-.footer { 
-	position: fixed;
-}
-.main-message {
-	font-size: 20px;
 
+/* line 16, ../sass/call-tool.scss */
+.footer {
+  position: fixed;
 }
+
+/* line 19, ../sass/call-tool.scss */
+.main-message {
+  font-size: 20px;
+}
+
+/* line 23, ../sass/call-tool.scss */
 li {
-	font-size: 16px;
-	margin-bottom: 15px;
+  font-size: 16px;
+  margin-bottom: 15px;
 }
+
+/* line 27, ../sass/call-tool.scss */
 .talking-point {
-	font-weight: bold;
+  font-weight: bold;
 }

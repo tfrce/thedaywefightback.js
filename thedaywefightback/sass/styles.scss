@@ -91,12 +91,16 @@ body {
     padding: 0;
     background: #000;
     color: #FFF;
-    max-width: 980px;
     width: 100%;
     height: 100%;
     font-size: 18px;
     font-family: 'Quattrocento Sans', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
+}
+div.container {
+	width: 600px;
+	margin: 0 auto;
+	background: #000;
 }
 a {
 	color: $yellow;

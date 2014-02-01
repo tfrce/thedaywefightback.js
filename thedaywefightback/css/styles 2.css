@@ -67,22 +67,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 50, ../sass/styles.scss */
+/* line 50, ../sass/styles 2.scss */
 body {
   width: 100%;
   *zoom: 1;
 }
-/* line 36, ../sass/styles.scss */
+/* line 36, ../sass/styles 2.scss */
 body:before, body:after {
   content: "";
   display: table;
 }
-/* line 40, ../sass/styles.scss */
+/* line 40, ../sass/styles 2.scss */
 body:after {
   clear: both;
 }
 
-/* line 82, ../sass/styles.scss */
+/* line 82, ../sass/styles 2.scss */
 html {
   overflow: hidden;
   width: 100%;
@@ -90,7 +90,7 @@ html {
   background: #000;
 }
 
-/* line 88, ../sass/styles.scss */
+/* line 88, ../sass/styles 2.scss */
 body {
   margin: 0 auto;
   overflow: hidden;
@@ -104,36 +104,36 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 100, ../sass/styles.scss */
+/* line 100, ../sass/styles 2.scss */
 div.container {
   width: 600px;
   margin: 0 auto;
   background: #000;
 }
 
-/* line 105, ../sass/styles.scss */
+/* line 105, ../sass/styles 2.scss */
 a {
   color: #f2c45a;
   text-decoration: none;
 }
-/* line 108, ../sass/styles.scss */
+/* line 108, ../sass/styles 2.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 112, ../sass/styles.scss */
+/* line 112, ../sass/styles 2.scss */
 strong {
   color: #f2c45a;
 }
 
-/* line 116, ../sass/styles.scss */
+/* line 116, ../sass/styles 2.scss */
 img {
   border: none;
   width: 100%;
   height: auto;
 }
 
-/* line 122, ../sass/styles.scss */
+/* line 122, ../sass/styles 2.scss */
 input {
   border: 4px solid #f2c45a;
   background: none;
@@ -146,13 +146,13 @@ input {
   margin: 1em auto;
   display: block;
 }
-/* line 133, ../sass/styles.scss */
+/* line 133, ../sass/styles 2.scss */
 input:focus, input:active {
   background: #FFF;
   color: #333;
   font-style: normal;
 }
-/* line 138, ../sass/styles.scss */
+/* line 138, ../sass/styles 2.scss */
 input#submit {
   background: #f2c45a;
   font-style: normal;
@@ -161,7 +161,7 @@ input#submit {
   color: #333;
 }
 
-/* line 150, ../sass/styles.scss */
+/* line 150, ../sass/styles 2.scss */
 h2 {
   font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
@@ -171,12 +171,12 @@ h2 {
   padding-bottom: 1em;
   margin-bottom: 1em;
 }
-/* line 158, ../sass/styles.scss */
+/* line 158, ../sass/styles 2.scss */
 h2 a {
   display: block;
 }
 
-/* line 166, ../sass/styles.scss */
+/* line 166, ../sass/styles 2.scss */
 #slides .slide {
   padding-top: 3em;
   display: block;
@@ -187,21 +187,21 @@ h2 a {
   overflow: hidden;
   position: relative;
 }
-/* line 36, ../sass/styles.scss */
+/* line 36, ../sass/styles 2.scss */
 #slides .slide:before, #slides .slide:after {
   content: "";
   display: table;
 }
-/* line 40, ../sass/styles.scss */
+/* line 40, ../sass/styles 2.scss */
 #slides .slide:after {
   clear: both;
 }
 
-/* line 174, ../sass/styles.scss */
+/* line 174, ../sass/styles 2.scss */
 form {
   display: block;
 }
-/* line 176, ../sass/styles.scss */
+/* line 176, ../sass/styles 2.scss */
 form div {
   display: inline;
   float: left;
@@ -210,7 +210,7 @@ form div {
   text-align: center;
 }
 
-/* line 181, ../sass/styles.scss */
+/* line 181, ../sass/styles 2.scss */
 #header {
   display: inline;
   float: left;
@@ -219,7 +219,7 @@ form div {
   margin-right: 5.20833%;
 }
 
-/* line 188, ../sass/styles.scss */
+/* line 188, ../sass/styles 2.scss */
 #footer {
   background: #262626;
   position: absolute;
@@ -232,19 +232,19 @@ form div {
   font-weight: bold;
   font-size: 0.9em;
 }
-/* line 199, ../sass/styles.scss */
+/* line 199, ../sass/styles 2.scss */
 #footer ul {
   text-align: justify;
   padding: 1em 2em;
   padding-bottom: 0;
 }
-/* line 203, ../sass/styles.scss */
+/* line 203, ../sass/styles 2.scss */
 #footer ul li {
   display: inline-block;
   text-align: left;
   line-height: 1em;
 }
-/* line 207, ../sass/styles.scss */
+/* line 207, ../sass/styles 2.scss */
 #footer ul li.break {
   width: 100%;
   height: 0px;
@@ -253,7 +253,7 @@ form div {
 }
 
 @media (min-width: 1080px) {
-  /* line 219, ../sass/styles.scss */
+  /* line 219, ../sass/styles 2.scss */
   #second-slide {
     max-width: 1080px;
   }

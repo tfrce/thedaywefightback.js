@@ -1,0 +1,29 @@
+html {
+	height: 800px;
+	overflow: hidden;
+}
+body {
+	border: 12px solid #262626;
+	height: 800px;
+	overflow: hidden;
+}
+img.icon {
+	width: auto;
+}
+.container {
+	height: 800px;
+}
+.footer { 
+	position: fixed;
+}
+.main-message {
+	font-size: 20px;
+
+}
+li {
+	font-size: 16px;
+	margin-bottom: 15px;
+}
+.talking-point {
+	font-weight: bold;
+}
