@@ -79,6 +79,39 @@ img {
     }
 }
 
+
+/* =====================================*/
+/* CSS Sprite */
+/* =====================================*/
+
+
+.i {
+    background-image: url('imgs/image.png');
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.i-email {
+    width: 172px;
+    height: 19px;
+    background-position: -1px -25px;
+}
+
+.i-call {
+    width: 144px;
+    height: 22px;
+    background-position: -1px -1px;
+    margin-top:30px;
+}
+
+.i-logo {
+    width: 279px;
+    height: 30px;
+    background-position: -1px -46px;
+    margin-top:10px;
+}
+
+
 /* =====================================*/
 /* Left side of banner */
 /* =====================================*/
