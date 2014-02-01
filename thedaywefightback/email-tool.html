@@ -13,46 +13,66 @@
     <link rel="stylesheet" type="text/css" href="css/call-tool.css" />
 </head>
 
-<body>
-
-                <a href="http://thedaywefightback.org">
-                    <img src="imgs/email-tool.png" />
-                    </a>
-    <div class="container" style="padding: 0 50px 0 50px;">
-        <div>
-            <div class="row">
-                <div class="col-md-6 col-sm-56 col-xs-6">
-                    <div style="width: 100%; padding: 20px 0 30px 0;text-align: center">
-                        <img style="margin: auto;" src="imgs/phone-icon.png" />
-                    </div>
-                    <p class="main-message">We're about  to place a call to your phone. We'll ask you a few questions, like your ZIP code, and then connect you to your legislator. Once you're connectedd, you'll be able to leave a messa and tell them that you oppose the <span class="important">FISA Improvements Act and support the USA freedom Act.</span></p>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-6">
-                <ul style="padding: 0; margin: 20px 0 0 0;">
-                    <li><span class="talking-point">Talking point one</span>. Lorem ipsum dolar sit amet, consectueur adipicising elit, sed diam nonummy nibh euismood tincident ut loreet dolore magna aliquam erat volutpat.</li>
-                    <li><span class="talking-point">Talking point one</span>. Lorem ipsum dolar sit amet, consectueur adipicising elit, sed diam nonummy nibh euismood tincident ut loreet dolore magna aliquam erat volutpat.</li>
-                    <li><span class="talking-point">Talking point one</span>. Lorem ipsum dolar sit amet, consectueur adipicising elit, sed diam nonummy nibh euismood tincident ut loreet dolore magna aliquam erat volutpat.</li>
-                    <li><span class="talking-point">Talking point one</span>. Lorem ipsum dolar sit amet, consectueur adipicising elit, sed diam nonummy nibh euismood tincident ut loreet dolore magna aliquam erat volutpat.</li>
-                </div>
-                  
-            </div>
-        </div>
+<body class="email">
+  <div class="container">
+    <div class="header-text">
+      <h1> Email Congress</h1>
     </div>
-    <div class="footer" >
-        <div class="" style="float: left; margin-left: 12px;">
-          <span class="footer-notice">
-            <span class="important" id="email-count">120,045</span> EMAILS SENT
-          </span>
-        </div>
-
-        <div class=""  style="text-align: right; float: right; margin-right: 12px"> 
-          <span class="footer-notice">
-            <span class="important">FIGHT</span> FOR THE FUTURE
-          </span>
-        </div>
+  <!-- Form Starts -->
+  <form>
+    <div class="row">
+      <div class="col-sm-5">
+        <label for="full_name">Your Full Name:</label>
+        <label for="email">Your Email: </label>
+        <label for="address">Your Address:</label>
+        <label for="zip">Your Zip Code: </label>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="First Last" id="full_name">
+        <input type="email" class="form-control" placeholder="youremail@domain.com" id="email">
+        <input type="text" class="form-control" placeholder="1 Home Road" id="address">
+        <input type="text" class="form-control" placeholder="123456" id="zip">
+      </div>
     </div>
-    <script type="text/javascript" src="js/main.js"></script>
-   
+    <div class="col-sm-12">
+      <h2>Your Message:</h2>
+      <div class="row">
+        <div class='col-sm-8'>
+          <textarea id="email-text" rows="10" columns="3" >Dear Senator/Rep. _______________ (we’ll fill this in),
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+
+- Sina Khanifar
+        </textarea>
+        <div class="email-checkbox-box">
+          <label for="email-checkbox">
+            <input type="checkbox" id="email-checkbox">
+            Also sign up to receive emails from Fight for the Future, one of the coalition members <span><a href="#">(privacy policy).</a></span>
+          <label>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <ul style="padding: 0 0 0 5px; margin:0;">
+          <li><span class="talking-point">The USA Freedom Act: </span>is a law that would severely curtail the NSA’s ability to collect data on US citizens, and would limit ...</li>
+          <li><span class="talking-point">Undermining encryption is bad: </span>. Lorem ipsum dolar sit amet, consectueur adipicising elit, sed diam nonummy nibh euismood tincident ut loreet dolore magna aliquam erat volutpat.</li>
+          <li><span class="talking-point">International people matter</span>. Lorem ipsum dolar sit amet, consectueur adipicising elit, sed diam nonummy nibh euismood tincident ut loreet dolore magna aliquam erat volutpat.</li>
+        </ul>
+      <input id="submit" type="submit" value="SEND EMAIL >>" class="cta-button">
+      </div>
+    </div>
+  </div>
+  </form>
+<!-- Form end -->
+  </div>
+  <div class="footer">
+    <div class="footer-text">
+      <p>If for any reason we’re unable to deliver your email, one of the coalition members may deliver it in person (<a href="#">read more</a>).</p>
+    </div>
+    <i class="i i-logo" style="float:right;display:inline-block;"></i>
+  </div>
 </body>
+<script type="text/javascript" src="js/main.js"></script>
 
 </html>
