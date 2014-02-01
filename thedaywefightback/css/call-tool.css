@@ -5,10 +5,12 @@ h1,h2,h3 {
 }
 html {
 	height: 900px;
+	width:800px;
 	overflow: hidden;
 }
 body {
 	border: 12px solid #262626;
+	width:800px;
 	height: 900px;
 	overflow: hidden;
 	color: #fff;
@@ -24,6 +26,7 @@ body {
 }
 
 .container {
+	max-width: 760px;
 }
 
 .box {
@@ -59,7 +62,10 @@ body {
 }
 
 .footer { 
+	max-width:780px;
 	position: fixed;
+	background:#262626;
+	width:100%;
 }
 #main-message {
 	font-size: 23px;
@@ -100,7 +106,7 @@ li {
 	font-weight:900;
 	text-transform: uppercase;
 	font-size:35px;
-	line-height: 3;
+	line-height: 3.6;
 }
 
 #call-tool-continue:hover {
@@ -109,12 +115,6 @@ li {
 
 .arrow-fix {
 	vertical-align: 5%;
-}
-
-.footer {
-	background:#262626;
-	width:100%;
-	padding:10px 25px;
 }
 
 
@@ -158,6 +158,7 @@ li {
 	font-size:25px;
 	padding-top:5px;
 	width:100%;
+	margin-top:80px;
 }
 
 .email-checkbox-box label {
@@ -172,9 +173,7 @@ li {
 	width:25px;
 	height:14px;
 }
-.email .footer {
-	padding:0 25px;
-}
+
 .footer-text {
 	display:inline-block;
 	width:390px;
