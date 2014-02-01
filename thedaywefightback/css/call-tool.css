@@ -17,15 +17,53 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 .container {
-	height: 800px;
 }
+
+.header-text h1 {
+	font-size:80px;
+	margin:0;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 1;
+}
+
+.header-text h2 {
+	font-size:23px;
+	text-transform: uppercase;
+	color: #f2c45a;
+	text-align:center;
+	margin:0 0 10px 0;
+}
+
+.instructions {
+	width:100%;
+	padding:10px 0;
+	background: #f2c45a;
+}
+
+.instructions p {
+	margin:0;
+	color:black;
+}
+
 .footer { 
 	position: fixed;
 }
-.main-message {
-	font-size: 20px;
-
+#main-message {
+	font-size: 23px;
+	line-height:1.2;
 }
+
+#sub-message {
+	font-size:18px;
+	margin-top:10px;
+}
+
+#sub-message a {
+	text-decoration: underline;
+	color:black;
+}
+
 li {
 	font-size: 16px;
 	margin-bottom: 15px;
@@ -33,3 +71,4 @@ li {
 .talking-point {
 	font-weight: bold;
 }
+
