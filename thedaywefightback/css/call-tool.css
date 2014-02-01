@@ -4,27 +4,38 @@ h1,h2,h3 {
     -webkit-font-smoothing: antialiased;
 }
 html {
-	height: 800px;
+	height: 900px;
 	overflow: hidden;
 }
 body {
 	border: 12px solid #262626;
-	height: 800px;
+	height: 900px;
 	overflow: hidden;
 	color: #fff;
 
     font-family: 'brandon_grotesque';
     -webkit-font-smoothing: antialiased;
 }
+
+.call-tool h2 {
+	margin-bottom:5px;
+	font-size:18px;
+}
+
 .container {
 }
 
+.box {
+	padding: 0 50px;
+}
+
 .header-text h1 {
+	margin-top:10px;
 	font-size:80px;
 	margin:0;
 	text-align: center;
 	text-transform: uppercase;
-	line-height: 1;
+	line-height: 1.5;
 }
 
 .header-text h2 {
@@ -64,6 +75,17 @@ body {
 	color:black;
 }
 
+.whattosay-box {
+	background: white;
+	color:black;
+	padding:15px;
+}
+
+.whattosay-box p {
+	font-size:18px;
+	margin:0 0 5px;
+}
+
 li {
 	font-size: 16px;
 	margin-bottom: 15px;
@@ -72,3 +94,24 @@ li {
 	font-weight: bold;
 }
 
+#call-tool-continue {
+	font-style: italic;
+	font-weight:900;
+	text-transform: uppercase;
+	font-size:35px;
+	line-height: 3;
+}
+
+#call-tool-continue:hover {
+	color:white;
+}
+
+.arrow-fix {
+	vertical-align: 5%;
+}
+
+.footer {
+	background:#262626;
+	width:100%;
+	padding:10px 25px;
+}
