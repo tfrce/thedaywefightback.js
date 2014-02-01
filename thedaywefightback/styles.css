@@ -52,6 +52,12 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'brandon_grotesque';
+    src: url('fonts/BrandonGrotesque-BlackItalic.otf');
+    font-weight: 900;
+    font-style: italic;
+}
 html {
     overflow: hidden;
 }
