@@ -1,0 +1,218 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+
+
+@import "compass/reset";
+
+/////////////////
+// Semantic.gs // for SCSS: http://sass-lang.com/
+/////////////////
+
+// Defaults which you can freely override
+$column-width: 60px;
+$gutter-width: 20px;
+$columns: 12;
+
+// Utility function — you should never need to modify this
+@function gridsystem-width($columns:$columns) {
+	@return ($column-width * $columns) + ($gutter-width * $columns);
+}
+
+// Set $total-width to 100% for a fluid layout
+$total-width: 100%;
+
+// Uncomment these two lines and the star-hack width/margin lines below to enable sub-pixel fix for IE6 & 7. See http://tylertate.com/blog/2012/01/05/subpixel-rounding.html
+// $min-width: 999999;
+// $correction: 0.5 / $min-width * 100;
+
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+@mixin clearfix() {
+	*zoom:1;
+
+	&:before,
+	&:after {
+	    content:"";
+	    display:table;
+	}
+	&:after {
+	    clear:both;
+	}
+}
+
+
+//////////
+// GRID //
+//////////
+
+body {
+	width: 100%;
+	@include clearfix();
+}
+
+@mixin row($columns:$columns) {
+	display: block;
+	width: $total-width*(($gutter-width + gridsystem-width($columns))/gridsystem-width($columns));
+	margin: 0 $total-width*((($gutter-width*.5)/gridsystem-width($columns))*-1);
+	// *width: $total-width*(($gutter-width + gridsystem-width($columns))/gridsystem-width($columns))-$correction;
+	// *margin: 0 $total-width*((($gutter-width*.5)/gridsystem-width($columns))*-1)-$correction;
+	@include clearfix();
+}
+@mixin column($x,$columns:$columns) {
+	display: inline;
+	float: left;
+	width: $total-width*(((($gutter-width+$column-width)*$x)-$gutter-width) / gridsystem-width($columns));
+	margin: 0 $total-width*(($gutter-width*.5)/gridsystem-width($columns));
+	// *width: $total-width*(((($gutter-width+$column-width)*$x)-$gutter-width) / gridsystem-width($columns))-$correction;
+	// *margin: 0 $total-width*(($gutter-width*.5)/gridsystem-width($columns))-$correction;
+}
+@mixin push($offset:1) {
+	margin-left: $total-width*((($gutter-width+$column-width)*$offset) / gridsystem-width($columns)) + $total-width*(($gutter-width*.5)/gridsystem-width($columns));
+}
+@mixin pull($offset:1) {
+	margin-right: $total-width*((($gutter-width+$column-width)*$offset) / gridsystem-width($columns)) + $total-width*(($gutter-width*.5)/gridsystem-width($columns));
+}
+
+$josefin: 'Josefin Sans', Helvetica, Arial, sans-serif;
+$yellow: #F2C45A;
+// Base styles
+
+html {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+body {
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+    background: #000;
+    color: #FFF;
+    max-width: 980px;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    font-family: 'Quattrocento Sans', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+a {
+	color: $yellow;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+strong {
+	color: $yellow;
+}
+
+img {
+    border: none;
+    width: 100%;
+    height: auto;
+}
+
+input {
+	border: 4px solid $yellow;
+	background: none;
+	font-size: 0.8em;
+	padding: 0.5em;
+	color: $yellow;
+	font-style: italic;
+	margin: -4px;
+	width: 90%;
+	margin: 1em auto;
+	display: block;
+	&:focus, &:active {
+		background: #FFF;
+		color: #333;
+		font-style: normal;
+	}
+	&#submit {
+		background: $yellow;
+		font-style: normal;
+		font-family: $josefin;
+		font-weight: bold;
+		color: #333;
+	}
+}
+
+
+// Banner
+
+h2 {
+	font-family: $josefin;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 1.5em;
+	border-bottom: 1px solid #FFF;
+	padding-bottom: 1em;
+	margin-bottom: 1em;
+	a {
+		display: block;
+		}
+}
+
+// Slides
+
+#slides {
+	.slide {
+	    padding-top: 3em;
+		@include row(12);
+		margin: 0 auto;
+		overflow: hidden;
+		position: relative;
+	}
+}
+form {
+	display: block;
+	div {
+		@include column(2.9);
+		text-align: center;
+	}
+}
+#header {
+	@include column(5.5);
+	@include pull(0.5);
+}
+
+// Footer
+
+#footer {
+	background: #262626;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	font-family: $josefin;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 0.9em;
+	ul {
+		text-align: justify;
+		padding: 1em 2em;
+		padding-bottom: 0;
+		li {
+			display: inline-block;
+			text-align: left;
+			line-height: 1em;
+			&.break {
+				width: 100%;
+				height: 0px;
+				overflow: hidden;
+				line-height: 0;
+			}
+		}
+	}
+}
+
+
+@media (min-width: 1080px){
+    #second-slide {
+        max-width: 1080px;
+    }
+}

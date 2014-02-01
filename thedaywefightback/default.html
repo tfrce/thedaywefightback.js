@@ -1,94 +1,55 @@
-
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <!-- Bootstrap core CSS -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="" name="description">
+	
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:700,700italic|Quattrocento+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+
+	<title></title>
 </head>
 
 <body>
+	<div id="slides">
+		<!--<div id="slide first-slide">
+			<img src="imgs/splash.png" class="abs-centered" id="splash" />
+		</div>-->
 
-    <div id="banner-container">
-        <!--<div id="first-slide">
-            <img src="imgs/splash.png" class="img-responsive abs-centered" id="splash" />
-        </div>-->
-        <div class="second-slide"> <!-- style="display: none;">-->
-                <div class="col-sm-6 leftside">
-                    <div class="leftsidecontainer">
-                        <div class="scrolling-banner-text">
-                            Will you help put an end to <a href="#">mass spying?</a>
-                        </div>
-                        <div class="divider">
-                        </div>
-                        <div class="logotext">
-                            <a href="https://thedaywefightback.com">
-                                <img src="imgs/logotext.png" class="img-responsive" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 rightside">
-                        <form method="get" action="http://call.taskforce.is/create" class="call-and-email-form" role="form" autocomplete="on">
-                    <div class="phone-container">
-                            <div class="form-group">
-                                <label class="control-label" for="userPhone">
-                                    <img src="imgs/call-your-legislators.png" alt="Call your legislators!" class="img-responsive"/>
-                                </label>
-                                <div class="c">
-                                    <input type="text"  data-format="+1 (ddd) ddd-dddd" placeholder="YOUR PHONE NUMBER" name="phone" class="form-control bfh-phone" id="userPhone" x-autocompletetype="phone">
-                                </div>
-                            </div>
-                    </div>
-                    <div class="email-container">
-                            <div class="form-group">
-                                <label class=" control-label" for="userEmail">
-                                    <img src="imgs/email-your-legislators.png" alt="Email your legislators!" class="img-responsive"/>
-                                </label>
-                                <div class="c">
-                                    <input type="text" placeholder="YOUR EMAIL ADDRESS" name="email" class="form-control" id="userEmail"  x-autocompletetype="email" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                              <input id="submit" type="submit" value="CONTINUE >>" class="">
-                            </div>
-                    </div>
-                        </form>
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-wrapper">
-            <div id="banner-container" class="footer">
-                    <div class="col-sm-6 leftside">
-                        <div class="leftsidecontainer">
-                            <div class="calls-counter">
-                                <span class="important" id="call-count">0</span> CALLS PLACED
-                            </div>
-                            <div class="emails-counter">
-                                <span class="important" id="email-count">0</span> EMAILS SENT
-                            </div>
-                        </div>
-                    </div>
+		<div class="slide second-slide">
+			<!-- style="display: none;">-->
 
-                    <div class="col-sm-6 rightside">
-                        <div class="rightsidecontainer">
-                            <div class="org-logo-slider"> 
-                                <span class="important">FIGHT</span> FOR THE FUTURE
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
+			<div id="header">
+				<h2>Will you help put an end to <a href="#">mass spying?</a></h2>
 
-    <script type="text/javascript" src="js/main.js"></script>
+				<h1><a href="https://thedaywefightback.com"><img src="imgs/logotext.png"></a></h1>
+			</div>
 
+			<form action="http://call.taskforce.is/create" autocomplete="on" class="call-and-email-form" method="get">
+				<div>
+					<label class="control-label" for="userPhone"><img alt="Call your legislators!" src="imgs/call-your-legislators.png"></label> 
+					<input class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd" id="userPhone" name="phone" placeholder="YOUR PHONE NUMBER" type="text">
+				</div> 
+				<div>
+					<label class=" control-label" for="userEmail"><img alt="Email your legislators!" src="imgs/email-your-legislators.png"></label> 
+					<input class="form-control" id="userEmail" name="email" placeholder="YOUR EMAIL ADDRESS" type="text" value=""> <input class="" id="submit" type="submit" value="CONTINUE &gt;&gt;">
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="footer">
+		<ul>
+			<li><strong id="call-count">0</strong> calls placed</li>
+
+			<li><strong id="email-count">0</strong> emails sent</li>
+
+			<li><strong>Fight</strong> for the future</li>
+			<li class="break"></li>
+		</ul>
+	</div><script src="js/main.js" type="text/javascript"></script>
 </body>
-
 </html>
