@@ -3,56 +3,68 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <!-- Bootstrap core CSS -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <link rel="stylesheet" type="text/css" href="css/call-tool.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <!-- Bootstrap core CSS -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="stylesheet" type="text/css" href="css/call-tool.css" />
 </head>
 
-<body>
+<body class="call-tool">
 
-                <a href="http://thedaywefightback.org">
-                    <img src="imgs/call-tool.png" />
-                    </a>
-    <div class="container" style="padding: 0 50px 0 50px;">
-        <div>
-            <div class="row">
-                <div class="col-md-6 col-sm-56 col-xs-6">
-                    <div style="width: 100%; padding: 20px 0 30px 0;text-align: center">
-                        <img style="margin: auto;" src="imgs/phone-icon.png" />
-                    </div>
-                    <p class="main-message">We're about  to place a call to your phone. We'll ask you a few questions, like your ZIP code, and then connect you to your legislator. Once you're connectedd, you'll be able to leave a messa and tell them that you oppose the <span class="important">FISA Improvements Act and support the USA freedom Act.</span></p>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-6">
-                <ul style="padding: 0; margin: 20px 0 0 0;">
-                    <li><span class="talking-point">Talking point one</span>. Lorem ipsum dolar sit amet, consectueur adipicising elit, sed diam nonummy nibh euismood tincident ut loreet dolore magna aliquam erat volutpat.</li>
-                    <li><span class="talking-point">Talking point one</span>. Lorem ipsum dolar sit amet, consectueur adipicising elit, sed diam nonummy nibh euismood tincident ut loreet dolore magna aliquam erat volutpat.</li>
-                    <li><span class="talking-point">Talking point one</span>. Lorem ipsum dolar sit amet, consectueur adipicising elit, sed diam nonummy nibh euismood tincident ut loreet dolore magna aliquam erat volutpat.</li>
-                    <li><span class="talking-point">Talking point one</span>. Lorem ipsum dolar sit amet, consectueur adipicising elit, sed diam nonummy nibh euismood tincident ut loreet dolore magna aliquam erat volutpat.</li>
-                </div>
-                  
-            </div>
-        </div>
+  <div class="container">
+    <div class="header-text">
+      <h1> Call Congress</h1>
+      <h2> The single most important action you can take</h2>
     </div>
-    <div class="footer" >
-        <div class="" style="float: left; margin-left: 12px;">
-          <span class="footer-notice">
-            <span class="important" id="call-count">10,045</span> CALLS PLACED
-          </span>
+  </div>
+  <div class="instructions">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2">
+          <div style="width: 100%; padding: 40px 0 20px 0;text-align: center">
+              <img style="margin: auto 0;" src="imgs/phone-icon.png" />
+          </div>
         </div>
+        <div class="col-sm-10">
+          <p id="main-message">
+             We’re about to place a call to your phone. We’ll ask for your ZIP code, then connect you to your legislators. After each call, press the star key to connect to your next representative.
+          </p>
+          <p id="sub-message">
+            If the call doesn’t arrive within 10 seconds, <a href="#">click here</a> to try again or dial 415-322-4329.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <h2>WHAT TO SAY</h2>
+      <div class="whattosay-box">
+        <p>I’m calling to ask you to take action against mass surveillance by the NSA.</p>
 
-        <div class=""  style="text-align: right; float: right; margin-right: 12px"> 
-          <span class="footer-notice">
-            <span class="important">FIGHT</span> FOR THE FUTURE
-          </span>
-        </div>
+        <p>I’d like you Senator ____  to support and co-sponsoring the USA Freedom Act and opposing the FISA improvements act. Moreover, I’d like you to push for amendments to prevent the NSA from undermining encryption standards and to protect the rights of international people.</p>
+      </div>
+      <ul style="padding: 0 0 0 20px; margin: 20px 0 0 0;">
+        <li><span class="talking-point">The USA Freedom Act: </span>is a law that would severely curtail the NSA’s ability to collect data on US citizens, and would limit ...</li>
+        <li><span class="talking-point">Undermining encryption is bad: </span>. Lorem ipsum dolar sit amet, consectueur adipicising elit, sed diam nonummy nibh euismood tincident ut loreet dolore magna aliquam erat volutpat.</li>
+        <li><span class="talking-point">International people matter</span>. Lorem ipsum dolar sit amet, consectueur adipicising elit, sed diam nonummy nibh euismood tincident ut loreet dolore magna aliquam erat volutpat.</li>
+      </ul>
     </div>
-    <script type="text/javascript" src="js/main.js"></script>
-  
+    <div style="text-align:center">
+      <a href="#" id="call-tool-continue">Click here once you're done <span class="arrow-fix">>></span></a>
+    </div>
+  </div>
+  <div class="footer">
+    <i class="i i-twillio" style="float:left;display:inline-block;"></i>
+    <i class="i i-logo" style="float:right;display:inline-block;"></i>
+  </div>
+
+<script type="text/javascript" src="js/main.js"></script>
+
 </body>
 
 </html>
