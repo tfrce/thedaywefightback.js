@@ -19,7 +19,7 @@
       <h1> Email Congress</h1>
     </div>
   <!-- Form Starts -->
-  <form>
+  <form class="send-email">
     <div class="row">
       <div class="col-sm-5">
         <label for="full_name">Your Full Name:</label>
@@ -28,17 +28,17 @@
         <label for="zip">Your Zip Code: </label>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" placeholder="First Last" id="full_name">
-        <input type="email" class="form-control" placeholder="youremail@domain.com" id="email">
-        <input type="text" class="form-control" placeholder="1 Home Road" id="address">
-        <input type="text" class="form-control" placeholder="123456" id="zip">
+        <input type="text" class="form-control" name="name" placeholder="First Last" id="full_name">
+        <input type="email" class="form-control" name="email" placeholder="youremail@domain.com" id="email">
+        <input type="text" class="form-control" name="address" placeholder="1 Home Road" id="address">
+        <input type="text" class="form-control" name="zip" placeholder="123456" id="zip">
       </div>
     </div>
     <div class="col-sm-12">
       <h2>Your Message:</h2>
       <div class="row">
         <div class='col-sm-8'>
-          <textarea id="email-text" rows="10" columns="3" >Dear Senator/Rep. _______________ (we’ll fill this in),
+          <textarea id="email-text" rows="10" columns="3" name="message">Dear Senator/Rep. _______________ (we’ll fill this in),
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
 
@@ -73,6 +73,49 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
     <i class="i i-logo" style="float:right;display:inline-block;"></i>
   </div>
 </body>
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/easyXDM.min.js"></script>
 
+<script type="text/javascript" src="js/main.js"></script>
+<script>
+  $.fn.serializeObject = function() {
+     var o = {};
+     var a = this.serializeArray();
+     $.each(a, function() {
+         if (o[this.name]) {
+             if (!o[this.name].push) {
+                 o[this.name] = [o[this.name]];
+             }
+             o[this.name].push(this.value || '');
+         } else {
+             o[this.name] = this.value || '';
+         }
+     });
+     return o;
+  };
+  var rpc = new easyXDM.Rpc({
+      remote: "http://email-congress.herokuapp.com/xdm/cors/"
+  },
+  {
+      remote: {
+          request: {}
+      }
+  });
+
+  $('.send-email').on('submit', function (ev) {
+    var form = $(ev.currentTarget);
+    var data = form.serializeObject();
+    console.log(data);
+    rpc.request({
+      url: "http://email-congress.herokuapp.com/email",
+      method: "POST",
+      data: data
+    }, function(response){
+      $('body').html('success');
+    });
+    return false;
+  });
+  /*
+
+*/
+</script>
 </html>

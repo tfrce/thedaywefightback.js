@@ -48,9 +48,9 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
 
   widget_config.show_style = widget_config.show_style || 'default';
   widget_config.debug = widget_config.debug || false;
-  widget_config.disableDate = widget_config.disableDate || false;
   widget_config.campaign = widget_config.campaign || 'thedaywefightback';
   widget_config.cookieTimeout = widget_config.cookieTimeout || 172800;
+  widget_config.overrideLocation = widget_config.overrideLocation || false;
 
   // Setup
   var active_campaign;
@@ -89,15 +89,11 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
   // Define checks
 
   var checks = {
-    betweenDate: function(startDate, endDate) {
-      var startEpoch = startDate.getTime();
-      var endEpoch = endDate.getTime();
-      var currentEpoch = new Date().getTime();
-      if(currentEpoch > startEpoch && currentEpoch < endEpoch) {
-        return true;
-      } else {
-        return false;
-      }
+    correctDate: function(callback) {
+      window.tdwfbCheckDate = callback;
+      var script = document.createElement('script');
+      script.src = '//dznh7un1y2etk.cloudfront.net/time?callback=tdwfbCheckDate'
+      document.getElementsByTagName('head')[0].appendChild(script);
     },
     isMobile: function() {
       var ismobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
@@ -110,6 +106,12 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
       } else {
         return true
       }
+    },
+    location: function (callback) {
+      window.tdwfbParseLocation = callback;
+      var script = document.createElement('script');
+      script.src = '//geoip.taskforce.is/?callback=tdwfbParseLocation'
+      document.getElementsByTagName('head')[0].appendChild(script);
     }
   }
 
@@ -133,7 +135,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
           closeButton: 'border: 0;height: 28px;width: 28px;cursor: pointer;position: absolute;top:33px;right:20px;background: url("' + ASSET_URL +'imgs/close-button.png");'
         }
       },
-      show: function () {
+      show: function (options) {
 
         var style = active_campaign.styles[active_campaign.config.show_style]
         
@@ -162,9 +164,14 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         var iframe = document.createElement('iframe');
         iframe.style.cssText = style.iframe;
 
-        // Set the source of the iframe to the configured show_style type
-        iframe.src = ASSET_URL + active_campaign.config.show_style + '.html';
+        if(options.location && (options.location.country.iso_code === 'us' || widget_config.overrideLocation)) {
+          // Set the source of the iframe to the configured show_style type
+          iframe.src = ASSET_URL + active_campaign.config.show_style + '.html';
+        } else {
+          iframe.src = ASSET_URL + active_campaign.config.show_style + '_international.html';
+        }
         iframe_container.appendChild(iframe);
+
 
         // Setup a close button
         var closeButton = document.createElement('button');
@@ -186,17 +193,19 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
           //return false;
         }
 
-        // Check between date
-        if(!checks.betweenDate(active_campaign.startDate, active_campaign.endDate) && !active_campaign.config.disableDate) {
-          //return false;
-        }
+
 
         // Check if is mobile
         if(!checks.isMobile()){
           return false;
         }
-
-        active_campaign.show();
+        checks.correctDate(function (response) {
+          if(response && (response.thedaywefightback || widget_config.debug)) {
+            checks.location(function (location) {
+              active_campaign.show({location: location, widget_config: widget_config});
+            });
+          }
+        });
       }
     }
   }
