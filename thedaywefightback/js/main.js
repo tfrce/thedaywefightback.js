@@ -120,6 +120,10 @@ $('.call-and-email-form').on('submit', function(ev) {
     }
     if(isValidEmail(userEmail) && isValidPhoneNumber(phoneNumber)) {
         window.open('call-and-email.html', "Share on Facebook", "width=800,height=800");
+    } else if(isValidEmail(userEmail)) {
+        window.open('email-tool.html', "Share on Facebook", "width=800,height=800");
+    } else if(isValidPhoneNumber(phoneNumber)) {
+        window.open('call-tool.html', "Share on Facebook", "width=800,height=800");
     }
     return false;
 });
