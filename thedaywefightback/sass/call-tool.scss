@@ -1,15 +1,15 @@
 html {
 	height: 800px;
-	overflow: hidden;
+	overflow: visible;
 }
 body {
 	border: 12px solid #262626;
 	height: 800px;
 	width: auto;
-	height: auto;
 	overflow: hidden;
 	font-size: 16px;
 	line-height: 1.5em;
+	position: relative;
 }
 img.icon {
 	width: auto;

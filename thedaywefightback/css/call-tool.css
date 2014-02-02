@@ -1,7 +1,7 @@
 /* line 1, ../sass/call-tool.scss */
 html {
   height: 800px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* line 5, ../sass/call-tool.scss */
@@ -9,10 +9,10 @@ body {
   border: 12px solid #262626;
   height: 800px;
   width: auto;
-  height: auto;
   overflow: hidden;
   font-size: 16px;
   line-height: 1.5em;
+  position: relative;
 }
 
 /* line 14, ../sass/call-tool.scss */

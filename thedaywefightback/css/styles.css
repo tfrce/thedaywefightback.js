@@ -131,7 +131,7 @@ body {
 
 /* line 133, ../sass/styles.scss */
 div.container {
-  width: 600px;
+  max-width: 600px;
   margin: 0 auto;
   background: #000;
 }
@@ -289,5 +289,65 @@ form div {
   /* line 260, ../sass/styles.scss */
   #second-slide {
     max-width: 1080px;
+  }
+}
+@media (max-width: 801px) {
+  /* line 265, ../sass/styles.scss */
+  #header {
+    margin-right: 3.125%;
+  }
+}
+@media (max-width: 640px) {
+  /* line 270, ../sass/styles.scss */
+  #header {
+    margin-right: 9.375%;
+    display: inline;
+    float: left;
+    width: 35.41667%;
+    margin: 0 1.04167%;
+  }
+
+  /* line 274, ../sass/styles.scss */
+  h2 {
+    font-size: 1em;
+    line-height: 1.2em;
+  }
+
+  /* line 278, ../sass/styles.scss */
+  form div {
+    display: inline;
+    float: left;
+    width: 26.25%;
+    margin: 0 1.04167%;
+  }
+}
+@media (max-width: 500px) {
+  /* line 283, ../sass/styles.scss */
+  body {
+    font-size: 16px;
+  }
+
+  /* line 286, ../sass/styles.scss */
+  #slides .slide {
+    padding-top: 1em;
+  }
+
+  /* line 289, ../sass/styles.scss */
+  #header {
+    width: auto;
+    margin: 0 2em;
+    display: block;
+    float: none;
+    padding-bottom: 1em;
+  }
+
+  /* line 296, ../sass/styles.scss */
+  form div {
+    display: inline;
+    float: left;
+    width: 37.91667%;
+    margin: 0 1.04167%;
+    margin-left: 5.20833%;
+    margin-right: 5.20833%;
   }
 }

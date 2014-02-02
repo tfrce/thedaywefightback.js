@@ -131,7 +131,7 @@ body {
     line-height: 1.5em;
 }
 div.container {
-	width: 600px;
+	max-width: 600px;
 	margin: 0 auto;
 	background: #000;
 }
@@ -260,4 +260,42 @@ form {
     #second-slide {
         max-width: 1080px;
     }
+}
+@media (max-width: 801px){
+    #header {
+       @include pull(0.25);
+    }
+}
+@media (max-width: 640px){
+    #header {
+       @include pull(1);
+       @include column(4.5);
+    }
+    h2 {
+    	font-size: 1em;
+    	line-height: 1.2em;
+    }
+    form div {
+    	@include column(3.4);
+    }
+}
+@media (max-width: 500px) {
+	body {
+		font-size: 16px;
+	}
+	#slides .slide {
+		padding-top: 1em;
+	}
+	#header {
+		width: auto;
+		margin: 0 2em;
+		display: block;
+		float: none;
+		padding-bottom: 1em;
+	}
+	form div {
+		@include column(4.8);
+		@include push(0.5);
+		@include pull(0.5);
+	}
 }
