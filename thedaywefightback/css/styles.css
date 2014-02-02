@@ -1,0 +1,353 @@
+@font-face {
+  font-family: 'brandon_grotesque';
+  src: url("../fonts/brandongrotesque-blackitalic-webfont.eot");
+  src: url("../fonts/brandongrotesque-blackitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/brandongrotesque-blackitalic-webfont.woff") format("woff"), url("../fonts/brandongrotesque-blackitalic-webfont.ttf") format("truetype"), url("../fonts/brandongrotesque-blackitalic-webfont.svg#brandon_grotesqueblack_italic") format("svg");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'brandon_grotesque';
+  src: url("../fonts/brandongrotesque-mediumitalic-webfont.eot");
+  src: url("../fonts/brandongrotesque-mediumitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/brandongrotesque-mediumitalic-webfont.woff") format("woff"), url("../fonts/brandongrotesque-mediumitalic-webfont.ttf") format("truetype"), url("../fonts/brandongrotesque-mediumitalic-webfont.svg#brandon_grotesqueMdIt") format("svg");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'brandon_grotesque';
+  src: url("../fonts/brandongrotesque-regular-webfont.eot");
+  src: url("../fonts/brandongrotesque-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/brandongrotesque-regular-webfont.woff") format("woff"), url("../fonts/brandongrotesque-regular-webfont.ttf") format("truetype"), url("../fonts/brandongrotesque-regular-webfont.svg#brandon_grotesque_regularRg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 82, ../sass/styles.scss */
+body {
+  width: 100%;
+  *zoom: 1;
+}
+/* line 68, ../sass/styles.scss */
+body:before, body:after {
+  content: "";
+  display: table;
+}
+/* line 72, ../sass/styles.scss */
+body:after {
+  clear: both;
+}
+
+/* line 114, ../sass/styles.scss */
+html {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+/* line 120, ../sass/styles.scss */
+body {
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0;
+  background: #000;
+  color: #FFF;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-family: "brandon_grotesque", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5em;
+}
+
+/* line 133, ../sass/styles.scss */
+div.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #000;
+}
+
+/* line 138, ../sass/styles.scss */
+a {
+  color: #f2c45a;
+  text-decoration: none;
+}
+/* line 141, ../sass/styles.scss */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 145, ../sass/styles.scss */
+strong {
+  color: #f2c45a;
+}
+
+/* line 149, ../sass/styles.scss */
+img {
+  border: none;
+  width: 100%;
+  height: auto;
+}
+
+/* line 155, ../sass/styles.scss */
+input {
+  border: 4px solid #f2c45a;
+  background: none;
+  font-size: 0.8em;
+  padding: 0.5em;
+  color: #f2c45a;
+  font-style: italic;
+  margin: -4px;
+  width: 90%;
+  margin: 1em auto;
+  display: block;
+}
+/* line 166, ../sass/styles.scss */
+input:focus, input:active {
+  background: #FFF;
+  color: #333;
+  font-style: normal;
+}
+/* line 171, ../sass/styles.scss */
+input#submit {
+  background: #f2c45a;
+  font-style: normal;
+  font-family: "brandon_grotesque", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  letter-spacing: 0.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+/* line 185, ../sass/styles.scss */
+h2 {
+  font-family: "brandon_grotesque", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.5em;
+  border-bottom: 1px solid #FFF;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  font-style: italic;
+  letter-spacing: 0.2em;
+}
+/* line 196, ../sass/styles.scss */
+h2 a {
+  display: block;
+}
+
+/* line 204, ../sass/styles.scss */
+#slides .slide {
+  padding-top: 3em;
+  display: block;
+  width: 102.08333%;
+  margin: 0 -1.04167%;
+  *zoom: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+/* line 68, ../sass/styles.scss */
+#slides .slide:before, #slides .slide:after {
+  content: "";
+  display: table;
+}
+/* line 72, ../sass/styles.scss */
+#slides .slide:after {
+  clear: both;
+}
+
+/* line 213, ../sass/styles.scss */
+form {
+  display: block;
+}
+/* line 215, ../sass/styles.scss */
+form div {
+  display: inline;
+  float: left;
+  width: 22.08333%;
+  margin: 0 1.04167%;
+  text-align: center;
+}
+
+/* line 220, ../sass/styles.scss */
+#header {
+  display: inline;
+  float: left;
+  width: 43.75%;
+  margin: 0 1.04167%;
+  margin-right: 5.20833%;
+}
+
+/* line 227, ../sass/styles.scss */
+#footer {
+  background: #262626;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  font-family: "brandon_grotesque", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9em;
+  font-style: italic;
+  letter-spacing: 0.1em;
+}
+/* line 240, ../sass/styles.scss */
+#footer ul {
+  text-align: justify;
+  padding: 1em 2em;
+  padding-bottom: 0;
+}
+/* line 244, ../sass/styles.scss */
+#footer ul li {
+  display: inline-block;
+  text-align: left;
+  line-height: 1em;
+}
+/* line 248, ../sass/styles.scss */
+#footer ul li.break {
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+@media (min-width: 1080px) {
+  /* line 260, ../sass/styles.scss */
+  #second-slide {
+    max-width: 1080px;
+  }
+}
+@media (max-width: 801px) {
+  /* line 265, ../sass/styles.scss */
+  #header {
+    margin-right: 3.125%;
+  }
+}
+@media (max-width: 640px) {
+  /* line 270, ../sass/styles.scss */
+  #header {
+    margin-right: 9.375%;
+    display: inline;
+    float: left;
+    width: 35.41667%;
+    margin: 0 1.04167%;
+  }
+
+  /* line 274, ../sass/styles.scss */
+  h2 {
+    font-size: 1em;
+    line-height: 1.2em;
+  }
+
+  /* line 278, ../sass/styles.scss */
+  form div {
+    display: inline;
+    float: left;
+    width: 26.25%;
+    margin: 0 1.04167%;
+  }
+}
+@media (max-width: 500px) {
+  /* line 283, ../sass/styles.scss */
+  body {
+    font-size: 16px;
+  }
+
+  /* line 286, ../sass/styles.scss */
+  #slides .slide {
+    padding-top: 1em;
+  }
+
+  /* line 289, ../sass/styles.scss */
+  #header {
+    width: auto;
+    margin: 0 2em;
+    display: block;
+    float: none;
+    padding-bottom: 1em;
+  }
+
+  /* line 296, ../sass/styles.scss */
+  form div {
+    display: inline;
+    float: left;
+    width: 37.91667%;
+    margin: 0 1.04167%;
+    margin-left: 5.20833%;
+    margin-right: 5.20833%;
+  }
+}

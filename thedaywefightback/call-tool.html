@@ -9,21 +9,22 @@
     <!-- Bootstrap core CSS -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/call-tool.css" />
 </head>
 
 <body>
 
-                <a href="http://thedaywefightback.org">
-                    <img src="imgs/call-tool.png" />
-                    </a>
+               
     <div class="container" style="padding: 0 50px 0 50px;">
+    	<a href="http://thedaywefightback.org">
+    	    <img src="imgs/call-tool.png" />
+    	    </a>
         <div>
             <div class="row">
                 <div class="col-md-6 col-sm-56 col-xs-6">
                     <div style="width: 100%; padding: 20px 0 30px 0;text-align: center">
-                        <img style="margin: auto;" src="imgs/phone-icon.png" />
+                        <img style="margin: auto;" src="imgs/phone-icon.png" class="icon" />
                     </div>
                     <p class="main-message">We're about  to place a call to your phone. We'll ask you a few questions, like your ZIP code, and then connect you to your legislator. Once you're connectedd, you'll be able to leave a messa and tell them that you oppose the <span class="important">FISA Improvements Act and support the USA freedom Act.</span></p>
                 </div>
@@ -38,18 +39,12 @@
             </div>
         </div>
     </div>
-    <div class="footer" >
-        <div class="" style="float: left; margin-left: 12px;">
-          <span class="footer-notice">
-            <span class="important" id="call-count">10,045</span> CALLS PLACED
-          </span>
-        </div>
-
-        <div class=""  style="text-align: right; float: right; margin-right: 12px"> 
-          <span class="footer-notice">
-            <span class="important">FIGHT</span> FOR THE FUTURE
-          </span>
-        </div>
+    <div id="footer" >
+            <ul>
+            	<li><strong id="call-count">10,045</strong> CALLS PLACED</li>
+            	<li><strong>FIGHT</strong> FOR THE FUTURE</li>
+            	<li class="break"></li>
+            </ul>
     </div>
     <script type="text/javascript" src="js/main.js"></script>
   
