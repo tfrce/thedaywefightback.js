@@ -42,37 +42,47 @@
       </div>
       <div class="col-sm-6 rightside">
         <div class="rightsidecontainer">
-          <h2>Care About Internet Freedom?</h2>
-          <h3>Tell Congress To end Mass Surveillance</h3>
           <!-- Form Start -->
-          <form method="get" action="http://call.taskforce.is/create" class="call-and-email-form" role="form" autocomplete="on">
-            <div class="formtable">
-              <div class="formcell">
-                <div class="labels">
-                  <label class="i i-email" for="userEmail"></label>
-                  <label class="i i-call" for="userPhone"></label>
-                </div>
-              </div>
-              <div class="formcell">
-                <div class="forminputs">
-                  <input type="email" placeholder="YOUR EMAIL ADDRESS" name="email" class="form-control" id="userEmail"  x-autocompletetype="email" value="">
-                  <input type="tel"  data-format="+1 (ddd) ddd-dddd" placeholder="YOUR PHONE NUMBER" name="phone" class="form-control bfh-phone" id="userPhone" x-autocompletetype="phone">
-                </div>
-              </div>
-            </div>
+
             <div class="row">
               <div class="col-sm-6">
-                <ul>
-                  <li>Not in the US? <a href="#">Click here.</a></li>
-                  <li>We’ll only use your information as explicitly   authorized by you. <a href="#">Read more.</a></li>
-                </ul>
+                <form method="get" action="http://call.taskforce.is/create" class="email-form" role="form" autocomplete="on">
+                    <div class="formtable">
+                      <div class="">
+                        <div class="labels">
+                          <label class="i i-email" for="userEmail"></label>
+                        </div>
+                      </div>
+                      <div style="clear: both;"></div>
+                      <div class="">
+                        <div class="forminputs">
+                          <input type="email" placeholder="YOUR EMAIL ADDRESS" name="email" class="form-control" id="userEmail"  x-autocompletetype="email" value="">
+                        </div>
+                      </div>
+                    </div>
+                    <input id="submit" type="submit" value="CONTINUE >>" class="cta-button">
+                </form>
               </div>
               <div class="col-sm-6">
-                <input id="submit" type="submit" value="CONTINUE >>" class="cta-button">
+                <form method="get" action="http://call.taskforce.is/create" class="call-form" role="form" autocomplete="on">
+                    <div class="formtable">
+                      <div class="">
+                        <div class="labels">
+                          <label class="i i-call" for="userPhone"></label>
+                        </div>
+                      </div>
+                      <div style="clear: both;"></div>
+                      <div class="">
+                        <div class="forminputs">
+                          <input type="tel"  data-format="+1 (ddd) ddd-dddd" placeholder="YOUR PHONE NUMBER" name="phone" class="form-control bfh-phone" id="userPhone" x-autocompletetype="phone">
+                        </div>
+                      </div>
+                    </div>
+                    <input id="submit" type="submit" value="CONTINUE >>" class="cta-button">
+                </form>
               </div>
             </div>
             <!-- Form End -->
-          </form>
         </div>
       </div>
     </div>

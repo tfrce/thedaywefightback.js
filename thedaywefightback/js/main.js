@@ -40,7 +40,7 @@ $('#userPhone').focus(function(){
 
 //     })
 // }, 1000);
-
+/*
 $('.call-form').on('submit', function(ev) {
     var form = $(ev.currentTarget);
 
@@ -70,7 +70,7 @@ $('.email-form').on('submit', function(ev) {
 
     }
     return false;
-})
+})*/
 
 function rumbleEl(el) {
     el.css('border', '1px solid #ff0000');
@@ -90,6 +90,33 @@ function isValidEmail(email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 } 
+$('.call-form').on('submit', function(ev) {
+    var form = $(ev.currentTarget);
+
+    var phoneNumberEl = $('#userPhone', form);
+    var phoneNumber = phoneNumberEl.val().replace(/[^\d.]/g, '');
+
+    if(!isValidPhoneNumber(phoneNumber)){
+        rumbleEl(phoneNumberEl);
+    } else {
+        window.open('call-tool.html', "Share on Facebook", "width=800,height=800");
+    }
+    return false;
+});
+$('.email-form').on('submit', function(ev) {
+    var form = $(ev.currentTarget);
+
+    var userEmailEl = $('#userEmail', form);
+    var userEmail = userEmailEl.val();
+
+    if(!isValidEmail(userEmail)){
+        rumbleEl(userEmailEl);
+    } else {
+        window.open('email-tool.html', "Share on Facebook", "width=800,height=800");
+    }
+    return false;
+});
+/*
 $('.call-and-email-form').on('submit', function(ev) {
     var form = $(ev.currentTarget);
 
@@ -127,7 +154,7 @@ $('.call-and-email-form').on('submit', function(ev) {
     }
     return false;
 });
-
+*/
 
 // Call and email counters
 if($('#email-count').length > 0) {

@@ -223,10 +223,8 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         }
         var cookie = getCookie(active_campaign.cookieName);
         if(cookie) {
-          console.log(cookie);
           var cData = JSON.parse(cookie);
           this.minimized = cData.minimized;
-          console.log(cData);
         }
 
 
