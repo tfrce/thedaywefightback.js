@@ -7,9 +7,262 @@ function countUp(a,b,c,d,e){for(var f=0,g=["webkit","moz","ms"],h=0;h<g.length&&
 /* Modified phone number formatting script */
 /* via BootstrapFormHelpers - https://github.com/vlamanna/BootstrapFormHelpers - Apache License, Version 2.0 */
 $('#userPhone').focus(function(){
-+function(e){"use strict";function n(e,t){var n,r,i,s;n="";t=String(t).replace(/\D/g,"");for(r=0,i=0;r<e.length;r=r+1){if(/\d/g.test(e.charAt(r))){if(e.charAt(r)===t.charAt(i)){n+=t.charAt(i);i=i+1}else{n+=e.charAt(r)}}else if(e.charAt(r)!=="d"){if(t.charAt(i)!==""||e.charAt(r)==="+"){n+=e.charAt(r)}}else{if(t.charAt(i)===""){n+=""}else{n+=t.charAt(i);i=i+1}}}s=e.charAt(n.length);if(s!=="d"){n+=s}return n}function r(e){var t=0,n;if(document.selection){e.focus();n=document.selection.createRange();n.moveStart("character",-e.value.length);t=n.text.length}else if(e.selectionStart||e.selectionStart===0){t=e.selectionStart}return t}function i(e,t){var n;if(document.selection){e.focus();n=document.selection.createRange();n.moveStart("character",-e.value.length);n.moveStart("character",t);n.moveEnd("character",0);n.select()}else if(e.selectionStart||e.selectionStart===0){e.selectionStart=t;e.selectionEnd=t;e.focus()}}var t=function(t,n){this.options=e.extend({},e.fn.bfhphone.defaults,n);this.$element=e(t);if(this.$element.is('input[type="text"]')||this.$element.is('input[type="tel"]')){this.addFormatter()}if(this.$element.is("span")){this.displayFormatter()}};t.prototype={constructor:t,addFormatter:function(){var n;if(this.options.country!==""){n=e(document).find("#"+this.options.country);if(n.length!==0){this.options.format=BFHPhoneFormatList[n.val()];n.on("change",{phone:this},this.changeCountry)}else{this.options.format=BFHPhoneFormatList[this.options.country]}}this.$element.on("keyup.bfhphone.data-api",t.prototype.change);this.loadFormatter()},loadFormatter:function(){var e;e=n(this.options.format,this.$element.val());this.$element.val(e)},displayFormatter:function(){var e;if(this.options.country!==""){this.options.format=BFHPhoneFormatList[this.options.country]}e=n(this.options.format,this.options.number);this.$element.html(e)},changeCountry:function(t){var n,r;n=e(this);r=t.data.phone;r.$element.val(String(r.$element.val()).replace(/\+\d*/g,""));r.options.format=BFHPhoneFormatList[n.val()];r.loadFormatter()},change:function(t){var s,o,u,a;s=e(this).data("bfhphone");if(s.$element.is(".disabled")||s.$element.attr("disabled")!==undefined){return true}o=r(s.$element[0]);u=false;if(o===s.$element.val().length){u=true}if(t.which===8&&s.options.format.charAt(s.$element.val().length)!=="d"){s.$element.val(String(s.$element.val()).substring(0,s.$element.val().length-1))}a=n(s.options.format,s.$element.val());if(a===s.$element.val()){return true}s.$element.val(a);if(u){o=s.$element.val().length}i(s.$element[0],o);return true}};var s=e.fn.bfhphone;e.fn.bfhphone=function(n){return this.each(function(){var r,i,s;r=e(this);i=r.data("bfhphone");s=typeof n==="object"&&n;if(!i){r.data("bfhphone",i=new t(this,s))}if(typeof n==="string"){i[n].call(r)}})};e.fn.bfhphone.Constructor=t;e.fn.bfhphone.defaults={format:"",number:"",country:""};e.fn.bfhphone.noConflict=function(){e.fn.bfhphone=s;return this};e(document).ready(function(){e('form input[type="text"].bfh-phone, form input[type="tel"].bfh-phone, span.bfh-phone').each(function(){var t;t=e(this);t.bfhphone(t.data())})})}(window.jQuery)
-});
+    +function ($) {
 
+      'use strict';
+
+
+      /* PHONE CLASS DEFINITION
+       * ====================== */
+
+      var BFHPhone = function (element, options) {
+        this.options = $.extend({}, $.fn.bfhphone.defaults, options);
+        this.$element = $(element);
+
+        if (this.$element.is('input[type="text"]') || this.$element.is('input[type="tel"]')) {
+          this.addFormatter();
+        }
+
+        if (this.$element.is('span')) {
+          this.displayFormatter();
+        }
+      };
+
+      BFHPhone.prototype = {
+
+        constructor: BFHPhone,
+
+        addFormatter: function() {
+          var $country;
+
+          if (this.options.country !== '') {
+            $country = $(document).find('#' + this.options.country);
+
+            if ($country.length !== 0) {
+              this.options.format = BFHPhoneFormatList[$country.val()];
+              $country.on('change', {phone: this}, this.changeCountry);
+            } else {
+              this.options.format = BFHPhoneFormatList[this.options.country];
+            }
+          }
+          
+          this.$element.on('keyup.bfhphone.data-api', BFHPhone.prototype.change);
+
+          this.loadFormatter();
+        },
+
+        loadFormatter: function () {
+          var formattedNumber;
+
+          formattedNumber = formatNumber(this.options.format, this.$element.val());
+
+          this.$element.val(formattedNumber);
+        },
+
+        displayFormatter: function () {
+          var formattedNumber;
+
+          if (this.options.country !== '') {
+            this.options.format = BFHPhoneFormatList[this.options.country];
+          }
+
+          formattedNumber = formatNumber(this.options.format, this.options.number);
+
+          this.$element.html(formattedNumber);
+        },
+
+        changeCountry: function (e) {
+          var $this,
+              $phone;
+
+          $this = $(this);
+          $phone = e.data.phone;
+
+          $phone.$element.val(String($phone.$element.val()).replace(/\+\d*/g, ''));
+          $phone.options.format = BFHPhoneFormatList[$this.val()];
+
+          $phone.loadFormatter();
+        },
+
+        change: function(e) {
+          var $this,
+              cursorPosition,
+              cursorEnd,
+              formattedNumber;
+
+          $this = $(this).data('bfhphone');
+
+          if ($this.$element.is('.disabled') || $this.$element.attr('disabled') !== undefined) {
+            return true;
+          }
+
+          cursorPosition = getCursorPosition($this.$element[0]);
+
+          cursorEnd = false;
+          if (cursorPosition === $this.$element.val().length) {
+            cursorEnd = true;
+          }
+          
+          if (e.which === 8 && $this.options.format.charAt($this.$element.val().length) !== 'd') {
+            $this.$element.val(String($this.$element.val()).substring(0, $this.$element.val().length - 1));
+          }
+
+          formattedNumber = formatNumber($this.options.format, $this.$element.val());
+          
+          if (formattedNumber === $this.$element.val()) {
+            return true;
+          }
+          
+          $this.$element.val(formattedNumber);
+
+          if (cursorEnd) {
+            cursorPosition = $this.$element.val().length;
+          }
+
+          setCursorPosition($this.$element[0], cursorPosition);
+
+          return true;
+        }
+
+      };
+
+      function formatNumber(format, number) {
+        var formattedNumber,
+            indexFormat,
+            indexNumber,
+            lastCharacter;
+
+        formattedNumber = '';
+        number = String(number).replace(/\D/g, '');
+
+        for (indexFormat = 0, indexNumber = 0; indexFormat < format.length; indexFormat = indexFormat + 1) {
+          if (/\d/g.test(format.charAt(indexFormat))) {
+            if (format.charAt(indexFormat) === number.charAt(indexNumber)) {
+              formattedNumber += number.charAt(indexNumber);
+              indexNumber = indexNumber + 1;
+            } else {
+              formattedNumber += format.charAt(indexFormat);
+            }
+          } else if (format.charAt(indexFormat) !== 'd') {
+            if (number.charAt(indexNumber) !== '' || format.charAt(indexFormat) === '+') {
+              formattedNumber += format.charAt(indexFormat);
+            }
+          } else {
+            if (number.charAt(indexNumber) === '') {
+              formattedNumber += '';
+            } else {
+              formattedNumber += number.charAt(indexNumber);
+              indexNumber = indexNumber + 1;
+            }
+          }
+        }
+        
+        lastCharacter = format.charAt(formattedNumber.length);
+        if (lastCharacter !== 'd') {
+          formattedNumber += lastCharacter;
+        }
+
+        return formattedNumber;
+      }
+
+      function getCursorPosition($element) {
+        var position = 0,
+            selection;
+
+        if (document.selection) {
+          // IE Support
+          $element.focus();
+          selection = document.selection.createRange();
+          selection.moveStart ('character', -$element.value.length);
+          position = selection.text.length;
+        } else if ($element.selectionStart || $element.selectionStart === 0) {
+          position = $element.selectionStart;
+        }
+
+        return position;
+      }
+
+      function setCursorPosition($element, position) {
+        var selection;
+
+        if (document.selection) {
+          // IE Support
+          $element.focus ();
+          selection = document.selection.createRange();
+          selection.moveStart ('character', -$element.value.length);
+          selection.moveStart ('character', position);
+          selection.moveEnd ('character', 0);
+          selection.select ();
+        } else if ($element.selectionStart || $element.selectionStart === 0) {
+          $element.selectionStart = position;
+          $element.selectionEnd = position;
+          $element.focus ();
+        }
+      }
+
+      /* PHONE PLUGIN DEFINITION
+       * ======================= */
+
+      var old = $.fn.bfhphone;
+
+      $.fn.bfhphone = function (option) {
+        return this.each(function () {
+          var $this,
+              data,
+              options;
+
+          $this = $(this);
+          data = $this.data('bfhphone');
+          options = typeof option === 'object' && option;
+
+          if (!data) {
+            $this.data('bfhphone', (data = new BFHPhone(this, options)));
+          }
+          if (typeof option === 'string') {
+            data[option].call($this);
+          }
+        });
+      };
+
+      $.fn.bfhphone.Constructor = BFHPhone;
+
+      $.fn.bfhphone.defaults = {
+        format: '',
+        number: '',
+        country: ''
+      };
+
+
+      /* PHONE NO CONFLICT
+       * ========================== */
+
+      $.fn.bfhphone.noConflict = function () {
+        $.fn.bfhphone = old;
+        return this;
+      };
+
+
+      /* PHONE DATA-API
+       * ============== */
+
+      $(document).ready( function () {
+        $('form input[type="text"].bfh-phone, form input[type="tel"].bfh-phone, span.bfh-phone').each(function () {
+          var $phone;
+
+          $phone = $(this);
+
+          $phone.bfhphone($phone.data());
+        });
+      });
+
+    }(window.jQuery);
+    });
+
+$('#userPhone').focusout(function(){
+    if  ($('#userPhone').val() == "+1 ") {
+        $('#userPhone').val("");
+    }
+});
 
 function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
@@ -202,7 +455,6 @@ $(document).ready(function() {
         var preferredWidth = 1060;
         var preferredFontSize = 22;
 
-
         var displayWidth = $(window).width();
         if (displayWidth < preferredWidth) {
         var scalePercentage = displayWidth / preferredWidth;
@@ -216,5 +468,46 @@ $(document).ready(function() {
     $(window).bind('resize', function() {
         resizeText();
     }).trigger('resize');
-
 });
+
+$(document).ready(function() {
+    setInterval(function(){
+
+        var $visibleslide = $(".animated.flipInX")
+         $visibleslide.removeClass("flipInY").addClass("flipOutY");
+
+        window.setTimeout(function(){
+        $visibleslide.addClass("hidden");
+        $visibleslide.removeClass("flipOutY");
+        var factslides = $visibleslide.parent().children();
+        // console.log((factslides.index($selected) + 1) % factslides.length);
+        var $nextslide = factslides.eq((factslides.index($visibleslide) + 1) % factslides.length);
+         $nextslide.removeClass("hidden").addClass("animated").addClass("flipInX");
+        },1300)
+        
+    },7000);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
