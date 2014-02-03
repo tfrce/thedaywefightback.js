@@ -192,3 +192,29 @@ if($('#call-count').length > 0) {
         jsonpCallback : 'ccca'
     });
 }
+
+// Resize the scrolling text to fit
+
+$(document).ready(function() {
+
+    var resizeText = function () {
+        // Standard height, for which the body font size is correct
+        var preferredWidth = 1060;
+        var preferredFontSize = 22;
+
+
+        var displayWidth = $(window).width();
+        if (displayWidth < preferredWidth) {
+        var scalePercentage = displayWidth / preferredWidth;
+        var newFontSize = preferredFontSize * scalePercentage;
+            newFontSize -= 2;
+        }
+        else {newFontSize = 21};
+        $(".scrolling-banner-text").css("font-size", newFontSize + 'px');
+    };
+
+    $(window).bind('resize', function() {
+        resizeText();
+    }).trigger('resize');
+
+});
