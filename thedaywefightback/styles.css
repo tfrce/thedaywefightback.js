@@ -242,25 +242,25 @@ a {
 /* =====================================*/
 /* Call and email forms */
 /* =====================================*/
-.phone-container, .email-container {
+.phone-container, .email-container, .calls-counter, .emails-counter {
     width: 35.85%;
     float:left;
 }
-.phone-container {
+.phone-container, .calls-counter {
     margin-right: 9.43%;
     margin-left:9.43%;
 }
 @media (max-width: 900px){
-    .phone-container {
+    .phone-container, .calls-counter {
         margin-left: 3%;
         margin-right: 5%;
     }
-    .phone-container, .email-container {
+    .phone-container, .email-container, .calls-counter, .emails-counter {
         width: 42.5%;
     }
 }
 @media (max-width: 800px){
-    .rightside {
+    .rightside.top {
       position: relative;
       top: -7px;
     }
@@ -302,13 +302,13 @@ a {
   letter-spacing: 1px;
   line-height: 20px;
   padding: 0 !important;
-  height: 59px;
+  height: 54px;
   position:relative;
 }
 .call-form label img,
 .email-form label img {
     position:absolute;
-    bottom:10px;
+    bottom:5px;
 }
 
 .call-form input.form-control,
@@ -329,14 +329,16 @@ a {
 }
 .call-form input[type="submit"],
 .email-form input[type="submit"] {
-  border: 0;
-  background: none;
-  color: #fff;
-  font-weight: 700;
-  font-style: italic;
-  letter-spacing: 1px;
-  padding: 10px 10px 10px 0;
-  font-size: 14px;
+line-height: 24px;
+width: 100%;
+text-transform: uppercase;
+text-align: center;
+background-color: #F2C45A;
+font-weight: 700;
+border: 0;
+margin-top:5px;
+letter-spacing: 1px;
+font-size:12px;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -382,29 +384,20 @@ a {
   display: inline-block;
   margin: 0 15px;
 }
-
 #call-count, #email-count {
   color:white;
-  font-weight:900;
+  font-weight:500;
 }
-
-.calls-counter {
-  width: 50%;
-  float:left;
+.calls-counter, .emails-counter {
+  font-weight: 700;
 }
-.emails-counter {
-  width: 50%;
-    text-align: right;
-    float:right;
-}
-
 #banner-container {
     height: 300px;
 }
 
 @media (max-width: 900px){
   .calls-counter, .emails-counter {
-    font-size:12px;
+    font-size:13px;
     letter-spacing:0.5px;
   }
 

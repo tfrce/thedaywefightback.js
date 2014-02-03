@@ -33,50 +33,39 @@
               </div>
         </div>
       </div>
-      <div class="col-sm-6 rightside">
-        <div class="rightsidecontainer">
-          <!-- Form Start -->
-
-            <div class="row">
-              <div class="col-sm-6">
-                <form method="get" action="http://call.taskforce.is/create" class="email-form" role="form" autocomplete="on">
-                    <div class="formtable">
-                      <div class="">
-                        <div class="labels">
-                          <label class="i i-email" for="userEmail"></label>
-                        </div>
+      <div class="col-sm-6 rightside top">
+          <div class="phone-container">
+              <form method="get" action="http://call.taskforce.is/create" class="call-form" role="form" autocomplete="on">
+                  <div class="form-group">
+                      <label class="control-label" for="userPhone">
+                          <img src="imgs/call-your-legislators.png" alt="Call your legislators!" class="img-responsive"/>
+                      </label>
+                      <div class="c">
+                          <input type="text"  data-format="+1 (ddd) ddd-dddd" placeholder="YOUR PHONE NUMBER" name="phone" class="form-control bfh-phone" id="userPhone" x-autocompletetype="phone">
                       </div>
-                      <div style="clear: both;"></div>
-                      <div class="">
-                        <div class="forminputs">
-                          <input type="email" placeholder="YOUR EMAIL ADDRESS" name="email" class="form-control" id="userEmail"  x-autocompletetype="email" value="">
-                        </div>
+                  </div>
+                  <span id="error-text"></span>
+                  <div class="form-group">
+                    <input id="submit" type="submit" value="Connect my call" class="">
+                  </div>
+              </form>
+          </div>
+          <div class="email-container">
+              <form method="get" action="http://call.taskforce.is/create" class="email-form" role="form"  autocomplete="on">
+                  <div class="form-group">
+                      <label class=" control-label" for="userEmail">
+                          <img src="imgs/email-your-legislators.png" alt="Email your legislators!" class="img-responsive"/>
+                      </label>
+                      <div class="c">
+                          <input type="email" placeholder="YOUR EMAIL ADDRESS" name="email" class="form-control" id="userEmail"  x-autocompletetype="email">
                       </div>
-                    </div>
-                    <input id="submit" type="submit" value="CONTINUE >>" class="cta-button">
-                </form>
-              </div>
-              <div class="col-sm-6">
-                <form method="get" action="http://call.taskforce.is/create" class="call-form" role="form" autocomplete="on">
-                    <div class="formtable">
-                      <div class="">
-                        <div class="labels">
-                          <label class="i i-call" for="userPhone"></label>
-                        </div>
-                      </div>
-                      <div style="clear: both;"></div>
-                      <div class="">
-                        <div class="forminputs">
-                          <input type="tel"  data-format="+1 (ddd) ddd-dddd" placeholder="YOUR PHONE NUMBER" name="phone" class="form-control bfh-phone" id="userPhone" x-autocompletetype="phone">
-                        </div>
-                      </div>
-                    </div>
-                    <input id="submit" type="submit" value="CONTINUE >>" class="cta-button">
-                </form>
-              </div>
-            </div>
-            <!-- Form End -->
-        </div>
+                  </div>
+                  <span id="error-text"></span>
+                  <div class="form-group">
+                    <input id="submit" type="submit" value="Compose email" class="">
+                  </div>
+              </form>
+          </div>
       </div>
     </div>
   </div>
@@ -93,13 +82,11 @@
         </div>
       </div>
       <div class="col-sm-6 rightside">
-        <div class="rightsidecontainer">
-          <div class="calls-counter">
-            <span class="important" id="call-count">0</span> CALLS PLACED
-          </div>
-          <div class="emails-counter">
-            <span class="important" id="email-count">0</span> EMAILS SENT
-          </div>
+        <div class="calls-counter">
+          CALLS PLACED: <span class="important" id="call-count">0</span>
+        </div>
+        <div class="emails-counter">
+           EMAILS SENT: <span class="important" id="email-count">0</span>
         </div>
       </div>
     </div>
