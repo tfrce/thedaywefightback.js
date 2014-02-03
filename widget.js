@@ -86,6 +86,8 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
     return c_value;
   }
 
+
+
   // Define checks
 
   var checks = {
@@ -94,6 +96,14 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
       var script = document.createElement('script');
       script.src = '//dznh7un1y2etk.cloudfront.net/time?callback=tdwfbCheckDate'
       document.getElementsByTagName('head')[0].appendChild(script);
+      window.tdwfbDateCallBackFailSafe = setTimeout(function () {
+        // TODO - Potentially better logic for this fallback
+        if(new Date().getDate() === 3) {
+          callback({thedaywefightback: true});
+        } else {
+          callback({thedaywefightback: false});
+        }
+      }, 5000);
     },
     isMobile: function() {
       var ismobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
@@ -112,6 +122,10 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
       var script = document.createElement('script');
       script.src = '//geoip.taskforce.is/?callback=tdwfbParseLocation'
       document.getElementsByTagName('head')[0].appendChild(script);
+      window.tdwfbLocationCallBackFailSafe = setTimeout(function () {
+        // Set location to US and pass to callback
+        callback({country: {iso_code: 'us'}});
+      }, 5000);
     }
   }
 
@@ -200,8 +214,10 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
           return false;
         }
         checks.correctDate(function (response) {
+          clearTimeout(window.tdwfbDateCallBackFailSafe);
           if(response && (response.thedaywefightback || widget_config.debug)) {
             checks.location(function (location) {
+              clearTimeout(window.tdwfbLocationCallBackFailSafe);
               active_campaign.show({location: location, widget_config: widget_config});
             });
           }
