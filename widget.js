@@ -58,7 +58,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
 
   if(widget_config.debug) {
     ASSET_URL = '../thedaywefightback/';
-    COOKIE_TIMEOUT = 20;
+    COOKIE_TIMEOUT = 200000;
   } else {
     ASSET_URL = '//d1agz031tafz8n.cloudfront.net/thedaywefightback.js/';
     COOKIE_TIMEOUT = widget_config.cookieTimeout;
@@ -137,8 +137,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
       startDate: new Date(2013, 9, 15, 0),
       endDate: new Date(2013, 9, 26, 12),
       hide: function (el, callback) {
-        document.body.removeChild(el);
-        setCookie(active_campaign.cookieName, 'true', COOKIE_TIMEOUT);
+        //document.body.removeChild(el);
         if(callback) { callback(); };
       },
       styles: {
@@ -149,6 +148,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
           closeButton: 'border: 0;height: 28px;width: 28px;cursor: pointer;position: absolute;top:33px;right:20px;background: url("' + ASSET_URL +'imgs/close-button.png");'
         }
       },
+      minimized: false,
       show: function (options) {
 
         var style = active_campaign.styles[active_campaign.config.show_style]
@@ -168,7 +168,12 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         var iframe_container = document.createElement('div');
         iframe_container.style.cssText = style.iframe_container;
 
-
+        // Find out if user has minimized via cookie
+        if(this.minimized) {
+          iframe_container.style.height = "50px";
+        } else {
+          iframe_container.style.height = "350px";
+        };
 
         // Append Iframe and campaign container to document
         campaign_container.appendChild(iframe_container);
@@ -191,7 +196,17 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         var closeButton = document.createElement('button');
         closeButton.style.cssText = style.closeButton;
         iframe_container.appendChild(closeButton);
+        var that = this;
         closeButton.onclick = function() {
+          if(!that.minimized) {
+            iframe_container.style.height = "50px";
+            that.minimized = true;
+            setCookie(active_campaign.cookieName, '{"minimized": true}', COOKIE_TIMEOUT);
+          } else {
+            iframe_container.style.height = "350px";
+            that.minimized = false;
+            setCookie(active_campaign.cookieName, '{"minimized": false}', COOKIE_TIMEOUT);
+          };
           active_campaign.hide(campaign_container);
           if(style.overlay) {
             document.body.removeChild(overlay);
@@ -206,7 +221,13 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         if(checks.hasSeenCampaign(active_campaign.cookieName)) {
           //return false;
         }
-
+        var cookie = getCookie(active_campaign.cookieName);
+        if(cookie) {
+          console.log(cookie);
+          var cData = JSON.parse(cookie);
+          this.minimized = cData.minimized;
+          console.log(cData);
+        }
 
 
         // Check if is mobile
