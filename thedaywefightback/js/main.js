@@ -10,6 +10,18 @@ $('#userPhone').focus(function(){
 +function(e){"use strict";function n(e,t){var n,r,i,s;n="";t=String(t).replace(/\D/g,"");for(r=0,i=0;r<e.length;r=r+1){if(/\d/g.test(e.charAt(r))){if(e.charAt(r)===t.charAt(i)){n+=t.charAt(i);i=i+1}else{n+=e.charAt(r)}}else if(e.charAt(r)!=="d"){if(t.charAt(i)!==""||e.charAt(r)==="+"){n+=e.charAt(r)}}else{if(t.charAt(i)===""){n+=""}else{n+=t.charAt(i);i=i+1}}}s=e.charAt(n.length);if(s!=="d"){n+=s}return n}function r(e){var t=0,n;if(document.selection){e.focus();n=document.selection.createRange();n.moveStart("character",-e.value.length);t=n.text.length}else if(e.selectionStart||e.selectionStart===0){t=e.selectionStart}return t}function i(e,t){var n;if(document.selection){e.focus();n=document.selection.createRange();n.moveStart("character",-e.value.length);n.moveStart("character",t);n.moveEnd("character",0);n.select()}else if(e.selectionStart||e.selectionStart===0){e.selectionStart=t;e.selectionEnd=t;e.focus()}}var t=function(t,n){this.options=e.extend({},e.fn.bfhphone.defaults,n);this.$element=e(t);if(this.$element.is('input[type="text"]')||this.$element.is('input[type="tel"]')){this.addFormatter()}if(this.$element.is("span")){this.displayFormatter()}};t.prototype={constructor:t,addFormatter:function(){var n;if(this.options.country!==""){n=e(document).find("#"+this.options.country);if(n.length!==0){this.options.format=BFHPhoneFormatList[n.val()];n.on("change",{phone:this},this.changeCountry)}else{this.options.format=BFHPhoneFormatList[this.options.country]}}this.$element.on("keyup.bfhphone.data-api",t.prototype.change);this.loadFormatter()},loadFormatter:function(){var e;e=n(this.options.format,this.$element.val());this.$element.val(e)},displayFormatter:function(){var e;if(this.options.country!==""){this.options.format=BFHPhoneFormatList[this.options.country]}e=n(this.options.format,this.options.number);this.$element.html(e)},changeCountry:function(t){var n,r;n=e(this);r=t.data.phone;r.$element.val(String(r.$element.val()).replace(/\+\d*/g,""));r.options.format=BFHPhoneFormatList[n.val()];r.loadFormatter()},change:function(t){var s,o,u,a;s=e(this).data("bfhphone");if(s.$element.is(".disabled")||s.$element.attr("disabled")!==undefined){return true}o=r(s.$element[0]);u=false;if(o===s.$element.val().length){u=true}if(t.which===8&&s.options.format.charAt(s.$element.val().length)!=="d"){s.$element.val(String(s.$element.val()).substring(0,s.$element.val().length-1))}a=n(s.options.format,s.$element.val());if(a===s.$element.val()){return true}s.$element.val(a);if(u){o=s.$element.val().length}i(s.$element[0],o);return true}};var s=e.fn.bfhphone;e.fn.bfhphone=function(n){return this.each(function(){var r,i,s;r=e(this);i=r.data("bfhphone");s=typeof n==="object"&&n;if(!i){r.data("bfhphone",i=new t(this,s))}if(typeof n==="string"){i[n].call(r)}})};e.fn.bfhphone.Constructor=t;e.fn.bfhphone.defaults={format:"",number:"",country:""};e.fn.bfhphone.noConflict=function(){e.fn.bfhphone=s;return this};e(document).ready(function(){e('form input[type="text"].bfh-phone, form input[type="tel"].bfh-phone, span.bfh-phone').each(function(){var t;t=e(this);t.bfhphone(t.data())})})}(window.jQuery)
 });
 
+
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split('&');
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split('=');
+        if (decodeURIComponent(pair[0]) == variable) {
+            return decodeURIComponent(pair[1]);
+        }
+    }
+    console.log('Query variable %s not found', variable);
+}
     /* $.ajax({
          type: "GET",
          url: 'https://thedaywefightback.org/blank.html',
@@ -99,7 +111,7 @@ $('.call-form').on('submit', function(ev) {
     if(!isValidPhoneNumber(phoneNumber)){
         rumbleEl(phoneNumberEl);
     } else {
-        window.open('call-tool.html', "Share on Facebook", "width=800,height=800");
+        window.open('call-tool.html?phoneNumber=' + phoneNumber, "Share on Facebook", "width=800,height=800");
     }
     return false;
 });
@@ -112,10 +124,11 @@ $('.email-form').on('submit', function(ev) {
     if(!isValidEmail(userEmail)){
         rumbleEl(userEmailEl);
     } else {
-        window.open('email-tool.html', "Share on Facebook", "width=800,height=800");
+        window.open('email-tool.html?email=' + userEmail, "Share on Facebook", "width=800,height=800");
     }
     return false;
 });
+
 /*
 $('.call-and-email-form').on('submit', function(ev) {
     var form = $(ev.currentTarget);

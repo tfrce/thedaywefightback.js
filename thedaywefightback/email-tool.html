@@ -100,7 +100,11 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
           request: {}
       }
   });
+  $(document).on('ready', function () {
 
+  console.log(getQueryVariable('email'));
+  $('#email').val(getQueryVariable('email'));
+  $('#full_name').focus();
   $('.send-email').on('submit', function (ev) {
     var form = $(ev.currentTarget);
     var data = form.serializeObject();
@@ -113,6 +117,7 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
       $('body').html('success');
     });
     return false;
+  });
   });
   /*
 
