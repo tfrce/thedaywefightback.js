@@ -120,7 +120,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
     location: function (callback) {
       window.tdwfbParseLocation = callback;
       var script = document.createElement('script');
-      script.src = '//geoip.taskforce.is/?callback=tdwfbParseLocation'
+      script.src = 'https://geoip.taskforce.is/?callback=tdwfbParseLocation'
       document.getElementsByTagName('head')[0].appendChild(script);
       window.tdwfbLocationCallBackFailSafe = setTimeout(function () {
         // Set location to US and pass to callback
