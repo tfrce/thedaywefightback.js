@@ -56,11 +56,11 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
   var active_campaign;
   var ASSET_URL, COOKIE_TIMEOUT;
 
-  if(widget_config.debug) {
+  if(widget_config.debug && 0) {
     ASSET_URL = '../thedaywefightback/';
     COOKIE_TIMEOUT = 200000;
   } else {
-    ASSET_URL = '//d1agz031tafz8n.cloudfront.net/thedaywefightback.js/';
+    ASSET_URL = '//d1agz031tafz8n.cloudfront.net/thedaywefightback.js/thedaywefightback/';
     COOKIE_TIMEOUT = widget_config.cookieTimeout;
   }
 
