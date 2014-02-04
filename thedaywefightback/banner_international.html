@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <!-- Bootstrap core CSS -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
@@ -20,31 +19,56 @@
     </div>-->
     <div class="second-slide"> <!-- style="display: none;">-->
       <div class="col-sm-6 leftside">
-        <div class="leftsidecontainer">
-          <h1>Dear Internet Users:</h1>
-          <p>The NSA’s actions <a href="#">undermine online privacy</a> and tilt the balance of power away from the people. </p>
-          <p>Our rights won’t defend themselves — we have to tell Congress to <a href="#">pass proposed laws</a> to defend privacy.</p>
-          <div class="facts">
-            <p><span>FACT:</span> 97 billion pieces of data about people around the world were collected by the NSA in March 2013 alone.</p>
-          </div>
-          <h2>Not Convinced? <a href="#">Read More</a></h2>
-          <!-- <div class="scrolling-banner-text">
-            Will you help put an end to <a href="#">mass spying?</a>
-          </div>
-          <div class="divider">
-          </div>
-          <div class="logotext">
-            <a href="https://thedaywefightback.com">
-              <img src="imgs/logotext.png" class="img-responsive" />
-            </a>
-          </div> -->
+          <div class="leftsidecontainer">
+              <div class="scrolling-banner-text ">
+                <div class="animated flipInX">
+                  Hey Reddit, we’re sick of complaining about the NSA. We want <a href="">new laws</a> that curtail online surveillance.
+                </div>
+                <div class="animated hidden">
+                  <a href="#" target="_blank"><span>FACT:</span></a> This is a second message that one might want to put here..
+                </div>
+              </div>
+              <div class="divider"><div></div></div>
+              <div class="logotext">
+                  <a href="https://thedaywefightback.org" target="_parent">
+                      <img src="imgs/logotext.png" class="img-responsive" />
+                  </a>
+              </div>
         </div>
       </div>
-      <div class="col-sm-6 rightside">
-        <div class="rightsidecontainer">
-          <h2>International</h2>
-
-        </div>
+      <div class="col-sm-6 rightside top">
+          <div class="phone-container">
+              <form method="get" action="http://call.taskforce.is/create" class="call-form" role="form" autocomplete="on">
+                  <div class="form-group">
+                      <label class="control-label" for="userPhone">
+                          <img src="imgs/call-your-legislators.png" alt="Call your legislators!" class="img-responsive"/>
+                      </label>
+                      <div class="c">
+                          <input type="text"  data-format="+1 (ddd) ddd-dddd" placeholder="YOUR PHONE NUMBER" name="phone" class="form-control bfh-phone" id="userPhone" x-autocompletetype="phone">
+                      </div>
+                  </div>
+                  <span id="error-text"></span>
+                  <div class="form-group">
+                    <input id="submit" type="submit" value="Connect my call" class="">
+                  </div>
+              </form>
+          </div>
+          <div class="email-container">
+              <form method="get" action="http://call.taskforce.is/create" class="email-form" role="form"  autocomplete="on">
+                  <div class="form-group">
+                      <label class=" control-label" for="userEmail">
+                          <img src="imgs/email-your-legislators.png" alt="Email your legislators!" class="img-responsive"/>
+                      </label>
+                      <div class="c">
+                          <input type="email" placeholder="YOUR EMAIL ADDRESS" name="email" class="form-control" id="userEmail"  x-autocompletetype="email">
+                      </div>
+                  </div>
+                  <span id="error-text"></span>
+                  <div class="form-group">
+                    <input id="submit" type="submit" value="Compose email" class="">
+                  </div>
+              </form>
+          </div>
       </div>
     </div>
   </div>
@@ -55,23 +79,21 @@
 
       <div class="col-sm-6 leftside">
         <div class="leftsidecontainer">
+
           <div class="org-logo-slider"> 
             <i class="i i-logo"></i>
+          </div>
+          
+          <div class="footer-left"> 
+            <a href="http://thedaywefightback.org/privacy/">Privacy Policy</a><span> | </span><a href="banner.html">In the USA?</a>
           </div>
         </div>
       </div>
       <div class="col-sm-6 rightside">
-        <div class="rightsidecontainer">
-          <div class="calls-counter">
-            <span class="important" id="call-count">0</span> CALLS PLACED
-          </div>
-          <div class="emails-counter">
-            <span class="important" id="email-count">0</span> EMAILS SENT
-          </div>
-        </div>
       </div>
     </div>
   </div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
 
   <script type="text/javascript" src="js/main.js"></script>
 
