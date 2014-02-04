@@ -474,13 +474,12 @@ $(document).ready(function() {
     setInterval(function(){
 
         var $visibleslide = $(".animated.flipInX")
-         $visibleslide.removeClass("flipInY").addClass("flipOutY");
+         $visibleslide.removeClass("flipInX").addClass("flipOutY");
 
         window.setTimeout(function(){
         $visibleslide.addClass("hidden");
         $visibleslide.removeClass("flipOutY");
         var factslides = $visibleslide.parent().children();
-        // console.log((factslides.index($selected) + 1) % factslides.length);
         var $nextslide = factslides.eq((factslides.index($visibleslide) + 1) % factslides.length);
          $nextslide.removeClass("hidden").addClass("animated").addClass("flipInX");
         },1300)
