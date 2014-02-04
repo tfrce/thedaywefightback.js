@@ -508,7 +508,7 @@ $(document).ready( function () {
     var greeting = getQueryVariable('greeting');
     $('.greeting').text(greeting);
 
-
+});
 
 });
 
