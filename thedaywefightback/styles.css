@@ -456,15 +456,16 @@ font-size:12px;
 
 .nandp-container {
   margin-right: 9.5%;
-  margin-left: 9.5%;
+  margin-left: 3%;
   text-align:center;
   margin-top:46px;
 }
 .international .form-group.inline {
-  width: 30%;
+  width: 32%;
   display:inline-block;
   float:left;
-  margin-right:5%;
+  margin-right:2%;
+  margin-bottom: 7px;
 }
 .international .form-group.inline.last {
   margin-right:0;
@@ -494,4 +495,34 @@ font-size:12px;
 .international .int-pencil {
   width:35px;
 }
+.international .checkbox {
+  float:left;
+  margin-top: 0;
+  margin-bottom:7px;
+}
+.international .checkbox label {
+  color: #fff;
+}
+.international .checkbox input {
+  height: 14px;
+  width: 14px;
+  margin-top: 3px;
+}
 
+@media (max-width: 991px){
+  .nandp-container {
+  margin-left: 9.5%; 
+  }
+  .international .checkbox label {
+    font-size:16px;
+    }
+  .international .form-group.inline {
+    margin-bottom:10px;
+  }
+  .international h3 {
+    font-size:20px;
+  }
+  .international input[type="submit"] {
+    margin-top:5px;
+  }
+}
