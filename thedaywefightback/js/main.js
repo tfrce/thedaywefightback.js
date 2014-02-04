@@ -278,7 +278,6 @@ $(document).ready( function () {
                 return decodeURIComponent(pair[1]);
             }
         }
-        console.log('Query variable %s not found', variable);
     }
         /* $.ajax({
              type: "GET",
