@@ -47,6 +47,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
   // Do configuration
 
   widget_config.show_style = widget_config.show_style || 'banner';
+  widget_config.greeting = widget_config.greeting || 'Dear Internet';
   widget_config.debug = widget_config.debug || false;
   widget_config.campaign = widget_config.campaign || 'thedaywefightback';
   widget_config.cookieTimeout = widget_config.cookieTimeout || 172800;
@@ -189,12 +190,12 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
 
         if( (options.location && options.location.country.iso_code === 'us') || widget_config.overrideLocation == "usa") {
           // Set the source of the iframe to the configured show_style type
-          iframe.src = ASSET_URL + active_campaign.config.show_style + '.html';
+          iframe.src = ASSET_URL + active_campaign.config.show_style + '.html?greeting=' + widget_config.greeting;
         } else if ( (options.location && options.location.country.iso_code !== 'us') || widget_config.overrideLocation == "usa" ) {
           iframe.src = ASSET_URL + active_campaign.config.show_style + '_international.html';
         }
         else {
-          iframe.src = ASSET_URL + active_campaign.config.show_style + '.html';
+          iframe.src = ASSET_URL + active_campaign.config.show_style + '.html?greeting=' + widget_config.greeting;
         }
         iframe_container.appendChild(iframe);
 

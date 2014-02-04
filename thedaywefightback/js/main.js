@@ -508,9 +508,22 @@ $(document).ready( function () {
             $('.divider > div').css("width", 0);
     }
 
+    var greeting = getQueryVariable('greeting');
+    $('.greeting').text(greeting);
 
 
 });
+
+
+//safari  on mavericks is good
+/*
+Cross Browser bugs
+firefox 26 seems good
+doesn't seem to be running on mobile
+opera is cool
+
+
+*/
 
 
 
