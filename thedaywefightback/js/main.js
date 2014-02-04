@@ -486,7 +486,7 @@ $(document).ready( function () {
     $(document).ready(function() {
         dividerFill();
         setInterval(function(){
-            var $visibleslide = $(".animated.flipInX")
+            var $visibleslide = $(".scrolling-banner-text .animated.flipInX")
              $visibleslide.removeClass("flipInX").addClass("flipOutX");
             dividerReset();
 

@@ -88,7 +88,7 @@
       </div>
       
       <div class="col-md-6 rightside top thanks hidden animated">
-          <div class="nandp-container">
+          <div class="nandp-container" style="margin-top: 76px">
               <img src="imgs/int-pencil.png" class="int-pencil"/>
               <h3>THANK YOU! WE HAVE RECEIVED YOUR SIGNATURE.<br />
                 <a href="https://necessaryandproportionate.org" target="_blank">NOW HELP US SPREAD THE WORD:</a>
@@ -169,7 +169,7 @@ $.fn.serializeObject = function() {
       }, function(response){
         $('.international .rightside.top.before').addClass('animate flipOutX');
         window.setTimeout(function(){
-          $('.international .rightside.top.before').hide();
+          $('.international .rightside.top.before').addClass("hidden");
           $('.international .rightside.top.thanks').removeClass("hidden").addClass("flipInX");
           ;}, 1000);
 
