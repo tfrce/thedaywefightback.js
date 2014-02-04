@@ -183,11 +183,14 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         var iframe = document.createElement('iframe');
         iframe.style.cssText = style.iframe;
 
-        if(options.location && (options.location.country.iso_code === 'us' || widget_config.overrideLocation)) {
+        if( (options.location && options.location.country.iso_code === 'us') || widget_config.overrideLocation == "usa") {
           // Set the source of the iframe to the configured show_style type
           iframe.src = ASSET_URL + active_campaign.config.show_style + '.html';
-        } else {
+        } else if ( (options.location && options.location.country.iso_code !== 'us') || widget_config.overrideLocation == "usa" ) {
           iframe.src = ASSET_URL + active_campaign.config.show_style + '_international.html';
+        }
+        else {
+          iframe.src = ASSET_URL + active_campaign.config.show_style + '.html';
         }
         iframe_container.appendChild(iframe);
 
