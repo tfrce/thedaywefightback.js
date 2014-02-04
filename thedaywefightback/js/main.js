@@ -424,7 +424,7 @@ $('.call-and-email-form').on('submit', function(ev) {
 
 // Call and email counters
 if($('#email-count').length > 0) {
-    $.ajax('http://dznh7un1y2etk.cloudfront.net/count', {
+    $.ajax('//dznh7un1y2etk.cloudfront.net/count', {
         success: function(res, err) {
         	var demo = new countUp("email-count", 0, res.count, 0, 2);
     		demo.start();
@@ -435,7 +435,7 @@ if($('#email-count').length > 0) {
     });
 }
 if($('#call-count').length > 0) {
-    $.ajax('http://dczwo4qqyofa4.cloudfront.net/count', {
+    $.ajax('//dczwo4qqyofa4.cloudfront.net/count', {
         success: function(res, err) {
         	var demo = new countUp("call-count", 0, res.count, 0, 2);
     		demo.start();
@@ -487,10 +487,6 @@ $(document).ready(function() {
         
     },7000);
 });
-
-
-
-
 
 
 

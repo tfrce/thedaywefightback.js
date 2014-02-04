@@ -56,11 +56,11 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
   var active_campaign;
   var ASSET_URL, COOKIE_TIMEOUT;
 
-  if(widget_config.debug) {
+  if(widget_config.debug && 0) {
     ASSET_URL = '../thedaywefightback/';
     COOKIE_TIMEOUT = 200000;
   } else {
-    ASSET_URL = '//d1agz031tafz8n.cloudfront.net/thedaywefightback.js/';
+    ASSET_URL = '//d1agz031tafz8n.cloudfront.net/thedaywefightback.js/thedaywefightback/';
     COOKIE_TIMEOUT = widget_config.cookieTimeout;
   }
 
@@ -120,7 +120,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
     location: function (callback) {
       window.tdwfbParseLocation = callback;
       var script = document.createElement('script');
-      script.src = '//geoip.taskforce.is/?callback=tdwfbParseLocation'
+      script.src = 'https://geoip.taskforce.is/?callback=tdwfbParseLocation'
       document.getElementsByTagName('head')[0].appendChild(script);
       window.tdwfbLocationCallBackFailSafe = setTimeout(function () {
         // Set location to US and pass to callback
