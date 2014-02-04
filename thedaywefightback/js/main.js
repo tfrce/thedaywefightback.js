@@ -470,27 +470,41 @@ $(document).ready(function() {
     }).trigger('resize');
 });
 
+/* Animating the bar above the logo */
+
+var timeperslide = 9000; // time between each slide
+var animationdelay = 1300; // time between each slide
+var dividerdelay = 1300; // time between each slide
+
 $(document).ready(function() {
+
+    dividerFill();
+
     setInterval(function(){
 
         var $visibleslide = $(".animated.flipInX")
-         $visibleslide.removeClass("flipInX").addClass("flipOutY");
+         $visibleslide.removeClass("flipInX").addClass("flipOutX");
+        dividerReset();
 
         window.setTimeout(function(){
         $visibleslide.addClass("hidden");
-        $visibleslide.removeClass("flipOutY");
+        $visibleslide.removeClass("flipOutX");
         var factslides = $visibleslide.parent().children();
         var $nextslide = factslides.eq((factslides.index($visibleslide) + 1) % factslides.length);
          $nextslide.removeClass("hidden").addClass("animated").addClass("flipInX");
-        },1300)
+        },animationdelay)
+        window.setTimeout(function(){dividerFill();},dividerdelay);
         
-    },7000);
+    },timeperslide);
 });
 
+function dividerFill() {
+       $('.divider > div').animate({ width: "100%" }, timeperslide - animationdelay - dividerdelay);
+}
 
-
-
-
+function dividerReset() {
+        $('.divider > div').css("width", 0);
+}
 
 
 
