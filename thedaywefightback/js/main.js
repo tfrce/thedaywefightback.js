@@ -509,8 +509,10 @@ $(document).ready( function () {
     }
 
     var greeting = getQueryVariable('greeting');
+    
     $('.greeting').text(greeting);
-
+    var src = $('.switch-locale').attr('href')
+    $('.switch-locale').attr('href', src + '?greeting=' + greeting);
 });
 
 });
