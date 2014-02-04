@@ -145,7 +145,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
           campaign_container: 'background: #000;position:fixed;width:100%;bottom:0;left:0;z-index:100000; padding: 0;-webkit-box-sizing: border-box; -moz-box-sizing: border-box;',
           iframe_container: 'position: relative; height: 350px; width:100%; margin: 0; background: #000; ',
           iframe: 'width: 100%;height: 100%;border: 0;margin:0;padding:0; background: #000;',
-          closeButton: 'border: 0;height: 28px;width: 28px;cursor: pointer;position: absolute;top:33px;right:20px;background: url("' + ASSET_URL +'imgs/close-button.png");'
+          closeButton: 'border: 0;height: 28px;width: 28px;cursor: pointer;position: absolute;top:20px;right:20px;background: url("' + ASSET_URL +'imgs/close-button.png");'
         }
       },
       minimized: false,
