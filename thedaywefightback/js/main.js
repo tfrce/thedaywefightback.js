@@ -6,509 +6,511 @@ function countUp(a,b,c,d,e){for(var f=0,g=["webkit","moz","ms"],h=0;h<g.length&&
 
 /* Modified phone number formatting script */
 /* via BootstrapFormHelpers - https://github.com/vlamanna/BootstrapFormHelpers - Apache License, Version 2.0 */
-$('#userPhone').focus(function(){
-    +function ($) {
+$(document).ready( function () {
 
-      'use strict';
+    $('#userPhone').focus(function(){
+        +function ($) {
+
+          'use strict';
 
 
-      /* PHONE CLASS DEFINITION
-       * ====================== */
+          /* PHONE CLASS DEFINITION
+           * ====================== */
 
-      var BFHPhone = function (element, options) {
-        this.options = $.extend({}, $.fn.bfhphone.defaults, options);
-        this.$element = $(element);
+          var BFHPhone = function (element, options) {
+            this.options = $.extend({}, $.fn.bfhphone.defaults, options);
+            this.$element = $(element);
 
-        if (this.$element.is('input[type="text"]') || this.$element.is('input[type="tel"]')) {
-          this.addFormatter();
-        }
+            if (this.$element.is('input[type="text"]') || this.$element.is('input[type="tel"]')) {
+              this.addFormatter();
+            }
 
-        if (this.$element.is('span')) {
-          this.displayFormatter();
-        }
-      };
+            if (this.$element.is('span')) {
+              this.displayFormatter();
+            }
+          };
 
-      BFHPhone.prototype = {
+          BFHPhone.prototype = {
 
-        constructor: BFHPhone,
+            constructor: BFHPhone,
 
-        addFormatter: function() {
-          var $country;
+            addFormatter: function() {
+              var $country;
 
-          if (this.options.country !== '') {
-            $country = $(document).find('#' + this.options.country);
+              if (this.options.country !== '') {
+                $country = $(document).find('#' + this.options.country);
 
-            if ($country.length !== 0) {
-              this.options.format = BFHPhoneFormatList[$country.val()];
-              $country.on('change', {phone: this}, this.changeCountry);
-            } else {
-              this.options.format = BFHPhoneFormatList[this.options.country];
+                if ($country.length !== 0) {
+                  this.options.format = BFHPhoneFormatList[$country.val()];
+                  $country.on('change', {phone: this}, this.changeCountry);
+                } else {
+                  this.options.format = BFHPhoneFormatList[this.options.country];
+                }
+              }
+              
+              this.$element.on('keyup.bfhphone.data-api', BFHPhone.prototype.change);
+
+              this.loadFormatter();
+            },
+
+            loadFormatter: function () {
+              var formattedNumber;
+
+              formattedNumber = formatNumber(this.options.format, this.$element.val());
+
+              this.$element.val(formattedNumber);
+            },
+
+            displayFormatter: function () {
+              var formattedNumber;
+
+              if (this.options.country !== '') {
+                this.options.format = BFHPhoneFormatList[this.options.country];
+              }
+
+              formattedNumber = formatNumber(this.options.format, this.options.number);
+
+              this.$element.html(formattedNumber);
+            },
+
+            changeCountry: function (e) {
+              var $this,
+                  $phone;
+
+              $this = $(this);
+              $phone = e.data.phone;
+
+              $phone.$element.val(String($phone.$element.val()).replace(/\+\d*/g, ''));
+              $phone.options.format = BFHPhoneFormatList[$this.val()];
+
+              $phone.loadFormatter();
+            },
+
+            change: function(e) {
+              var $this,
+                  cursorPosition,
+                  cursorEnd,
+                  formattedNumber;
+
+              $this = $(this).data('bfhphone');
+
+              if ($this.$element.is('.disabled') || $this.$element.attr('disabled') !== undefined) {
+                return true;
+              }
+
+              cursorPosition = getCursorPosition($this.$element[0]);
+
+              cursorEnd = false;
+              if (cursorPosition === $this.$element.val().length) {
+                cursorEnd = true;
+              }
+              
+              if (e.which === 8 && $this.options.format.charAt($this.$element.val().length) !== 'd') {
+                $this.$element.val(String($this.$element.val()).substring(0, $this.$element.val().length - 1));
+              }
+
+              formattedNumber = formatNumber($this.options.format, $this.$element.val());
+              
+              if (formattedNumber === $this.$element.val()) {
+                return true;
+              }
+              
+              $this.$element.val(formattedNumber);
+
+              if (cursorEnd) {
+                cursorPosition = $this.$element.val().length;
+              }
+
+              setCursorPosition($this.$element[0], cursorPosition);
+
+              return true;
+            }
+
+          };
+
+          function formatNumber(format, number) {
+            var formattedNumber,
+                indexFormat,
+                indexNumber,
+                lastCharacter;
+
+            formattedNumber = '';
+            number = String(number).replace(/\D/g, '');
+
+            for (indexFormat = 0, indexNumber = 0; indexFormat < format.length; indexFormat = indexFormat + 1) {
+              if (/\d/g.test(format.charAt(indexFormat))) {
+                if (format.charAt(indexFormat) === number.charAt(indexNumber)) {
+                  formattedNumber += number.charAt(indexNumber);
+                  indexNumber = indexNumber + 1;
+                } else {
+                  formattedNumber += format.charAt(indexFormat);
+                }
+              } else if (format.charAt(indexFormat) !== 'd') {
+                if (number.charAt(indexNumber) !== '' || format.charAt(indexFormat) === '+') {
+                  formattedNumber += format.charAt(indexFormat);
+                }
+              } else {
+                if (number.charAt(indexNumber) === '') {
+                  formattedNumber += '';
+                } else {
+                  formattedNumber += number.charAt(indexNumber);
+                  indexNumber = indexNumber + 1;
+                }
+              }
+            }
+            
+            lastCharacter = format.charAt(formattedNumber.length);
+            if (lastCharacter !== 'd') {
+              formattedNumber += lastCharacter;
+            }
+
+            return formattedNumber;
+          }
+
+          function getCursorPosition($element) {
+            var position = 0,
+                selection;
+
+            if (document.selection) {
+              // IE Support
+              $element.focus();
+              selection = document.selection.createRange();
+              selection.moveStart ('character', -$element.value.length);
+              position = selection.text.length;
+            } else if ($element.selectionStart || $element.selectionStart === 0) {
+              position = $element.selectionStart;
+            }
+
+            return position;
+          }
+
+          function setCursorPosition($element, position) {
+            var selection;
+
+            if (document.selection) {
+              // IE Support
+              $element.focus ();
+              selection = document.selection.createRange();
+              selection.moveStart ('character', -$element.value.length);
+              selection.moveStart ('character', position);
+              selection.moveEnd ('character', 0);
+              selection.select ();
+            } else if ($element.selectionStart || $element.selectionStart === 0) {
+              $element.selectionStart = position;
+              $element.selectionEnd = position;
+              $element.focus ();
             }
           }
-          
-          this.$element.on('keyup.bfhphone.data-api', BFHPhone.prototype.change);
 
-          this.loadFormatter();
-        },
+          /* PHONE PLUGIN DEFINITION
+           * ======================= */
 
-        loadFormatter: function () {
-          var formattedNumber;
+          var old = $.fn.bfhphone;
 
-          formattedNumber = formatNumber(this.options.format, this.$element.val());
+          $.fn.bfhphone = function (option) {
+            return this.each(function () {
+              var $this,
+                  data,
+                  options;
 
-          this.$element.val(formattedNumber);
-        },
+              $this = $(this);
+              data = $this.data('bfhphone');
+              options = typeof option === 'object' && option;
 
-        displayFormatter: function () {
-          var formattedNumber;
+              if (!data) {
+                $this.data('bfhphone', (data = new BFHPhone(this, options)));
+              }
+              if (typeof option === 'string') {
+                data[option].call($this);
+              }
+            });
+          };
 
-          if (this.options.country !== '') {
-            this.options.format = BFHPhoneFormatList[this.options.country];
-          }
+          $.fn.bfhphone.Constructor = BFHPhone;
 
-          formattedNumber = formatNumber(this.options.format, this.options.number);
+          $.fn.bfhphone.defaults = {
+            format: '',
+            number: '',
+            country: ''
+          };
 
-          this.$element.html(formattedNumber);
-        },
 
-        changeCountry: function (e) {
-          var $this,
-              $phone;
+          /* PHONE NO CONFLICT
+           * ========================== */
 
-          $this = $(this);
-          $phone = e.data.phone;
+          $.fn.bfhphone.noConflict = function () {
+            $.fn.bfhphone = old;
+            return this;
+          };
 
-          $phone.$element.val(String($phone.$element.val()).replace(/\+\d*/g, ''));
-          $phone.options.format = BFHPhoneFormatList[$this.val()];
 
-          $phone.loadFormatter();
-        },
+          /* PHONE DATA-API
+           * ============== */
 
-        change: function(e) {
-          var $this,
-              cursorPosition,
-              cursorEnd,
-              formattedNumber;
+          $(document).ready( function () {
+            $('form input[type="text"].bfh-phone, form input[type="tel"].bfh-phone, span.bfh-phone').each(function () {
+              var $phone;
 
-          $this = $(this).data('bfhphone');
+              $phone = $(this);
 
-          if ($this.$element.is('.disabled') || $this.$element.attr('disabled') !== undefined) {
-            return true;
-          }
+              $phone.bfhphone($phone.data());
+            });
+          });
 
-          cursorPosition = getCursorPosition($this.$element[0]);
-
-          cursorEnd = false;
-          if (cursorPosition === $this.$element.val().length) {
-            cursorEnd = true;
-          }
-          
-          if (e.which === 8 && $this.options.format.charAt($this.$element.val().length) !== 'd') {
-            $this.$element.val(String($this.$element.val()).substring(0, $this.$element.val().length - 1));
-          }
-
-          formattedNumber = formatNumber($this.options.format, $this.$element.val());
-          
-          if (formattedNumber === $this.$element.val()) {
-            return true;
-          }
-          
-          $this.$element.val(formattedNumber);
-
-          if (cursorEnd) {
-            cursorPosition = $this.$element.val().length;
-          }
-
-          setCursorPosition($this.$element[0], cursorPosition);
-
-          return true;
-        }
-
-      };
-
-      function formatNumber(format, number) {
-        var formattedNumber,
-            indexFormat,
-            indexNumber,
-            lastCharacter;
-
-        formattedNumber = '';
-        number = String(number).replace(/\D/g, '');
-
-        for (indexFormat = 0, indexNumber = 0; indexFormat < format.length; indexFormat = indexFormat + 1) {
-          if (/\d/g.test(format.charAt(indexFormat))) {
-            if (format.charAt(indexFormat) === number.charAt(indexNumber)) {
-              formattedNumber += number.charAt(indexNumber);
-              indexNumber = indexNumber + 1;
-            } else {
-              formattedNumber += format.charAt(indexFormat);
-            }
-          } else if (format.charAt(indexFormat) !== 'd') {
-            if (number.charAt(indexNumber) !== '' || format.charAt(indexFormat) === '+') {
-              formattedNumber += format.charAt(indexFormat);
-            }
-          } else {
-            if (number.charAt(indexNumber) === '') {
-              formattedNumber += '';
-            } else {
-              formattedNumber += number.charAt(indexNumber);
-              indexNumber = indexNumber + 1;
-            }
-          }
-        }
-        
-        lastCharacter = format.charAt(formattedNumber.length);
-        if (lastCharacter !== 'd') {
-          formattedNumber += lastCharacter;
-        }
-
-        return formattedNumber;
-      }
-
-      function getCursorPosition($element) {
-        var position = 0,
-            selection;
-
-        if (document.selection) {
-          // IE Support
-          $element.focus();
-          selection = document.selection.createRange();
-          selection.moveStart ('character', -$element.value.length);
-          position = selection.text.length;
-        } else if ($element.selectionStart || $element.selectionStart === 0) {
-          position = $element.selectionStart;
-        }
-
-        return position;
-      }
-
-      function setCursorPosition($element, position) {
-        var selection;
-
-        if (document.selection) {
-          // IE Support
-          $element.focus ();
-          selection = document.selection.createRange();
-          selection.moveStart ('character', -$element.value.length);
-          selection.moveStart ('character', position);
-          selection.moveEnd ('character', 0);
-          selection.select ();
-        } else if ($element.selectionStart || $element.selectionStart === 0) {
-          $element.selectionStart = position;
-          $element.selectionEnd = position;
-          $element.focus ();
-        }
-      }
-
-      /* PHONE PLUGIN DEFINITION
-       * ======================= */
-
-      var old = $.fn.bfhphone;
-
-      $.fn.bfhphone = function (option) {
-        return this.each(function () {
-          var $this,
-              data,
-              options;
-
-          $this = $(this);
-          data = $this.data('bfhphone');
-          options = typeof option === 'object' && option;
-
-          if (!data) {
-            $this.data('bfhphone', (data = new BFHPhone(this, options)));
-          }
-          if (typeof option === 'string') {
-            data[option].call($this);
-          }
+        }(window.jQuery);
         });
-      };
 
-      $.fn.bfhphone.Constructor = BFHPhone;
+    $('#userPhone').focusout(function(){
+        if  ($('#userPhone').val() == "+1 ") {
+            $('#userPhone').val("");
+        }
+    });
 
-      $.fn.bfhphone.defaults = {
-        format: '',
-        number: '',
-        country: ''
-      };
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split('&');
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split('=');
+            if (decodeURIComponent(pair[0]) == variable) {
+                return decodeURIComponent(pair[1]);
+            }
+        }
+        console.log('Query variable %s not found', variable);
+    }
+        /* $.ajax({
+             type: "GET",
+             url: 'https://thedaywefightback.org/blank.html',
+             success: function(data, status, xhr) {
+                 var serverDateTime = (xhr.getResponseHeader('Date'));
+                 serverDate = new Date(serverDateTime);
+                 liveDate = new Date(Date.UTC(2014, 1, 12, 8, 0));
+                 var diff = liveDate - serverDate;
+                console.log(diff);
+             }
+         });*/
+
+        //         timeDiffObj = splitTime(diff);
+        //         updateTimeOnSite(timeDiffObj);
+
+        //         setInterval(function(){
+        //             diff -= 1000;
+        //             timeDiffObj = splitTime(diff);
+        //             updateTimeOnSite(timeDiffObj);
+        //         }, 1000);
+        //     }
+        // });
+
+    // setTimeout(function() {
+    //     $('#first-slide').fadeOut(50, function() {
+    //         $('#second-slide').fadeIn(50);
+    //         $('.footer').fadeIn(50);
+
+    //     })
+    // }, 1000);
+    /*
+    $('.call-form').on('submit', function(ev) {
+        var form = $(ev.currentTarget);
+
+        if(isValidPhoneNumber(phoneNumber)) {
+            window.open('call-tool.html', "Share on Facebook", "width=800,height=800");
+
+        } else {
+            phoneNumberEl.css('border', '1px solid #ff0000');
+            phoneNumberEl.jrumble({})
+            phoneNumberEl.trigger('startRumble');
+            demoTimeout = setTimeout(function(){phoneNumberEl.trigger('stopRumble');
+    phoneNumberEl.css('border', 'none');
+
+        }, 500)
+
+        }
+        return false;
+    })
+    $('.email-form').on('submit', function(ev) {
 
 
-      /* PHONE NO CONFLICT
-       * ========================== */
-
-      $.fn.bfhphone.noConflict = function () {
-        $.fn.bfhphone = old;
-        return this;
-      };
+        if(isValidEmail(userEmail)) {
+            window.open('email-tool.html', "Share on Facebook", "width=800,height=800");
+        } else {
 
 
-      /* PHONE DATA-API
-       * ============== */
 
-      $(document).ready( function () {
-        $('form input[type="text"].bfh-phone, form input[type="tel"].bfh-phone, span.bfh-phone').each(function () {
-          var $phone;
+        }
+        return false;
+    })*/
 
-          $phone = $(this);
+    function rumbleEl(el) {
+        el.css('border', '1px solid #ff0000');
+        el.jrumble({})
+        el.trigger('startRumble');
+        var demoTimeout = setTimeout(function(){el.trigger('stopRumble');
+            el.css('border', 'none');
+        }, 500) 
+    }
 
-          $phone.bfhphone($phone.data());
+    function isValidPhoneNumber(value) {
+        if (!value) return false;
+        var count = value.length;
+        return count == 10 || count == 11;
+    }
+    function isValidEmail(email) { 
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    } 
+    $('.call-form').on('submit', function(ev) {
+        var form = $(ev.currentTarget);
+
+        var phoneNumberEl = $('#userPhone', form);
+        var phoneNumber = phoneNumberEl.val().replace(/[^\d.]/g, '');
+
+        if(!isValidPhoneNumber(phoneNumber)){
+            rumbleEl(phoneNumberEl);
+        } else {
+            window.open('call-tool.html?phoneNumber=' + phoneNumber, "Share on Facebook", "width=800,height=800");
+        }
+        return false;
+    });
+    $('.email-form').on('submit', function(ev) {
+        var form = $(ev.currentTarget);
+
+        var userEmailEl = $('#userEmail', form);
+        var userEmail = userEmailEl.val();
+
+        if(!isValidEmail(userEmail)){
+            rumbleEl(userEmailEl);
+        } else {
+            window.open('email-tool.html?email=' + userEmail, "Share on Facebook", "width=800,height=800");
+        }
+        return false;
+    });
+
+    /*
+    $('.call-and-email-form').on('submit', function(ev) {
+        var form = $(ev.currentTarget);
+
+        var phoneNumberEl = $('#userPhone', form);
+        var phoneNumber = phoneNumberEl.val().replace(/[^\d.]/g, '');
+
+        var userEmailEl = $('#userEmail', form);
+        var userEmail = userEmailEl.val();
+
+
+        // Ugly thomas logic
+        if(userEmail === '' && phoneNumber === '') {
+            rumbleEl(phoneNumberEl);
+            rumbleEl(userEmailEl);
+            return false;
+        }
+        var errors = false;
+        if(userEmail !== '' && !isValidEmail(userEmail)){
+            errors = true;
+            rumbleEl(userEmailEl);
+        }
+        if(phoneNumber !== '' && !isValidPhoneNumber(phoneNumber)){
+            errors = true;
+            rumbleEl(phoneNumberEl);
+        }
+        if(errors) {
+            return false;
+        }
+        if(isValidEmail(userEmail) && isValidPhoneNumber(phoneNumber)) {
+            window.open('call-and-email.html', "Share on Facebook", "width=800,height=800");
+        } else if(isValidEmail(userEmail)) {
+            window.open('email-tool.html', "Share on Facebook", "width=800,height=800");
+        } else if(isValidPhoneNumber(phoneNumber)) {
+            window.open('call-tool.html', "Share on Facebook", "width=800,height=800");
+        }
+        return false;
+    });
+    */
+
+    // Call and email counters
+    if($('#email-count').length > 0) {
+        $.ajax('//dznh7un1y2etk.cloudfront.net/count', {
+            success: function(res, err) {
+            	var demo = new countUp("email-count", 0, res.count, 0, 2);
+        		demo.start();
+            },
+            dataType: 'jsonp',
+            cache         : true,
+            jsonpCallback : 'myCallback'
         });
-      });
+    }
+    if($('#call-count').length > 0) {
+        $.ajax('//dczwo4qqyofa4.cloudfront.net/count', {
+            success: function(res, err) {
+            	var demo = new countUp("call-count", 0, res.count, 0, 2);
+        		demo.start();
+            },
+            dataType: 'jsonp',
+            cache         : true,
+            jsonpCallback : 'ccca'
+        });
+    }
 
-    }(window.jQuery);
+    // Resize the scrolling text to fit
+
+    $(document).ready(function() {
+
+        var resizeText = function () {
+            // Standard height, for which the body font size is correct
+            var preferredWidth = 1060;
+            var preferredFontSize = 22;
+
+            var displayWidth = $(window).width();
+            if (displayWidth < preferredWidth) {
+            var scalePercentage = displayWidth / preferredWidth;
+            var newFontSize = preferredFontSize * scalePercentage;
+                newFontSize -= 2;
+            }
+            else {newFontSize = 21};
+            $(".scrolling-banner-text").css("font-size", newFontSize + 'px');
+        };
+
+        $(window).bind('resize', function() {
+            resizeText();
+        }).trigger('resize');
     });
 
-$('#userPhone').focusout(function(){
-    if  ($('#userPhone').val() == "+1 ") {
-        $('#userPhone').val("");
-    }
-});
+    /* Animating the bar above the logo */
 
-function getQueryVariable(variable) {
-    var query = window.location.search.substring(1);
-    var vars = query.split('&');
-    for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split('=');
-        if (decodeURIComponent(pair[0]) == variable) {
-            return decodeURIComponent(pair[1]);
-        }
-    }
-    console.log('Query variable %s not found', variable);
-}
-    /* $.ajax({
-         type: "GET",
-         url: 'https://thedaywefightback.org/blank.html',
-         success: function(data, status, xhr) {
-             var serverDateTime = (xhr.getResponseHeader('Date'));
-             serverDate = new Date(serverDateTime);
-             liveDate = new Date(Date.UTC(2014, 1, 12, 8, 0));
-             var diff = liveDate - serverDate;
-            console.log(diff);
-         }
-     });*/
+    var timeperslide = 9000; // time between each slide
+    var animationdelay = 1300; // time between each slide
+    var dividerdelay = 1300; // time between each slide
 
-    //         timeDiffObj = splitTime(diff);
-    //         updateTimeOnSite(timeDiffObj);
+    $(document).ready(function() {
 
-    //         setInterval(function(){
-    //             diff -= 1000;
-    //             timeDiffObj = splitTime(diff);
-    //             updateTimeOnSite(timeDiffObj);
-    //         }, 1000);
-    //     }
-    // });
+        dividerFill();
 
-// setTimeout(function() {
-//     $('#first-slide').fadeOut(50, function() {
-//         $('#second-slide').fadeIn(50);
-//         $('.footer').fadeIn(50);
+        setInterval(function(){
 
-//     })
-// }, 1000);
-/*
-$('.call-form').on('submit', function(ev) {
-    var form = $(ev.currentTarget);
+            var $visibleslide = $(".animated.flipInX")
+             $visibleslide.removeClass("flipInX").addClass("flipOutX");
+            dividerReset();
 
-    if(isValidPhoneNumber(phoneNumber)) {
-        window.open('call-tool.html', "Share on Facebook", "width=800,height=800");
-
-    } else {
-        phoneNumberEl.css('border', '1px solid #ff0000');
-        phoneNumberEl.jrumble({})
-        phoneNumberEl.trigger('startRumble');
-        demoTimeout = setTimeout(function(){phoneNumberEl.trigger('stopRumble');
-phoneNumberEl.css('border', 'none');
-
-    }, 500)
-
-    }
-    return false;
-})
-$('.email-form').on('submit', function(ev) {
-
-
-    if(isValidEmail(userEmail)) {
-        window.open('email-tool.html', "Share on Facebook", "width=800,height=800");
-    } else {
-
-
-
-    }
-    return false;
-})*/
-
-function rumbleEl(el) {
-    el.css('border', '1px solid #ff0000');
-    el.jrumble({})
-    el.trigger('startRumble');
-    var demoTimeout = setTimeout(function(){el.trigger('stopRumble');
-        el.css('border', 'none');
-    }, 500) 
-}
-
-function isValidPhoneNumber(value) {
-    if (!value) return false;
-    var count = value.length;
-    return count == 10 || count == 11;
-}
-function isValidEmail(email) { 
-    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-} 
-$('.call-form').on('submit', function(ev) {
-    var form = $(ev.currentTarget);
-
-    var phoneNumberEl = $('#userPhone', form);
-    var phoneNumber = phoneNumberEl.val().replace(/[^\d.]/g, '');
-
-    if(!isValidPhoneNumber(phoneNumber)){
-        rumbleEl(phoneNumberEl);
-    } else {
-        window.open('call-tool.html?phoneNumber=' + phoneNumber, "Share on Facebook", "width=800,height=800");
-    }
-    return false;
-});
-$('.email-form').on('submit', function(ev) {
-    var form = $(ev.currentTarget);
-
-    var userEmailEl = $('#userEmail', form);
-    var userEmail = userEmailEl.val();
-
-    if(!isValidEmail(userEmail)){
-        rumbleEl(userEmailEl);
-    } else {
-        window.open('email-tool.html?email=' + userEmail, "Share on Facebook", "width=800,height=800");
-    }
-    return false;
-});
-
-/*
-$('.call-and-email-form').on('submit', function(ev) {
-    var form = $(ev.currentTarget);
-
-    var phoneNumberEl = $('#userPhone', form);
-    var phoneNumber = phoneNumberEl.val().replace(/[^\d.]/g, '');
-
-    var userEmailEl = $('#userEmail', form);
-    var userEmail = userEmailEl.val();
-
-
-    // Ugly thomas logic
-    if(userEmail === '' && phoneNumber === '') {
-        rumbleEl(phoneNumberEl);
-        rumbleEl(userEmailEl);
-        return false;
-    }
-    var errors = false;
-    if(userEmail !== '' && !isValidEmail(userEmail)){
-        errors = true;
-        rumbleEl(userEmailEl);
-    }
-    if(phoneNumber !== '' && !isValidPhoneNumber(phoneNumber)){
-        errors = true;
-        rumbleEl(phoneNumberEl);
-    }
-    if(errors) {
-        return false;
-    }
-    if(isValidEmail(userEmail) && isValidPhoneNumber(phoneNumber)) {
-        window.open('call-and-email.html', "Share on Facebook", "width=800,height=800");
-    } else if(isValidEmail(userEmail)) {
-        window.open('email-tool.html', "Share on Facebook", "width=800,height=800");
-    } else if(isValidPhoneNumber(phoneNumber)) {
-        window.open('call-tool.html', "Share on Facebook", "width=800,height=800");
-    }
-    return false;
-});
-*/
-
-// Call and email counters
-if($('#email-count').length > 0) {
-    $.ajax('//dznh7un1y2etk.cloudfront.net/count', {
-        success: function(res, err) {
-        	var demo = new countUp("email-count", 0, res.count, 0, 2);
-    		demo.start();
-        },
-        dataType: 'jsonp',
-        cache         : true,
-        jsonpCallback : 'myCallback'
+            window.setTimeout(function(){
+            $visibleslide.addClass("hidden");
+            $visibleslide.removeClass("flipOutX");
+            var factslides = $visibleslide.parent().children();
+            var $nextslide = factslides.eq((factslides.index($visibleslide) + 1) % factslides.length);
+             $nextslide.removeClass("hidden").addClass("animated").addClass("flipInX");
+            },animationdelay)
+            window.setTimeout(function(){dividerFill();},dividerdelay);
+            
+        },timeperslide);
     });
-}
-if($('#call-count').length > 0) {
-    $.ajax('//dczwo4qqyofa4.cloudfront.net/count', {
-        success: function(res, err) {
-        	var demo = new countUp("call-count", 0, res.count, 0, 2);
-    		demo.start();
-        },
-        dataType: 'jsonp',
-        cache         : true,
-        jsonpCallback : 'ccca'
-    });
-}
 
-// Resize the scrolling text to fit
+    function dividerFill() {
+           $('.divider > div').animate({ width: "100%" }, timeperslide - animationdelay - dividerdelay);
+    }
 
-$(document).ready(function() {
+    function dividerReset() {
+            $('.divider > div').css("width", 0);
+    }
 
-    var resizeText = function () {
-        // Standard height, for which the body font size is correct
-        var preferredWidth = 1060;
-        var preferredFontSize = 22;
 
-        var displayWidth = $(window).width();
-        if (displayWidth < preferredWidth) {
-        var scalePercentage = displayWidth / preferredWidth;
-        var newFontSize = preferredFontSize * scalePercentage;
-            newFontSize -= 2;
-        }
-        else {newFontSize = 21};
-        $(".scrolling-banner-text").css("font-size", newFontSize + 'px');
-    };
 
-    $(window).bind('resize', function() {
-        resizeText();
-    }).trigger('resize');
 });
-
-/* Animating the bar above the logo */
-
-var timeperslide = 9000; // time between each slide
-var animationdelay = 1300; // time between each slide
-var dividerdelay = 1300; // time between each slide
-
-$(document).ready(function() {
-
-    dividerFill();
-
-    setInterval(function(){
-
-        var $visibleslide = $(".animated.flipInX")
-         $visibleslide.removeClass("flipInX").addClass("flipOutX");
-        dividerReset();
-
-        window.setTimeout(function(){
-        $visibleslide.addClass("hidden");
-        $visibleslide.removeClass("flipOutX");
-        var factslides = $visibleslide.parent().children();
-        var $nextslide = factslides.eq((factslides.index($visibleslide) + 1) % factslides.length);
-         $nextslide.removeClass("hidden").addClass("animated").addClass("flipInX");
-        },animationdelay)
-        window.setTimeout(function(){dividerFill();},dividerdelay);
-        
-    },timeperslide);
-});
-
-function dividerFill() {
-       $('.divider > div').animate({ width: "100%" }, timeperslide - animationdelay - dividerdelay);
-}
-
-function dividerReset() {
-        $('.divider > div').css("width", 0);
-}
-
-
-
-
 
 
 
