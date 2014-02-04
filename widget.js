@@ -46,7 +46,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
 
   // Do configuration
 
-  widget_config.show_style = widget_config.show_style || 'default';
+  widget_config.show_style = widget_config.show_style || 'defaultc';
   widget_config.debug = widget_config.debug || false;
   widget_config.campaign = widget_config.campaign || 'thedaywefightback';
   widget_config.cookieTimeout = widget_config.cookieTimeout || 172800;
@@ -141,7 +141,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         if(callback) { callback(); };
       },
       styles: {
-        default: {
+        defaultc: {
           campaign_container: 'background: #000;position:fixed;width:100%;bottom:0;left:0;z-index:100000; padding: 0;-webkit-box-sizing: border-box; -moz-box-sizing: border-box;',
           iframe_container: 'position: relative; height: 350px; width:100%; margin: 0; background: #000; ',
           iframe: 'width: 100%;height: 100%;border: 0;margin:0;padding:0; background: #000;',
