@@ -10,7 +10,7 @@ function countUp(a,b,c,d,e){for(var f=0,g=["webkit","moz","ms"],h=0;h<g.length&&
 /* Modified phone number formatting script */
 /* via BootstrapFormHelpers - https://github.com/vlamanna/BootstrapFormHelpers - Apache License, Version 2.0 */
 $(document).ready( function () {
-
+    $('input, textarea').placeholder();
     $('#userPhone').focus(function(){
         +function ($) {
 
