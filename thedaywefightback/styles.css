@@ -440,3 +440,14 @@ font-size:12px;
       position: absolute;
       top: 0; left: 0; bottom: 0; right: 0;
 }
+.org-logo-slider {
+	display: none;
+}
+@media (max-height: 60px) {
+	.footer-left {
+		display: none;
+	}
+	.org-logo-slider {
+		display: block;
+	}
+}

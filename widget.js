@@ -143,8 +143,9 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
       styles: {
         banner: {
           campaign_container: 'background: #000;position:fixed;width:100%;bottom:0;left:0;z-index:100000; padding: 0;-webkit-box-sizing: border-box; -moz-box-sizing: border-box;',
-          iframe_container: 'position: relative; height: 350px; width:100%; margin: 0; background: #000; ',
+          iframe_container: 'position: relative; height: 350px; width:100%; margin: 0; background: #000; z-index:1;',
           iframe: 'width: 100%;height: 100%;border: 0;margin:0;padding:0; background: #000;',
+          footerOverlay: 'cursor: pointer;position: absolute; bottom: 0; height: 50px; width:100%; margin: 0; background: none;z-index:2;',
           closeButton: 'border: 0;height: 28px;width: 28px;cursor: pointer;position: absolute;top:20px;right:20px;background: url("' + ASSET_URL +'imgs/close-button.png");'
         }
       },
@@ -176,6 +177,9 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         };
 
         // Append Iframe and campaign container to document
+        var footerOverlay = document.createElement('div');
+        footerOverlay.style.cssText = style.footerOverlay;
+        campaign_container.appendChild(footerOverlay);
         campaign_container.appendChild(iframe_container);
         document.body.appendChild(campaign_container);
 
@@ -199,15 +203,44 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         var closeButton = document.createElement('button');
         closeButton.style.cssText = style.closeButton;
         iframe_container.appendChild(closeButton);
+
+
+        if(this.minimized) {
+          closeButton.style.display = 'none';
+          footerOverlay.style.display = 'block';
+        } else {
+          closeButton.style.display = 'block';
+          footerOverlay.style.display = 'none';
+
+        };
         var that = this;
-        closeButton.onclick = function() {
+        footerOverlay.onclick = function () {
           if(!that.minimized) {
             iframe_container.style.height = "50px";
             that.minimized = true;
+            footerOverlay.style.display = 'block';
+            closeButton.style.display = 'none';
             setCookie(active_campaign.cookieName, '{"minimized": true}', COOKIE_TIMEOUT);
           } else {
             iframe_container.style.height = "350px";
             that.minimized = false;
+            footerOverlay.style.display = 'none';
+            closeButton.style.display = 'block';
+            setCookie(active_campaign.cookieName, '{"minimized": false}', COOKIE_TIMEOUT);
+          };
+        };
+        closeButton.onclick = function() {
+          if(!that.minimized) {
+            iframe_container.style.height = "50px";
+            that.minimized = true;
+            closeButton.style.display = 'none';
+            footerOverlay.style.display = 'block';
+            setCookie(active_campaign.cookieName, '{"minimized": true}', COOKIE_TIMEOUT);
+          } else {
+            iframe_container.style.height = "350px";
+            that.minimized = false;
+            closeButton.style.display = 'block';
+            footerOverlay.style.display = 'none';
             setCookie(active_campaign.cookieName, '{"minimized": false}', COOKIE_TIMEOUT);
           };
           active_campaign.hide(campaign_container);
