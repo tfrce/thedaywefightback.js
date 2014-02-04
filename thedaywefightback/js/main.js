@@ -452,25 +452,27 @@ $(document).ready( function () {
 
     $(document).ready(function() {
 
-        var resizeText = function () {
-            // Standard height, for which the body font size is correct
-            var preferredWidth = 1060;
-            var preferredFontSize = 22;
+    /* Resizing the text size based on width */
 
-            var displayWidth = $(window).width();
-            if (displayWidth < preferredWidth) {
-            var scalePercentage = displayWidth / preferredWidth;
-            var newFontSize = preferredFontSize * scalePercentage;
-                newFontSize -= 2;
-            }
-            else {newFontSize = 21};
-            $(".scrolling-banner-text").css("font-size", newFontSize + 'px');
-        };
+    //     var resizeText = function () {
+    //         // Standard height, for which the body font size is correct
+    //         var preferredWidth = 1060;
+    //         var preferredFontSize = 22;
 
-        $(window).bind('resize', function() {
-            resizeText();
-        }).trigger('resize');
-    });
+    //         var displayWidth = $(window).width();
+    //         if (displayWidth < preferredWidth) {
+    //         var scalePercentage = displayWidth / preferredWidth;
+    //         var newFontSize = preferredFontSize * scalePercentage;
+    //             newFontSize -= 2;
+    //         }
+    //         else {newFontSize = 21};
+    //         $(".scrolling-banner-text").css("font-size", newFontSize + 'px');
+    //     };
+
+    //     $(window).bind('resize', function() {
+    //         resizeText();
+    //     }).trigger('resize');
+    // });
 
     /* Animating the bar above the logo */
 
@@ -479,11 +481,8 @@ $(document).ready( function () {
     var dividerdelay = 1300; // time between each slide
 
     $(document).ready(function() {
-
         dividerFill();
-
         setInterval(function(){
-
             var $visibleslide = $(".animated.flipInX")
              $visibleslide.removeClass("flipInX").addClass("flipOutX");
             dividerReset();
@@ -499,17 +498,16 @@ $(document).ready( function () {
             
         },timeperslide);
     });
-
     function dividerFill() {
            $('.divider > div').animate({ width: "100%" }, timeperslide - animationdelay - dividerdelay);
     }
-
     function dividerReset() {
             $('.divider > div').css("width", 0);
     }
 
     var greeting = getQueryVariable('greeting');
     $('.greeting').text(greeting);
+
 
 
 });

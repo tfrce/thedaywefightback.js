@@ -153,17 +153,29 @@ a {
 .scrolling-banner-text {
     color: #fff;
     font-size:21px;
-    line-height:1.4;
+    line-height:1.1;
     width: 100%;
     text-align:center;
     height: 50px;
 }
-
+.scrolling-banner-text span {
+  display:inline-block;
+  font-weight: 700;
+  font-style: italic;
+  font-size:13px;
+  background-color: #F2C45A;
+  color: #000;
+  padding: 4px 5px 2px 5px;
+  position: relative;
+  bottom: 2px;
+  }
+.scrolling-banner-text span:hover {
+  background-color: #262626;
+  color: #F2C45A;
+}
 
 @media (max-width: 900px){
     .scrolling-banner-text {
-        font-size: 20px;
-        padding-top: 8px;
     }
 }
 
@@ -172,7 +184,7 @@ a {
 }
 .leftsidecontainer .divider {
     background: #fff;
-    margin-top: 22px;
+    margin-top: 35px;
     height: 1px;
 }
 .leftsidecontainer .divider div {
@@ -182,7 +194,7 @@ a {
   z-index:100;
 }
 .leftsidecontainer .logotext {
-    margin-top:25px;
+    margin-top:15px;
 }
 
 /* =====================================*/
@@ -237,16 +249,12 @@ a {
     letter-spacing: 1px;
     text-align: center;
   }
-
   .rightsidecontainer h3 {
     font-size:17px;
     letter-spacing:1px;
     text-align: center;
   }
-
-
 }
-
 
 /* =====================================*/
 /* Call and email forms */
