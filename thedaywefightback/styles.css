@@ -158,7 +158,7 @@ a {
     text-align:center;
     height: 50px;
 }
-.scrolling-banner-text span {
+.scrolling-banner-text span.fact {
   display:inline-block;
   font-weight: 700;
   font-style: italic;
@@ -169,7 +169,7 @@ a {
   position: relative;
   bottom: 2px;
   }
-.scrolling-banner-text span:hover {
+.scrolling-banner-text span.fact:hover {
   background-color: #262626;
   color: #F2C45A;
 }
