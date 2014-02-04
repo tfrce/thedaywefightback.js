@@ -147,7 +147,8 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
           iframe_container: 'position: relative; height: 350px; width:100%; margin: 0; background: #000; z-index:1;',
           iframe: 'width: 100%;height: 100%;border: 0;margin:0;padding:0; background: #000;',
           footerOverlay: 'cursor: pointer;position: absolute; bottom: 0; height: 50px; width:100%; margin: 0; background: none;z-index:2;',
-          closeButton: 'border: 0;height: 28px;width: 28px;cursor: pointer;position: absolute;top:20px;right:20px;background: url("' + ASSET_URL +'imgs/close-button.png");'
+          closeButton: 'border: 0;height: 26px;width: 26px;cursor: pointer;position: absolute;top:20px;right:20px;background: url("' + ASSET_URL +'imgs/close-button.png");',
+          openButton: 'border: 0;height: 26px;width: 26px;cursor: pointer;position: absolute;bottom:10px;right:20px;background: url("' + ASSET_URL +'imgs/open-button.png");'
         }
       },
       minimized: false,
@@ -204,12 +205,17 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         var closeButton = document.createElement('button');
         closeButton.style.cssText = style.closeButton;
         iframe_container.appendChild(closeButton);
-
+        // Setup a open button
+        var openButton = document.createElement('button');
+        openButton.style.cssText = style.openButton;
+        iframe_container.appendChild(openButton);
 
         if(this.minimized) {
+          openButton.style.display = 'block';
           closeButton.style.display = 'none';
           footerOverlay.style.display = 'block';
         } else {
+          openButton.style.display = 'none';
           closeButton.style.display = 'block';
           footerOverlay.style.display = 'none';
 
@@ -221,11 +227,13 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
             that.minimized = true;
             footerOverlay.style.display = 'block';
             closeButton.style.display = 'none';
+            openButton.style.display = 'block';
             setCookie(active_campaign.cookieName, '{"minimized": true}', COOKIE_TIMEOUT);
           } else {
             iframe_container.style.height = "350px";
             that.minimized = false;
             footerOverlay.style.display = 'none';
+            openButton.style.display = 'none';
             closeButton.style.display = 'block';
             setCookie(active_campaign.cookieName, '{"minimized": false}', COOKIE_TIMEOUT);
           };
@@ -234,6 +242,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
           if(!that.minimized) {
             iframe_container.style.height = "50px";
             that.minimized = true;
+            openButton.style.display = 'block';
             closeButton.style.display = 'none';
             footerOverlay.style.display = 'block';
             setCookie(active_campaign.cookieName, '{"minimized": true}', COOKIE_TIMEOUT);
@@ -241,6 +250,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
             iframe_container.style.height = "350px";
             that.minimized = false;
             closeButton.style.display = 'block';
+            openButton.style.display = 'none';
             footerOverlay.style.display = 'none';
             setCookie(active_campaign.cookieName, '{"minimized": false}', COOKIE_TIMEOUT);
           };
