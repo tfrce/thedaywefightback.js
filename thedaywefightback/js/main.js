@@ -513,8 +513,8 @@ $(document).ready( function () {
     $('.greeting').text(greeting);
     var src = $('.switch-locale').attr('href')
     $('.switch-locale').attr('href', src + '?greeting=' + greeting);
-});
-
+    
+    })
 });
 
 
