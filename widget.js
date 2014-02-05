@@ -5,13 +5,13 @@
   | || (_| \__ \   <|  _| (_) | | | (_|  __/
    \__\__,_|___/_|\_\_|  \___/|_|  \___\___|
 
-  ===============================================================================
+  =============================================================================
 
-  A generic widget include script which we will use to show further campaigns etc
+  A generic widget include script which we will use to show further campaigns
 
   <thomasalwyndavis@gmail.com> or http://taskforce.is for support
 
-  ===============================================================================
+  =============================================================================
 
   @source: https://raw.github.com/tfrce/project-megaphone/gh-pages/widget.js
 
@@ -42,7 +42,7 @@
 // Wrap widget in function to protect scope
 var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
 
-(function(window, widget_config){
+(function (window, widget_config) {
   // Do configuration
   widget_config.show_style = widget_config.show_style || 'banner';
   widget_config.greeting = widget_config.greeting || 'Dear Internet';
@@ -55,10 +55,10 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
   widget_config.overrideLocation = widget_config.overrideLocation || false;
 
   // Setup
-  var active_campaign;
+  var activeCampaign;
   var ASSET_URL, COOKIE_TIMEOUT;
 
-  if(widget_config.debug) {
+  if (widget_config.debug) {
     ASSET_URL = '../thedaywefightback/';
     COOKIE_TIMEOUT = 200000;
   } else {
@@ -67,37 +67,37 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
   }
 
   // Cookie helpers, taken from w3schools
-  function setCookie(c_name,value,seconds) {
-    var exdate = new Date(new Date().getTime() + seconds*1000);
-    var c_value=escape(value) + ((seconds==null) ? "" : "; expires="+exdate.toUTCString());
-    document.cookie=c_name + "=" + c_value;
+  function setCookie(c_name, value, seconds) {
+    var exdate = new Date(new Date().getTime() + seconds * 1000);
+    var c_value = escape(value) + ((seconds === null) ? "" : "; expires=" + exdate.toUTCString());
+    document.cookie = c_name + "=" + c_value;
   }
 
   function getCookie(c_name) {
     var c_value = document.cookie;
     var c_start = c_value.indexOf(" " + c_name + "=");
-    if (c_start == -1) { c_start = c_value.indexOf(c_name + "="); };
-    if (c_start == -1) {
+    if (c_start === -1) { c_start = c_value.indexOf(c_name + "="); }
+    if (c_start === -1) {
       c_value = null;
     } else {
       c_start = c_value.indexOf("=", c_start) + 1;
       var c_end = c_value.indexOf(";", c_start);
-      if (c_end == -1) { c_end = c_value.length; }
-      c_value = unescape(c_value.substring(c_start,c_end));
+      if (c_end === -1) { c_end = c_value.length; }
+      c_value = unescape(c_value.substring(c_start, c_end));
     }
     return c_value;
   }
 
   // Define checks
   var checks = {
-    correctDate: function(callback) {
+    correctDate: function (callback) {
       window.tdwfbCheckDate = callback;
       var script = document.createElement('script');
       script.src = '//dznh7un1y2etk.cloudfront.net/time?callback=tdwfbCheckDate';
       document.getElementsByTagName('head')[0].appendChild(script);
       window.tdwfbDateCallBackFailSafe = setTimeout(function () {
         // TODO - Potentially better logic for this fallback
-        if(new Date().getDate() === 3) {
+        if (new Date().getDate() === 3) {
           callback({thedaywefightback: true});
         } else {
           callback({thedaywefightback: false});
@@ -127,20 +127,20 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
           iframe_container: 'position: relative; height: 350px; width:100%; margin: 0; background: #000; z-index:1;',
           iframe: 'width: 100%;height: 100%;border: 0;margin:0;padding:0; background: #000;',
           footerOverlay: 'cursor: pointer;position: absolute; bottom: 0; height: 50px; width:100%; margin: 0; background: none;z-index:2;',
-          closeButton: 'border: 0;height: 26px;width: 26px;cursor: pointer;position: absolute;top:20px;right:20px;background: url("' + ASSET_URL +'imgs/close-button.png");',
-          mobileCloseButton: 'border: 0;height: 20px;width: 20px;cursor: pointer;position: absolute;top:10px;right:10px;background: url("' + ASSET_URL +'imgs/close-button-mobile.png");',
-          openButton: 'border: 0;height: 26px;width: 26px;cursor: pointer;position: absolute;bottom:10px;right:20px;background: url("' + ASSET_URL +'imgs/open-button.png");'
+          closeButton: 'border: 0;height: 26px;width: 26px;cursor: pointer;position: absolute;top:20px;right:20px;background: url("' + ASSET_URL + 'imgs/close-button.png");',
+          mobileCloseButton: 'border: 0;height: 20px;width: 20px;cursor: pointer;position: absolute;top:10px;right:10px;background: url("' + ASSET_URL + 'imgs/close-button-mobile.png");',
+          openButton: 'border: 0;height: 26px;width: 26px;cursor: pointer;position: absolute;bottom:10px;right:20px;background: url("' + ASSET_URL + 'imgs/open-button.png");'
         }
       },
       minimized: false,
       show: function (options) {
-        var cookie = getCookie(active_campaign.cookieName);
-        if(widget_config.startAsMinimized && cookie === null) {
+        var cookie = getCookie(activeCampaign.cookieName);
+        if (widget_config.startAsMinimized && cookie === null) {
           this.minimized = true;
         }
-        var style = active_campaign.styles[active_campaign.config.show_style];
+        var style = activeCampaign.styles[activeCampaign.config.show_style];
 
-        if(style.overlay) {
+        if (style.overlay) {
           var overlay = document.createElement('div');
           overlay.style.cssText = style.overlay;
           document.body.appendChild(overlay);
@@ -160,18 +160,17 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
             d = document,
             e = d.documentElement,
             g = d.getElementsByTagName('body')[0],
-            x = w.innerWidth || e.clientWidth || g.clientWidth,
-            y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+            x = w.innerWidth || e.clientWidth || g.clientWidth;
 
-        if(x< 767) {
-          if(!this.minimized) {
+        if (x< 767) {
+          if (!this.minimized) {
             iframe_container.style.height = "100px";
           } else {
             iframe_container.style.height = "0px";
           }
         } else {
           // Find out if user has minimized via cookie
-          if(this.minimized) {
+          if (this.minimized) {
             iframe_container.style.height = "50px";
           } else {
             iframe_container.style.height = "350px";
@@ -190,27 +189,27 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         var isoCode = options.location.country &&
           options.location.country.iso_code || 'unknown';
         var firstTime = true;
-        if(cookie !== null) {
+        if (cookie !== null) {
           firstTime = false;
         }
         // a Hack, if mobile set firsttime to false so splash page never shows
-        if(x < 767) {
+        if (x < 767) {
           firstTime = false;
         }
-        if(isoCode === 'us' ||
+        if (isoCode === 'us' ||
             widget_config.overrideLocation === 'usa') {
           // Set the source of the iframe to the configured show_style type
-          iframe.src = ASSET_URL + active_campaign.config.show_style +
+          iframe.src = ASSET_URL + activeCampaign.config.show_style +
             '.html?firstTime=' + firstTime + '&callOnly=' +
             widget_config.callOnly + '&iso=' + isoCode + '&greeting=' +
             widget_config.greeting;
         } else if (isoCode !== 'us' ||
             widget_config.overrideLocation === 'usa') {
-          iframe.src = ASSET_URL + active_campaign.config.show_style +
+          iframe.src = ASSET_URL + activeCampaign.config.show_style +
             '_international.html?firstTime=' + firstTime + '&iso=' + isoCode +
             '&greeting=' + widget_config.greeting;
         } else {
-          iframe.src = ASSET_URL + active_campaign.config.show_style +
+          iframe.src = ASSET_URL + activeCampaign.config.show_style +
             '.html?firstTime=' + firstTime + '&callOnly=' +
             widget_config.callOnly + '&iso=' + isoCode + '&greeting=' +
             widget_config.greeting;
@@ -218,7 +217,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         iframe_container.appendChild(iframe);
         var that = this;
 
-        if(x > 767) {
+        if (x > 767) {
 
           // Setup a close button
           var closeButton = document.createElement('button');
@@ -230,7 +229,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
           iframe_container.appendChild(openButton);
 
 
-          if(this.minimized) {
+          if (this.minimized) {
             openButton.style.display = 'block';
             closeButton.style.display = 'none';
             footerOverlay.style.display = 'block';
@@ -239,87 +238,88 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
             closeButton.style.display = 'block';
             footerOverlay.style.display = 'none';
           }
+
           var toggleDisplay = function () {
-            if(!that.minimized) {
+            if (!that.minimized) {
               iframe_container.style.height = "50px";
               that.minimized = true;
               footerOverlay.style.display = 'block';
               closeButton.style.display = 'none';
               openButton.style.display = 'block';
-              setCookie(active_campaign.cookieName, '{"minimized": true}', COOKIE_TIMEOUT);
+              setCookie(activeCampaign.cookieName, '{"minimized": true}', COOKIE_TIMEOUT);
             } else {
               iframe_container.style.height = "350px";
               that.minimized = false;
               footerOverlay.style.display = 'none';
               openButton.style.display = 'none';
               closeButton.style.display = 'block';
-              setCookie(active_campaign.cookieName, '{"minimized": false}', COOKIE_TIMEOUT);
-            };
+              setCookie(activeCampaign.cookieName, '{"minimized": false}', COOKIE_TIMEOUT);
+            }
           };
 
           footerOverlay.onclick = toggleDisplay;
-          closeButton.onclick = toggleDisplay
+          closeButton.onclick = toggleDisplay;
         } else {
           var mobileCloseButton = document.createElement('button');
           mobileCloseButton.style.cssText = style.mobileCloseButton;
           iframe_container.appendChild(mobileCloseButton);
 
-          mobileCloseButton.onclick = function() {
-              setCookie(active_campaign.cookieName, '{"minimized": true}', COOKIE_TIMEOUT);
-              document.body.removeChild(campaign_container);
-          }
+          mobileCloseButton.onclick = function () {
+            setCookie(activeCampaign.cookieName, '{"minimized": true}', COOKIE_TIMEOUT);
+            document.body.removeChild(campaign_container);
+          };
         }
       },
 
       init: function (config) {
-        active_campaign.config = config;
+        activeCampaign.config = config;
 
-        var cookie = getCookie(active_campaign.cookieName);
-        if(cookie) {
+        var cookie = getCookie(activeCampaign.cookieName);
+
+        if (cookie) {
           var cData = JSON.parse(cookie);
           this.minimized = cData.minimized;
         }
 
         checks.correctDate(function (response) {
           clearTimeout(window.tdwfbDateCallBackFailSafe);
-          if(response && (response.thedaywefightback || widget_config.disableDate || widget_config.debug)) {
+          if (response && (response.thedaywefightback ||
+              widget_config.disableDate || widget_config.debug)) {
             checks.location(function (location) {
               window.tdwfbLocation = location;
               clearTimeout(window.tdwfbLocationCallBackFailSafe);
-              active_campaign.show({location: location, widget_config: widget_config});
+              activeCampaign.show({location: location, widget_config: widget_config});
             });
           }
         });
+
         var that = this;
-        window.onresize = function(event) {
-          if(window.tdwfbResizeCallback) {
+
+        window.onresize = function () {
+          if (window.tdwfbResizeCallback) {
             clearTimeout(window.tdwfbResizeCallback);
-
           }
+
           window.tdwfbResizeCallback = setTimeout(function () {
-            var w = window,
-              d = document,
-              e = d.documentElement,
-              g = d.getElementsByTagName('body')[0],
-              x = w.innerWidth || e.clientWidth || g.clientWidth,
-              y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+            if (window.tdwfbCampaignContainer) {
               document.body.removeChild(window.tdwfbCampaignContainer);
-              that.show({location: window.tdwfbLocation, widget_config: widget_config});
+            }
 
+            that.show({
+              location: window.tdwfbLocation,
+              widget_config: widget_config
+            });
           }, 50);
-
         };
       }
     }
-  }
+  };
 
   // Load campaign if exist
-
-  if(typeof campaign[widget_config.campaign] !== 'undefined') {
-    active_campaign = campaign[widget_config.campaign];
-    active_campaign.init(widget_config);
+  if (typeof campaign[widget_config.campaign] !== 'undefined') {
+    activeCampaign = campaign[widget_config.campaign];
+    activeCampaign.init(widget_config);
   } else {
     return false;
   }
-
 })(window, _tfrce_config);
