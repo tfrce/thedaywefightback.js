@@ -83,25 +83,33 @@
   (function() {
 
       var referalMap = {
-          'fp': {
-              name: 'Free Press',
-              policy: 'http://www.freepress.net/privacy-copyright'
+          'org': {
+              name: 'Open Rights Group',
+              policy: 'https://www.openrightsgroup.org/privacy/'
           },
-          'fftf': {
-              name: 'Fight for the Future',
-              policy: 'http://www.fightforthefuture.org/privacy/'
+          'pi': {
+              name: 'Privacy International',
+              policy: 'https://www.privacyinternational.org/privacy-and-cookies-policy'
           },
           'eff': {
               name: 'EFF',
               policy: 'https://www.eff.org/policy'
           },
-          'an': {
-              name: 'Access Now',
-              policy: 'https://www.accessnow.org/pages/privacy-policy'
+          'dc': {
+              name: 'Digital Courage',
+              policy: 'http://digitalcourage.de/ueber-uns/datenschutz-bei-digitalcourage'
           },
-          'dp': {
-              name: 'Demand Progress',
-              policy: 'http://www.demandprogress.org/privacy/'
+          'dg': {
+              name: 'Digitale Gesellschaft',
+              policy: 'https://digitalegesellschaft.de/uber-uns/datenschutzerklaerung/'
+          },
+          'sd': {
+              name: 'Share Defense',
+              policy: 'http://www.shareconference.net/sh/politika-privatnosti'
+          },
+          'oa': {
+              name: 'Oficina Antivigilancia',
+              policy: 'http://www.antivigilancia.tk/wiki/politica'
           },
           'om': {
               name: 'Open Media',
