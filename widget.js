@@ -49,7 +49,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
   widget_config.show_style = widget_config.show_style || 'banner';
   widget_config.greeting = widget_config.greeting || 'Dear Internet';
   widget_config.debug = widget_config.debug || false;
-  widget_config.callOnly = widget_config.callOnly || true;
+  widget_config.callOnly = widget_config.callOnly || false;
   widget_config.startAsMinimized = widget_config.startAsMinimized || false;
   widget_config.disableDate = widget_config.disableDate || false;
   widget_config.campaign = widget_config.campaign || 'thedaywefightback';
@@ -153,6 +153,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
 
         // Create a container
         var campaign_container = document.createElement('div');
+        window.tdwfbCampaignContainer = campaign_container;
         campaign_container.style.cssText = style.campaign_container;
 
         // Create a container for the iframe so we can do padding and border-radius properly
@@ -285,11 +286,24 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
           clearTimeout(window.tdwfbDateCallBackFailSafe);
           if(response && (response.thedaywefightback || widget_config.disableDate || widget_config.debug)) {
             checks.location(function (location) {
+              window.tdwfbLocation = location;
               clearTimeout(window.tdwfbLocationCallBackFailSafe);
               active_campaign.show({location: location, widget_config: widget_config});
             });
           }
         });
+        var that = this;
+        window.onresize = function(event) {
+          var w = window,
+            d = document,
+            e = d.documentElement,
+            g = d.getElementsByTagName('body')[0],
+            x = w.innerWidth || e.clientWidth || g.clientWidth,
+            y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+            document.body.removeChild(window.tdwfbCampaignContainer);
+            that.show({location: window.tdwfbLocation, widget_config: widget_config});        
+
+        };
       }
     }
   }
