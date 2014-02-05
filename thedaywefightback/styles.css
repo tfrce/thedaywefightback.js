@@ -53,7 +53,7 @@
     font-weight: 700;
     font-style: normal;
 }
-@media screen and (-webkit-min-device-pixel-ratio:0) {
+/*@media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
       font-family: 'brandon_grotesque';
       src: url('fonts/brandongrotesque-regular-webfont.svg#brandon_grotesque_regularRg') format('svg');
@@ -78,7 +78,7 @@
       font-weight: 700;
       font-style: normal;
   }
-}
+}*/
 
 html {
     overflow: hidden;
