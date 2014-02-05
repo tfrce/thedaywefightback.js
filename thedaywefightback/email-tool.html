@@ -7,6 +7,7 @@
 	<meta content="" name="description"><!-- Bootstrap core CSS -->
 
 	<link href="css/call-email-tool.css" rel="stylesheet" type="text/css">
+
 	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
 	<script type='text/javascript' src="js/modernizr.min.js"></script>
@@ -77,15 +78,11 @@ I'm also urging you to oppose S. 1631, the so-called FISA Improvements Act. This
 				<li><h4>Protect encryption standards.</h4> The NSA is weakening encryption standards, attacking technology companies, and preventing security holes from being fixed. This must stop.</li>
 			</ol>			
 		</aside>
-		
-		
-		
-		
 	</form>
 	
 	<footer>
 	  <div>
-	  	<p>If for any reason we’re unable to deliver your email, one of the coalition members may deliver it in person <a href="#">(read more)</a>.</p>
+	  	<p>If for any reason we’re unable to deliver your email, one of the coalition members may deliver it in person <span href="#" class="popovertext" data-container="body" data-toggle="popover" id="readmoreaboutdelivery" data-placement="top" data-content="Unfortunately members of congress don’t publish their emails, so delivering messages to them is tricky. Instead, each member has his or her own “contact” page with various form fields. To deliver messages, we rely on code originally written by internet activist Aaron Swartz that fills those contact pages. Unfortunately, sometimes the messages don’t go through. So, your messages may be delivered by hand by one of the members of The Day We Fight Back coalition. That organization will only hold your personal information for as long as is necessary to deliver your message, and will delete the information after that. You won’t be signed up for their email list unless you opted into receiving emails.">(read more)</span>.</p>
 	  	<i class="i i-logo"></i>
 	  </div>
 	</footer>
@@ -93,8 +90,10 @@ I'm also urging you to oppose S. 1631, the so-called FISA Improvements Act. This
 	
 	<script src="js/easyXDM.min.js" type="text/javascript"></script>
 	<script src="js/main.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script>
-	document.body.style.overflow = 'scroll';
+		$('#readmoreaboutdelivery').popover();
+		document.body.style.overflow = 'scroll';
 		function getQueryVariable(variable) {
 				var query = window.location.search.substring(1);
 				var vars = query.split('&');
