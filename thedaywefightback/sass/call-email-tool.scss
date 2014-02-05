@@ -481,7 +481,7 @@ footer {
 		margin-top: 1.5em;
 	}
 	#social {
-		padding-top: 2.5em;
+		padding-top: 2em;
 		margin-bottom: 1em;
 		text-align: center;
 		@include clearfix;
@@ -502,7 +502,7 @@ footer {
 		    font-style: italic;
 		    font-weight: bold;
 		    border-radius: 1px;
-		    top: -39px;
+		    top: -33px;
 		    color: #333;
 		    content: attr(count);
 		    display: block;
@@ -510,6 +510,7 @@ footer {
 		    margin-left: -32px;
 		    width: 54px;
 		    padding: 5px;
+		    line-height: 1em;
 		    text-align: center;
 		    position: absolute;
 		    white-space: nowrap;
@@ -519,12 +520,12 @@ footer {
 		    border: 1px solid $yellow;
 		    border-color: #111 transparent;
 		    border-color:$yellow transparent;
-		    border-width: .4em .4em 0 .4em;
-		    top: -7px;
+		    border-width: .2em .2em 0 .2em;
+		    top: -8px;
 		    content: "";
 		    display: block;
 		    left: 50%;
-		    margin-left: -6px;
+		    margin-left: -.2em;
 		    position: absolute;
 		}
 		.sicon {
