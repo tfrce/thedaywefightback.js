@@ -106,18 +106,6 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         }
       }, 5000);
     },
-    isMobile: function() {
-      var ismobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
-      return ismobile ? false : true;
-    },
-    hasSeenCampaign: function (cookieName) {
-      var cookie = getCookie(cookieName)
-      if(cookie === null) {
-        return false;
-      } else {
-        return true
-      }
-    },
     location: function (callback) {
       window.tdwfbParseLocation = callback;
       var script = document.createElement('script');
@@ -135,12 +123,6 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
   var campaign = {
     thedaywefightback: {
       cookieName: 'thedaywefightback_hasseen',
-      startDate: new Date(2013, 9, 15, 0),
-      endDate: new Date(2013, 9, 26, 12),
-      hide: function (el, callback) {
-        //document.body.removeChild(el);
-        if(callback) { callback(); };
-      },
       styles: {
         banner: {
           campaign_container: 'background: #000;position:fixed;width:100%;bottom:0;left:0;z-index:100000; padding: 0;-webkit-box-sizing: border-box; -moz-box-sizing: border-box;',
@@ -162,7 +144,6 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
           overlay.style.cssText = style.overlay;
           document.body.appendChild(overlay);
         }
-
 
         // Create a container
         var campaign_container = document.createElement('div');
@@ -199,6 +180,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         footerOverlay.style.cssText = style.footerOverlay;
         campaign_container.appendChild(footerOverlay);
         campaign_container.appendChild(iframe_container);
+
         document.body.appendChild(campaign_container);
 
 
@@ -219,98 +201,69 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
 
         if(x > 790) {
 
-        // Setup a close button
-        var closeButton = document.createElement('button');
-        closeButton.style.cssText = style.closeButton;
-        iframe_container.appendChild(closeButton);
-        // Setup a open button
-        var openButton = document.createElement('button');
-        openButton.style.cssText = style.openButton;
-        iframe_container.appendChild(openButton);
+          // Setup a close button
+          var closeButton = document.createElement('button');
+          closeButton.style.cssText = style.closeButton;
+          iframe_container.appendChild(closeButton);
+          // Setup a open button
+          var openButton = document.createElement('button');
+          openButton.style.cssText = style.openButton;
+          iframe_container.appendChild(openButton);
 
 
-        if(this.minimized) {
-          openButton.style.display = 'block';
-          closeButton.style.display = 'none';
-          footerOverlay.style.display = 'block';
+          if(this.minimized) {
+            openButton.style.display = 'block';
+            closeButton.style.display = 'none';
+            footerOverlay.style.display = 'block';
+          } else {
+            openButton.style.display = 'none';
+            closeButton.style.display = 'block';
+            footerOverlay.style.display = 'none';
+
+          };
+          var toggleDisplay = function () {
+            if(!that.minimized) {
+              iframe_container.style.height = "50px";
+              that.minimized = true;
+              footerOverlay.style.display = 'block';
+              closeButton.style.display = 'none';
+              openButton.style.display = 'block';
+              setCookie(active_campaign.cookieName, '{"minimized": true}', COOKIE_TIMEOUT);
+            } else {
+              iframe_container.style.height = "350px";
+              that.minimized = false;
+              footerOverlay.style.display = 'none';
+              openButton.style.display = 'none';
+              closeButton.style.display = 'block';
+              setCookie(active_campaign.cookieName, '{"minimized": false}', COOKIE_TIMEOUT);
+            };
+          };
+
+          footerOverlay.onclick = toggleDisplay;
+          closeButton.onclick = toggleDisplay
+          
         } else {
-          openButton.style.display = 'none';
-          closeButton.style.display = 'block';
-          footerOverlay.style.display = 'none';
 
-        };
-        footerOverlay.onclick = function () {
-          if(!that.minimized) {
-            iframe_container.style.height = "50px";
-            that.minimized = true;
-            footerOverlay.style.display = 'block';
-            closeButton.style.display = 'none';
-            openButton.style.display = 'block';
-            setCookie(active_campaign.cookieName, '{"minimized": true}', COOKIE_TIMEOUT);
-          } else {
-            iframe_container.style.height = "350px";
-            that.minimized = false;
-            footerOverlay.style.display = 'none';
-            openButton.style.display = 'none';
-            closeButton.style.display = 'block';
-            setCookie(active_campaign.cookieName, '{"minimized": false}', COOKIE_TIMEOUT);
-          };
-        };
-        closeButton.onclick = function() {
-          if(!that.minimized) {
-            iframe_container.style.height = "50px";
-            that.minimized = true;
-            openButton.style.display = 'block';
-            closeButton.style.display = 'none';
-            footerOverlay.style.display = 'block';
-            setCookie(active_campaign.cookieName, '{"minimized": true}', COOKIE_TIMEOUT);
-          } else {
-            iframe_container.style.height = "350px";
-            that.minimized = false;
-            closeButton.style.display = 'block';
-            openButton.style.display = 'none';
-            footerOverlay.style.display = 'none';
-            setCookie(active_campaign.cookieName, '{"minimized": false}', COOKIE_TIMEOUT);
-          };
-          active_campaign.hide(campaign_container);
-          if(style.overlay) {
-            document.body.removeChild(overlay);
+          var mobileCloseButton = document.createElement('button');
+          mobileCloseButton.style.cssText = style.mobileCloseButton;
+          iframe_container.appendChild(mobileCloseButton);
+
+          mobileCloseButton.onclick = function() {
+              setCookie(active_campaign.cookieName, '{"minimized": true}', COOKIE_TIMEOUT);
+              document.body.removeChild(campaign_container);        
           }
         }
-      } else {
-
-        var mobileCloseButton = document.createElement('button');
-        mobileCloseButton.style.cssText = style.mobileCloseButton;
-        iframe_container.appendChild(mobileCloseButton);
-
-        mobileCloseButton.onclick = function() {
-            setCookie(active_campaign.cookieName, '{"minimized": true}', COOKIE_TIMEOUT);
-            that.mobileHide(campaign_container);
-        }
-      }
     },
 
-      mobileHide: function (el) {
-        document.body.removeChild(el);        
-
-      },
       init: function (config) {
         active_campaign.config = config;
-        // Check cookie for this campaign
-        if(checks.hasSeenCampaign(active_campaign.cookieName)) {
-          //return false;
-        }
+
         var cookie = getCookie(active_campaign.cookieName);
         if(cookie) {
           var cData = JSON.parse(cookie);
           this.minimized = cData.minimized;
         }
 
-
-        // Check if is mobile
-        if(!checks.isMobile()){
-          //return false;
-        }
         checks.correctDate(function (response) {
           clearTimeout(window.tdwfbDateCallBackFailSafe);
           if(response && (response.thedaywefightback || widget_config.debug)) {
