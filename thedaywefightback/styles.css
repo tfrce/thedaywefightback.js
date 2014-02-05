@@ -408,9 +408,15 @@ font-size:12px;
   color: #F2C45A;
 }
 
+/* 
+	Call Only
+*/
 
 .phone-only-container {
 	padding: 0 20px;
+}
+.rightside .call-form {
+	margin-top:60px;
 }
 
 .email-instead {
@@ -418,17 +424,15 @@ font-size:12px;
 	padding-top:11px;
 }
 
-.phone-only-container input[type="submit"] {
-	color:white;
-	background:transparent;
-	text-align:left;
-	padding-left:0;
-	font-style: italic;
-	font-size:17px;
+.twilio-privacy {
+	margin-top:5px;
 }
 
-.phone-only-container input[type="submit"]:hover {
-	background: none;
+.phone-only-container input[type="submit"] {
+	font-style: italic;
+	font-size:16px;
+	padding-top:5px;
+	height:30px;
 }
 
 .phone-only-container a {
@@ -441,9 +445,9 @@ font-size:12px;
 }
 
 .full-input {
-	margin-top:22px !important;
 	width:100%;
 }
+
 
 
 /*
