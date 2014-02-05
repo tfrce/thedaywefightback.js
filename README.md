@@ -51,7 +51,7 @@ You can choose a different banner style and customize the preferences using a ja
   // The defaults are set below
   var tdwfb_config = {
     greeting: 'Dear Internet Users', // Sets the salutation at the top left.
-    debug_mode: false // If true, the banner shows even if the date is not yet 02/11/2014
+    disableDate: false // If true, the banner shows even if the date is not yet 02/11/2014
   };
   (function(){
     var e = document.createElement('script'); e.type='text/javascript'; e.async = true;

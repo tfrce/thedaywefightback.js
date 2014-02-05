@@ -16,6 +16,25 @@
     $('.nandp-form').on('submit', function (ev) {
         var form = $(ev.currentTarget);
         var data = form.serializeObject();
+
+        var nameEl = $('#userName', form);
+        var emailEl = $('#userEmail', form);
+
+        var userName = nameEl.val();
+        var userEmail = emailEl.val();
+
+        var errors = false;
+        if(!isValidEmail(userEmail)){
+          errors = true;
+          rumbleEl(emailEl);
+        };
+        if(userName === '') {
+          errors = true;
+          rumbleEl(nameEl);
+        }
+        if(errors) {
+          return false;
+        }
         var rpc = new easyXDM.Rpc({
             remote: "http://email-congress.herokuapp.com/xdm/cors/"
         },
@@ -124,4 +143,10 @@
           hiddenInput.value = checkbox.checked ? referalOrg.name : '';
       };
       */
-  })();
+})();
+$(document).on('ready', function () {
+
+var iso = getQueryVariable('iso');
+
+$('#userCountry option[value="'+iso+'"]').attr("selected", "selected");
+});  

@@ -9,6 +9,35 @@ function countUp(a,b,c,d,e){for(var f=0,g=["webkit","moz","ms"],h=0;h<g.length&&
 
 /* Modified phone number formatting script */
 /* via BootstrapFormHelpers - https://github.com/vlamanna/BootstrapFormHelpers - Apache License, Version 2.0 */
+
+    function rumbleEl(el) {
+        el.css('border', '1px solid #ff0000');
+        el.jrumble({})
+        el.trigger('startRumble');
+        var demoTimeout = setTimeout(function(){el.trigger('stopRumble');
+            el.css('border', 'none');
+        }, 500) 
+    }
+
+    function isValidPhoneNumber(value) {
+        if (!value) return false;
+        var count = value.length;
+        return count == 10 || count == 11;
+    }
+    function isValidEmail(email) { 
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    } 
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split('&');
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split('=');
+            if (decodeURIComponent(pair[0]) == variable) {
+                return decodeURIComponent(pair[1]);
+            }
+        }
+    }
 $(document).ready( function () {
     $('input, textarea').placeholder();
     $('#userPhone').focus(function(){
@@ -269,16 +298,7 @@ $(document).ready( function () {
         }
     });
 
-    function getQueryVariable(variable) {
-        var query = window.location.search.substring(1);
-        var vars = query.split('&');
-        for (var i = 0; i < vars.length; i++) {
-            var pair = vars[i].split('=');
-            if (decodeURIComponent(pair[0]) == variable) {
-                return decodeURIComponent(pair[1]);
-            }
-        }
-    }
+
         /* $.ajax({
              type: "GET",
              url: 'https://thedaywefightback.org/blank.html',
@@ -341,24 +361,7 @@ $(document).ready( function () {
         return false;
     })*/
 
-    function rumbleEl(el) {
-        el.css('border', '1px solid #ff0000');
-        el.jrumble({})
-        el.trigger('startRumble');
-        var demoTimeout = setTimeout(function(){el.trigger('stopRumble');
-            el.css('border', 'none');
-        }, 500) 
-    }
 
-    function isValidPhoneNumber(value) {
-        if (!value) return false;
-        var count = value.length;
-        return count == 10 || count == 11;
-    }
-    function isValidEmail(email) { 
-        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-    } 
     $('.call-form').on('submit', function(ev) {
         var form = $(ev.currentTarget);
 
