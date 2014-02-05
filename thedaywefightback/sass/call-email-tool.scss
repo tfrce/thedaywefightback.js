@@ -207,6 +207,8 @@ form {
 	h2 {
 		text-transform: uppercase;
 		font-weight: bold;
+		letter-spacing: 0.1em;
+		font-style: italic;
 		padding-top: 1em;
 		border-top: 1px solid #EEE;
 		color: #333;
@@ -262,7 +264,7 @@ label, h3 {
 			display: block;
 			width: 95%;
 		}
-		input {
+		input#email-checkbox {
 			width: auto;
 			padding: 0;
 			display: inline;
@@ -273,6 +275,7 @@ label, h3 {
 			display: inline;
 			text-transform: none;
 			font-weight: normal;
+			letter-spacing: normal;
 		}
 		input.cta-button {
 			padding: 0.5em 0;
@@ -288,8 +291,9 @@ label, h3 {
 		}
 	}
 
-		.cta-button {
+		.cta-button, input.cta-button {
 			font-weight: bold;
+			display: block;
 			background: $yellow;
 			color: #333;
 			padding: 0.75em 0;
@@ -319,12 +323,17 @@ label, h3 {
 aside {
 	@include column(4.5);
 	h3 {
+		padding-bottom: 0.5em;
 		padding-top: 0;
-		padding-bottom: 1em;
-		padding-left: 0;
-		border-bottom: 1px solid #FAFAFA;
+		margin-bottom: 1.5em;
+		display: inline-block;
+		border-bottom: 2px solid #EEE;
+	}
+	p {
+		margin-top: 0;
 	}
 	ol {
+		display: block;
 		background: #FFF;
 		padding: 0.5em 1.5em;
 		padding-bottom: 1.5em;
