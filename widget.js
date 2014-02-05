@@ -181,7 +181,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
 
         alert(x);
         if(x< 790) {
-          iframe_container.style.height = "180px";
+          iframe_container.style.height = "100px";
 
         } else {
           // Find out if user has minimized via cookie
