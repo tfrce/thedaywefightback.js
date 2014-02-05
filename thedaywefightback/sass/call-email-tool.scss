@@ -6,87 +6,72 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 
 @font-face {
     font-family: 'brandon_grotesque';
-    src: url('../fonts/BrandonGrotesque-regular-webfont.eot');
-    src: url('../fonts/BrandonGrotesque-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/BrandonGrotesque-regular-webfont.woff') format('woff'),
-         url('../fonts/BrandonGrotesque-regular-webfont.ttf') format('truetype'),
-         url('../fonts/BrandonGrotesque-regular-webfont.svg#brandon_grotesque_regularRg') format('svg');
+    src: url('../fonts/brandongrotesque-regular-webfont.eot');
+    src: url('../fonts/brandongrotesque-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/brandongrotesque-regular-webfont.woff') format('woff'),
+         url('../fonts/brandongrotesque-regular-webfont.ttf') format('truetype'),
+         url('../fonts/brandongrotesque-regular-webfont.svg#brandon_grotesque_regularRg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'brandon_grotesque';
-    src: url('../fonts/BrandonGrotesque-mediumitalic-webfont.eot');
-    src: url('../fonts/BrandonGrotesque-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/BrandonGrotesque-mediumitalic-webfont.woff') format('woff'),
-         url('../fonts/BrandonGrotesque-mediumitalic-webfont.ttf') format('truetype'),
-         url('../fonts/BrandonGrotesque-mediumitalic-webfont.svg#brandon_grotesqueMdIt') format('svg');
+    src: url('../fonts/brandongrotesque-mediumitalic-webfont.eot');
+    src: url('../fonts/brandongrotesque-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/brandongrotesque-mediumitalic-webfont.woff') format('woff'),
+         url('../fonts/brandongrotesque-mediumitalic-webfont.ttf') format('truetype'),
+         url('../fonts/brandongrotesque-mediumitalic-webfont.svg#brandon_grotesqueMdIt') format('svg');
     font-weight: 500;
     font-style: italic;
 }
 @font-face {
     font-family: 'brandon_grotesque';
-    src: url('../fonts/BrandonGrotesque-blackitalic-webfont.eot');
-    src: url('../fonts/BrandonGrotesque-blackitalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/BrandonGrotesque-blackitalic-webfont.woff') format('woff'),
-         url('../fonts/BrandonGrotesque-blackitalic-webfont.ttf') format('truetype'),
-         url('../fonts/BrandonGrotesque-blackitalic-webfont.svg#brandon_grotesqueblack_italic') format('svg');
+    src: url('../fonts/brandongrotesque-blackitalic-webfont.eot');
+    src: url('../fonts/brandongrotesque-blackitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/brandongrotesque-blackitalic-webfont.woff') format('woff'),
+         url('../fonts/brandongrotesque-blackitalic-webfont.ttf') format('truetype'),
+         url('../fonts/brandongrotesque-blackitalic-webfont.svg#brandon_grotesqueblack_italic') format('svg');
     font-weight: 700;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'brandon_grotesque';
-    src: url('../fonts/BrandonGrotesque-black-webfont.eot');
-    src: url('../fonts/BrandonGrotesque-black-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/BrandonGrotesque-black-webfont.woff') format('woff'),
-         url('../fonts/BrandonGrotesque-black-webfont.ttf') format('truetype'),
-         url('../fonts/BrandonGrotesque-black-webfont.svg#brandon_grotesqueblack') format('svg');
+    src: url('../fonts/brandongrotesque-black-webfont.eot');
+    src: url('../fonts/brandongrotesque-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/brandongrotesque-black-webfont.woff') format('woff'),
+         url('../fonts/brandongrotesque-black-webfont.ttf') format('truetype'),
+         url('../fonts/brandongrotesque-black-webfont.svg#brandon_grotesqueblack') format('svg');
     font-weight: 700;
     font-style: normal;
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
       font-family: 'brandon_grotesque';
-      src: url('../fonts/BrandonGrotesque-regular-webfont.svg#brandon_grotesque_regularRg') format('svg');
+      src: url('../fonts/brandongrotesque-regular-webfont.svg#brandon_grotesque_regularRg') format('svg');
       font-weight: normal;
       font-style: normal;
   }
   @font-face {
       font-family: 'brandon_grotesque';
-      src: url('../fonts/BrandonGrotesque-mediumitalic-webfont.svg#brandon_grotesqueMdIt') format('svg');
+      src: url('../fonts/brandongrotesque-mediumitalic-webfont.svg#brandon_grotesqueMdIt') format('svg');
       font-weight: 500;
       font-style: italic;
   }
   @font-face {
       font-family: 'brandon_grotesque';
-      src: url('../fonts/BrandonGrotesque-blackitalic-webfont.svg#brandon_grotesqueblack_italic') format('svg');
+      src: url('../fonts/brandongrotesque-blackitalic-webfont.svg#brandon_grotesqueblack_italic') format('svg');
       font-weight: 700;
       font-style: italic;
   }
   @font-face {
       font-family: 'brandon_grotesque';
-      src: url('../fonts/BrandonGrotesque-black-webfont.svg#brandon_grotesqueblack') format('svg');
+      src: url('../fonts/brandongrotesque-black-webfont.svg#brandon_grotesqueblack') format('svg');
       font-weight: 700;
       font-style: normal;
   }
 }
 
-/* Need to import webfonts here*/
-
-@font-face {
-    font-family: 'brandon_grotesque';
-    src: url('../fonts/BrandonGrotesque-Black.otf');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'brandon_grotesque';
-    src: url('../fonts/BrandonGrotesque-BlackItalic.otf');
-    font-weight: 900;
-    font-style: italic;
-}
 
 /////////////////
 // Semantic.gs // for SCSS: http://sass-lang.com/
