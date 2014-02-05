@@ -39,6 +39,11 @@ function countUp(a,b,c,d,e){for(var f=0,g=["webkit","moz","ms"],h=0;h<g.length&&
         }
     }
 $(document).ready( function () {
+    if(getQueryVariable('callOnly') === 'true') {
+      $('.phone-only-container').show();
+    } else {
+      $('.both-container').show();
+    }
     $('input, textarea').placeholder();
     $('#userPhone').focus(function(){
         +function ($) {
