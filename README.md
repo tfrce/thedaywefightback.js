@@ -16,7 +16,7 @@ View the [US demo page](http://tfrce.github.io/thedaywefightback.js/example/bann
 
 ## Getting started
 
-You can add the snippet to your site now - it won't be activated until midnight EST on February 11th. You can also host the files locally. After 24 hours the banner de-activates and should be removed from your website code.
+You can add the snippet to your site now - it won't be activated until midnight EST on February 11th and will remain active for 26 hours.
 
 Simply copy and paste the code below into your website, right above the closing `<body>` tag.
 
@@ -43,7 +43,7 @@ The counts will reset on the day, and only the additions on the 11th will contri
 
 ## Other ways to install the banner
 
-Coming soon.
+A Cloudflare app and Wordpress plugin will be added soon.
 
 ## Customize the banner
 
