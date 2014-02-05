@@ -40,7 +40,7 @@
 */
 
 // Wrap widget in function to protect scope
-var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
+var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
 
 (function (window, widgetConfig) {
   // Do configuration
@@ -53,6 +53,14 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
   widgetConfig.campaign = widgetConfig.campaign || 'thedaywefightback';
   widgetConfig.cookieTimeout = widgetConfig.cookieTimeout || 172800;
   widgetConfig.overrideLocation = widgetConfig.overrideLocation || false;
+
+  function debug() {
+    if (widgetConfig.debug) {
+      if (console) {
+        console.log.apply(console, arguments);
+      }
+    }
+  }
 
   // Setup
   var activeCampaign;
@@ -98,10 +106,18 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
   // Define checks
   var checks = {
     correctDate: function (callback) {
-      window.tdwfbCheckDate = callback;
+      debug('correctDate()');
+
+      window.tdwfbCheckDate = function (data) {
+        debug('tdwfbCheckDate()', data);
+
+        callback(data);
+      };
+
       var script = document.createElement('script');
       script.src = '//dznh7un1y2etk.cloudfront.net/time?callback=tdwfbCheckDate';
       document.getElementsByTagName('head')[0].appendChild(script);
+
       window.tdwfbDateCallBackFailSafe = setTimeout(function () {
         // TODO - Potentially better logic for this fallback
         if (new Date().getDate() === 3) {
@@ -112,10 +128,18 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
       }, 5000);
     },
     location: function (callback) {
-      window.tdwfbParseLocation = callback;
+      debug('location()');
+
+      window.tdwfbParseLocation = function (data) {
+        debug('tdwfbParseLocation()', data);
+
+        callback(data);
+      };
+
       var script = document.createElement('script');
       script.src = 'https://geoip.taskforce.is/?callback=tdwfbParseLocation';
       document.getElementsByTagName('head')[0].appendChild(script);
+
       window.tdwfbLocationCallBackFailSafe = setTimeout(function () {
         // Set location to US and pass to callback
         callback({country: {iso_code: 'us'}});
@@ -124,7 +148,6 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
   };
 
   // Define campaigns
-
   var campaign = {
     thedaywefightback: {
       cookieName: 'thedaywefightback_hasseen',
@@ -155,6 +178,8 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
       },
       minimized: false,
       show: function (options) {
+        debug('show()', options);
+
         var cookie = getCookie(activeCampaign.cookieName);
 
         if (widgetConfig.startAsMinimized && cookie === null) {
@@ -180,11 +205,9 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
 
         iframeContainer.style.cssText = style.iframeContainer;
 
-        var w = window,
-            d = document,
-            e = d.documentElement,
-            g = d.getElementsByTagName('body')[0],
-            x = w.innerWidth || e.clientWidth || g.clientWidth;
+        var e = document.documentElement,
+            g = document.getElementsByTagName('body')[0],
+            x = window.innerWidth || e.clientWidth || g.clientWidth;
 
         if (x < 767) {
           if (!this.minimized) {
@@ -227,6 +250,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         if (x < 767) {
           firstTime = false;
         }
+
         if (isoCode === 'us' ||
             widgetConfig.overrideLocation === 'usa') {
           // Set the source of the iframe to the configured show_style type
@@ -315,10 +339,15 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         }
 
         checks.correctDate(function (response) {
+          debug('correctDate() callback', response);
+
           clearTimeout(window.tdwfbDateCallBackFailSafe);
+
           if (response && (response.thedaywefightback ||
               widgetConfig.disableDate || widgetConfig.debug)) {
             checks.location(function (location) {
+              debug('location() callback', location);
+
               window.tdwfbLocation = location;
 
               clearTimeout(window.tdwfbLocationCallBackFailSafe);
@@ -334,19 +363,23 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         var that = this;
 
         window.onresize = function () {
+          debug('window.onresize()');
+
           if (window.tdwfbResizeCallback) {
             clearTimeout(window.tdwfbResizeCallback);
           }
 
           window.tdwfbResizeCallback = setTimeout(function () {
+            debug('tdwfbResizeCallback()');
+
             if (window.tdwfbCampaignContainer) {
               document.body.removeChild(window.tdwfbCampaignContainer);
-            }
 
-            that.show({
-              location: window.tdwfbLocation,
-              widgetConfig: widgetConfig
-            });
+              that.show({
+                location: window.tdwfbLocation,
+                widgetConfig: widgetConfig
+              });
+            }
           }, 50);
         };
       }
@@ -360,4 +393,4 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
   } else {
     return false;
   }
-})(window, _tfrce_config);
+})(window, _tdwfb_config);
