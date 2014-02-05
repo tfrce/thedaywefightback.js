@@ -364,7 +364,11 @@ form, section {
   padding: 1em 2em;
 }
 
-/* line 207, ../sass/call-email-tool.scss */
+/* line 206, ../sass/call-email-tool.scss */
+form {
+  padding-top: 0;
+}
+/* line 208, ../sass/call-email-tool.scss */
 form h2 {
   text-transform: uppercase;
   font-weight: bold;
@@ -376,7 +380,7 @@ form h2 {
   font-size: 1.2em;
   margin-bottom: 0.5em;
 }
-/* line 218, ../sass/call-email-tool.scss */
+/* line 219, ../sass/call-email-tool.scss */
 form fieldset {
   display: block;
   display: inline;
@@ -388,6 +392,10 @@ form fieldset {
   padding-bottom: 1em;
 }
 /* line 225, ../sass/call-email-tool.scss */
+form fieldset label {
+  padding-top: 2em;
+}
+/* line 229, ../sass/call-email-tool.scss */
 form input {
   border: 1px solid #AAA;
   padding: 0.5em 2.5%;
@@ -396,7 +404,7 @@ form input {
   font-size: 0.9em;
 }
 
-/* line 235, ../sass/call-email-tool.scss */
+/* line 239, ../sass/call-email-tool.scss */
 label, h3 {
   text-transform: uppercase;
   font-weight: bold;
@@ -410,23 +418,22 @@ label, h3 {
   letter-spacing: 0.1em;
 }
 
-/* line 249, ../sass/call-email-tool.scss */
-div#left {
+/* line 253, ../sass/call-email-tool.scss */
+div#content {
   display: inline;
   float: left;
   width: 56.25%;
   margin: 0 1.04167%;
-  margin-right: 5.20833%;
 }
-/* line 252, ../sass/call-email-tool.scss */
-div#left p {
+/* line 255, ../sass/call-email-tool.scss */
+div#content p {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.9em;
   line-height: 1em;
 }
-/* line 258, ../sass/call-email-tool.scss */
-div#left textarea {
+/* line 261, ../sass/call-email-tool.scss */
+div#content textarea {
   -moz-box-shadow: inset 0 1px 2px #000;
   border: 1px solid #AAA;
   background: #FFF;
@@ -435,37 +442,39 @@ div#left textarea {
   display: block;
   width: 95%;
 }
-/* line 267, ../sass/call-email-tool.scss */
-div#left input#email-checkbox {
+/* line 270, ../sass/call-email-tool.scss */
+div#content input#email-checkbox {
   width: auto;
   padding: 0;
   display: inline;
   margin-right: 0.5em;
   margin-top: 1em;
 }
-/* line 274, ../sass/call-email-tool.scss */
-div#left label {
+/* line 277, ../sass/call-email-tool.scss */
+div#content label {
   display: inline;
   text-transform: none;
   font-weight: normal;
   letter-spacing: normal;
+  font-size: 1.1em;
+  font-style: normal;
 }
-/* line 280, ../sass/call-email-tool.scss */
-div#left input.cta-button {
+/* line 285, ../sass/call-email-tool.scss */
+div#content input.cta-button {
   padding: 0.5em 0;
 }
-/* line 283, ../sass/call-email-tool.scss */
-div#left .read-more {
+/* line 288, ../sass/call-email-tool.scss */
+div#content .read-more {
   text-align: center;
   font-size: 1.25em;
   font-style: italic;
   display: block;
-  border-top: 1px solid #EEE;
   padding: 1em 0;
   text-align: center;
+  padding-bottom: 0;
 }
 
-/* line 294, ../sass/call-email-tool.scss */
+/* line 299, ../sass/call-email-tool.scss */
 .cta-button, input.cta-button {
   font-weight: bold;
   display: block;
@@ -485,25 +494,25 @@ div#left .read-more {
   border: none;
   border-bottom: 2px solid #EEE;
 }
-/* line 312, ../sass/call-email-tool.scss */
+/* line 317, ../sass/call-email-tool.scss */
 .cta-button:hover, input.cta-button:hover {
   background: #333;
   color: #f2c45a;
 }
-/* line 316, ../sass/call-email-tool.scss */
+/* line 321, ../sass/call-email-tool.scss */
 .cta-button:active, input.cta-button:active {
   background: #111;
   color: #eeb32b;
 }
 
-/* line 323, ../sass/call-email-tool.scss */
+/* line 328, ../sass/call-email-tool.scss */
 aside {
   display: inline;
   float: left;
-  width: 35.41667%;
+  width: 39.58333%;
   margin: 0 1.04167%;
 }
-/* line 325, ../sass/call-email-tool.scss */
+/* line 330, ../sass/call-email-tool.scss */
 aside h3 {
   padding-bottom: 0.5em;
   padding-top: 0;
@@ -511,11 +520,11 @@ aside h3 {
   display: inline-block;
   border-bottom: 2px solid #EEE;
 }
-/* line 332, ../sass/call-email-tool.scss */
+/* line 337, ../sass/call-email-tool.scss */
 aside p {
   margin-top: 0;
 }
-/* line 335, ../sass/call-email-tool.scss */
+/* line 340, ../sass/call-email-tool.scss */
 aside ol {
   display: block;
   background: #FFF;
@@ -524,23 +533,23 @@ aside ol {
   list-style-type: none;
   border-bottom: 3px solid #EEE;
 }
-/* line 342, ../sass/call-email-tool.scss */
+/* line 347, ../sass/call-email-tool.scss */
 aside ol li {
   margin-bottom: 1.5em;
 }
-/* line 344, ../sass/call-email-tool.scss */
+/* line 349, ../sass/call-email-tool.scss */
 aside ol li:last-child {
   padding: 0;
   margin: 0;
   border: 0;
 }
-/* line 349, ../sass/call-email-tool.scss */
+/* line 354, ../sass/call-email-tool.scss */
 aside ol li h4 {
   margin: 0;
   color: #333;
 }
 
-/* line 358, ../sass/call-email-tool.scss */
+/* line 363, ../sass/call-email-tool.scss */
 footer {
   background: #000;
   width: 100%;
@@ -550,7 +559,7 @@ footer {
   left: 0;
   clear: both;
 }
-/* line 366, ../sass/call-email-tool.scss */
+/* line 371, ../sass/call-email-tool.scss */
 footer div {
   max-width: 768px;
   padding: 0 2em;
@@ -566,15 +575,16 @@ footer div:before, footer div:after {
 footer div:after {
   clear: both;
 }
-/* line 371, ../sass/call-email-tool.scss */
+/* line 376, ../sass/call-email-tool.scss */
 footer div p {
   float: left;
   width: 51%;
   margin: 0;
+  font-size: 0.85em;
   color: #FFF;
   line-height: 1.2em;
 }
-/* line 378, ../sass/call-email-tool.scss */
+/* line 384, ../sass/call-email-tool.scss */
 footer div i {
   float: right;
   display: inline-block;
@@ -582,22 +592,47 @@ footer div i {
 }
 
 /* Call Page */
-/* line 387, ../sass/call-email-tool.scss */
-.call div#left {
+/* line 394, ../sass/call-email-tool.scss */
+.call div#content {
   text-align: center;
+  max-width: 600px;
+  width: auto;
+  margin: 0 auto;
+  float: none;
+  display: block;
 }
-/* line 389, ../sass/call-email-tool.scss */
-.call div#left h2 {
+/* line 401, ../sass/call-email-tool.scss */
+.call div#content aside {
+  width: auto;
+  display: block;
+  float: none;
+  text-align: left;
+  margin-top: 2em;
+  font-size: 1.1em;
+}
+/* line 408, ../sass/call-email-tool.scss */
+.call div#content aside p {
+  font-style: normal;
+}
+/* line 412, ../sass/call-email-tool.scss */
+.call div#content h2 {
   font-weight: normal;
   line-height: 1.25em;
   font-size: 1.25em;
 }
-/* line 394, ../sass/call-email-tool.scss */
-.call div#left img {
+/* line 417, ../sass/call-email-tool.scss */
+.call div#content img {
   margin-top: 1em;
 }
-/* line 397, ../sass/call-email-tool.scss */
-.call div#left p {
+/* line 420, ../sass/call-email-tool.scss */
+.call div#content a.cta-button {
+  padding-left: 0;
+  padding-right: 0;
+  width: 98%;
+  margin: 0 auto;
+}
+/* line 426, ../sass/call-email-tool.scss */
+.call div#content p {
   line-height: 1.5em;
   text-transform: none;
   font-weight: normal;
@@ -605,13 +640,49 @@ footer div i {
   font-size: 1.05em;
   color: #777;
 }
-/* line 404, ../sass/call-email-tool.scss */
-.call div#left p a {
+/* line 433, ../sass/call-email-tool.scss */
+.call div#content p a {
   white-space: nowrap;
+  text-shadow: 0 1px 3px #FFF;
+}
+/* line 438, ../sass/call-email-tool.scss */
+.call div#content ul#bill-details {
+  text-align: left;
+  padding: 0 1em;
+  list-style-type: none;
+}
+/* line 442, ../sass/call-email-tool.scss */
+.call div#content ul#bill-details li {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px dashed #DDD;
+}
+/* line 447, ../sass/call-email-tool.scss */
+.call div#content ul#bill-details.invisible {
+  display: none;
+}
+/* line 452, ../sass/call-email-tool.scss */
+.call footer a {
+  opacity: 0.6;
+  transition: all 0.2s ease-in-out;
+}
+/* line 455, ../sass/call-email-tool.scss */
+.call footer a img {
+  height: auto;
+  vertical-align: middle;
+  width: 171px;
+}
+/* line 459, ../sass/call-email-tool.scss */
+.call footer a img.twilio-privacy {
+  width: 114px;
+}
+/* line 464, ../sass/call-email-tool.scss */
+.call footer a:hover {
+  opacity: 0.9;
 }
 
 /* Thank You page */
-/* line 413, ../sass/call-email-tool.scss */
+/* line 473, ../sass/call-email-tool.scss */
 .thank-you {
   background: #000;
   color: #EEE;
@@ -620,22 +691,22 @@ footer div i {
   line-height: 1.5em;
   padding-bottom: 1em;
 }
-/* line 420, ../sass/call-email-tool.scss */
+/* line 480, ../sass/call-email-tool.scss */
 .thank-you header {
   padding-bottom: 0;
 }
-/* line 422, ../sass/call-email-tool.scss */
+/* line 482, ../sass/call-email-tool.scss */
 .thank-you header h1 {
   padding: 2em;
   padding-bottom: 0;
   max-width: 400px;
 }
-/* line 428, ../sass/call-email-tool.scss */
+/* line 488, ../sass/call-email-tool.scss */
 .thank-you form {
   padding: 0 2em;
   max-width: 400px;
 }
-/* line 432, ../sass/call-email-tool.scss */
+/* line 492, ../sass/call-email-tool.scss */
 .thank-you input {
   margin: 0;
   width: 92%;
@@ -644,42 +715,42 @@ footer div i {
   line-height: normal;
   color: #333;
 }
-/* line 439, ../sass/call-email-tool.scss */
+/* line 499, ../sass/call-email-tool.scss */
 .thank-you input#submit {
   padding: 0.8em 0;
   width: 100%;
   border: none;
-  margin-top: 0.2em;
+  margin-top: 0.15em;
   margin-bottom: 1em;
   font-size: 1em;
   box-shadow: none;
 }
-/* line 449, ../sass/call-email-tool.scss */
+/* line 509, ../sass/call-email-tool.scss */
 .thank-you section {
   max-width: 600px;
   padding-top: 0;
 }
-/* line 452, ../sass/call-email-tool.scss */
+/* line 512, ../sass/call-email-tool.scss */
 .thank-you section p {
   font-size: 1.2em;
 }
-/* line 454, ../sass/call-email-tool.scss */
+/* line 514, ../sass/call-email-tool.scss */
 .thank-you section p span {
   display: block;
 }
-/* line 458, ../sass/call-email-tool.scss */
+/* line 518, ../sass/call-email-tool.scss */
 .thank-you section .twilio-container {
   font-size: 0.8em;
 }
-/* line 460, ../sass/call-email-tool.scss */
+/* line 520, ../sass/call-email-tool.scss */
 .thank-you section .twilio-container img {
   vertical-align: middle;
 }
-/* line 465, ../sass/call-email-tool.scss */
+/* line 525, ../sass/call-email-tool.scss */
 .thank-you footer {
   background: #222;
 }
-/* line 468, ../sass/call-email-tool.scss */
+/* line 528, ../sass/call-email-tool.scss */
 .thank-you h2 {
   text-transform: uppercase;
   padding-top: 1.5em;
@@ -687,14 +758,33 @@ footer div i {
   font-size: 1.2em;
   border-top: 1px solid #333;
 }
-/* line 475, ../sass/call-email-tool.scss */
+/* line 536, ../sass/call-email-tool.scss */
 .thank-you #also-call h2 {
   padding: 0;
   margin-top: 1.5em;
   font-size: 1.5em;
   border: none;
 }
-/* line 481, ../sass/call-email-tool.scss */
+/* line 543, ../sass/call-email-tool.scss */
+.thank-you #also-call .twilio-container a {
+  opacity: 0.6;
+  transition: all 0.2s ease-in-out;
+}
+/* line 546, ../sass/call-email-tool.scss */
+.thank-you #also-call .twilio-container a img {
+  height: auto;
+  vertical-align: middle;
+  width: 171px;
+}
+/* line 550, ../sass/call-email-tool.scss */
+.thank-you #also-call .twilio-container a img.twilio-privacy {
+  width: 114px;
+}
+/* line 554, ../sass/call-email-tool.scss */
+.thank-you #also-call .twilio-container a:hover {
+  opacity: 0.9;
+}
+/* line 559, ../sass/call-email-tool.scss */
 .thank-you a.cta-button {
   display: inline-block;
   width: auto;
@@ -703,11 +793,11 @@ footer div i {
   padding: 0.8em 2em;
   margin: 0;
 }
-/* line 489, ../sass/call-email-tool.scss */
+/* line 567, ../sass/call-email-tool.scss */
 .thank-you i.i-logo {
   margin-top: 1.5em;
 }
-/* line 492, ../sass/call-email-tool.scss */
+/* line 570, ../sass/call-email-tool.scss */
 .thank-you #social {
   padding-top: 2em;
   margin-bottom: 1em;
@@ -723,7 +813,7 @@ footer div i {
 .thank-you #social:after {
   clear: both;
 }
-/* line 497, ../sass/call-email-tool.scss */
+/* line 575, ../sass/call-email-tool.scss */
 .thank-you #social a {
   display: inline;
   float: left;
@@ -735,11 +825,11 @@ footer div i {
   transition: 0.2s ease-in-out all;
   opacity: 0.8;
 }
-/* line 504, ../sass/call-email-tool.scss */
+/* line 582, ../sass/call-email-tool.scss */
 .thank-you #social a:hover {
   opacity: 1;
 }
-/* line 508, ../sass/call-email-tool.scss */
+/* line 586, ../sass/call-email-tool.scss */
 .thank-you #social .social-count:after {
   background: #f2c45a;
   text-transform: uppercase;
@@ -759,7 +849,7 @@ footer div i {
   position: absolute;
   white-space: nowrap;
 }
-/* line 527, ../sass/call-email-tool.scss */
+/* line 605, ../sass/call-email-tool.scss */
 .thank-you #social .social-count:before {
   border: solid;
   border: 1px solid #f2c45a;
@@ -773,40 +863,40 @@ footer div i {
   margin-left: -.2em;
   position: absolute;
 }
-/* line 540, ../sass/call-email-tool.scss */
+/* line 618, ../sass/call-email-tool.scss */
 .thank-you #social .sicon {
-  width: 40px;
-  height: 40px;
+  width: 54px;
+  height: 54px;
   margin: 0 auto;
   position: relative;
   background-color: black;
   background-image: url("../imgs/social-icons.png");
 }
-/* line 549, ../sass/call-email-tool.scss */
+/* line 627, ../sass/call-email-tool.scss */
 .thank-you #social #sfb {
   background-position: 70% 0;
 }
-/* line 552, ../sass/call-email-tool.scss */
+/* line 630, ../sass/call-email-tool.scss */
 .thank-you #social #sfb:hover {
   background-position: 70% 0%;
 }
-/* line 555, ../sass/call-email-tool.scss */
+/* line 633, ../sass/call-email-tool.scss */
 .thank-you #social #sbh {
   background-position: 60% 0;
 }
-/* line 558, ../sass/call-email-tool.scss */
+/* line 636, ../sass/call-email-tool.scss */
 .thank-you #social #sbh:hover {
   background-position: 60% 100%;
 }
-/* line 561, ../sass/call-email-tool.scss */
+/* line 639, ../sass/call-email-tool.scss */
 .thank-you #social #stwit {
   background-position: 50% 0;
 }
-/* line 564, ../sass/call-email-tool.scss */
+/* line 642, ../sass/call-email-tool.scss */
 .thank-you #social #sgplus {
   background-position: 20% 0;
 }
-/* line 567, ../sass/call-email-tool.scss */
+/* line 645, ../sass/call-email-tool.scss */
 .thank-you #social #sgplus:hover {
   background-position: 20% 0%;
 }
@@ -814,7 +904,7 @@ footer div i {
 /* =====================================*/
 /* CSS Sprite */
 /* =====================================*/
-/* line 580, ../sass/call-email-tool.scss */
+/* line 658, ../sass/call-email-tool.scss */
 .i {
   background-image: url("../imgs/image.png");
   background-repeat: no-repeat;
@@ -822,7 +912,7 @@ footer div i {
   margin: 0 auto;
 }
 
-/* line 587, ../sass/call-email-tool.scss */
+/* line 665, ../sass/call-email-tool.scss */
 .i-email {
   width: 172px;
   height: 19px;
@@ -830,7 +920,7 @@ footer div i {
   margin-top: 13px;
 }
 
-/* line 594, ../sass/call-email-tool.scss */
+/* line 672, ../sass/call-email-tool.scss */
 .i-call {
   width: 144px;
   height: 22px;
@@ -838,7 +928,7 @@ footer div i {
   margin-top: 30px;
 }
 
-/* line 601, ../sass/call-email-tool.scss */
+/* line 679, ../sass/call-email-tool.scss */
 .i-logo {
   width: 279px;
   height: 30px;
@@ -850,66 +940,87 @@ footer div i {
 /* Media Queries */
 /* =====================================*/
 @media screen and (max-width: 600px) {
-  /* line 613, ../sass/call-email-tool.scss */
+  /* line 691, ../sass/call-email-tool.scss */
   body {
     font-size: 0.9em;
     padding: 0;
   }
 
-  /* line 617, ../sass/call-email-tool.scss */
+  /* line 695, ../sass/call-email-tool.scss */
   footer {
     position: static;
     text-align: center;
     font-size: 0.9em;
     margin-top: 2em;
   }
-  /* line 623, ../sass/call-email-tool.scss */
+  /* line 701, ../sass/call-email-tool.scss */
   footer div p {
     float: none;
     width: auto;
     margin-bottom: 1em;
   }
-  /* line 628, ../sass/call-email-tool.scss */
+  /* line 706, ../sass/call-email-tool.scss */
   footer div i {
     float: none;
     margin: 0 auto;
   }
 
-  /* line 636, ../sass/call-email-tool.scss */
+  /* line 714, ../sass/call-email-tool.scss */
   form {
     padding-bottom: 2em;
   }
 
-  /* line 639, ../sass/call-email-tool.scss */
+  /* line 717, ../sass/call-email-tool.scss */
   aside {
     display: none;
   }
 
-  /* line 643, ../sass/call-email-tool.scss */
-  div#left, div#left h2, .call aside {
+  /* line 721, ../sass/call-email-tool.scss */
+  div#content, div#content h2, .call aside {
     width: auto;
     float: none;
     margin: 0;
     display: block;
   }
 
-  /* line 649, ../sass/call-email-tool.scss */
-  .call div#left img {
+  /* line 727, ../sass/call-email-tool.scss */
+  .call div#content img {
     margin-bottom: 1em;
   }
 
-  /* line 652, ../sass/call-email-tool.scss */
+  /* line 730, ../sass/call-email-tool.scss */
   h2 {
     clear: both;
     display: block;
   }
 }
 @media screen and (max-width: 400px) {
-  /* line 660, ../sass/call-email-tool.scss */
+  /* line 738, ../sass/call-email-tool.scss */
   form fieldset {
     float: none;
     width: auto;
     margin: 0;
     display: block;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* line 748, ../sass/call-email-tool.scss */
+  .thank-you input {
+    padding-top: 1.2em;
+  }
+
+  /* line 751, ../sass/call-email-tool.scss */
+  .thank-you a.cta-button, .thank-you input#submit {
+    padding-top: 1em;
+  }
+
+  /* line 754, ../sass/call-email-tool.scss */
+  form input, div#content input.cta-button {
+    padding-top: 0.8em;
+  }
+
+  /* line 757, ../sass/call-email-tool.scss */
+  .cta-button, input.cta-button {
+    padding-top: 0.95em;
   }
 }
