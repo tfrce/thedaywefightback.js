@@ -4,13 +4,13 @@ _Please make pull requests with any fixes, and leave questions, suggestions and 
 
 thedaywefightback.js is a javascript snippet that automatically activates at midnight of February 11th and adds a banner to your site for 24 hours in support of [thedaywefightback.org](https://thedaywefightback.org).
 
-The goal is to drive as many phone calls and emails on the 11th. The calls are connected automatically by our servers and are free of cost for the users, thanks to the kind sponsorship of [Twilio](http://twilio.com).
+The goal is to drive as many phone calls and emails on the 11th. The calls are connected automatically by our a call server for free, thanks to Twilio.
 
 <a href="http://tfrce.github.io/thedaywefightback.js/example/banner.html" target="_blank"><img src="screenshots/tdwfb-banner.png" alt="banner" /></a>
 
 **If you own a website, no matter how big or small, you can be part of this.**
 
-## Demo
+## Demo pages
 
 View the [US demo page](http://tfrce.github.io/thedaywefightback.js/example/banner.html) or the [international demo page](http://tfrce.github.io/thedaywefightback.js/example/banner_international.html) - (unless explicitly set the banner uses GeoIP to detect your location).
 
