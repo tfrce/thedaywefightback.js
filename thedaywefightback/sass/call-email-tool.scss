@@ -45,32 +45,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
     font-weight: 700;
     font-style: normal;
 }
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-      font-family: 'brandon_grotesque';
-      src: url('../fonts/brandongrotesque-regular-webfont.svg#brandon_grotesque_regularRg') format('svg');
-      font-weight: normal;
-      font-style: normal;
-  }
-  @font-face {
-      font-family: 'brandon_grotesque';
-      src: url('../fonts/brandongrotesque-mediumitalic-webfont.svg#brandon_grotesqueMdIt') format('svg');
-      font-weight: 500;
-      font-style: italic;
-  }
-  @font-face {
-      font-family: 'brandon_grotesque';
-      src: url('../fonts/brandongrotesque-blackitalic-webfont.svg#brandon_grotesqueblack_italic') format('svg');
-      font-weight: 700;
-      font-style: italic;
-  }
-  @font-face {
-      font-family: 'brandon_grotesque';
-      src: url('../fonts/brandongrotesque-black-webfont.svg#brandon_grotesqueblack') format('svg');
-      font-weight: 700;
-      font-style: normal;
-  }
-}
+
 
 
 /////////////////
@@ -275,9 +250,11 @@ label, h3 {
 			font-size: 1.25em;
 			font-style: italic;
 			display: block;
-			padding: 0.5em 0;
+			padding-top: 0;
 			padding-bottom: 1em;
+			margin-bottom: 1em;
 			text-align: center;
+			border-bottom: 1px solid #EEE;
 		}
 	}
 
@@ -430,7 +407,7 @@ footer {
 			li {
 				margin-bottom: 1em;
 				padding-bottom: 1em;
-				border-bottom: 1px dashed #DDD;
+				border-bottom: 1px solid #DDD;
 			}
 			&.invisible {
 				display: none;
