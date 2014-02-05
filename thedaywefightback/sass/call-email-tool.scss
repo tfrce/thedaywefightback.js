@@ -481,6 +481,9 @@ footer {
 	footer a {
 		opacity: 0.6;
 		transition: all 0.2s ease-in-out;
+		&.tdwfb {
+			opacity: 1;
+		}
 		img {
 			height: auto;
 			vertical-align: middle;
@@ -654,27 +657,14 @@ footer {
 		}
 		
 		#sfb {
-		    background-position: 70% 0;
-		}
-		#sfb:hover {
-		    background-position: 70% 0%;
-		}
-		#sbh {
-		    background-position: 60% 0;
-		}
-		#sbh:hover {
-		    background-position: 60% 100%;
+		    background-position: 66.6666% 0;
 		}
 		#stwit {
-		    background-position: 50% 0;
+		    background-position: 33.3333% 0;
 		}
 		#sgplus {
-		    background-position: 20% 0;
-		}
-		#sgplus:hover {
-		    background-position: 20% 0%;
-		}
-	
+		    background-position: 0% 0;
+		}	
 	}
 	
 }
