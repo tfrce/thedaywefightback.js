@@ -47,6 +47,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
   widgetConfig.show_style = widgetConfig.show_style || 'banner';
   widgetConfig.greeting = widgetConfig.greeting || 'Dear Internet';
   widgetConfig.debug = widgetConfig.debug || false;
+  widgetConfig.localAssets = widgetConfig.localAssets || false;
   widgetConfig.callOnly = widgetConfig.callOnly || false;
   widgetConfig.startAsMinimized = widgetConfig.startAsMinimized || false;
   widgetConfig.disableDate = widgetConfig.disableDate || false;
@@ -64,15 +65,13 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
 
   // Setup
   var activeCampaign;
-  var ASSET_URL, COOKIE_TIMEOUT;
+  var ASSET_URL;
 
-  if (widgetConfig.debug) {
+  if (widgetConfig.localAssets) {
     ASSET_URL = '../thedaywefightback/';
-    COOKIE_TIMEOUT = 200000;
   } else {
     ASSET_URL = '//d1agz031tafz8n.cloudfront.net/thedaywefightback.js' +
       '/thedaywefightback/';
-    COOKIE_TIMEOUT = widgetConfig.cookieTimeout;
   }
 
   // Cookie helpers, taken from w3schools
@@ -157,11 +156,11 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
             'width: 100%; bottom: 0; left: 0; z-index: 100000; padding: 0; ' +
             '-webkit-box-sizing: border-box; -moz-box-sizing: border-box;',
           iframeContainer: 'position: relative; height: 350px; width: 100%; ' +
-            'margin: 0; background: #000; z-index:1;',
+            'margin: 0; background: #000; z-index: 1;',
           iframe: 'width: 100%; height: 100%; border: 0; margin: 0; ' +
             'padding: 0; background: #000;',
           footerOverlay: 'cursor: pointer; position: absolute; bottom: 0; ' +
-            'height: 50px; width:100%; margin: 0; background: none; ' +
+            'height: 50px; width: 100%; margin: 0; background: none; ' +
             'z-index: 2;',
           closeButton: 'border: 0; height: 26px; width: 26px; ' +
             'cursor: pointer; position: absolute; top: 20px; right: 20px; ' +
@@ -211,16 +210,16 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
 
         if (x < 767) {
           if (!this.minimized) {
-            iframeContainer.style.height = "100px";
+            iframeContainer.style.height = '100px';
           } else {
-            iframeContainer.style.height = "0px";
+            iframeContainer.style.height = '0px';
           }
         } else {
           // Find out if user has minimized via cookie
           if (this.minimized) {
-            iframeContainer.style.height = "50px";
+            iframeContainer.style.height = '50px';
           } else {
-            iframeContainer.style.height = "350px";
+            iframeContainer.style.height = '350px';
           }
         }
 
@@ -297,21 +296,21 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
 
           var toggleDisplay = function () {
             if (!that.minimized) {
-              iframeContainer.style.height = "50px";
+              iframeContainer.style.height = '50px';
               that.minimized = true;
               footerOverlay.style.display = 'block';
               closeButton.style.display = 'none';
               openButton.style.display = 'block';
               setCookie(activeCampaign.cookieName, '{"minimized": true}',
-                COOKIE_TIMEOUT);
+                widgetConfig.cookieTimeout);
             } else {
-              iframeContainer.style.height = "350px";
+              iframeContainer.style.height = '350px';
               that.minimized = false;
               footerOverlay.style.display = 'none';
               openButton.style.display = 'none';
               closeButton.style.display = 'block';
               setCookie(activeCampaign.cookieName, '{"minimized": false}',
-                COOKIE_TIMEOUT);
+                widgetConfig.cookieTimeout);
             }
           };
 
@@ -324,7 +323,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
 
           mobileCloseButton.onclick = function () {
             setCookie(activeCampaign.cookieName, '{"minimized": true}',
-              COOKIE_TIMEOUT);
+              widgetConfig.cookieTimeout);
             document.body.removeChild(campaignContainer);
           };
         }
