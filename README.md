@@ -71,9 +71,17 @@ Built by [Taskforce.is](http://taskforce.is) members [Thomas Davis](https://twit
 
 **A big thank you to [Twilio](https://www.twilio.com/) for sponsoring calls and [Rob Spectre](https://twitter.com/dN0t) for all his help.**
 
-## List of participating sites:
-
-- [cdnjs](http://cdnjs.com)
-- [Backbone Tutorials](http://backbonetutorials.com/)
 
 - Submit a pull request or <a href="https://twitter.com/home?status=@sinak Please add our XXX to the list of sites participating in Project Megaphone" target="_blank">tweet</a> to be added here.
+
+
+## Screenshots
+
+### Main Banner
+<img src="screenshots/tdwfb-banner.png" alt="banner" />
+
+### Call Tool Pop-up
+<img src="screenshots/call-tool.png" alt="banner" />
+
+### Email Tool Pop-up
+<img src="screenshots/email-tool.png" alt="banner" />
