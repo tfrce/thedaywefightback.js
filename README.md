@@ -39,7 +39,7 @@ The widget supports all screen sizes and platforms, if you encounter a bug pleas
 
 The counts will reset on the day, and only the additions on the 11th will contribute to the total.
 
-**Other ways to install the banner**
+## Other ways to install the banner
 
 Coming soon.
 
