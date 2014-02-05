@@ -95,7 +95,7 @@ body {
 	line-height: 1.5em;
 	font-family: 'brandon_grotesque', Helvetica, Arial, sans-serif;
 	color: #666;
-	padding-bottom: 5em;
+	padding-bottom: 0;
 }
 
 a {
@@ -326,9 +326,6 @@ footer {
 	background: #000;
 	width: 100%;
 	padding: 1em 0;
-	position: fixed;
-	bottom: 0;
-	left: 0;
 	clear: both;
 	div {
 		max-width: 768px;
