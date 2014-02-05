@@ -293,17 +293,24 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
           }
         });
         var that = this;
-        window.onresize = function(event) {
-          var w = window,
-            d = document,
-            e = d.documentElement,
-            g = d.getElementsByTagName('body')[0],
-            x = w.innerWidth || e.clientWidth || g.clientWidth,
-            y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-            document.body.removeChild(window.tdwfbCampaignContainer);
-            that.show({location: window.tdwfbLocation, widget_config: widget_config});        
+        /*window.onresize = function(event) {
+          if(window.tdwfbResizeCallback) {
+            clearTimeout(window.tdwfbResizeCallback);
 
-        };
+          }
+          window.tdwfbResizeCallback = setTimeout(function () {
+            var w = window,
+              d = document,
+              e = d.documentElement,
+              g = d.getElementsByTagName('body')[0],
+              x = w.innerWidth || e.clientWidth || g.clientWidth,
+              y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+              document.body.removeChild(window.tdwfbCampaignContainer);
+              that.show({location: window.tdwfbLocation, widget_config: widget_config});        
+
+          }, 50);
+
+        };*/
       }
     }
   }
