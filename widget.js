@@ -171,13 +171,26 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         var iframe_container = document.createElement('div');
         iframe_container.style.cssText = style.iframe_container;
 
-        // Find out if user has minimized via cookie
-        if(this.minimized) {
-          iframe_container.style.height = "50px";
-        } else {
-          iframe_container.style.height = "350px";
-        };
+        var w = window,
+            d = document,
+            e = d.documentElement,
+            g = d.getElementsByTagName('body')[0],
+            x = w.innerWidth || e.clientWidth || g.clientWidth,
+            y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+        
 
+        alert(x);
+        if(x< 790) {
+          iframe_container.style.height = "180px";
+
+        } else {
+          // Find out if user has minimized via cookie
+          if(this.minimized) {
+            iframe_container.style.height = "50px";
+          } else {
+            iframe_container.style.height = "350px";
+          };
+        }
         // Append Iframe and campaign container to document
         var footerOverlay = document.createElement('div');
         footerOverlay.style.cssText = style.footerOverlay;
@@ -209,6 +222,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         var openButton = document.createElement('button');
         openButton.style.cssText = style.openButton;
         iframe_container.appendChild(openButton);
+
 
         if(this.minimized) {
           openButton.style.display = 'block';
