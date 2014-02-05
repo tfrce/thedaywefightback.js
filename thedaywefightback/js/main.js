@@ -29,6 +29,11 @@ function countUp(a,b,c,d,e){for(var f=0,g=["webkit","moz","ms"],h=0;h<g.length&&
         var count = value.length;
         return count == 10 || count == 11;
     }
+    function isValidZip(value) {
+        if (!value) return false;
+        var count = value.length;
+        return count == 5;
+    }
     function isValidEmail(email) { 
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);

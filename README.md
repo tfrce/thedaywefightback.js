@@ -34,6 +34,8 @@ _Place the code below before `</body>` tag. The script loads asynchronously and 
 
 The widget supports all screen sizes and platforms, if you encounter a bug please let us know on the [issues](http://github.com/tfrce/thedaywefightback.js/issues) page.
 
+The counts will reset on the day, and only the additions on the 11th will contribute to the total.
+
 **Other ways to install include;**
 
 * [Cloudflare app](#)
