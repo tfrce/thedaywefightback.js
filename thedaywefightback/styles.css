@@ -103,6 +103,7 @@ a {
 
 a:hover {
     text-decoration: underline;
+    color: #f2c45a;
 }
 
 #banner-container {
@@ -310,7 +311,7 @@ a:hover {
     }
   }
 .call-form, .email-form {
-  margin-top: 77px;
+  margin-top: 70px;
 }
 ::-webkit-input-placeholder { /* WebKit browsers */
     color:    #9e9e9e;
