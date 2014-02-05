@@ -42,6 +42,7 @@
     font-weight: 700;
     font-style: italic;
 }
+
 @font-face {
     font-family: 'brandon_grotesque';
     src: url('fonts/brandongrotesque-black-webfont.eot');
@@ -178,7 +179,7 @@ a {
 
 .scrolling-banner-text {
     color: #fff;
-    font-size:21px;
+    font-size:20px;
     line-height:1.1;
     width: 100%;
     text-align:center;
