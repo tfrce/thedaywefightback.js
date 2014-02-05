@@ -395,7 +395,12 @@ $(document).ready( function () {
         if(!isValidPhoneNumber(phoneNumber)){
             rumbleEl(phoneNumberEl);
         } else {
-            window.open('call-tool.html?phoneNumber=' + phoneNumber, "Share on Facebook", "width=800,height=800");
+            if(typeof page !== 'undefined' && page === 'thankyou') {
+              window.location = 'call-tool.html?phoneNumber=' + phoneNumber;
+            } else {
+              window.open('call-tool.html?phoneNumber=' + phoneNumber, "Share on Facebook", "width=800,height=800");
+
+            }
         }
         return false;
     });
