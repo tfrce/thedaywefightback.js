@@ -428,13 +428,23 @@ font-size:12px;
 	text-align:right;
 	padding-top:15px;
 }
-
-.twilio-privacy {
-	margin-top:8px;
-	opacity: .6;
+.twilio-container {
+  width: 100%;
+  max-width: 190px;
+  margin: 0 auto;
 }
-
-.twilio-privacy:hover {
+.twilio-poweredby, .twilio-privacy {
+	margin-top:6px;
+	opacity: .6;
+      margin-bottom:3px;
+}
+.twilio-poweredby {
+  width: 60%;
+}
+.twilio-privacy {
+  width: 40%;
+}
+.twilio-privacy:hover, .twilio-poweredby:hover {
 	opacity:.8;
 }
 
