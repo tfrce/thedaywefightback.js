@@ -8,7 +8,7 @@ The goal is to drive as many phone calls and emails on the 11th. The calls are c
 
 <a href="http://tfrce.github.io/thedaywefightback.js/example/banner.html" target="_blank"><img src="screenshots/tdwfb-banner.png" alt="banner" /></a>
 
-View the [US demo page](http://tfrce.github.io/thedaywefightback.js/example/banner.html) or the [international demo page](http://tfrce.github.io/thedaywefightback.js/example/banner_international.html) - (unless explicitly set the banner generally determines what to show based off your location).
+View the [US demo page](http://tfrce.github.io/thedaywefightback.js/example/banner.html) or the [international demo page](http://tfrce.github.io/thedaywefightback.js/example/banner_international.html) - (unless explicitly set the banner uses GeoIP to detect your location).
 
 You can add it to your site now - it won't be activated until midnight EST on February 11th. You can also host the files locally. After 24 hours the banner de-activates and should be removed from your website code.
 
