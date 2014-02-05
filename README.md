@@ -1,6 +1,6 @@
 # thedaywefightback.js
 
-_Please make pull requests with any fixes, and leave questions, suggestions and bugs on our [issue](http://github.com/tfrce/thedaywefightback.js/issues) page. We've tried our best to accomodate all browsers but  will fix any remaining issues before the 11th._
+_Please make pull requests with any fixes, and leave , suggestions and bugs on our [issue](http://github.com/tfrce/thedaywefightback.js/issues) page. We've tried our best to accomodate all browsers but  will fix any remaining issues before the 11th._
 
 thedaywefightback.js is a javascript snippet that automatically activates at midnight of February 11th and adds a banner to your site for 24 hours in support of [thedaywefightback.org](https://thedaywefightback.org).
 
@@ -67,16 +67,17 @@ You can choose a different banner style and customize the preferences using a ja
 
 A Cloudflare app and Wordpress plugin will be added soon.
 
-## Questions
+## Let us know you're taking part
+
+If you add the banner to your site, sign up at [TheDayWeFightBack.org](https://thedaywefightback.org) and let us know.
+
+## Copyright and thanks
 
 Please feel free to fork and submit pull requests for any bugs or quirks you might find. thedaywefightback.js's code is licensed under the terms of the [GNU Affero General Public License](https://gnu.org/licenses/agpl) version 3, or, at your option, any later version (See [./COPYING](./COPYING)
 
 Built by [Taskforce.is](http://taskforce.is) members [Thomas Davis](https://twitter.com/neutralthoughts) and [Sina Khanifar](https://github.com/sinak/).
 
 **A big thank you to [Twilio](https://www.twilio.com/) for sponsoring calls and [Rob Spectre](https://twitter.com/dN0t) for all his help.**
-
-
-- Submit a pull request or <a href="https://twitter.com/home?status=@sinak Please add our XXX to the list of sites participating in Project Megaphone" target="_blank">tweet</a> to be added here.
 
 
 ## Screenshots
