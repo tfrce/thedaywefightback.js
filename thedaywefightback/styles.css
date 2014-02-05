@@ -415,7 +415,7 @@ font-size:12px;
 
 .email-instead {
 	text-align:right;
-	padding-top:8px;
+	padding-top:11px;
 }
 
 .phone-only-container input[type="submit"] {
@@ -423,11 +423,25 @@ font-size:12px;
 	background:transparent;
 	text-align:left;
 	padding-left:0;
+	font-style: italic;
+	font-size:17px;
 }
+
 .phone-only-container input[type="submit"]:hover {
 	background: none;
 }
+
+.phone-only-container a {
+	font-size:12px;
+}
+
+.phone-only-container a:hover {
+	color:white;
+	text-decoration: none;
+}
+
 .full-input {
+	margin-top:22px !important;
 	width:100%;
 }
 
