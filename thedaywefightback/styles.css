@@ -415,28 +415,53 @@ font-size:12px;
 .phone-only-container {
 	padding: 0 20px;
 }
+
+.phone-only-container input {
+	padding-left:10px;
+}
+
 .rightside .call-form {
 	margin-top:60px;
 }
 
 .email-instead {
 	text-align:right;
-	padding-top:11px;
+	padding-top:15px;
 }
 
 .twilio-privacy {
-	margin-top:5px;
+	margin-top:8px;
+	opacity: .6;
+}
+
+.twilio-privacy:hover {
+	opacity:1;
 }
 
 .phone-only-container input[type="submit"] {
 	font-style: italic;
 	font-size:16px;
-	padding-top:5px;
+	padding:5px 0 0 0;
 	height:30px;
+	margin-top:7px;
+	letter-spacing:2px;
+	width:210px;
 }
 
 .phone-only-container a {
 	font-size:12px;
+	font-weight: bold;
+}
+
+.email-icon {
+	padding-right:6px;
+	vertical-align: super;
+}
+
+@media (max-width:800px) {
+	.email-icon {
+		display:none;
+	}
 }
 
 .phone-only-container a:hover {
