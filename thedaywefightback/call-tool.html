@@ -37,9 +37,15 @@
 						<p>I’d like Senator/Representative ____ to support and co-sponsor the <strong>USA Freedom Act</strong>. I would also like you to oppose S. 1631, the so-called <strong>FISA Improvements Act</strong>. Moreover, I’d like you to work to prevent the NSA from <strong>undermining encryption standards</strong> and to <strong>protect the privacy rights of non-Americans</strong>.</p>
 					</li>
 				</ol>			
-	
+				
 			</aside>
 
+			<a href="#bill-details" id="read-more" onclick="showMore();">Find out more about the bills &rarr;</a>
+			<ul id="bill-details" style="">
+				<li><strong>The USA Freedom Act</strong> is a proposed law that would curtail the NSA’s ability to collect data on US citizens, create a special advocate to champion privacy in the FISA court, and increase transparency around NSA surveillance.</li>
+				<li><strong>Undermining encryption is bad:</strong> Weakening encryption standards and attacking technology companies makes us all less secure.</li>
+				<li><strong>International people matter:</strong> We must apply human rights values to digital surveillance techniques through transparency, rigorous oversight, and privacy protections that transcend borders.</li>
+			</ul>
 			
 			<a class="cta-button" href="thank-you.html?called=true">Click here once you're done  &rarr;</a>
 			<a href="#bill-details" class="read-more" onclick="showMore();">Find out more about the bills &rarr;</a>
@@ -61,32 +67,10 @@
 	</footer>
 	
 	<script type="text/javascript">
-		var className = "invisible";
-		var el = document.getElementById("bill-details");
-		
-		if (el.classList)
-		  el.classList.add(className);
-		else
-		  el.className += ' ' + className;
-		
+		document.getElementById("bill-details").style.display = 'none';		
 		function showMore(e) {
-			if (el.classList) {
-			  el.classList.toggle(className);
-			} else {
-			    var classes = el.className.split(' ');
-			    var existingIndex = -1;
-			    for (var i = classes.length; i--;) {
-			      if (classes[i] === className)
-			        existingIndex = i;
-			    }
-			
-			    if (existingIndex >= 0)
-			      classes.splice(existingIndex, 1);
-			    else
-			      classes.push(className);
-			
-			  el.className = classes.join(' ');
-			}
+			document.getElementById("bill-details").style.display = 'block';
+			document.getElementById("read-more").style.display = 'none';
 		}
 	</script>
 	

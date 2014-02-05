@@ -270,14 +270,14 @@ label, h3 {
 		input.cta-button {
 			padding: 0.5em 0;
 		}
-		.read-more {
+		#read-more {
 			text-align: center;
 			font-size: 1.25em;
 			font-style: italic;
 			display: block;
-			padding: 1em 0;
+			padding: 0.5em 0;
+			padding-bottom: 1em;
 			text-align: center;
-			padding-bottom: 0;
 		}
 	}
 
@@ -392,6 +392,9 @@ footer {
 			font-size: 1.1em;
 			p {
 				font-style: normal;
+				&:last-child {
+					margin-bottom:0;
+				}
 			}
 		}
 		h2 {
@@ -665,7 +668,6 @@ footer {
     width: 279px;
     height: 30px;
     background-position: -1px -46px;
-    margin-top:6px;
 }
 
 /* =====================================*/
