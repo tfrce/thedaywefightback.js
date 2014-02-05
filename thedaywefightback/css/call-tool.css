@@ -1,211 +1,629 @@
-h1,h2,h3 {
-	font-weight: bold;
-    font-family: 'brandon_grotesque';
-    -webkit-font-smoothing: antialiased;
-}
+/* normalise.css v3 */
+/* line 5, ../sass/call-tool.scss */
 html {
-	height: 900px;
-	width:800px;
-	overflow: hidden;
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
+
+/* line 5, ../sass/call-tool.scss */
 body {
-	border: 12px solid #262626;
-	width:800px;
-	height: 900px;
-	overflow: hidden;
-	color: #fff;
+  margin: 0;
+}
 
+/* line 5, ../sass/call-tool.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+
+/* line 5, ../sass/call-tool.scss */
+audio, canvas, progress, video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* line 5, ../sass/call-tool.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 5, ../sass/call-tool.scss */
+[hidden], template {
+  display: none;
+}
+
+/* line 5, ../sass/call-tool.scss */
+a {
+  background: transparent;
+}
+
+/* line 5, ../sass/call-tool.scss */
+a:active, a:hover {
+  outline: 0;
+}
+
+/* line 5, ../sass/call-tool.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 5, ../sass/call-tool.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 5, ../sass/call-tool.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 5, ../sass/call-tool.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* line 5, ../sass/call-tool.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/* line 5, ../sass/call-tool.scss */
+small {
+  font-size: 80%;
+}
+
+/* line 5, ../sass/call-tool.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 5, ../sass/call-tool.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 5, ../sass/call-tool.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 5, ../sass/call-tool.scss */
+img {
+  border: 0;
+}
+
+/* line 5, ../sass/call-tool.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 5, ../sass/call-tool.scss */
+figure {
+  margin: 1em 40px;
+}
+
+/* line 5, ../sass/call-tool.scss */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/* line 5, ../sass/call-tool.scss */
+pre {
+  overflow: auto;
+}
+
+/* line 5, ../sass/call-tool.scss */
+code, kbd, pre, samp {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+/* line 5, ../sass/call-tool.scss */
+button, input, optgroup, select, textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+/* line 5, ../sass/call-tool.scss */
+button {
+  overflow: visible;
+}
+
+/* line 5, ../sass/call-tool.scss */
+button, select {
+  text-transform: none;
+}
+
+/* line 5, ../sass/call-tool.scss */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/* line 5, ../sass/call-tool.scss */
+button[disabled], html input[disabled] {
+  cursor: default;
+}
+
+/* line 5, ../sass/call-tool.scss */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 5, ../sass/call-tool.scss */
+input {
+  line-height: normal;
+}
+
+/* line 5, ../sass/call-tool.scss */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* line 5, ../sass/call-tool.scss */
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* line 5, ../sass/call-tool.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 5, ../sass/call-tool.scss */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 5, ../sass/call-tool.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/* line 5, ../sass/call-tool.scss */
+legend {
+  border: 0;
+  padding: 0;
+}
+
+/* line 5, ../sass/call-tool.scss */
+textarea {
+  overflow: auto;
+}
+
+/* line 5, ../sass/call-tool.scss */
+optgroup {
+  font-weight: bold;
+}
+
+/* line 5, ../sass/call-tool.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 5, ../sass/call-tool.scss */
+td, th {
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'brandon_grotesque';
+  src: url("../fonts/BrandonGrotesque-regular-webfont.eot");
+  src: url("../fonts/BrandonGrotesque-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BrandonGrotesque-regular-webfont.woff") format("woff"), url("../fonts/BrandonGrotesque-regular-webfont.ttf") format("truetype"), url("../fonts/BrandonGrotesque-regular-webfont.svg#brandon_grotesque_regularRg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'brandon_grotesque';
+  src: url("../fonts/BrandonGrotesque-mediumitalic-webfont.eot");
+  src: url("../fonts/BrandonGrotesque-mediumitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BrandonGrotesque-mediumitalic-webfont.woff") format("woff"), url("../fonts/BrandonGrotesque-mediumitalic-webfont.ttf") format("truetype"), url("../fonts/BrandonGrotesque-mediumitalic-webfont.svg#brandon_grotesqueMdIt") format("svg");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'brandon_grotesque';
+  src: url("../fonts/BrandonGrotesque-blackitalic-webfont.eot");
+  src: url("../fonts/BrandonGrotesque-blackitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BrandonGrotesque-blackitalic-webfont.woff") format("woff"), url("../fonts/BrandonGrotesque-blackitalic-webfont.ttf") format("truetype"), url("../fonts/BrandonGrotesque-blackitalic-webfont.svg#brandon_grotesqueblack_italic") format("svg");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'brandon_grotesque';
+  src: url("../fonts/BrandonGrotesque-black-webfont.eot");
+  src: url("../fonts/BrandonGrotesque-black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BrandonGrotesque-black-webfont.woff") format("woff"), url("../fonts/BrandonGrotesque-black-webfont.ttf") format("truetype"), url("../fonts/BrandonGrotesque-black-webfont.svg#brandon_grotesqueblack") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
     font-family: 'brandon_grotesque';
-    -webkit-font-smoothing: antialiased;
+    src: url("../fonts/BrandonGrotesque-regular-webfont.svg#brandon_grotesque_regularRg") format("svg");
+    font-weight: normal;
+    font-style: normal;
 }
 
-.call-tool h2, .email h2 {
-	margin-bottom:5px;
-	font-size:18px;
-	text-transform: uppercase;
+  @font-face {
+    font-family: 'brandon_grotesque';
+    src: url("../fonts/BrandonGrotesque-mediumitalic-webfont.svg#brandon_grotesqueMdIt") format("svg");
+    font-weight: 500;
+    font-style: italic;
 }
 
-.container {
-	max-width: 760px;
+  @font-face {
+    font-family: 'brandon_grotesque';
+    src: url("../fonts/BrandonGrotesque-blackitalic-webfont.svg#brandon_grotesqueblack_italic") format("svg");
+    font-weight: 700;
+    font-style: italic;
 }
 
-.box {
-	padding: 0 50px;
+  @font-face {
+    font-family: 'brandon_grotesque';
+    src: url("../fonts/BrandonGrotesque-black-webfont.svg#brandon_grotesqueblack") format("svg");
+    font-weight: 700;
+    font-style: normal;
+}
+}
+/* Need to import webfonts here*/
+@font-face {
+  font-family: 'brandon_grotesque';
+  src: url("../fonts/BrandonGrotesque-Black.otf");
+  font-weight: 900;
+  font-style: normal;
 }
 
-.header-text h1 {
-	margin-top:10px;
-	font-size:80px;
-	margin:0;
-	text-align: center;
-	text-transform: uppercase;
-	line-height: 1.5;
+@font-face {
+  font-family: 'brandon_grotesque';
+  src: url("../fonts/BrandonGrotesque-BlackItalic.otf");
+  font-weight: 900;
+  font-style: italic;
 }
 
-.header-text h2 {
-	font-size:23px;
-	text-transform: uppercase;
-	color: #f2c45a;
-	text-align:center;
-	margin:0 0 10px 0;
+/* line 131, ../sass/call-tool.scss */
+body {
+  width: 100%;
+  *zoom: 1;
+  background: #FAFAFA;
+  line-height: 1.5em;
+  font-family: 'brandon_grotesque', Helvetica, Arial, sans-serif;
+  color: #666;
+  padding-bottom: 5em;
+}
+/* line 117, ../sass/call-tool.scss */
+body:before, body:after {
+  content: "";
+  display: table;
+}
+/* line 121, ../sass/call-tool.scss */
+body:after {
+  clear: both;
 }
 
-.instructions {
-	width:100%;
-	padding:10px 0;
-	background: #f2c45a;
+/* line 141, ../sass/call-tool.scss */
+a {
+  color: #f2c45a;
 }
 
-.instructions p {
-	margin:0;
-	color:black;
+/* CSS START */
+/* line 171, ../sass/call-tool.scss */
+header {
+  background: #000;
+  width: 100%;
+  line-height: 0;
+}
+/* line 175, ../sass/call-tool.scss */
+header h1 {
+  font-size: 0em;
+  margin: 0;
+  max-width: 768px;
+  margin: 0 auto;
+}
+/* line 181, ../sass/call-tool.scss */
+header img {
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.footer { 
-	max-width:780px;
-	position: fixed;
-	background:#262626;
-	width:100%;
-}
-#main-message {
-	font-size: 23px;
-	line-height:1.2;
+/* line 190, ../sass/call-tool.scss */
+form, section {
+  max-width: 768px;
+  margin: 0 auto;
 }
 
-#sub-message {
-	font-size:18px;
-	margin-top:10px;
+/* line 195, ../sass/call-tool.scss */
+form {
+  padding: 1em 2em;
+}
+/* line 197, ../sass/call-tool.scss */
+form h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline;
+  float: left;
+  width: 97.91667%;
+  margin: 0 1.04167%;
+  padding-top: 1em;
+  margin-top: 1.2em;
+  border-top: 1px solid #EEE;
+  color: #333;
+}
+/* line 206, ../sass/call-tool.scss */
+form fieldset {
+  display: block;
+  display: inline;
+  float: left;
+  width: 47.91667%;
+  margin: 0 1.04167%;
+  border: none;
+  padding: 0;
+}
+/* line 212, ../sass/call-tool.scss */
+form label {
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  padding: 0.5em 0;
+  padding-top: 1em;
+  color: #555;
+}
+/* line 220, ../sass/call-tool.scss */
+form input {
+  border: 1px solid #888;
+  padding: 0.5em;
+  line-height: 1em;
+  width: 90%;
+}
+/* line 226, ../sass/call-tool.scss */
+form div#message {
+  display: inline;
+  float: left;
+  width: 52.08333%;
+  margin: 0 1.04167%;
+  margin-right: 5.20833%;
+}
+/* line 229, ../sass/call-tool.scss */
+form div#message p {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  line-height: 1em;
+}
+/* line 235, ../sass/call-tool.scss */
+form div#message textarea {
+  -moz-box-shadow: inset 0 1px 2px #000;
+  border: 1px solid #888;
+  background: #FFF;
+  padding: 2.5%;
+  height: 60%;
+  display: block;
+  width: 95%;
+}
+/* line 244, ../sass/call-tool.scss */
+form div#message input {
+  width: auto;
+  padding: 0;
+  display: inline;
+  margin-right: 0.5em;
+  margin-top: 1em;
+}
+/* line 251, ../sass/call-tool.scss */
+form div#message label {
+  display: inline;
+  text-transform: none;
+  font-weight: normal;
+}
+/* line 256, ../sass/call-tool.scss */
+form div#message input.cta-button {
+  font-weight: bold;
+  background: #f2c45a;
+  border: 3px solid #000;
+  color: #111;
+  padding: 0.25em 0;
+  line-height: 1em;
+  font-size: 1.5em;
+  display: block;
+  font-style: italic;
+  margin-top: 1em;
+  width: 100%;
+}
+/* line 268, ../sass/call-tool.scss */
+form div#message input.cta-button:hover {
+  border-color: #000;
+  background: #f6d589;
+}
+/* line 272, ../sass/call-tool.scss */
+form div#message input.cta-button:active {
+  background: #eeb32b;
+  border-color: #000;
+}
+/* line 278, ../sass/call-tool.scss */
+form aside {
+  display: inline;
+  float: left;
+  width: 35.41667%;
+  margin: 0 1.04167%;
+}
+/* line 280, ../sass/call-tool.scss */
+form aside ol {
+  background: #FFF;
+  padding: 1em;
+  padding-left: 2.25em;
+  margin-top: 1em;
+}
+/* line 285, ../sass/call-tool.scss */
+form aside ol li {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #EEE;
+}
+/* line 289, ../sass/call-tool.scss */
+form aside ol li:last-child {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+/* line 294, ../sass/call-tool.scss */
+form aside ol li strong {
+  display: block;
+  color: #333;
 }
 
-#sub-message a {
-	text-decoration: underline;
-	color:black;
+/* line 304, ../sass/call-tool.scss */
+footer {
+  background: #000;
+  width: 100%;
+  padding: 1em 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  clear: both;
+}
+/* line 312, ../sass/call-tool.scss */
+footer div {
+  max-width: 768px;
+  padding: 0 2em;
+  margin: 0 auto;
+  *zoom: 1;
+}
+/* line 117, ../sass/call-tool.scss */
+footer div:before, footer div:after {
+  content: "";
+  display: table;
+}
+/* line 121, ../sass/call-tool.scss */
+footer div:after {
+  clear: both;
+}
+/* line 317, ../sass/call-tool.scss */
+footer div p {
+  float: left;
+  width: 50%;
+  margin: 0;
+  color: #FFF;
+  line-height: 1.2em;
+}
+/* line 324, ../sass/call-tool.scss */
+footer div i {
+  float: right;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.whattosay-box {
-	background: white;
-	color:black;
-	padding:15px;
+/* =====================================*/
+/* CSS Sprite */
+/* =====================================*/
+/* line 338, ../sass/call-tool.scss */
+.i {
+  background-image: url("../imgs/image.png");
+  background-repeat: no-repeat;
+  display: block;
 }
 
-.whattosay-box p {
-	font-size:18px;
-	margin:0 0 5px;
+/* line 344, ../sass/call-tool.scss */
+.i-email {
+  width: 172px;
+  height: 19px;
+  background-position: -1px -25px;
+  margin-top: 13px;
 }
 
-li {
-	font-size: 16px;
-	margin-bottom: 15px;
-}
-.talking-point {
-	font-weight: bold;
-}
-
-#call-tool-continue {
-	font-style: italic;
-	font-weight:900;
-	text-transform: uppercase;
-	font-size:35px;
-	line-height: 3.6;
+/* line 351, ../sass/call-tool.scss */
+.i-call {
+  width: 144px;
+  height: 22px;
+  background-position: -1px -1px;
+  margin-top: 30px;
 }
 
-#call-tool-continue:hover {
-	color:white;
+/* line 358, ../sass/call-tool.scss */
+.i-logo {
+  width: 279px;
+  height: 30px;
+  background-position: -1px -46px;
+  margin-top: 6px;
 }
 
-.arrow-fix {
-	vertical-align: 5%;
+/* =====================================*/
+/* Media Queries */
+/* =====================================*/
+@media screen and (max-width: 768px) {
+  /* line 370, ../sass/call-tool.scss */
+  body {
+    padding: 0;
+  }
+
+  /* line 373, ../sass/call-tool.scss */
+  footer {
+    position: static;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 2em;
+  }
+  /* line 379, ../sass/call-tool.scss */
+  footer div p {
+    float: none;
+    width: auto;
+    margin-bottom: 1em;
+  }
+  /* line 384, ../sass/call-tool.scss */
+  footer div i {
+    float: none;
+    margin: 0 auto;
+  }
 }
+@media screen and (max-width: 600px) {
+  /* line 392, ../sass/call-tool.scss */
+  body {
+    font-size: 0.9em;
+  }
 
-
-/*
-	Email Tool
-*/
-
-.email h1 {
-	color: #f2c45a;
-	line-height:1.1;
+  /* line 396, ../sass/call-tool.scss */
+  form {
+    padding-bottom: 2em;
+  }
+  /* line 399, ../sass/call-tool.scss */
+  form div#message, form h2 {
+    width: auto;
+    float: none;
+    margin: 0;
+  }
+  /* line 404, ../sass/call-tool.scss */
+  form h2 {
+    clear: both;
+    display: block;
+  }
+  /* line 408, ../sass/call-tool.scss */
+  form aside {
+    display: none;
+  }
 }
-.email input {
-	width:250px;
-	height:40px;
-	margin-top:11px;
-	padding-left:5px;
-	font-size:18px;
-	color:black;
-}
-
-.email label {
-	display:block;
-	text-align:right;
-	font-size:18px;
-	font-weight:900;
-	margin-top:23px;
-	text-transform: uppercase;
-}
-
-#email-text {
-	width:100%;
-	height:398px;
-	font-size:16px;
-	padding:10px;
-	resize:none;
-	color:black;
-}
-
-.email .cta-button {
-	float:right;
-	font-size:25px;
-	padding-top:5px;
-	width:100%;
-	margin-top:80px;
-}
-
-.email-checkbox-box label {
-	font-weight:normal;
-	font-size:15px;
-	text-align:left;
-	text-transform: none;
-}
-
-#email-checkbox {
-	border-radius: 0;
-	width:25px;
-	height:14px;
-}
-
-.footer-text {
-	display:inline-block;
-	width:390px;
-	float:left;
-}
-.footer-text p {
-	margin:4px 0 0;
-	font-size:15px;
-}
-
-/* 
-	Thank You
-*/
-
-.thankyou h1 {
-	color: #f2c45a;
-	line-height:1.1;
-	text-align: left;
-}
-
-.thankyou h2 {
-	color:white;
-	margin:60px 0 0 0;
-	text-align: left;
-	font-size:30px;
-}
-
-.thankyou p {
-	font-size:24px;
-	margin-top:0;
-}
-
-.thankyou p span {
-	font-weight: 900;
+@media screen and (max-width: 400px) {
+  /* line 416, ../sass/call-tool.scss */
+  form fieldset {
+    float: none;
+    width: auto;
+    margin: 0;
+    display: block;
+  }
 }
