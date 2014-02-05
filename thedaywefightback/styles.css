@@ -409,6 +409,33 @@ font-size:12px;
 }
 
 
+.phone-only-container {
+	padding: 0 20px;
+}
+
+.email-instead {
+	text-align:right;
+	padding-top:8px;
+}
+
+.phone-only-container input[type="submit"] {
+	color:white;
+	background:transparent;
+	text-align:left;
+	padding-left:0;
+}
+.phone-only-container input[type="submit"]:hover {
+	background: none;
+}
+.full-input {
+	width:100%;
+}
+
+
+/*
+	Footer
+*/
+
 .footer .leftsidecontainer {
   margin: 0 auto;
   margin-left: 9.5%;
@@ -434,6 +461,8 @@ font-size:12px;
   letter-spacing: 1px;
   font-weight: normal;
 }
+
+
 
 .footer-left, .footer-left a {
   font-weight: 700;

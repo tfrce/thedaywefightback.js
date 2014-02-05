@@ -74,7 +74,7 @@
         </div>
       </div>
       <div class="col-sm-6 rightside top">
-          <div class="phone-container">
+          <!-- <div class="phone-container">
               <form method="get" action="http://call.taskforce.is/create" class="call-form" role="form" autocomplete="on">
                   <div class="form-group">
                       <label class="control-label" for="userPhone">
@@ -105,6 +105,24 @@
                     <input id="submit" type="submit" value="Compose email" class="">
                   </div>
               </form>
+          </div> -->
+          <div class="phone-only-container">
+            <form method="get" action="http://call.taskforce.is/create" class="call-form" role="form" autocomplete="on">
+              <div class="form-group" style="text-align:center">
+                <img src="imgs/call-your-legislators.png" alt="Call your legislators!" />
+              </div>
+              <input type="text"  data-format="+1 (ddd) ddd-dddd" placeholder="YOUR PHONE NUMBER" name="phone" class="form-control bfh-phone full-input" id="userPhone" x-autocompletetype="phone">
+              <div class="row">
+                <div class="col-sm-6">
+                  <input id="submit" type="submit" value="Connect my call >>" class="">
+                </div>
+                <div class="col-sm-6">
+                  <div class="email-instead">
+                    <a href="#" >SEND AN EMAIL INSTEAD</a>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
       </div>
     </div>
