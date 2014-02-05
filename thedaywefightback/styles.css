@@ -116,39 +116,46 @@ a:hover {
     }
 }
 
+/* =====================================*/
+/* Mobile banner */
+/* =====================================*/
+
+.mobile-banner.visible-xs {
+  margin-top:5px;
+  height: 100%;
+}
+.mobile-banner img {
+  height: 89px;
+  margin: 0 auto;
+  margin-bottom:10px;
+}
 
 /* =====================================*/
 /* CSS Sprite */
 /* =====================================*/
-
-
 .i {
     background-image: url('imgs/image.png');
     background-repeat: no-repeat;
     display: block;
 }
-
 .i-email {
     width: 172px;
     height: 19px;
     background-position: -1px -25px;
     margin-top:13px;
 }
-
 .i-call {
     width: 144px;
     height: 22px;
     background-position: -1px -1px;
     margin-top:30px;
 }
-
 .i-logo {
     width: 279px;
     height: 30px;
     background-position: -1px -46px;
     margin-top:10px;
 }
-
 
 /* =====================================*/
 /* Left side of banner */
@@ -171,7 +178,12 @@ a:hover {
     line-height:1.1;
     width: 100%;
     text-align:center;
-    height: 50px;
+    height: 85px;
+  position:relative;
+}
+.scrolling-banner-text div {
+  position: absolute;
+  bottom:0;
 }
 .scrolling-banner-text span.fact {
   display:inline-block;
@@ -183,23 +195,11 @@ a:hover {
   padding: 7px 7px 2px 8px;
   position: relative;
   bottom: 2px;
+  margin-right: 4px;
   }
 .scrolling-banner-text span.fact:hover {
   background-color: #262626;
   color: #F2C45A;
-}
-/* =====================================*/
-/* Mobile banner */
-/* =====================================*/
-
-.mobile-banner.visible-xs {
-  margin-top:5px;
-  height: 100%;
-}
-.mobile-banner img {
-  height: 89px;
-  margin: 0 auto;
-  margin-bottom:10px;
 }
 
 @media (max-width: 900px){
@@ -212,7 +212,7 @@ a:hover {
 }
 .leftsidecontainer .divider {
     background: #fff;
-    margin-top: 35px;
+    margin-top: 5px;
     height: 1px;
 }
 .leftsidecontainer .divider div {
@@ -222,7 +222,7 @@ a:hover {
   z-index:100;
 }
 .leftsidecontainer .logotext {
-    margin-top:15px;
+    margin-top:10px;
 }
 
 /* =====================================*/
@@ -634,7 +634,7 @@ font-size:12px;
   margin-top: 3px;
 }
 .footer .signature-counter {
-  margin-left: 0;
+  margin-left: 3%;
 }
 .int-share img {
   width: 32%;
