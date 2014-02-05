@@ -31,7 +31,7 @@
 				<h2>Why you should also call</h2>
 				<p>Legislators receive over a hundred times more emails than phone calls. <span>It stands to reason that <strong>a single call is worth over a hundred emails.</strong></span></p>
 				<form method="get" action="http://call.taskforce.is/create" class="call-form" role="form" autocomplete="on">
-					<input type="text"  data-format="+1 (ddd) ddd-dddd" placeholder="YOUR PHONE NUMBER" name="phone" id="userPhone" x-autocompletetype="phone">
+					<input type="text"  data-format="+1 (ddd) ddd-dddd" placeholder="YOUR PHONE NUMBER" name="phone" id="userPhone" x-autocompletetype="phone" class="bfh-phone">
 				    <span id="error-text"></span>
 				    <input id="submit" type="submit" value="Connect my call" class="cta-button">
 				  <div class="twilio-container">
@@ -63,7 +63,9 @@
 	</section>
 	<script src="js/main.js" type="text/javascript"></script>
 	<script type="text/javascript">
-		var displayCall = true;		
+		var displayCall = true;	
+		// Thomas hack
+		var page = 'thankyou';	
 		if(getQueryVariable('called') === 'true') {
 			displayCall = false;
 		}
