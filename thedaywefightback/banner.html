@@ -109,9 +109,9 @@
           <div class="phone-only-container">
             <form method="get" action="http://call.taskforce.is/create" class="call-form" role="form" autocomplete="on">
               <div class="form-group" style="text-align:center">
-                <div><img src="imgs/call-your-legislators.png" alt="Call your legislators!" /></div>
-                <div class="twilio-privacy">
-                  <a href="#"><img src="imgs/twilioprivacy.png" ></a>
+                <img src="imgs/call-your-legislators.png" alt="Call your legislators!" />
+                <div>
+                  <a href="#"><img class="twilio-privacy" src="imgs/twilioprivacy.png" ></a>
                 </div>
               </div>
               <input type="text"  data-format="+1 (ddd) ddd-dddd" placeholder="YOUR PHONE NUMBER" name="phone" class="form-control bfh-phone full-input" id="userPhone" x-autocompletetype="phone">
@@ -121,7 +121,10 @@
                 </div>
                 <div class="col-sm-6">
                   <div class="email-instead">
-                    <a href="#" >SEND AN EMAIL INSTEAD</a>
+                    <a href="#" >
+                      <i class="email-icon"><img src="imgs/email-icon.png"></i>
+                      <span class="email-text">SEND AN EMAIL INSTEAD</span>
+                    </a>
                   </div>
                 </div>
               </div>
