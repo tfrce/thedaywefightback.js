@@ -103,6 +103,7 @@ a {
 
 a:hover {
     text-decoration: underline;
+    color: #f2c45a;
 }
 
 #banner-container {
