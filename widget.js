@@ -168,7 +168,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
             y = w.innerHeight|| e.clientHeight|| g.clientHeight;
         
 
-        if(x< 790) {
+        if(x< 767) {
           if(!this.minimized) {
             iframe_container.style.height = "100px";
           } else {
@@ -202,7 +202,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
           firstTime = false;
         }
         // a Hack, if mobile set firsttime to false so splash page never shows
-        if(x < 790) {
+        if(x < 767) {
           firstTime = false;
         }
         if( (options.location && options.location.country.iso_code === 'us') || widget_config.overrideLocation == "usa") {
@@ -217,7 +217,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         iframe_container.appendChild(iframe);
         var that = this;
 
-        if(x > 790) {
+        if(x > 767) {
 
           // Setup a close button
           var closeButton = document.createElement('button');
