@@ -34,11 +34,11 @@ _Place the code below before `</body>` tag. The script loads asynchronously and 
 
 The widget supports all screen sizes and platforms, if you encounter a bug please let us know on the [issues](http://github.com/tfrce/thedaywefightback.js/issues) page.
 
-## Other ways to install
+**Other ways to install include;
 
-* Cloudflare app
-* Wordpress pluging
-* Drupal plugin
+* [Cloudflare app](#)
+* [Wordpress plugin](#)
+* [Drupal plugin](#)
 
 
 ## Some things to know
