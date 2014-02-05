@@ -192,14 +192,19 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         if(options.location.country.iso_code) {
           selectedLocation = options.location.country.iso_code;
         }
+        var firstTime = true;
+        var cookie = getCookie(active_campaign.cookieName);
+        if(cookie !== null) {
+          firstTime = false;
+        }
         if( (options.location && options.location.country.iso_code === 'us') || widget_config.overrideLocation == "usa") {
           // Set the source of the iframe to the configured show_style type
-          iframe.src = ASSET_URL + active_campaign.config.show_style + '.html?callOnly='+widget_config.callOnly+'&iso='+selectedLocation+'&greeting=' + widget_config.greeting;
+          iframe.src = ASSET_URL + active_campaign.config.show_style + '.html?firstTime='+firstTime+'&callOnly='+widget_config.callOnly+'&iso='+selectedLocation+'&greeting=' + widget_config.greeting;
         } else if ( (options.location && options.location.country.iso_code !== 'us') || widget_config.overrideLocation == "usa" ) {
-          iframe.src = ASSET_URL + active_campaign.config.show_style + '_international.html?iso='+selectedLocation+'&greeting=' + widget_config.greeting;
+          iframe.src = ASSET_URL + active_campaign.config.show_style + '_international.html?firstTime='+firstTime+'&iso='+selectedLocation+'&greeting=' + widget_config.greeting;
         }
         else {
-          iframe.src = ASSET_URL + active_campaign.config.show_style + '.html?callOnly='+widget_config.callOnly+'&iso='+selectedLocation+'&greeting=' + widget_config.greeting;
+          iframe.src = ASSET_URL + active_campaign.config.show_style + '.html?firstTime='+firstTime+'&callOnly='+widget_config.callOnly+'&iso='+selectedLocation+'&greeting=' + widget_config.greeting;
         }
         iframe_container.appendChild(iframe);
         var that = this;
