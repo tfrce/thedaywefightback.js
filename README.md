@@ -1,14 +1,14 @@
 # thedaywefightback.js
 
-_Please leave questions, suggestions and bugs on our [issue](http://github.com/tfrce/thedaywefightback.js/issues) page. We've tried our best to accomodate all browsers but we are sure to run into more and hope to fix them by the 11th_
+_Please make pull requests with any fixes, and leave questions, suggestions and bugs on our [issue](http://github.com/tfrce/thedaywefightback.js/issues) page. We've tried our best to accomodate all browsers but  will fix any remaining issues before the 11th._
 
 thedaywefightback.js is a javascript snippet that automatically activates at midnight of February 11th and adds a banner to your site for 24 hours in support of [thedaywefightback.org](https://thedaywefightback.org).
 
 The goal is to drive as many phone calls and emails on the 11th. The calls are connected automatically by our servers and are free of cost for the users, thanks to the kind sponsorship of [Twilio](http://twilio.com).
 
-<img src="screenshots/tdwfb-banner.png" alt="banner" />
+<a href="http://tfrce.github.io/thedaywefightback.js/example/banner.html" target="_blank"><img src="screenshots/tdwfb-banner.png" alt="banner" /></a>
 
-View the [US demo page](http://tfrce.github.io/thedaywefightback.js/example/banner.html) or the [international demo page](http://tfrce.github.io/thedaywefightback.js/example/banner_international.html)(Unless explicitly set the banner generally determines what to show based off your location).
+View the [US demo page](http://tfrce.github.io/thedaywefightback.js/example/banner.html) or the [international demo page](http://tfrce.github.io/thedaywefightback.js/example/banner_international.html) - (unless explicitly set the banner uses GeoIP to detect your location).
 
 You can add it to your site now - it won't be activated until midnight EST on February 11th. You can also host the files locally. After 24 hours the banner de-activates and should be removed from your website code.
 
@@ -39,12 +39,9 @@ The widget supports all screen sizes and platforms, if you encounter a bug pleas
 
 The counts will reset on the day, and only the additions on the 11th will contribute to the total.
 
-**Other ways to install include;**
+## Other ways to install the banner
 
-* [Cloudflare app](#)
-* [Wordpress plugin](#)
-* [Drupal plugin](#)
-
+Coming soon.
 
 ## Customize the banner
 
@@ -70,10 +67,9 @@ You can choose a different banner style and customize the preferences using a ja
 
 ## Questions
 
+Please feel free to fork and submit pull requests for any bugs or quirks you might find. thedaywefightback.js's code is licensed under the terms of the [GNU Affero General Public License](https://gnu.org/licenses/agpl) version 3, or, at your option, any later version (See [./COPYING](./COPYING)
 
-Please feel free to fork and submit pull requests for any bugs or quirks you might find. thedaywefightback.js's code is licensed under the terms of the [GNU Affero General Public License](https://gnu.org/licenses/agpl) version 3, or, at your option, any later version (See [./COPYING].)
-
-Built by [Taskforce.is](http://taskforce.is) members [Thomas Davis](https://twitter.com/neutralthoughts) and [Sina Khanifar](https://twitter.com/sinak).
+Built by [Taskforce.is](http://taskforce.is) members [Thomas Davis](https://twitter.com/neutralthoughts) and [Sina Khanifar](https://github.com/sinak/).
 
 **A big thank you to [Twilio](https://www.twilio.com/) for sponsoring calls and [Rob Spectre](https://twitter.com/dN0t) for all his help.**
 
@@ -87,7 +83,5 @@ Built by [Taskforce.is](http://taskforce.is) members [Thomas Davis](https://twit
 <img src="screenshots/tdwfb-banner.png" alt="banner" />
 
 ### Call Tool Pop-up
-<img src="screenshots/call-tool.png" alt="banner" />
 
 ### Email Tool Pop-up
-<img src="screenshots/email-tool.png" alt="banner" />
