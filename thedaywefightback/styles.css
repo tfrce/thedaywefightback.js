@@ -420,7 +420,7 @@ font-size:12px;
 	padding-left:10px;
 }
 
-.rightside .call-form {
+.phone-only-container .call-form {
 	margin-top:60px;
 }
 
@@ -435,7 +435,7 @@ font-size:12px;
 }
 
 .twilio-privacy:hover {
-	opacity:1;
+	opacity:.8;
 }
 
 .phone-only-container input[type="submit"] {
