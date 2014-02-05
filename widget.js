@@ -309,7 +309,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
 
         // Check if is mobile
         if(!checks.isMobile()){
-          return false;
+          //return false;
         }
         checks.correctDate(function (response) {
           clearTimeout(window.tdwfbDateCallBackFailSafe);
