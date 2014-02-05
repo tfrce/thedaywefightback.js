@@ -1,6 +1,6 @@
 /*
-   _            _     __                    
-  | |_ __ _ ___| | __/ _| ___  _ __ ___ ___ 
+   _            _     __
+  | |_ __ _ ___| | __/ _| ___  _ __ ___ ___
   | __/ _` / __| |/ / |_ / _ \| '__/ __/ _ \
   | || (_| \__ \   <|  _| (_) | | | (_|  __/
    \__\__,_|___/_|\_\_|  \___/|_|  \___\___|
@@ -27,13 +27,13 @@
   later version.  The code is distributed WITHOUT ANY WARRANTY;
   without even the implied warranty of MERCHANTABILITY or FITNESS FOR
   A PARTICULAR PURPOSE.  See the GNU GPL for more details.
- 
+
   As additional permission under GNU AGPL version 3 section 7, you may
   distribute non-source (e.g., minimized or compacted) forms of that
   code without the copy of the GNU AGPL normally required by section
   4, provided you include this license notice and a URL through which
   recipients can access the Corresponding Source.
- 
+
  @licend  The above is the entire license notice for the JavaScript
           code in this page.
 
@@ -43,9 +43,7 @@
 var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
 
 (function(window, widget_config){
-
   // Do configuration
-
   widget_config.show_style = widget_config.show_style || 'banner';
   widget_config.greeting = widget_config.greeting || 'Dear Internet';
   widget_config.debug = widget_config.debug || false;
@@ -79,8 +77,8 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
     var c_value = document.cookie;
     var c_start = c_value.indexOf(" " + c_name + "=");
     if (c_start == -1) { c_start = c_value.indexOf(c_name + "="); };
-    if (c_start == -1) { 
-      c_value = null; 
+    if (c_start == -1) {
+      c_value = null;
     } else {
       c_start = c_value.indexOf("=", c_start) + 1;
       var c_end = c_value.indexOf(";", c_start);
@@ -90,15 +88,12 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
     return c_value;
   }
 
-
-
   // Define checks
-
   var checks = {
     correctDate: function(callback) {
       window.tdwfbCheckDate = callback;
       var script = document.createElement('script');
-      script.src = '//dznh7un1y2etk.cloudfront.net/time?callback=tdwfbCheckDate'
+      script.src = '//dznh7un1y2etk.cloudfront.net/time?callback=tdwfbCheckDate';
       document.getElementsByTagName('head')[0].appendChild(script);
       window.tdwfbDateCallBackFailSafe = setTimeout(function () {
         // TODO - Potentially better logic for this fallback
@@ -112,14 +107,14 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
     location: function (callback) {
       window.tdwfbParseLocation = callback;
       var script = document.createElement('script');
-      script.src = 'https://geoip.taskforce.is/?callback=tdwfbParseLocation'
+      script.src = 'https://geoip.taskforce.is/?callback=tdwfbParseLocation';
       document.getElementsByTagName('head')[0].appendChild(script);
       window.tdwfbLocationCallBackFailSafe = setTimeout(function () {
         // Set location to US and pass to callback
         callback({country: {iso_code: 'us'}});
       }, 5000);
     }
-  }
+  };
 
   // Define campaigns
 
@@ -143,8 +138,8 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         if(widget_config.startAsMinimized && cookie === null) {
           this.minimized = true;
         }
-        var style = active_campaign.styles[active_campaign.config.show_style]
-        
+        var style = active_campaign.styles[active_campaign.config.show_style];
+
         if(style.overlay) {
           var overlay = document.createElement('div');
           overlay.style.cssText = style.overlay;
@@ -156,7 +151,8 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         window.tdwfbCampaignContainer = campaign_container;
         campaign_container.style.cssText = style.campaign_container;
 
-        // Create a container for the iframe so we can do padding and border-radius properly
+        // Create a container for the iframe so we can do padding and
+        // border-radius properly
         var iframe_container = document.createElement('div');
         iframe_container.style.cssText = style.iframe_container;
 
@@ -166,7 +162,6 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
             g = d.getElementsByTagName('body')[0],
             x = w.innerWidth || e.clientWidth || g.clientWidth,
             y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-        
 
         if(x< 767) {
           if(!this.minimized) {
@@ -180,7 +175,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
             iframe_container.style.height = "50px";
           } else {
             iframe_container.style.height = "350px";
-          };
+          }
         }
         // Append Iframe and campaign container to document
         var footerOverlay = document.createElement('div');
@@ -190,13 +185,10 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
 
         document.body.appendChild(campaign_container);
 
-
         var iframe = document.createElement('iframe');
         iframe.style.cssText = style.iframe;
-        var selectedLocation = '';
-        if(options.location.country.iso_code) {
-          selectedLocation = options.location.country.iso_code;
-        }
+        var isoCode = options.location.country &&
+          options.location.country.iso_code || 'unknown';
         var firstTime = true;
         if(cookie !== null) {
           firstTime = false;
@@ -205,14 +197,23 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         if(x < 767) {
           firstTime = false;
         }
-        if( (options.location && options.location.country.iso_code === 'us') || widget_config.overrideLocation == "usa") {
+        if(isoCode === 'us' ||
+            widget_config.overrideLocation === 'usa') {
           // Set the source of the iframe to the configured show_style type
-          iframe.src = ASSET_URL + active_campaign.config.show_style + '.html?firstTime='+firstTime+'&callOnly='+widget_config.callOnly+'&iso='+selectedLocation+'&greeting=' + widget_config.greeting;
-        } else if ( (options.location && options.location.country.iso_code !== 'us') || widget_config.overrideLocation == "usa" ) {
-          iframe.src = ASSET_URL + active_campaign.config.show_style + '_international.html?firstTime='+firstTime+'&iso='+selectedLocation+'&greeting=' + widget_config.greeting;
-        }
-        else {
-          iframe.src = ASSET_URL + active_campaign.config.show_style + '.html?firstTime='+firstTime+'&callOnly='+widget_config.callOnly+'&iso='+selectedLocation+'&greeting=' + widget_config.greeting;
+          iframe.src = ASSET_URL + active_campaign.config.show_style +
+            '.html?firstTime=' + firstTime + '&callOnly=' +
+            widget_config.callOnly + '&iso=' + isoCode + '&greeting=' +
+            widget_config.greeting;
+        } else if (isoCode !== 'us' ||
+            widget_config.overrideLocation === 'usa') {
+          iframe.src = ASSET_URL + active_campaign.config.show_style +
+            '_international.html?firstTime=' + firstTime + '&iso=' + isoCode +
+            '&greeting=' + widget_config.greeting;
+        } else {
+          iframe.src = ASSET_URL + active_campaign.config.show_style +
+            '.html?firstTime=' + firstTime + '&callOnly=' +
+            widget_config.callOnly + '&iso=' + isoCode + '&greeting=' +
+            widget_config.greeting;
         }
         iframe_container.appendChild(iframe);
         var that = this;
@@ -237,8 +238,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
             openButton.style.display = 'none';
             closeButton.style.display = 'block';
             footerOverlay.style.display = 'none';
-
-          };
+          }
           var toggleDisplay = function () {
             if(!that.minimized) {
               iframe_container.style.height = "50px";
@@ -259,19 +259,17 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
 
           footerOverlay.onclick = toggleDisplay;
           closeButton.onclick = toggleDisplay
-          
         } else {
-
           var mobileCloseButton = document.createElement('button');
           mobileCloseButton.style.cssText = style.mobileCloseButton;
           iframe_container.appendChild(mobileCloseButton);
 
           mobileCloseButton.onclick = function() {
               setCookie(active_campaign.cookieName, '{"minimized": true}', COOKIE_TIMEOUT);
-              document.body.removeChild(campaign_container);        
+              document.body.removeChild(campaign_container);
           }
         }
-    },
+      },
 
       init: function (config) {
         active_campaign.config = config;
@@ -306,7 +304,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
               x = w.innerWidth || e.clientWidth || g.clientWidth,
               y = w.innerHeight|| e.clientHeight|| g.clientHeight;
               document.body.removeChild(window.tdwfbCampaignContainer);
-              that.show({location: window.tdwfbLocation, widget_config: widget_config});        
+              that.show({location: window.tdwfbLocation, widget_config: widget_config});
 
           }, 50);
 
