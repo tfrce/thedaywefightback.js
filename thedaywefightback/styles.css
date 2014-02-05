@@ -80,22 +80,6 @@
   }
 }
 
-/* Need to import webfonts here*/
-
-@font-face {
-    font-family: 'brandon_grotesque';
-    src: url('fonts/BrandonGrotesque-Black.otf');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'brandon_grotesque';
-    src: url('fonts/BrandonGrotesque-BlackItalic.otf');
-    font-weight: 900;
-    font-style: italic;
-}
-
 html {
     overflow: hidden;
 }
@@ -115,6 +99,10 @@ img {
 
 a {
     color: #f2c45a;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 #banner-container {
@@ -192,7 +180,7 @@ a {
   font-size:13px;
   background-color: #F2C45A;
   color: #000;
-  padding: 4px 5px 2px 5px;
+  padding: 7px 7px 2px 8px;
   position: relative;
   bottom: 2px;
   }
