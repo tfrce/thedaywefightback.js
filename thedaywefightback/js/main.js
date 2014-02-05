@@ -149,7 +149,7 @@ $(document).ready( function () {
             if(typeof page !== 'undefined' && page === 'thankyou') {
               window.location = 'call-tool.html?phoneNumber=' + phoneNumber;
             } else {
-              window.open('call-tool.html?phoneNumber=' + phoneNumber, "Share on Facebook", "width=800,height=800");
+              window.open('call-tool.html?phoneNumber=' + phoneNumber, "_blank", "width=800,height=800");
 
             }
         }
@@ -164,7 +164,7 @@ $(document).ready( function () {
         if(!isValidEmail(userEmail)){
             rumbleEl(userEmailEl);
         } else {
-            window.open('email-tool.html?email=' + userEmail, "Share on Facebook", "width=800,height=800");
+            window.open('email-tool.html?email=' + userEmail, "_blank", "width=800,height=800");
         }
         return false;
     });
