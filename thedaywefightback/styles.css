@@ -200,6 +200,13 @@ a {
   background-color: #262626;
   color: #F2C45A;
 }
+/* =====================================*/
+/* Mobile banner */
+/* =====================================*/
+
+.visible-xs {
+  margin-top:5px;
+}
 
 @media (max-width: 900px){
     .scrolling-banner-text {
