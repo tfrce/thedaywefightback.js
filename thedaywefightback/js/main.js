@@ -469,7 +469,7 @@ $(document).ready( function () {
     if($('#signatory-count').length > 0) {
         $.ajax('//dznh7un1y2etk.cloudfront.net/signature_count', {
             success: function(res, err) {
-                var demo = new countUp("signatory-count", 0, res.count, 0, 2);
+                var demo = new countUp("signatory-count", 0, res.count + 10000, 0, 2);
                 demo.start();
             },
             dataType: 'jsonp',
