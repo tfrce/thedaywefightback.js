@@ -627,7 +627,6 @@ if (!Object.keys) {
     }
 
 
-    console.log(randomOrgIndex, referalMap);
 
     var referalKeys = Object.keys(referalMap);
     var referalParam = getParameterByName('r');
