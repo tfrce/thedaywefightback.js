@@ -556,7 +556,7 @@ footer div:after {
 /* line 359, ../sass/call-email-tool.scss */
 footer div p {
   float: left;
-  width: 50%;
+  width: 51%;
   margin: 0;
   color: #FFF;
   line-height: 1.2em;
@@ -590,7 +590,7 @@ footer div i {
   font-weight: normal;
   font-style: italic;
   font-size: 1.05em;
-  color: #BBB;
+  color: #777;
 }
 /* line 392, ../sass/call-email-tool.scss */
 .call div#left p a {
@@ -634,59 +634,63 @@ footer div i {
 /* =====================================*/
 /* Media Queries */
 /* =====================================*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   /* line 437, ../sass/call-email-tool.scss */
   body {
+    font-size: 0.9em;
     padding: 0;
   }
 
-  /* line 440, ../sass/call-email-tool.scss */
+  /* line 441, ../sass/call-email-tool.scss */
   footer {
     position: static;
     text-align: center;
     font-size: 0.9em;
     margin-top: 2em;
   }
-  /* line 446, ../sass/call-email-tool.scss */
+  /* line 447, ../sass/call-email-tool.scss */
   footer div p {
     float: none;
     width: auto;
     margin-bottom: 1em;
   }
-  /* line 451, ../sass/call-email-tool.scss */
+  /* line 452, ../sass/call-email-tool.scss */
   footer div i {
     float: none;
     margin: 0 auto;
   }
-}
-@media screen and (max-width: 600px) {
-  /* line 459, ../sass/call-email-tool.scss */
-  body {
-    font-size: 0.9em;
-  }
 
-  /* line 463, ../sass/call-email-tool.scss */
+  /* line 460, ../sass/call-email-tool.scss */
   form {
     padding-bottom: 2em;
   }
-  /* line 466, ../sass/call-email-tool.scss */
-  form div#message, form h2 {
+
+  /* line 463, ../sass/call-email-tool.scss */
+  aside {
+    display: none;
+  }
+
+  /* line 467, ../sass/call-email-tool.scss */
+  div#left, h2, .call aside {
     width: auto;
     float: none;
     margin: 0;
+    display: block;
   }
-  /* line 471, ../sass/call-email-tool.scss */
-  form h2 {
+
+  /* line 473, ../sass/call-email-tool.scss */
+  .call div#left img {
+    margin-bottom: 1em;
+  }
+
+  /* line 476, ../sass/call-email-tool.scss */
+  h2 {
     clear: both;
     display: block;
   }
-  /* line 475, ../sass/call-email-tool.scss */
-  form aside {
-    display: none;
-  }
 }
 @media screen and (max-width: 400px) {
-  /* line 483, ../sass/call-email-tool.scss */
+  /* line 484, ../sass/call-email-tool.scss */
   form fieldset {
     float: none;
     width: auto;

@@ -358,7 +358,7 @@ footer {
 		@include clearfix;
 		p {
 			float: left;
-			width: 50%;
+			width: 51%;
 			margin: 0;
 			color: #FFF;
 			line-height: 1.2em;
@@ -388,7 +388,7 @@ footer {
 		font-weight: normal;
 		font-style: italic;
 		font-size: 1.05em;
-		color: #BBB;
+		color: #777;
 		a {
 			white-space: nowrap;
 		}
@@ -433,8 +433,9 @@ footer {
 /* Media Queries */
 /* =====================================*/
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
 	body {
+		font-size: 0.9em;
 		padding: 0;
 	}
 	footer {
@@ -454,29 +455,29 @@ footer {
 			}
 		}
 	}
-}
-@media screen and (max-width: 600px) {
-	body {
-		font-size: 0.9em;
-	}
+	
 	
 	form {
 		padding-bottom: 2em;
+		}
+		aside {
+			display: none;
+		}
 		
-		div#message, h2 {
+		div#left, h2, .call aside {
 			width: auto;
 			float: none;
 			margin: 0;
+			display: block;
+		}
+		.call div#left img {
+			margin-bottom: 1em;
 		}
 		h2 {
 			clear: both;
 			display: block;
 		}
-		aside {
-			display: none;
-		}
-	}
-	
+		
 }
 @media screen and (max-width: 400px) {
 	form {
