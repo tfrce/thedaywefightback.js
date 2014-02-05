@@ -8,7 +8,7 @@ The goal is to drive as many phone calls and emails on the 11th. The calls are c
 
 <img src="screenshots/tdwfb-banner.png" alt="banner" />
 
-View the [example](http://tfrce.github.io/thedaywefightback.js/example/banner.html)
+View the [US demo page](http://tfrce.github.io/thedaywefightback.js/example/banner.html) or the [international demo page](http://tfrce.github.io/thedaywefightback.js/example/banner_international.html).
 
 You can add it to your site now - it won't be activated until midnight EST on February 11th. You can also host the files locally.
 
@@ -21,7 +21,7 @@ Simply copy and paste the code below into your website, right above the closing 
 _Place the code below before `</body>` tag. The script loads asynchronously and won't affect page load times._
 
 ```html
-<script> 
+<script type="text/javascript"> 
   // @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt GPL-v3-or-Later
   (function(){
     var e = document.createElement('script'); e.type='text/javascript'; e.async = true;
@@ -34,7 +34,7 @@ _Place the code below before `</body>` tag. The script loads asynchronously and 
 
 The widget supports all screen sizes and platforms, if you encounter a bug please let us know on the [issues](http://github.com/tfrce/thedaywefightback.js/issues) page.
 
-**Other ways to install include;
+**Other ways to install include;**
 
 * [Cloudflare app](#)
 * [Wordpress plugin](#)
