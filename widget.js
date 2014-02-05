@@ -141,7 +141,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
 
       window.tdwfbLocationCallBackFailSafe = setTimeout(function () {
         // Set location to US and pass to callback
-        callback({country: {iso_code: 'us'}});
+        callback({country: {iso_code: 'US'}});
       }, 5000);
     }
   };
@@ -250,14 +250,14 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
           firstTime = false;
         }
 
-        if (isoCode === 'us' ||
+        if (isoCode === 'US' ||
             widgetConfig.overrideLocation === 'usa') {
           // Set the source of the iframe to the configured show_style type
           iframe.src = ASSET_URL + activeCampaign.config.show_style +
             '.html?firstTime=' + firstTime + '&callOnly=' +
             widgetConfig.callOnly + '&iso=' + isoCode + '&greeting=' +
             widgetConfig.greeting;
-        } else if (isoCode !== 'us' ||
+        } else if (isoCode !== 'US' ||
             widgetConfig.overrideLocation === 'usa') {
           iframe.src = ASSET_URL + activeCampaign.config.show_style +
             '_international.html?firstTime=' + firstTime + '&iso=' + isoCode +
