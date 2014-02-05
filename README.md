@@ -39,7 +39,7 @@ The widget supports all screen sizes and platforms, if you encounter a bug pleas
 
 The counts will reset on the day, and only the additions on the 11th will contribute to the total.
 
-**Other ways to install include;**
+**Other ways to install the banner**
 
 Coming soon.
 
@@ -67,10 +67,9 @@ You can choose a different banner style and customize the preferences using a ja
 
 ## Questions
 
+Please feel free to fork and submit pull requests for any bugs or quirks you might find. thedaywefightback.js's code is licensed under the terms of the [GNU Affero General Public License](https://gnu.org/licenses/agpl) version 3, or, at your option, any later version (See [./COPYING](./COPYING)
 
-Please feel free to fork and submit pull requests for any bugs or quirks you might find. thedaywefightback.js's code is licensed under the terms of the [GNU Affero General Public License](https://gnu.org/licenses/agpl) version 3, or, at your option, any later version (See [./COPYING].)
-
-Built by [Taskforce.is](http://taskforce.is) members [Thomas Davis](https://twitter.com/neutralthoughts) and [Sina Khanifar](https://twitter.com/sinak).
+Built by [Taskforce.is](http://taskforce.is) members [Thomas Davis](https://twitter.com/neutralthoughts) and [Sina Khanifar](https://github.com/sinak/).
 
 **A big thank you to [Twilio](https://www.twilio.com/) for sponsoring calls and [Rob Spectre](https://twitter.com/dN0t) for all his help.**
 
