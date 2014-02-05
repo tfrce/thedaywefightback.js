@@ -21,6 +21,7 @@ Simply copy and paste the code below into your website, right above the closing 
 _Place the code below before `</body>` tag. The script loads asynchronously and won't affect page load times._
 
 ```html
+<!--[if !(lte IE 8)]><!-->
 <script type="text/javascript"> 
   // @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt GPL-v3-or-Later
   (function(){
@@ -30,6 +31,8 @@ _Place the code below before `</body>` tag. The script loads asynchronously and 
   })();
   // @license-end
 </script>
+<!--<![endif]-->
+
 ```
 
 The widget supports all screen sizes and platforms, if you encounter a bug please let us know on the [issues](http://github.com/tfrce/thedaywefightback.js/issues) page.
