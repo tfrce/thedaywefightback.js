@@ -50,7 +50,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
   widget_config.greeting = widget_config.greeting || 'Dear Internet';
   widget_config.debug = widget_config.debug || false;
   widget_config.callOnly = widget_config.callOnly || true;
-  widget_config.startAsMinimized = widget_config.startAsMinimized || true;
+  widget_config.startAsMinimized = widget_config.startAsMinimized || false;
   widget_config.disableDate = widget_config.disableDate || false;
   widget_config.campaign = widget_config.campaign || 'thedaywefightback';
   widget_config.cookieTimeout = widget_config.cookieTimeout || 172800;
