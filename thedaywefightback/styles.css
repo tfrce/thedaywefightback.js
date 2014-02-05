@@ -458,7 +458,7 @@ font-size:12px;
 	vertical-align: super;
 }
 
-@media (max-width:800px) {
+@media (max-width:850px) {
 	.email-icon {
 		display:none;
 	}
