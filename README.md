@@ -86,4 +86,4 @@ Built by [Taskforce.is](http://taskforce.is) members [Thomas Davis](https://twit
 <img src="screenshots/call-tool.png" style="width:300px;" alt="banner" />
 
 ### Email Tool Pop-up
-<img src="screenshots/call-tool.png" style="width:300px;" alt="banner" />
+<img src="screenshots/email-tool.png" style="width:300px;" alt="banner" />
