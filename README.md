@@ -41,10 +41,6 @@ The widget supports all screen sizes and platforms, if you encounter a bug pleas
 
 The counts will reset on the day, and only the additions on the 11th will contribute to the total.
 
-## Other ways to install the banner
-
-A Cloudflare app and Wordpress plugin will be added soon.
-
 ## Customize the banner
 
 You can choose a different banner style and customize the preferences using a javascript object:
@@ -66,6 +62,10 @@ You can choose a different banner style and customize the preferences using a ja
   // @license-end
 </script>
 ```
+
+## Other ways to install the banner
+
+A Cloudflare app and Wordpress plugin will be added soon.
 
 ## Questions
 
