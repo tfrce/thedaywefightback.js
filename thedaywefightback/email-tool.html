@@ -1,273 +1,251 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="description">
-    <!-- Bootstrap core CSS -->
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="" name="description"><!-- Bootstrap core CSS -->
 
 
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
-    <link href="css/call-email-tool.css" rel="stylesheet" type="text/css">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js" type='text/javascript'></script>
-    <script src="js/css3-mediaqueries.js" type='text/javascript'></script>
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+	<link href="css/call-email-tool.css" rel="stylesheet" type="text/css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js" type='text/javascript'></script>
+	<script src="js/css3-mediaqueries.js" type='text/javascript'></script>
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
 	  <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	  <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
 	<![endif]-->
 
-    <title></title>
+	<title></title>
 </head>
 
 <body class="email">
-    <header>
-        <h1>
-            <span>Email Congress</span>
-            <img src="imgs/email-congress.png">
-        </h1>
-    </header>
-    <!-- Form Starts -->
+	<header>
+		<h1><span>Email Congress</span><img src="imgs/email-congress.png"></h1>
+	</header><!-- Form Starts -->
 
-    <form class="send-email">
-        <fieldset>
-            <label for="full_name">Your Full Name</label>
-            <input class="form-control" id="full_name" name="name" placeholder="First Last" type="text">
+	<form class="send-email">
+		<fieldset>
+			<label for="full_name">Your Full Name</label> 
+			<input class="form-control" id="full_name" name="name" placeholder="First Last" type="text"> 
+			
+			<label for="email">Your Email</label> 
+			<input class="form-control" id="email" name="email" placeholder="youremail@domain.com" type="email">
+		</fieldset>
 
-            <label for="email">Your Email</label>
-            <input class="form-control" id="email" name="email" placeholder="youremail@domain.com" type="email">
-        </fieldset>
+		<fieldset>
+			<label for="address">Your Address</label> 
+			<input class="form-control" id="address" name="address" placeholder="1 Home Road" type="text"> 
+			<label for="zip">Your Zip Code</label> 
+			<input class="form-control" id="zip" name="zip" placeholder="123456" type="text">
+		</fieldset>
 
-        <fieldset>
-            <label for="address">Your Address</label>
-            <input class="form-control" id="address" name="address" placeholder="1 Home Road" type="text">
-            <label for="zip">Your Zip Code</label>
-            <input class="form-control" id="zip" name="zip" placeholder="123456" type="text">
-        </fieldset>
-
-
-        <div id="left">
-            <h2>Your Message</h2>
-
-            <p>Dear representative/senator,</p>
-
-            <textarea id="email-text" name="message" rows="10">
-                As your constituent, I am deeply concerned about the National Security Agency’s (NSA) mass surveillance programs. We need real reform to stop the NSA's mass collection of our information. I urge you to support the USA Freedom Act (H.R. 3361/S. 1599), an important first step in stopping mass spying, reforming the FISA court, and increasing transparency. But reform shouldn't stop there: please push for stronger privacy protections that stop dragnet surveillance of innocent users across the globe, and stop the NSA from sabotaging international encryption standards. I'm also urging you to oppose S. 1631, the so-called FISA Improvements Act. This bill aims to entrench some of the worst forms of NSA surveillance and extend the NSA surveillance programs in unprecedented ways. It would allow the NSA to continue to collect the phone records of hundreds of millions of Americans not suspected of any crime—a program I absolutely oppose—and could expand into collecting records of Internet usage. The NSA mass surveillance programs chill freedom of speech, undermine confidence in US Internet companies, and run afoul of the Constitution. We need reform now.
-            </textarea>
-
-            <p>- Your name</p>
-
-            <input class="org-slug" name="org" type="hidden" value="">
-            <input id="email-checkbox" type="checkbox">
-            <label for="email-checkbox">Also sign up to receive emails from
-                <span class="org-name"></span>, one of the coalition members <a class="org-privacy" href="#">(privacy policy).</a>
-            </label>
-
-            <input class="cta-button" id="submit" type="submit" value="SEND EMAIL &rarr;">
-        </div>
-        <aside>
-            <ol>
-                <h3>Brief overview</h3>
-                <li>
-                    <h4>Support the USA Freedom Act.</h4>The USA Freedom Act would institute key pro-privacy reforms, including creating new limits on the NSA’s ability to collect American’s telephone records in bulk.</li>
-
-                <li>
-                    <h4>Oppose the FISA Improvements Act.</h4>This dangerous bill would codify mass surveillance by the NSA and potentially expand the spying.</li>
-
-                <li>
-                    <h4>Protect people around the globe.</h4>Everybody deserves basic privacy rights: Innocent foreigners shouldn't have their communications surveilled any more than innocent Americans.</li>
-
-                <li>
-                    <h4>Protect encryption standards.</h4>The NSA is weakening encryption standards, attacking technology companies, and preventing security holes from being fixed. This must stop.</li>
-            </ol>
-        </aside>
-
-
-
-
-    </form>
-
-    <footer>
-        <div>
-            <p>If for any reason we’re unable to deliver your email, one of the coalition members may deliver it in person <a href="#">(read more)</a>.</p>
-            <i class="i i-logo"></i>
-        </div>
-    </footer>
-
-
-    <script src="js/easyXDM.min.js" type="text/javascript"></script>
-    <script src="js/main.js" type="text/javascript"></script>
-    <script>
-    function getQueryVariable(variable) {
-        var query = window.location.search.substring(1);
-        var vars = query.split('&');
-        for (var i = 0; i < vars.length; i++) {
-            var pair = vars[i].split('=');
-            if (decodeURIComponent(pair[0]) == variable) {
-                return decodeURIComponent(pair[1]);
-            }
-        }
-    }
-    $.fn.serializeObject = function() {
-        var o = {};
-        var a = this.serializeArray();
-        $.each(a, function() {
-            if (o[this.name]) {
-                if (!o[this.name].push) {
-                    o[this.name] = [o[this.name]];
-                }
-                o[this.name].push(this.value || '');
-            } else {
-                o[this.name] = this.value || '';
-            }
-        });
-        return o;
-    };
-    var rpc = new easyXDM.Rpc({
-        remote: "http://email-congress.herokuapp.com/xdm/cors/"
-    }, {
-        remote: {
-            request: {}
-        }
-    });
-    $(document).on('ready', function() {
-
-        $('#email').val(getQueryVariable('email'));
-        $('#full_name').focus();
-        $('.send-email').on('submit', function(ev) {
-            var form = $(ev.currentTarget);
-            var data = form.serializeObject();
-            console.log(data);
-            rpc.request({
-                url: "http://email-congress.herokuapp.com/email",
-                method: "POST",
-                data: data
-            }, function(response) {
-                $('body').html('success');
-            });
-            return false;
-        });
-
-
-
-        function getParameterByName(name) {
-            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-            var regex = new RegExp("[\\?&]" + name + "=([^&\/#]*)"),
-                results = regex.exec(location.search);
-            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-        }
-
-        // ie shims
-        if (!Object.keys) {
-            Object.keys = function(o) {
-                if (o !== Object(o))
-                    throw new TypeError('Object.keys called on a non-object');
-                var k = [],
-                    p;
-                for (p in o)
-                    if (Object.prototype.hasOwnProperty.call(o, p)) k.push(p);
-                return k;
-            }
-        }
-
-        (function() {
-
-            var referalMap = {
-                'fp': {
-                    name: 'Free Press',
-                    policy: 'http://www.freepress.net/privacy-copyright',
-                    weight: 100
-                },
-                'fftf': {
-                    name: 'Fight for the Future',
-                    policy: 'http://www.fightforthefuture.org/privacy/',
-                    weight: 100
-                },
-                'eff': {
-                    name: 'EFF',
-                    policy: 'https://www.eff.org/policy',
-                    weight: 100
-                },
-                'an': {
-                    name: 'Access Now',
-                    policy: 'https://www.accessnow.org/pages/privacy-policy',
-                    weight: 100
-                },
-                'dp': {
-                    name: 'Demand Progress',
-                    policy: 'http://www.demandprogress.org/privacy/',
-                    weight: 100
-                },
-                'om': {
-                    name: 'Open Media',
-                    policy: 'https://openmedia.ca/privacy',
-                    weight: 100
-                },
-                'ra': {
-                    name: 'RootsAction',
-                    policy: 'http://www.rootsaction.org/privacy-policy',
-                    weight: 100
-                },
-                'o98': {
-                    name: 'The Other 98%',
-                    policy: 'http://other98.com/privacy/',
-                    weight: 100
-                },
-                'dk': {
-                    name: 'Daily Kos',
-                    policy: 'http://www.dailykos.com/special/privacy',
-                    weight: 100
-                }
-            }
-            var total = 0;
-            for (key in referalMap) {
-                var org = referalMap[key];
-                var range = {
-                    min: total + 1,
-                    max: total + org.weight + 1
-                }
-                total += org.weight + 1;
-                org.range = range;
-            }
-
-
-
-            var referalKeys = Object.keys(referalMap);
-            var referalParam = getParameterByName('r');
-            var referalOrg;
-            var slug;
-
-            // Allows a page to have a selected org always
-            if (typeof alwaysSelected !== 'undefined') {
-                referalParam = alwaysSelected;
-            }
-
-            if (referalParam in referalMap) {
-                referalOrg = referalMap[referalParam];
-                slug = referalParam;
-            } else {
-                //var randomOrgIndex = Math.floor(Math.random() * referalKeys.length);
-                var randomOrgIndex = Math.ceil(Math.random() * total);
-                var selectedOrg = 'eff';
-                for (key in referalMap) {
-                    var org = referalMap[key];
-                    if (randomOrgIndex <= org.range.max && randomOrgIndex >= org.range.min) {
-                        selectedOrg = key;
-                    }
-                }
-                referalOrg = referalMap[selectedOrg];
-                slug = selectedOrg;
-            }
-            $('.org-name').text(referalOrg.name);
-            $('.org-slug').val(slug);
-            $('.org-privacy').attr('href', referalOrg.policy);
-            if (slug === 'eff') {
-                $('#subscriber-checkbox').removeAttr('checked');
-            }
-            /*
+		
+		<div id="content">
+			<h2>Your Message</h2>
+			
+			<p>Dear representative/senator,</p>
+			
+			<textarea id="email-text" name="message" rows="10">
+As your constituent, I am deeply concerned about the National Security Agency’s (NSA) mass surveillance programs. We need real reform to stop the NSA's mass collection of our information.
+ 
+I urge you to support the USA Freedom Act (H.R. 3361/S. 1599), an important first step in stopping mass spying, reforming the FISA court, and increasing transparency. But reform shouldn't stop there: please push for stronger privacy protections that stop dragnet surveillance of innocent users across the globe, and stop the NSA from sabotaging international encryption standards.
+ 
+I'm also urging you to oppose S. 1631, the so-called FISA Improvements Act. This bill aims to entrench some of the worst forms of NSA surveillance and extend the NSA surveillance programs in unprecedented ways. It would allow the NSA to continue to collect the phone records of hundreds of millions of Americans not suspected of any crime—a program I absolutely oppose—and could expand into collecting records of Internet usage.
+ 
+The NSA mass surveillance programs chill freedom of speech, undermine confidence in US Internet companies, and run afoul of the Constitution.  We need reform now.
+			</textarea>
+			
+			<p>- Your name</p>
+			
+			<input class="org-slug" name="org" type="hidden" value=""> 
+			<input id="email-checkbox" type="checkbox"> 
+			<label for="email-checkbox">Also sign up to receive emails from <span class="org-name"></span>, one of the coalition members <a class="org-privacy" href="#">(privacy policy).</a></label>
+			
+			<input class="cta-button" id="submit" type="submit" value="SEND EMAIL &rarr;">
+		</div>
+		<aside>
+			<ol>
+				<h3>Brief overview</h3>
+				<li><h4>Support the USA Freedom Act.</h4> The USA Freedom Act would institute key pro-privacy reforms, including creating new limits on the NSA’s ability to collect American’s telephone records in bulk.</li>
+	
+				<li><h4>Oppose the FISA Improvements Act.</h4> This dangerous bill would codify mass surveillance by the NSA and potentially expand the spying.</li>
+	
+				<li><h4>Protect people around the globe.</h4> Everybody deserves basic privacy rights: Innocent foreigners shouldn't have their communications surveilled any more than innocent Americans.</li>
+	
+				<li><h4>Protect encryption standards.</h4> The NSA is weakening encryption standards, attacking technology companies, and preventing security holes from being fixed. This must stop.</li>
+			</ol>			
+		</aside>
+		
+		
+		
+		
+	</form>
+	
+	<footer>
+	  <div>
+	  	<p>If for any reason we’re unable to deliver your email, one of the coalition members may deliver it in person <a href="#">(read more)</a>.</p>
+	  	<i class="i i-logo"></i>
+	  </div>
+	</footer>
+	
+	
+	<script src="js/easyXDM.min.js" type="text/javascript"></script><script src="js/main.js" type="text/javascript"></script><script>
+		function getQueryVariable(variable) {
+				var query = window.location.search.substring(1);
+				var vars = query.split('&');
+				for (var i = 0; i < vars.length; i++) {
+					var pair = vars[i].split('=');
+					if (decodeURIComponent(pair[0]) == variable) {
+						return decodeURIComponent(pair[1]);
+					}
+				}
+			}
+			$.fn.serializeObject = function() {
+			 var o = {};
+			 var a = this.serializeArray();
+			 $.each(a, function() {
+				 if (o[this.name]) {
+					 if (!o[this.name].push) {
+						 o[this.name] = [o[this.name]];
+					 }
+					 o[this.name].push(this.value || '');
+				 } else {
+					 o[this.name] = this.value || '';
+				 }
+			 });
+			 return o;
+			};
+			var rpc = new easyXDM.Rpc({
+			  remote: "http://email-congress.herokuapp.com/xdm/cors/"
+			},
+			{
+			  remote: {
+				  request: {}
+			  }
+			});
+			$(document).on('ready', function () {
+		
+			$('#email').val(getQueryVariable('email'));
+			$('#full_name').focus();
+			$('.send-email').on('submit', function (ev) {
+			var form = $(ev.currentTarget);
+			var data = form.serializeObject();
+			console.log(data);
+			rpc.request({
+			  url: "http://email-congress.herokuapp.com/email",
+			  method: "POST",
+			  data: data
+			}, function(response){
+			  $('body').html('success');
+			});
+			return false;
+			});
+		
+		
+		
+			function getParameterByName(name) {
+			name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+			var regex = new RegExp("[\\?&]" + name + "=([^&\/#]*)"),
+				results = regex.exec(location.search);
+			return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+		
+			// ie shims
+			if (!Object.keys) {
+			Object.keys = function(o) {
+				if (o !== Object(o))
+					throw new TypeError('Object.keys called on a non-object');
+				var k = [],
+					p;
+				for (p in o)
+					if (Object.prototype.hasOwnProperty.call(o, p)) k.push(p);
+				return k;
+			}
+			}
+		
+			(function() {
+		
+			var referalMap = {
+				'fp': {
+					name: 'Free Press',
+					policy: 'http://www.freepress.net/privacy-copyright',
+					weight: 100000
+				},
+				'fftf': {
+					name: 'Fight for the Future',
+					policy: 'http://www.fightforthefuture.org/privacy/',
+					weight: 100000
+				},
+				'eff': {
+					name: 'EFF',
+					policy: 'https://www.eff.org/policy',
+					weight: 100
+				},
+				'an': {
+					name: 'Access Now',
+					policy: 'https://www.accessnow.org/pages/privacy-policy',
+					weight: 100
+				},
+				'dp': {
+					name: 'Demand Progress',
+					policy: 'http://www.demandprogress.org/privacy/',
+					weight: 100
+				},
+				'om': {
+					name: 'Open Media',
+					policy: 'https://openmedia.ca/privacy',
+					weight: 100
+				}
+			};
+			var total = 0;
+			for(key in referalMap) {
+				var org = referalMap[key];
+				var range = {
+					min: total + 1,
+					max: total + org.weight + 1
+				}
+				total += org.weight + 1;
+				org.range = range;
+			}
+		
+		
+		
+			var referalKeys = Object.keys(referalMap);
+			var referalParam = getParameterByName('r');
+			var referalOrg;
+			var slug;
+		
+			// Allows a page to have a selected org always
+			if(typeof alwaysSelected !== 'undefined') {
+				referalParam = alwaysSelected;
+			}
+		
+			if (referalParam in referalMap) {
+			  referalOrg = referalMap[referalParam];
+			  slug = referalParam;
+			} else {
+			  //var randomOrgIndex = Math.floor(Math.random() * referalKeys.length);
+				var randomOrgIndex = Math.ceil(Math.random() * total);
+				var selectedOrg = 'eff';
+				for(key in referalMap) {
+				  var org = referalMap[key];
+				  if(randomOrgIndex <= org.range.max && randomOrgIndex >= org.range.min) {
+					selectedOrg = key;
+				  }
+				}
+			  referalOrg = referalMap[selectedOrg];
+			  slug = selectedOrg;
+			}
+			$('.org-name').text(referalOrg.name);
+			$('.org-slug').val(slug);
+			$('.org-privacy').attr('href', referalOrg.policy);
+			if(slug === 'eff') {
+			  $('#subscriber-checkbox').removeAttr('checked');
+			}
+			/*
 		
 			var spans = label.getElementsByTagName('span');
 			var link = label.getElementsByTagName('a')[0];
@@ -278,16 +256,15 @@
 				hiddenInput.value = checkbox.checked ? referalOrg.name : '';
 			};
 			*/
-        })();
-
-
-
-
-    });
-    /*
+			})();
+		
+		
+		
+		
+			});
+			/*
 		
 			*/
-    </script>
+	</script>
 </body>
-
 </html>

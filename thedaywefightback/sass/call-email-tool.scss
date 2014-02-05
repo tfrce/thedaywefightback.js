@@ -204,6 +204,7 @@ form, section {
 }
 
 form {
+	padding-top: 0;
 	h2 {
 		text-transform: uppercase;
 		font-weight: bold;
@@ -221,6 +222,9 @@ form {
 		border: none;
 		padding: 0;
 		padding-bottom: 1em;
+		label {
+			padding-top: 2em;
+		}
 	}
 	input {
 		border: 1px solid #AAA;
@@ -246,9 +250,8 @@ label, h3 {
 }
 
 
-	div#left {
+	div#content {
 		@include column(7);
-		@include pull(0.5);	
 		p {
 			font-weight: bold;
 			text-transform: uppercase;
@@ -276,6 +279,8 @@ label, h3 {
 			text-transform: none;
 			font-weight: normal;
 			letter-spacing: normal;
+			font-size: 1.1em;
+			font-style: normal;
 		}
 		input.cta-button {
 			padding: 0.5em 0;
@@ -285,9 +290,9 @@ label, h3 {
 			font-size: 1.25em;
 			font-style: italic;
 			display: block;
-			border-top: 1px solid #EEE;
 			padding: 1em 0;
 			text-align: center;
+			padding-bottom: 0;
 		}
 	}
 
@@ -321,7 +326,7 @@ label, h3 {
 		
 
 aside {
-	@include column(4.5);
+	@include column(5);
 	h3 {
 		padding-bottom: 0.5em;
 		padding-top: 0;
@@ -372,6 +377,7 @@ footer {
 			float: left;
 			width: 51%;
 			margin: 0;
+			font-size: 0.85em;
 			color: #FFF;
 			line-height: 1.2em;
 		}
@@ -384,29 +390,83 @@ footer {
 }
 
 /* Call Page */
-.call div#left {
-	text-align: center;
-	h2 {
-		font-weight: normal;
-		line-height: 1.25em;
-		font-size: 1.25em;
+.call {
+	div#content {
+		text-align: center;
+		max-width: 600px;
+		width: auto;
+		margin: 0 auto;
+		float: none;
+		display: block;
+		aside {
+			width: auto;
+			display: block;
+			float: none;
+			text-align: left;
+			margin-top: 2em;
+			font-size: 1.1em;
+			p {
+				font-style: normal;
+			}
+		}
+		h2 {
+			font-weight: normal;
+			line-height: 1.25em;
+			font-size: 1.25em;
+		}
+		img {
+			margin-top: 1em;
+		}
+		a.cta-button {
+			padding-left: 0;
+			padding-right: 0;
+			width: 98%;
+			margin: 0 auto;
+		}
+		p {
+			line-height: 1.5em;
+			text-transform: none;
+			font-weight: normal;
+			font-style: italic;
+			font-size: 1.05em;
+			color: #777;
+			a {
+				white-space: nowrap;
+				text-shadow: 0 1px 3px #FFF;
+			}
+		}
+		ul#bill-details {
+			text-align: left;
+			padding: 0 1em;
+			list-style-type: none;
+			li {
+				margin-bottom: 1em;
+				padding-bottom: 1em;
+				border-bottom: 1px dashed #DDD;
+			}
+			&.invisible {
+				display: none;
+			}
+		}
 	}
-	img {
-		margin-top: 1em;
-	}
-	p {
-		line-height: 1.5em;
-		text-transform: none;
-		font-weight: normal;
-		font-style: italic;
-		font-size: 1.05em;
-		color: #777;
-		a {
-			white-space: nowrap;
+	footer a {
+		opacity: 0.6;
+		transition: all 0.2s ease-in-out;
+		img {
+			height: auto;
+			vertical-align: middle;
+			width: 171px;
+			&.twilio-privacy {
+				width: 114px;
+			}
+		}
+
+		&:hover {
+			opacity: 0.9;
 		}
 	}
 	
-}
+} 
 
 /* Thank You page */
 
@@ -440,7 +500,7 @@ footer {
 			padding: 0.8em 0;
 			width: 100%;
 			border: none;
-			margin-top: 0.2em;
+			margin-top: 0.15em;
 			margin-bottom: 1em;
 			font-size: 1em;
 			box-shadow: none;
@@ -472,11 +532,29 @@ footer {
 		font-size: 1.2em;
 		border-top: 1px solid #333;
 	}
-	#also-call h2 {
-		padding: 0;
-		margin-top: 1.5em;
-		font-size: 1.5em;
-		border: none;
+	#also-call {
+		h2 {
+			padding: 0;
+			margin-top: 1.5em;
+			font-size: 1.5em;
+			border: none;
+		}
+		
+		.twilio-container a {
+			opacity: 0.6;
+			transition: all 0.2s ease-in-out;
+			img {
+				height: auto;
+				vertical-align: middle;
+				width: 171px;
+				&.twilio-privacy {
+					width: 114px;
+				}
+			}
+			&:hover {
+				opacity: 0.9;
+			}
+		}
 	}
 	a.cta-button {
 		display: inline-block;
@@ -538,8 +616,8 @@ footer {
 		    position: absolute;
 		}
 		.sicon {
-		    width: 40px;
-		    height: 40px;
+		    width: 54px;
+		    height: 54px;
 		    margin: 0 auto;
 		    position: relative;
 		    background-color: black;
@@ -640,13 +718,13 @@ footer {
 			display: none;
 		}
 		
-		div#left, div#left h2, .call aside {
+		div#content, div#content h2, .call aside {
 			width: auto;
 			float: none;
 			margin: 0;
 			display: block;
 		}
-		.call div#left img {
+		.call div#content img {
 			margin-bottom: 1em;
 		}
 		h2 {
@@ -664,4 +742,19 @@ footer {
 			display: block;
 		}
 	}
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .thank-you input {
+    	padding-top: 1.2em;
+    }
+    .thank-you a.cta-button,.thank-you input#submit {
+        padding-top: 1em;
+    }
+    form input, div#content input.cta-button {
+    	padding-top: 0.8em;
+    }
+    .cta-button, input.cta-button {
+    	padding-top: 0.95em;
+    }
 }

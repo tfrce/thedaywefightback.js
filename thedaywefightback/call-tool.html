@@ -24,32 +24,69 @@
 		<h1><span>Call Congress</span><img src="imgs/call-congress.png" /></h1>
 	</header><!-- Form Starts -->
 	<section>
-		<div id="left">
+		<div id="content">
 			<img src="imgs/call-tool-icon.png" />
 			<h2>We’re about to place a call to your phone. We’ll ask for your ZIP code, then connect you to your legislators. After each call, press the star key to connect to your next representative.</h2>
 			<p>If the call doesn’t arrive within 10 seconds, <a href="#">click here to try again</a> or dial <strong>415-322-4329</strong>.</p>
 			
-			<a class="cta-button" href="#">Click here once you're done  &rarr;</a>
-			<a href="#" class="read-more">Find out more about the bills &rarr;</a>
-		</div>
-		<aside>
-			<ol>
-				<h3>What to say</h3>
-				<li><p>I am one of your constituents, and I’m calling to ask you to take action against mass surveillance by the NSA.</p>
-				<p>
-				I’d like Senator/Representative ____ to support and co-sponsor the <strong>USA Freedom Act</strong>. I would also like you to oppose S. 1631, the so-called <strong>ISA Improvements Act</strong>. Moreover, I’d like you to work to <strong>prevent the NSA</strong> from <strong>undermining encryption standards</strong> and to <strong>protect the privacy rights of non-Americans.</strong></p></li>
-			</ol>			
+			<aside>
+				<ol>
+					<h3>What to say</h3>
+					<li><p>I am one of your constituents, and I’m calling to ask you to take action against mass surveillance by the NSA.</p>
+					<p>I’d like Senator/Representative ____ to support and co-sponsor H.R. 3361/S. 1599, the <strong>USA Freedom Act</strong>. I would also like you to oppose S. 1631, the so-called <strong>FISA Improvements Act</strong>. Moreover, I’d like you to work to <strong>prevent the NSA</strong> from <strong>undermining encryption standards</strong> and to <strong>protect the privacy rights of non-Americans</strong>.</p></li>
+				</ol>			
+	
+			</aside>
 
-		</aside>
+			
+			<a class="cta-button" href="#">Click here once you're done  &rarr;</a>
+			<a href="#bill-details" class="read-more" onclick="showMore();">Find out more about the bills &rarr;</a>
+			<ul id="bill-details">
+				<li>The USA Freedom Act is a proposed law that would curtail the NSA’s ability to collect data on US citizens, create a special advocate to champion privacy in the FISA court, and increase transparency around NSA surveillance.</li>
+				<li>Undermining encryption is bad: Weakening encryption standards and attacking technology companies makes us all less secure.</li>
+				<li>International people matter: We must apply human rights values to digital surveillance techniques through transparency, rigorous oversight, and privacy protections that transcend borders.</li>
+			</ul>
+			
+			
+		</div>
 	</section>
 
 	<footer>
 	  <div>
-	  	<i class="i i-twillio" style="float:left;display:inline-block;"></i>
+	  	<a href="https://twilio.com" target="_blank"><img class="twilio-poweredby" src="imgs/poweredby.png" ></a><a href="https://www.twilio.com/legal/privacy" target="_blank"><img class="twilio-privacy" src="imgs/twilio-privacypolicy.png" ></a>
 	  	<i class="i i-logo"></i>
 	  </div>
 	</footer>
 	
+	<script type="text/javascript">
+		var className = "invisible";
+		var el = document.getElementById("bill-details");
+		
+		if (el.classList)
+		  el.classList.add(className);
+		else
+		  el.className += ' ' + className;
+		
+		function showMore(e) {
+			if (el.classList) {
+			  el.classList.toggle(className);
+			} else {
+			    var classes = el.className.split(' ');
+			    var existingIndex = -1;
+			    for (var i = classes.length; i--;) {
+			      if (classes[i] === className)
+			        existingIndex = i;
+			    }
+			
+			    if (existingIndex >= 0)
+			      classes.splice(existingIndex, 1);
+			    else
+			      classes.push(className);
+			
+			  el.className = classes.join(' ');
+			}
+		}
+	</script>
 	
 </body>
 </html>
