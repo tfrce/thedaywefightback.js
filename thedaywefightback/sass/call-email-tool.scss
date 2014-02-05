@@ -250,9 +250,11 @@ label, h3 {
 			font-size: 1.25em;
 			font-style: italic;
 			display: block;
-			padding: 0.5em 0;
+			padding-top: 0;
 			padding-bottom: 1em;
+			margin-bottom: 1em;
 			text-align: center;
+			border-bottom: 1px solid #EEE;
 		}
 	}
 
@@ -405,7 +407,7 @@ footer {
 			li {
 				margin-bottom: 1em;
 				padding-bottom: 1em;
-				border-bottom: 1px dashed #DDD;
+				border-bottom: 1px solid #DDD;
 			}
 			&.invisible {
 				display: none;
