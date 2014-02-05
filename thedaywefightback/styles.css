@@ -204,8 +204,14 @@ a {
 /* Mobile banner */
 /* =====================================*/
 
-.visible-xs {
+.mobile-banner.visible-xs {
   margin-top:5px;
+  height: 100%;
+}
+.mobile-banner img {
+  height: 89px;
+  margin: 0 auto;
+  margin-bottom:10px;
 }
 
 @media (max-width: 900px){
