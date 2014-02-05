@@ -56,7 +56,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
 
   function debug() {
     if (widgetConfig.debug) {
-      if (console) {
+      if (this.console) {
         console.log.apply(console, arguments);
       }
     }
