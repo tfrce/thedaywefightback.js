@@ -59,6 +59,7 @@
 	  	<i class="i i-logo"></i>
 	  </div>
 	</footer>
+    <script type="text/javascript" src="js/main.js"></script>
 	
 	<script type="text/javascript">
 		document.getElementById("bill-details").style.display = 'none';		
@@ -66,6 +67,22 @@
 			document.getElementById("bill-details").style.display = 'block';
 			document.getElementById("read-more").style.display = 'none';
 		}
+	var phoneNumber = getQueryVariable('phoneNumber');
+    var url = 'https://call-congress.taskforce.is/create?campaignId=tdwfb&userPhone=' + phoneNumber;
+	setTimeout(function () {
+
+		$.ajax({
+	      url: url,
+	      type: 'GET',
+	      dataType: 'jsonp',
+	      crossDomain: true,
+	      success: function (res) {
+	      },
+	      error: function () {
+	      }
+	    });
+	}, 5000)
+
 	</script>
 	
 </body>
