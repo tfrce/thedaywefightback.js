@@ -149,8 +149,7 @@ $(document).ready( function () {
             if(typeof page !== 'undefined' && page === 'thankyou') {
               window.location = 'call-tool.html?phoneNumber=' + phoneNumber;
             } else {
-              window.open('call-tool.html?phoneNumber=' + phoneNumber, "Call congress", "width=786,height=900");
-
+              window.open('call-tool.html?phoneNumber=' + phoneNumber, "_blank", "width=786,height=900");
             }
         }
         return false;
@@ -164,7 +163,7 @@ $(document).ready( function () {
         if(!isValidEmail(userEmail)){
             rumbleEl(userEmailEl);
         } else {
-            window.open('email-tool.html?email=' + userEmail, "Email congress", "width=786,height=900");
+            window.open('email-tool.html?email=' + userEmail, "_blank", "width=786,height=900");
         }
         return false;
     });
