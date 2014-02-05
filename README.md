@@ -83,7 +83,5 @@ Built by [Taskforce.is](http://taskforce.is) members [Thomas Davis](https://twit
 <img src="screenshots/tdwfb-banner.png" alt="banner" />
 
 ### Call Tool Pop-up
-<img src="screenshots/call-tool.png" alt="banner" />
 
 ### Email Tool Pop-up
-<img src="screenshots/email-tool.png" alt="banner" />
