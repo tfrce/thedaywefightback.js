@@ -1,5 +1,7 @@
 # thedaywefightback.js
 
+_Please leave questions, suggestions and bugs on our [issue](http://github.com/tfrce/thedaywefightback.js/issues) page._
+
 thedaywefightback.js is a javascript snippet that automatically activates at midnight of February 11th and adds a banner to your site for 24 hours in support of [thedaywefightback.org](https://thedaywefightback.org).
 
 The goal is to drive as many phone calls and emails on the 11th. The calls are connected automatically by our servers and are free of cost for the users, thanks to the kind sponsorship of Twilio.
@@ -14,12 +16,11 @@ You can add it to your site now - it won't be activated until midnight EST on Fe
 
 ## Getting started
 
-Simply copy and paste the code below into your website, right above the closing <body> tag.
+Simply copy and paste the code below into your website, right above the closing `<body>` tag.
 
 _Place the code below before `</body>` tag. The script loads asynchronously and won't affect page load times._
 
 ```html
-<!--[if !(lte IE 8)]><!-->
 <script> 
   // @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt GPL-v3-or-Later
   (function(){
@@ -29,11 +30,9 @@ _Place the code below before `</body>` tag. The script loads asynchronously and 
   })();
   // @license-end
 </script>
-<!--<![endif]-->
 ```
 
-## Some things to know
-* If users are outside the US, a different version of the banner will be shown with appropriate actions.
+The widget supports all screen sizes and platforms, if you encounter a bug please let us know on the [issues](http://github.com/tfrce/thedaywefightback.js/issues) page.
 
 ## Other ways to install
 
@@ -41,6 +40,9 @@ _Place the code below before `</body>` tag. The script loads asynchronously and 
 * Wordpress pluging
 * Drupal plugin
 
+
+## Some things to know
+* If users are outside the US, a different version of the banner will be shown with appropriate actions.
 
 
 ## Customize the banner
