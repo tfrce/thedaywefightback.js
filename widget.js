@@ -49,6 +49,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
   widget_config.show_style = widget_config.show_style || 'banner';
   widget_config.greeting = widget_config.greeting || 'Dear Internet';
   widget_config.debug = widget_config.debug || false;
+  widget_config.disableDate = widget_config.disableDate || false;
   widget_config.campaign = widget_config.campaign || 'thedaywefightback';
   widget_config.cookieTimeout = widget_config.cookieTimeout || 172800;
   widget_config.overrideLocation = widget_config.overrideLocation || false;
@@ -266,7 +267,7 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
 
         checks.correctDate(function (response) {
           clearTimeout(window.tdwfbDateCallBackFailSafe);
-          if(response && (response.thedaywefightback || widget_config.debug)) {
+          if(response && (response.thedaywefightback || widget_config.disableDate || widget_config.debug)) {
             checks.location(function (location) {
               clearTimeout(window.tdwfbLocationCallBackFailSafe);
               active_campaign.show({location: location, widget_config: widget_config});
