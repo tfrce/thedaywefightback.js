@@ -197,6 +197,10 @@ var _tfrce_config = (typeof tfrce_config  !== 'undefined') ? tfrce_config  : {};
         if(cookie !== null) {
           firstTime = false;
         }
+        // a Hack, if mobile set firsttime to false so splash page never shows
+        if(x < 790) {
+          firstTime = false;
+        }
         if( (options.location && options.location.country.iso_code === 'us') || widget_config.overrideLocation == "usa") {
           // Set the source of the iframe to the configured show_style type
           iframe.src = ASSET_URL + active_campaign.config.show_style + '.html?firstTime='+firstTime+'&callOnly='+widget_config.callOnly+'&iso='+selectedLocation+'&greeting=' + widget_config.greeting;
