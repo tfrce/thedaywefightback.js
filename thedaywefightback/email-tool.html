@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <!-- Bootstrap core CSS -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-placeholder/2.0.7/jquery.placeholder.min.js"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="stylesheet" type="text/css" href="css/call-tool.css" />
@@ -54,10 +55,13 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
 
 - Sina Khanifar
         </textarea>
+
+
         <div class="email-checkbox-box">
+          <input type="hidden" class="org-slug" name="org" value="" />
           <label for="email-checkbox">
             <input type="checkbox" id="email-checkbox">
-            Also sign up to receive emails from Fight for the Future, one of the coalition members <span><a href="#">(privacy policy).</a></span>
+            Also sign up to receive emails from <span class="org-name"></span>, one of the coalition members <span><a class="org-privacy" href="#">(privacy policy).</a></span>
           <label>
         </div>
       </div>
@@ -85,6 +89,16 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
 
 <script type="text/javascript" src="js/main.js"></script>
 <script>
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split('&');
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split('=');
+            if (decodeURIComponent(pair[0]) == variable) {
+                return decodeURIComponent(pair[1]);
+            }
+        }
+    }
   $.fn.serializeObject = function() {
      var o = {};
      var a = this.serializeArray();
@@ -110,7 +124,6 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
   });
   $(document).on('ready', function () {
 
-  console.log(getQueryVariable('email'));
   $('#email').val(getQueryVariable('email'));
   $('#full_name').focus();
   $('.send-email').on('submit', function (ev) {
@@ -126,6 +139,124 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
     });
     return false;
   });
+
+
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&\/#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+// ie shims
+if (!Object.keys) {
+    Object.keys = function(o) {
+        if (o !== Object(o))
+            throw new TypeError('Object.keys called on a non-object');
+        var k = [],
+            p;
+        for (p in o)
+            if (Object.prototype.hasOwnProperty.call(o, p)) k.push(p);
+        return k;
+    }
+}
+
+(function() {
+
+    var referalMap = {
+        'fp': {
+            name: 'Free Press',
+            policy: 'http://www.freepress.net/privacy-copyright',
+            weight: 100000
+        },
+        'fftf': {
+            name: 'Fight for the Future',
+            policy: 'http://www.fightforthefuture.org/privacy/',
+            weight: 100000
+        },
+        'eff': {
+            name: 'EFF',
+            policy: 'https://www.eff.org/policy',
+            weight: 100
+        },
+        'an': {
+            name: 'Access Now',
+            policy: 'https://www.accessnow.org/pages/privacy-policy',
+            weight: 100
+        },
+        'dp': {
+            name: 'Demand Progress',
+            policy: 'http://www.demandprogress.org/privacy/',
+            weight: 100
+        },
+        'om': {
+            name: 'Open Media',
+            policy: 'https://openmedia.ca/privacy',
+            weight: 100
+        }
+    };
+    var total = 0;
+    for(key in referalMap) {
+        var org = referalMap[key];
+        var range = {
+            min: total + 1,
+            max: total + org.weight + 1
+        }
+        total += org.weight + 1;
+        org.range = range;
+    }
+
+
+
+    var referalKeys = Object.keys(referalMap);
+    var referalParam = getParameterByName('r');
+    var referalOrg;
+    var slug;
+
+    // Allows a page to have a selected org always
+    if(typeof alwaysSelected !== 'undefined') {
+        referalParam = alwaysSelected;
+    }
+    
+    if (referalParam in referalMap) {
+      referalOrg = referalMap[referalParam];
+      slug = referalParam;
+    } else {
+      //var randomOrgIndex = Math.floor(Math.random() * referalKeys.length);
+        var randomOrgIndex = Math.ceil(Math.random() * total);
+        var selectedOrg = 'eff';
+        for(key in referalMap) {
+          var org = referalMap[key];
+          if(randomOrgIndex <= org.range.max && randomOrgIndex >= org.range.min) {
+            selectedOrg = key;
+          }
+        }
+      referalOrg = referalMap[selectedOrg];
+      slug = selectedOrg;
+    }
+    $('.org-name').text(referalOrg.name);
+    $('.org-slug').val(slug);
+    $('.org-privacy').attr('href', referalOrg.policy);
+    if(slug === 'eff') {
+      $('#subscriber-checkbox').removeAttr('checked');
+    }
+    /*
+
+    var spans = label.getElementsByTagName('span');
+    var link = label.getElementsByTagName('a')[0];
+    spans[0].innerHTML = referalOrg.name;
+    spans[1].innerHTML = referalOrg.name;
+    link.href = referalOrg.policy;
+    checkbox.onchange = function(e) {
+        hiddenInput.value = checkbox.checked ? referalOrg.name : '';
+    };
+    */
+})();
+
+
+
+
   });
   /*
 
