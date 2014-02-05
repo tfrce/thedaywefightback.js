@@ -133,6 +133,39 @@ I'm also urging you to oppose S. 1631, the so-called FISA Improvements Act. This
 			$('.send-email').on('submit', function (ev) {
 			var form = $(ev.currentTarget);
 			var data = form.serializeObject();
+
+
+			var nameEl = $('#full_name', form);
+	        var emailEl = $('#email', form);
+	        var addressEl = $('#address', form);
+	        var zipEl = $('#zip', form);
+
+	        var name = nameEl.val();
+	        var email = emailEl.val();
+	        var address = addressEl.val();
+	        var zip = zipEl.val();
+
+	        var errors = false;
+	        if(!isValidEmail(email)){
+	          errors = true;
+	          rumbleEl(emailEl);
+	        };
+	        if(!isValidZip(zip)) {
+	          errors = true;
+	          rumbleEl(zipEl);
+	        }
+	        if(name === '') {
+	          errors = true;
+	          rumbleEl(nameEl);
+	        }
+	        if(address === '') {
+	          errors = true;
+	          rumbleEl(addressEl);
+	        }
+	        if(errors) {
+	          return false;
+	        }
+
 			console.log(data);
 			rpc.request({
 			  url: "http://email-congress.herokuapp.com/email",
