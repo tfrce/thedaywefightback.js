@@ -1,12 +1,12 @@
 # thedaywefightback.js
 
-_Please leave questions, suggestions and bugs on our [issue](http://github.com/tfrce/thedaywefightback.js/issues) page. We've tried our best to accomodate all browsers but we are sure to run into more and hope to fix them by the 11th_
+_Please make pull requests with any fixes, and leave questions, suggestions and bugs on our [issue](http://github.com/tfrce/thedaywefightback.js/issues) page. We've tried our best to accomodate all browsers but we are sure to run into more and hope to fix them by the 11th._
 
 thedaywefightback.js is a javascript snippet that automatically activates at midnight of February 11th and adds a banner to your site for 24 hours in support of [thedaywefightback.org](https://thedaywefightback.org).
 
 The goal is to drive as many phone calls and emails on the 11th. The calls are connected automatically by our servers and are free of cost for the users, thanks to the kind sponsorship of [Twilio](http://twilio.com).
 
-<img src="screenshots/tdwfb-banner.png" alt="banner" />
+<a href="http://tfrce.github.io/thedaywefightback.js/example/banner.html" target="_blank"><img src="screenshots/tdwfb-banner.png" alt="banner" /></a>
 
 View the [US demo page](http://tfrce.github.io/thedaywefightback.js/example/banner.html) or the [international demo page](http://tfrce.github.io/thedaywefightback.js/example/banner_international.html)(Unless explicitly set the banner generally determines what to show based off your location).
 
@@ -41,10 +41,7 @@ The counts will reset on the day, and only the additions on the 11th will contri
 
 **Other ways to install include;**
 
-* [Cloudflare app](#)
-* [Wordpress plugin](#)
-* [Drupal plugin](#)
-
+Coming soon.
 
 ## Customize the banner
 
