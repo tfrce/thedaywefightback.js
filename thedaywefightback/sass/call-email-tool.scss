@@ -140,6 +140,10 @@ body {
 
 a {
 	color: $yellow;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 @mixin row($columns:$columns) {
@@ -216,16 +220,6 @@ form {
 		padding: 0;
 		padding-bottom: 1em;
 	}
-	label, h3 {
-		text-transform: uppercase;
-		font-weight: bold;
-		display: block;
-		padding: 0.5em 0;
-		padding-top: 1em;
-		font-size: 0.9em;
-		line-height: 1em;
-		color: #555;
-	}
 	input {
 		border: 1px solid #AAA;
 		padding: 0.5em 2.5%;
@@ -245,6 +239,8 @@ label, h3 {
 	font-size: 0.9em;
 	line-height: 1em;
 	color: #555;
+	font-style: italic;
+	letter-spacing: 0.1em;
 }
 
 
@@ -278,29 +274,8 @@ label, h3 {
 			text-transform: none;
 			font-weight: normal;
 		}
-		.cta-button {
-			font-weight: bold;
-			background: $yellow;
-			border: 3px solid #000;
-			color: #111;
+		input.cta-button {
 			padding: 0.5em 0;
-			font-size: 1.5em;
-			display: block;
-			font-style: italic;
-			text-align: center;
-			text-decoration: none;
-			text-transform: uppercase;
-			line-height: 1em;
-			margin: 1em 0;
-			width: 100%;
-			&:hover {
-				border-color: #000;
-				background: lighten($yellow,10%);
-			}
-			&:active {
-				background: darken($yellow,10%);
-				border-color: #000;
-			}
 		}
 		.read-more {
 			text-align: center;
@@ -312,6 +287,34 @@ label, h3 {
 			text-align: center;
 		}
 	}
+
+		.cta-button {
+			font-weight: bold;
+			background: $yellow;
+			color: #333;
+			padding: 0.75em 0;
+			letter-spacing: 0.1em;
+			font-size: 1.25em;
+			display: block;
+			font-style: italic;
+			text-align: center;
+			text-decoration: none;
+			text-transform: uppercase;
+			line-height: 1em;
+			margin: 1em 0;
+			width: 100%;
+			border: none;
+			border-bottom: 2px solid #EEE;
+			&:hover {
+				background: #333;
+				color: $yellow;
+			}
+			&:active {
+				background: #111;
+				color: darken($yellow, 10%);
+			}
+		}
+		
 
 aside {
 	@include column(4.5);
@@ -396,6 +399,168 @@ footer {
 	
 }
 
+/* Thank You page */
+
+.thank-you {
+	background: #000;
+	color: #EEE;
+	text-align: center;
+	font-size: 0.95em;
+	line-height: 1.5em;
+	padding-bottom: 1em;
+	header {
+		padding-bottom: 0;
+		h1 {
+			padding: 2em;
+			padding-bottom: 0;
+			max-width: 400px;
+		}
+	}
+	form {
+		padding: 0 2em;
+		max-width: 400px;
+	}
+	input {
+		margin: 0;
+		width: 92%;
+		padding: 1em 4%;
+		border: none;
+		line-height: normal;
+		color: #333;
+		&#submit {
+			padding: 0.8em 0;
+			width: 100%;
+			border: none;
+			margin-top: 0.2em;
+			margin-bottom: 1em;
+			font-size: 1em;
+			box-shadow: none;
+		}
+	}
+	section {
+		max-width: 600px;
+		padding-top: 0;
+		p {
+			font-size: 1.2em;
+			span {
+				display: block;
+			}
+		}
+		.twilio-container {
+			font-size: 0.8em;
+			img {
+				vertical-align: middle;
+			}
+		}
+	}
+	footer {
+		background: #222;
+	}
+	h2 {
+		text-transform: uppercase;
+		padding-top: 1.5em;
+		margin-top: 1.5em;
+		font-size: 1.2em;
+		border-top: 1px solid #333;
+	}
+	#also-call h2 {
+		padding: 0;
+		margin-top: 1.5em;
+		font-size: 1.5em;
+		border: none;
+	}
+	a.cta-button {
+		display: inline-block;
+		width: auto;
+		border: none;
+		font-size: 0.9em;
+		padding: 0.8em 2em;
+		margin: 0;
+	}
+	i.i-logo {
+		margin-top: 1.5em;
+	}
+	#social {
+		padding-top: 2.5em;
+		margin-bottom: 1em;
+		text-align: center;
+		@include clearfix;
+		a {
+			@include column(4);
+		    display: inline-block;
+		    position: relative;
+		    margin: 0 auto;
+		    transition: 0.2s ease-in-out all;
+		    opacity: 0.8;
+		    &:hover {
+		    	opacity:1;
+		    }
+		}
+		.social-count:after {
+		    background: $yellow;
+		    text-transform: uppercase;
+		    font-style: italic;
+		    font-weight: bold;
+		    border-radius: 1px;
+		    top: -39px;
+		    color: #333;
+		    content: attr(count);
+		    display: block;
+		    left: 50%;
+		    margin-left: -32px;
+		    width: 54px;
+		    padding: 5px;
+		    text-align: center;
+		    position: absolute;
+		    white-space: nowrap;
+		}
+		.social-count:before {
+		    border: solid;
+		    border: 1px solid $yellow;
+		    border-color: #111 transparent;
+		    border-color:$yellow transparent;
+		    border-width: .4em .4em 0 .4em;
+		    top: -7px;
+		    content: "";
+		    display: block;
+		    left: 50%;
+		    margin-left: -6px;
+		    position: absolute;
+		}
+		.sicon {
+		    width: 40px;
+		    height: 40px;
+		    margin: 0 auto;
+		    position: relative;
+		    background-color: black;
+		    background-image: url('../imgs/social-icons.png');
+		}
+		
+		#sfb {
+		    background-position: 70% 0;
+		}
+		#sfb:hover {
+		    background-position: 70% 0%;
+		}
+		#sbh {
+		    background-position: 60% 0;
+		}
+		#sbh:hover {
+		    background-position: 60% 100%;
+		}
+		#stwit {
+		    background-position: 50% 0;
+		}
+		#sgplus {
+		    background-position: 20% 0;
+		}
+		#sgplus:hover {
+		    background-position: 20% 0%;
+		}
+	
+	}
+	
+}
 
 /* =====================================*/
 /* CSS Sprite */
@@ -406,6 +571,7 @@ footer {
     background-image: url('../imgs/image.png');
     background-repeat: no-repeat;
     display: block;
+    margin: 0 auto;
 }
 
 .i-email {
@@ -464,7 +630,7 @@ footer {
 			display: none;
 		}
 		
-		div#left, h2, .call aside {
+		div#left, div#left h2, .call aside {
 			width: auto;
 			float: none;
 			margin: 0;
