@@ -444,8 +444,8 @@ font-size:12px;
 	padding:5px 0 0 0;
 	height:30px;
 	margin-top:7px;
-	letter-spacing:2px;
-	width:210px;
+	letter-spacing: 1px;
+	width: 200px;
 }
 
 .phone-only-container a {
@@ -453,9 +453,16 @@ font-size:12px;
 	font-weight: bold;
 }
 
+@media (max-width:800px) {
+	.phone-only-container a {
+		font-size:11px;
+	}
+}
+
+
 .email-icon {
 	padding-right:6px;
-	vertical-align: super;
+	vertical-align: middle;
 }
 
 @media (max-width:850px) {
