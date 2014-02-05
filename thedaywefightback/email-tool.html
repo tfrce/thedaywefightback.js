@@ -61,7 +61,7 @@ I'm also urging you to oppose S. 1631, the so-called FISA Improvements Act. This
 			<p>- Your name</p>
 			
 			<input class="org-slug" name="org" type="hidden" value=""> 
-			<input id="email-checkbox" type="checkbox"> 
+			<input id="email-checkbox" type="checkbox" checked > 
 			<label for="email-checkbox">Also sign up to receive emails from <span class="org-name"></span>, one of the coalition members (<a class="org-privacy" href="#" target="_blank">privacy policy</a>).</label>
 			
 			<input class="cta-button" id="submit" type="submit" value="SEND EMAIL &rarr;">
@@ -292,7 +292,7 @@ I'm also urging you to oppose S. 1631, the so-called FISA Improvements Act. This
 			$('.org-slug').val(slug);
 			$('.org-privacy').attr('href', referalOrg.policy);
 			if(slug === 'eff') {
-			  $('#subscriber-checkbox').removeAttr('checked');
+			  $('#email-checkbox').removeAttr('checked');
 			}
 			/*
 		

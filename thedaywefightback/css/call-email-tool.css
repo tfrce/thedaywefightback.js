@@ -322,6 +322,9 @@ span.popovertext {
   border-color: transparent;
   border-style: solid; }
 
+a:hover {
+  text-decoration: none; }
+
 div#content {
   display: inline;
   float: left;
@@ -361,7 +364,7 @@ div#content {
     font-style: italic;
     display: block;
     padding-top: 0;
-    padding-bottom: 1em;
+    padding-bottom: 0.75em;
     margin-bottom: 1em;
     text-align: center;
     border-bottom: 1px solid #EEE; }
@@ -607,9 +610,9 @@ footer {
       transition: 0.2s ease-in-out all;
       opacity: 0.8; }
       .thank-you #social a:hover {
-        opacity: 1; }
+        opacity: 0.95; }
     .thank-you #social .social-count:after {
-      background: #f2c45a;
+      background: #FFF;
       text-transform: uppercase;
       font-style: italic;
       font-weight: bold;
