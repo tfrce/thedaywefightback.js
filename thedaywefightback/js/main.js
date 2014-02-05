@@ -80,62 +80,6 @@ $(document).ready( function () {
     });
 
 
-        /* $.ajax({
-             type: "GET",
-             url: 'https://thedaywefightback.org/blank.html',
-             success: function(data, status, xhr) {
-                 var serverDateTime = (xhr.getResponseHeader('Date'));
-                 serverDate = new Date(serverDateTime);
-                 liveDate = new Date(Date.UTC(2014, 1, 12, 8, 0));
-                 var diff = liveDate - serverDate;
-                console.log(diff);
-             }
-         });*/
-
-        //         timeDiffObj = splitTime(diff);
-        //         updateTimeOnSite(timeDiffObj);
-
-        //         setInterval(function(){
-        //             diff -= 1000;
-        //             timeDiffObj = splitTime(diff);
-        //             updateTimeOnSite(timeDiffObj);
-        //         }, 1000);
-        //     }
-        // });
-
-
-    /*
-    $('.call-form').on('submit', function(ev) {
-        var form = $(ev.currentTarget);
-
-        if(isValidPhoneNumber(phoneNumber)) {
-            window.open('call-tool.html', "Share on Facebook", "width=800,height=800");
-
-        } else {
-            phoneNumberEl.css('border', '1px solid #ff0000');
-            phoneNumberEl.jrumble({})
-            phoneNumberEl.trigger('startRumble');
-            demoTimeout = setTimeout(function(){phoneNumberEl.trigger('stopRumble');
-    phoneNumberEl.css('border', 'none');
-
-        }, 500)
-
-        }
-        return false;
-    })
-    $('.email-form').on('submit', function(ev) {
-
-
-        if(isValidEmail(userEmail)) {
-            window.open('email-tool.html', "Share on Facebook", "width=800,height=800");
-        } else {
-
-
-
-        }
-        return false;
-    })*/
-
 
     $('.call-form').on('submit', function(ev) {
         var form = $(ev.currentTarget);
@@ -167,46 +111,6 @@ $(document).ready( function () {
         }
         return false;
     });
-
-    /*
-    $('.call-and-email-form').on('submit', function(ev) {
-        var form = $(ev.currentTarget);
-
-        var phoneNumberEl = $('#userPhone', form);
-        var phoneNumber = phoneNumberEl.val().replace(/[^\d.]/g, '');
-
-        var userEmailEl = $('#userEmail', form);
-        var userEmail = userEmailEl.val();
-
-
-        // Ugly thomas logic
-        if(userEmail === '' && phoneNumber === '') {
-            rumbleEl(phoneNumberEl);
-            rumbleEl(userEmailEl);
-            return false;
-        }
-        var errors = false;
-        if(userEmail !== '' && !isValidEmail(userEmail)){
-            errors = true;
-            rumbleEl(userEmailEl);
-        }
-        if(phoneNumber !== '' && !isValidPhoneNumber(phoneNumber)){
-            errors = true;
-            rumbleEl(phoneNumberEl);
-        }
-        if(errors) {
-            return false;
-        }
-        if(isValidEmail(userEmail) && isValidPhoneNumber(phoneNumber)) {
-            window.open('call-and-email.html', "Share on Facebook", "width=800,height=800");
-        } else if(isValidEmail(userEmail)) {
-            window.open('email-tool.html', "Share on Facebook", "width=800,height=800");
-        } else if(isValidPhoneNumber(phoneNumber)) {
-            window.open('call-tool.html', "Share on Facebook", "width=800,height=800");
-        }
-        return false;
-    });
-    */
 
     // Call and email counters
     if($('#email-count').length > 0) {
@@ -247,30 +151,6 @@ $(document).ready( function () {
     // Resize the scrolling text to fit
 
     $(document).ready(function() {
-
-    /* Resizing the text size based on width */
-
-    //     var resizeText = function () {
-    //         // Standard height, for which the body font size is correct
-    //         var preferredWidth = 1060;
-    //         var preferredFontSize = 22;
-
-    //         var displayWidth = $(window).width();
-    //         if (displayWidth < preferredWidth) {
-    //         var scalePercentage = displayWidth / preferredWidth;
-    //         var newFontSize = preferredFontSize * scalePercentage;
-    //             newFontSize -= 2;
-    //         }
-    //         else {newFontSize = 21};
-    //         $(".scrolling-banner-text").css("font-size", newFontSize + 'px');
-    //     };
-
-    //     $(window).bind('resize', function() {
-    //         resizeText();
-    //     }).trigger('resize');
-    // });
-
-    /* Animating the bar above the logo */
 
     var timeperslide = 9000; // time between each slide
     var animationdelay = 1300; // time between each slide
@@ -330,19 +210,5 @@ $( ".gpluslinkthis" ).click(function() {
     window.open(url,"Share on Google Plus","width=500,height=436");
     return false;
 })
-
-
-//safari  on mavericks is good
-/*
-Cross Browser bugs
-firefox 26 seems good
-doesn't seem to be running on mobile
-opera is cool
-
-
-*/
-
-
-
 
 
