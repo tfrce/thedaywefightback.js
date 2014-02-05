@@ -43,14 +43,14 @@ The counts will reset on the day, and only the additions on the 11th will contri
 
 ## Customize the banner
 
-You can choose a different banner style and customize the preferences using a javascript object:
+You can customize the preferences using a javascript object:
 
 ```html
 <script type="text/javascript"> 
   // @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt GPL-v3-or-Later
   // The defaults are set below
   var tdwfb_config = {
-    greeting: 'Dear Internet Users', // Sets the salutation at the top left.
+    greeting: 'Dear Internet Users', // Sets the salutation at the top left
     disableDate: false, // If true, the banner shows even if the date is not yet 02/11/2014
     callOnly: false // If true, the banner only displays a form for calling congress
   };
