@@ -233,10 +233,6 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
 
         document.body.appendChild(campaignContainer);
 
-        var iframe = document.createElement('iframe');
-
-        iframe.style.cssText = style.iframe;
-
         var isoCode = options.location && options.location.country &&
           options.location.country.iso_code || 'unknown';
         var firstTime = true;
@@ -250,23 +246,24 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
           firstTime = false;
         }
 
-        if (isoCode === 'US' ||
+        var iframe = document.createElement('iframe');
+
+        iframe.style.cssText = style.iframe;
+
+        var us = iframe.src = ASSET_URL + activeCampaign.config.show_style +
+          '.html?firstTime=' + firstTime + '&callOnly=' +
+          widgetConfig.callOnly + '&iso=' + isoCode + '&greeting=' +
+          widgetConfig.greeting;
+
+        if ((isoCode === 'US' && !widgetConfig.overrideLocation) ||
             widgetConfig.overrideLocation === 'usa') {
           // Set the source of the iframe to the configured show_style type
-          iframe.src = ASSET_URL + activeCampaign.config.show_style +
-            '.html?firstTime=' + firstTime + '&callOnly=' +
-            widgetConfig.callOnly + '&iso=' + isoCode + '&greeting=' +
-            widgetConfig.greeting;
-        } else if (isoCode !== 'US' ||
-            widgetConfig.overrideLocation === 'usa') {
+          iframe.src = us;
+        } else if ((isoCode !== 'US' && !widgetConfig.overrideLocation) ||
+            widgetConfig.overrideLocation === 'international') {
           iframe.src = ASSET_URL + activeCampaign.config.show_style +
             '_international.html?firstTime=' + firstTime + '&iso=' + isoCode +
             '&greeting=' + widgetConfig.greeting;
-        } else {
-          iframe.src = ASSET_URL + activeCampaign.config.show_style +
-            '.html?firstTime=' + firstTime + '&callOnly=' +
-            widgetConfig.callOnly + '&iso=' + isoCode + '&greeting=' +
-            widgetConfig.greeting;
         }
 
         iframeContainer.appendChild(iframe);
