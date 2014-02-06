@@ -356,7 +356,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
           }
         });
 
-        var that = this;
+/*        var that = this;
 
         window.onresize = function () {
           debug('window.onresize()');
@@ -377,7 +377,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
               });
             }
           }, 50);
-        };
+        }; */
       }
     }
   };
