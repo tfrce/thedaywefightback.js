@@ -37,6 +37,21 @@ _Place the code below before `</body>` tag. The script loads asynchronously and 
 
 ```
 
+If you've been using [Octopress](http://octopress.org/) for your blog or web site, it's pretty simple to add the widget into it:
+
+1.	Go to you octopress installation path
+2.	Touch a file in `source/_includes/thedaywefightback.html`
+3.	Place the code above to file `thedaywefightback.html`, as is
+4.	Put the **file name** above(without path) into file `source/_includes/after_footer.html`
+
+Then you are done. The file `source/_includes/after_footer.html` should then be something like this:
+
+```html
+{% include disqus.html %}
+{% include thedaywefightback.html %}
+{% include custom/after_footer.html %}
+```
+
 The widget supports all screen sizes and platforms, if you encounter a bug please let us know on the [issues](http://github.com/tfrce/thedaywefightback.js/issues) page.
 
 The counts will reset on the day, and only the additions on the 11th will contribute to the total.
