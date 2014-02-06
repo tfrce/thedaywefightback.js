@@ -355,29 +355,6 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
             });
           }
         });
-
-/*        var that = this;
-
-        window.onresize = function () {
-          debug('window.onresize()');
-
-          if (window.tdwfbResizeCallback) {
-            clearTimeout(window.tdwfbResizeCallback);
-          }
-
-          window.tdwfbResizeCallback = setTimeout(function () {
-            debug('tdwfbResizeCallback()');
-
-            if (window.tdwfbCampaignContainer) {
-              document.body.removeChild(window.tdwfbCampaignContainer);
-
-              that.show({
-                location: window.tdwfbLocation,
-                widgetConfig: widgetConfig
-              });
-            }
-          }, 50);
-        }; */
       }
     }
   };
