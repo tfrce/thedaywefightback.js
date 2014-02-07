@@ -1,6 +1,6 @@
   var tdwfb_config = {
     greeting: 'Dear Internet Users', // Sets the salutation at the top left
-    disableDate: true, // If true, the banner shows even if the date is not yet 02/11/2014
+    disableDate: false, // If true, the banner shows even if the date is not yet 02/11/2014
     callOnly: false // If true, the banner only displays a form for calling congress
   };
 (function(){
