@@ -75,7 +75,8 @@ For example, to change the background from black to something lighter:
 
 ## Other ways to install the banner
 
-A Cloudflare app and Wordpress plugin will be added soon.
+* [Cloudflare app](https://www.cloudflare.com/apps/the_day_we_fight_back) - Allows you to add the banner with one click if you use Cloudflare.
+* [Wordpress plugin](https://github.com/modemlooper/thedaywefightback.wp) - Adds the banner to a Wordpress site.
 
 ## Let us know you're taking part
 
