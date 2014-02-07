@@ -2,7 +2,7 @@
 
 _Please feel free to make pull requests with any fixes, and leave suggestions and bugs on our [issue](http://github.com/tfrce/thedaywefightback.js/issues) page. We've tried our best to accomodate all browsers but  will fix any remaining issues before the 11th._
 
-thedaywefightback.js is a javascript snippet that automatically activates at midnight of February 11th and adds a banner to your site for 24 hours in support of [thedaywefightback.org](https://thedaywefightback.org).
+thedaywefightback.js is a javascript snippet that automatically activates at midnight of February 11th and adds a banner to your site for 26 hours in support of [thedaywefightback.org](https://thedaywefightback.org).
 
 The goal is to drive as many phone calls and emails on the 11th. The calls are connected automatically by our call server for free thanks to Twilio.
 
