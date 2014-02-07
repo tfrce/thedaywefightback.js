@@ -65,7 +65,7 @@ You can customize the preferences using a javascript object:
 
 ###Custom CSS
 
-The <body> tag has a class of **"tdwfb-banner"**. You can use this to style elements if needed.
+The body tag has a class of **"tdwfb-banner"**. You can use this to style elements if needed.
 
 For example, to change the background from black to something lighter:
 
