@@ -41,6 +41,8 @@ The counts will reset on the day, and only the additions on the 11th will contri
 
 ## Customize the banner
 
+### Configuration
+
 You can customize the preferences using a javascript object:
 
 ```html
@@ -60,6 +62,16 @@ You can customize the preferences using a javascript object:
 </script>
 <!--<![endif]-->
 ```
+
+###Custom CSS
+
+The <body> tag has a class of **"tdwfb-banner"**. You can use this to style elements if needed.
+
+For example, to change the background from black to something lighter:
+
+    .tdwfb-banner {
+    	background: #111;
+    }
 
 ## Other ways to install the banner
 
