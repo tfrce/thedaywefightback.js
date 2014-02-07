@@ -1,7 +1,8 @@
 # WordPress plugin to include the JavaScript snippet from thedaywefightback.org
 
 This is a little plugin that is very very trivial and just uses a `HEREDOC` to
-output the script snippet into the `<head />` element for participating blogs.
+output the script snippet before the footer scripts, right before the navigation
+and the closing `</head>` element.
 
 ## How to use?
 

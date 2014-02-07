@@ -4,7 +4,7 @@ Plugin Name: tdwfb
 Plugin URI: https://thedaywefightback.org/
 Description: Embed the script code for thedaywefightback.org (2014-02-11)
 Author: Oliver Schneider
-Version: 0.1
+Version: 0.2
 Author URI: http://windirstat.info
 */
 ///////////////////////////////////////////////////////////////////////////////
@@ -22,7 +22,7 @@ Author URI: http://windirstat.info
 // Blogs und aktiviert es dann in der Administrationsoberfläche (Name: tdwfb).
 ///////////////////////////////////////////////////////////////////////////////
 
-function tdwfb_head()
+function tdwfb_footer()
 {
 	echo <<<EOT
 <!--[if !(lte IE 8)]><!-->
@@ -37,5 +37,5 @@ function tdwfb_head()
 
 EOT;
 }
-add_action('wp_head', 'tdwfb_head');
+add_action('wp_footer', 'tdwfb_footer');
 ?>
