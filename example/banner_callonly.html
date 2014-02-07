@@ -27,12 +27,29 @@
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
-        <h3 class="text-muted">Project name</h3>
+        <h3 class="text-muted">The Day We Fight Back</h3>
       </div>
 
       <div class="jumbotron">
-        <h1>Jumbotron heading</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <h1>Demo page for call-only banner</h1>
+        <p class="lead">To use this version of the banner, copy and paste the following code into your html, right above your closing </body> tag.</p>
+
+        <pre>
+&lt;!--[if !(lte IE 8)]&gt;&lt;!--&gt; 
+   &lt;script type="text/javascript"&gt; 
+  var tdwfb_config = {
+    greeting: 'Dear Internet', // Sets the salutation at the top left
+    disableDate: false, // If true, the banner shows even if the date is not yet 02/11/2014
+    callOnly: true // If true, the banner only displays a form for calling congress
+  };
+  (function(){
+    var e = document.createElement('script'); e.type='text/javascript'; e.async = true;
+    e.src = document.location.protocol + '//d1agz031tafz8n.cloudfront.net/thedaywefightback.js/widget.min.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);
+  })();
+          
+   &lt;/script&gt;
+&lt;!--&lt;![endif]--&gt;</pre>
         <p><a class="btn btn-lg btn-success" href="#">Sign up today</a></p>
       </div>
 
