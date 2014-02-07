@@ -31,7 +31,7 @@ cannot use code under either of the above licenses, feel free to use it under
 * http://opensource.org/licenses
 * http://creativecommons.org/publicdomain/zero/1.0/legalcode
 
-# Benutzungsbedingungen
+# Nutzungsbedingungen
 
 Da das Prinzip gemeinfrei als juristisches Konstrukt in Deutschland nicht
 existiert, stelle ich dieses Plugin unter die CC0-Lizenz oder hilfsweise
