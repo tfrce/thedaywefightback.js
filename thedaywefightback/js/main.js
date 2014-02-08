@@ -147,8 +147,7 @@ $(document).ready( function () {
         });
     }
 
-
-    // Resize the scrolling text to fit
+    // Animations for the fact text
 
     $(document).ready(function() {
 
