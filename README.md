@@ -34,23 +34,6 @@ _Place the code below before `</body>` tag. The script loads asynchronously and 
 <!--<![endif]-->
 ```
 
-####Installing the banner on Octopress
-
-If you've been using [Octopress](http://octopress.org/), it's pretty simple to add the banner to your site:
-
-1.	Go to your Octopress installation path
-2.	Touch a file in `source/_includes/thedaywefightback.html`
-3.	Place the code block above in `thedaywefightback.html`, as is
-4.	Put the **file name** above (without path) into `source/_includes/after_footer.html`
-
-Then you're done. The file `source/_includes/after_footer.html` should now look something like this:
-
-```html
-{% include disqus.html %}
-{% include thedaywefightback.html %}
-{% include custom/after_footer.html %}
-```
-
 The widget supports all screen sizes and platforms, if you encounter a bug please let us know on the [issues](http://github.com/tfrce/thedaywefightback.js/issues) page.
 
 The counts will reset on the day, and only the additions on the 11th will contribute to the total.
@@ -93,6 +76,23 @@ For example, to change the background from black to something lighter:
 
 * [Cloudflare app](https://www.cloudflare.com/apps/the_day_we_fight_back) - Allows you to add the banner with one click if you use Cloudflare.
 * [Wordpress plugin](https://github.com/modemlooper/thedaywefightback.wp) - Adds the banner to a Wordpress site.
+
+####Installing the banner on Octopress
+
+If you're using [Octopress](http://octopress.org/), it's pretty simple to add the banner to your site:
+
+1.	Go to your Octopress installation path
+2.	Touch a file in `source/_includes/thedaywefightback.html`
+3.	Place the code block above in `thedaywefightback.html`, as is
+4.	Put the **file name** above (without path) into `source/_includes/after_footer.html`
+
+Then you're done. The file `source/_includes/after_footer.html` should now look something like this:
+
+```html
+{% include disqus.html %}
+{% include thedaywefightback.html %}
+{% include custom/after_footer.html %}
+```
 
 ## Let us know you're taking part
 
