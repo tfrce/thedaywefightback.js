@@ -32,17 +32,18 @@ _Place the code below before `</body>` tag. The script loads asynchronously and 
   })();
 </script>
 <!--<![endif]-->
-
 ```
 
-If you've been using [Octopress](http://octopress.org/) for your blog or web site, it's pretty simple to add the widget into it:
+####Installing the banner on Octopress
 
-1.	Go to you octopress installation path
+If you've been using [Octopress](http://octopress.org/), it's pretty simple to add the banner to your site:
+
+1.	Go to your Octopress installation path
 2.	Touch a file in `source/_includes/thedaywefightback.html`
-3.	Place the code above to file `thedaywefightback.html`, as is
-4.	Put the **file name** above(without path) into file `source/_includes/after_footer.html`
+3.	Place the code block above in `thedaywefightback.html`, as is
+4.	Put the **file name** above (without path) into `source/_includes/after_footer.html`
 
-Then you are done. The file `source/_includes/after_footer.html` should then be something like this:
+Then you're done. The file `source/_includes/after_footer.html` should now look something like this:
 
 ```html
 {% include disqus.html %}
