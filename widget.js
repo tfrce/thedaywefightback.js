@@ -197,7 +197,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
         var campaignContainer = document.createElement('div');
         window.tdwfbCampaignContainer = campaignContainer;
         campaignContainer.style.cssText = style.campaignContainer;
-        campaignContainer.addClass("tdwfb-container");
+        campaignContainer.setAttribute("class", "tdwfb-container");
 
         // Create a container for the iframe so we can do padding and
         // border-radius properly
