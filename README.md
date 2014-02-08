@@ -1,24 +1,28 @@
+
 # thedaywefightback.js
 
-_Please feel free to make pull requests with any fixes, and leave suggestions and bugs on our [issue](http://github.com/tfrce/thedaywefightback.js/issues) page. We've tried our best to accomodate all browsers but  will fix any remaining issues before the 11th._
+_Please feel free to make pull requests with any fixes, and leave suggestions and bugs on our [issue](http://github.com/tfrce/thedaywefightback.js/issues) page._
 
 thedaywefightback.js is a javascript snippet that automatically activates at midnight of February 11th and adds a banner to your site for 26 hours in support of [thedaywefightback.org](https://thedaywefightback.org).
 
 The goal is to drive as many phone calls and emails on the 11th. The calls are connected automatically by our call server for free thanks to Twilio.
 
+**If you own a website, no matter how big or small, you can be part of this.**
+
 <a href="http://tfrce.github.io/thedaywefightback.js/example/banner.html" target="_blank"><img src="screenshots/tdwfb-banner.png" alt="banner" /></a>
 
-**If you own a website, no matter how big or small, you can be part of this.**
 
 ## Demo pages
 
-View the [US demo page](http://tfrce.github.io/thedaywefightback.js/example/banner.html) or the [international demo page](http://tfrce.github.io/thedaywefightback.js/example/banner_international.html) - (unless explicitly set the banner uses GeoIP to detect your location).
+* [US demo page](http://tfrce.github.io/thedaywefightback.js/example/banner.html) - Shown automatically to visitors from US IP addresses.
+* [International demo page](http://tfrce.github.io/thedaywefightback.js/example/banner_international.html) - Shown automatically to visitors from non-US IP addresses.
+* [Call-only version of the banner](http://tfrce.github.io/thedaywefightback.js/example/banner_callonly.html) - Shown if the callOnly flag is set to true, focusses people on the phone call action.
+
+*Note: Please don't copy the code from the source files of the demo pages. Use the code below instead.* 
 
 ## Getting started
 
 You can add the snippet to your site now - it won't be activated until midnight EST on February 11th and will remain active for 26 hours.
-
-Simply copy and paste the code below into your website, right above the closing `<body>` tag.
 
 _Place the code below before `</body>` tag. The script loads asynchronously and won't affect page load times._
 
@@ -36,22 +40,25 @@ _Place the code below before `</body>` tag. The script loads asynchronously and 
 
 The widget supports all screen sizes and platforms, if you encounter a bug please let us know on the [issues](http://github.com/tfrce/thedaywefightback.js/issues) page.
 
-The counts will reset on the day, and only the additions on the 11th will contribute to the total.
+#### Other ways to install the banner:
 
+* [Cloudflare app](https://www.cloudflare.com/apps/the_day_we_fight_back) - Allows you to add the banner with one click if you use Cloudflare.
+* [Wordpress plugin](https://github.com/modemlooper/thedaywefightback.wp) - Adds the banner to a Wordpress site.
+* [Octopress instructions](./OCTOPRESS.md) - Instructions for adding the banner to an Octopress blog
 ## Customize the banner
 
-### Configuration
+## Configuration
 
-You can customize the preferences using a javascript object:
+You can configure the banner using a javascript object:
 
 ```html
 <!--[if !(lte IE 8)]><!-->
 <script type="text/javascript"> 
   // The defaults are set below
   var tdwfb_config = {
-    greeting: 'Dear Internet Users', // Sets the salutation at the top left
-    disableDate: false, // If true, the banner shows even if the date is not yet 02/11/2014
-    callOnly: false // If true, the banner only displays a form for calling congress
+    greeting: 'Dear Internet', // Sets the salutation shown in the banner.
+    disableDate: false, // If true, the banner shows even if the date is not yet 02/11/2014. Use for testing.
+    callOnly: true // If true, the banner emphasizes calling congress over emailing.
   };
   (function(){
     var e = document.createElement('script'); e.type='text/javascript'; e.async = true;
@@ -72,39 +79,18 @@ For example, to change the background from black to something lighter:
     	background: #111;
     }
 
-## Other ways to install the banner
-
-* [Cloudflare app](https://www.cloudflare.com/apps/the_day_we_fight_back) - Allows you to add the banner with one click if you use Cloudflare.
-* [Wordpress plugin](https://github.com/modemlooper/thedaywefightback.wp) - Adds the banner to a Wordpress site.
-
-####Installing the banner on Octopress
-
-If you're using [Octopress](http://octopress.org/), it's pretty simple to add the banner to your site:
-
-1.	Go to your Octopress installation path
-2.	Touch a file in `source/_includes/thedaywefightback.html`
-3.	Place the code block above in `thedaywefightback.html`, as is
-4.	Put the **file name** above (without path) into `source/_includes/after_footer.html`
-
-Then you're done. The file `source/_includes/after_footer.html` should now look something like this:
-
-```html
-{% include disqus.html %}
-{% include thedaywefightback.html %}
-{% include custom/after_footer.html %}
-```
 
 ## Let us know you're taking part
 
 If you add the banner to your site, sign up at [TheDayWeFightBack.org](https://thedaywefightback.org) and let us know.
 
-## Copyright and thanks
+## Thanks
 
-Please feel free to fork and submit pull requests for any bugs or quirks you might find. thedaywefightback.js's code is licensed under the terms of the [GNU Affero General Public License](https://gnu.org/licenses/agpl) version 3, or, at your option, any later version (See [./COPYING](./COPYING)
+Built by [Taskforce.is](http://taskforce.is) members [Thomas Davis](https://twitter.com/neutralthoughts), [Sina Khanifar](https://github.com/sinak/), [Sam Mularczyk](https://twitter.com/sammularczyk) and [Beau Gunderson](https://twitter.com/beaugunderson).
 
-Built by [Taskforce.is](http://taskforce.is) members [Thomas Davis](https://twitter.com/neutralthoughts) and [Sina Khanifar](https://github.com/sinak/).
+Design by [Max Temkin](http://maxistentialism.com/).
 
-**A big thank you to [Twilio](https://www.twilio.com/) for sponsoring calls and [Rob Spectre](https://twitter.com/dN0t) for all his help.**
+**A big thank you to [Twilio](https://www.twilio.com/) for sponsoring calls.**
 
 
 ## Screenshots
