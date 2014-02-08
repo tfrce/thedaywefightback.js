@@ -1,4 +1,3 @@
-
 # thedaywefightback.js
 
 _Please feel free to make pull requests with any fixes, and leave suggestions and bugs on our [issue](http://github.com/tfrce/thedaywefightback.js/issues) page._
@@ -45,7 +44,6 @@ The widget supports all screen sizes and platforms, if you encounter a bug pleas
 * [Cloudflare app](https://www.cloudflare.com/apps/the_day_we_fight_back) - Allows you to add the banner with one click if you use Cloudflare.
 * [Wordpress plugin](https://github.com/modemlooper/thedaywefightback.wp) - Adds the banner to a Wordpress site.
 * [Octopress instructions](./OCTOPRESS.md) - Instructions for adding the banner to an Octopress blog
-## Customize the banner
 
 ## Configuration
 
