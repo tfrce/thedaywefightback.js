@@ -26,7 +26,7 @@ You can add the snippet to your site now - it won't be activated until midnight 
 _Place the code below before `</body>` tag. The script loads asynchronously and won't affect page load times._
 
 ```html
-<!--[if !(lte IE 8)]><!-->
+<!--[if !(lt IE 8)]><!-->
 <script type="text/javascript">
   (function(){
     var e = document.createElement('script'); e.type='text/javascript'; e.async = true;
@@ -50,7 +50,7 @@ The widget supports all screen sizes and platforms, if you encounter a bug pleas
 You can configure the banner using a javascript object:
 
 ```html
-<!--[if !(lte IE 8)]><!-->
+<!--[if !(lt IE 8)]><!-->
 <script type="text/javascript"> 
   // The defaults are set below
   var tdwfb_config = {
