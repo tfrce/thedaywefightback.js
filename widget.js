@@ -164,15 +164,15 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
             'z-index: 2;',
           closeButton: 'border: 0; height: 26px; width: 26px; ' +
             'cursor: pointer; position: absolute; top: 20px; right: 20px; ' +
-            'background: url("' + ASSET_URL + 'imgs/close-button.png");',
+            'background: url("' + ASSET_URL + 'imgs/close-button.png") no-repeat right top;',
           mobileCloseButton: 'border: 0; height: 20px; width: 20px; ' +
             'cursor: pointer; position: absolute;top: 10px; right: 10px; ' +
             'background: url("' + ASSET_URL +
-            'imgs/close-button-mobile.png");',
+            'imgs/close-button-mobile.png") no-repeat right top;',
           openButton: 'border: 0; height: 26px; width: 26px; ' +
             'cursor: pointer; position: absolute; bottom: 10px; ' +
             'right: 20px; background: url("' + ASSET_URL +
-            'imgs/open-button.png");'
+            'imgs/open-button.png") no-repeat right top;'
         }
       },
       minimized: false,
@@ -197,6 +197,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
         var campaignContainer = document.createElement('div');
         window.tdwfbCampaignContainer = campaignContainer;
         campaignContainer.style.cssText = style.campaignContainer;
+        campaignContainer.setAttribute("class", "tdwfb-container");
 
         // Create a container for the iframe so we can do padding and
         // border-radius properly

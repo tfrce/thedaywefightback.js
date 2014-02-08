@@ -193,10 +193,11 @@ a:hover {
   font-size:13px;
   background-color: #F2C45A;
   color: #000;
-  padding: 7px 7px 2px 8px;
+  padding: 5px 7px 5px 8px;
   position: relative;
   bottom: 2px;
   margin-right: 4px;
+  line-height: 1em;
   }
 .scrolling-banner-text span.fact:hover {
   background-color: #262626;
@@ -213,7 +214,8 @@ a:hover {
 }
 .leftsidecontainer .divider {
     background: #fff;
-    margin-top: 5px;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
     height: 1px;
 }
 .leftsidecontainer .divider div {
