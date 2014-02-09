@@ -25,7 +25,7 @@ You can install a static banner on your subreddit to show your support for The D
         width:100%;
         font-size:0em;
         background:#111 url(%%tdwfb-banner-static%%) no-repeat center center;
-        z-index: 200;
+        z-index: 9999999;
     }
     html {
         padding-bottom:160px;
