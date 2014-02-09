@@ -16,7 +16,7 @@ You can install a static banner on your subreddit to show your support for The D
 1. Upload **[this image](./thedaywefightback/static/tdwfb-banner-static.png)** to your subreddit (under **Subreddit settings > Stylesheet settings**)
 2. Add this css to the **bottom** of your stylesheet.
 
-    .side a[title="tdwfb"] {
+````.side a[title="tdwfb"] {
         position:fixed;
         bottom:0;
         left:0;
@@ -29,9 +29,9 @@ You can install a static banner on your subreddit to show your support for The D
     }
     html {
         padding-bottom:160px;
-    }
+}````
 
 3. Finally, go back to **Subreddit Settings** and add the following to the bottom of your sidebar.
 
-    [Help stand up for an open Internet: The Day We Fight Back &rarr;](http://thedaywefightback.org "tdwfb")
+````[Help stand up for an open Internet: The Day We Fight Back &rarr;](http://thedaywefightback.org "tdwfb")````
     
