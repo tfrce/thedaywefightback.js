@@ -318,7 +318,11 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
           var mobileCloseButton = document.createElement('button');
           mobileCloseButton.style.cssText = style.mobileCloseButton;
           iframeContainer.appendChild(mobileCloseButton);
-
+          if (this.minimized) {
+            mobileCloseButton.style.display = 'block';
+          } else {
+            mobileCloseButton.style.display = 'none';
+          }
           mobileCloseButton.onclick = function () {
             setCookie(activeCampaign.cookieName, '{"minimized": true}',
               widgetConfig.cookieTimeout);
