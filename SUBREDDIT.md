@@ -13,7 +13,7 @@ You can install a static banner on your subreddit to show your support for The D
 
 ##Instructions
 
-1. Upload **[this image](./thedaywefightback/static/tdwfb-banner-static.png)** to your subreddit (under **Subreddit settings > Stylesheet settings**)
+1. Upload **[this image](https://raw.github.com/tfrce/thedaywefightback.js/gh-pages/thedaywefightback/static/tdwfb-banner-static.png)** to your subreddit (under **Subreddit settings > Stylesheet settings**)
 2. Add this css to the **bottom** of your stylesheet.
 
 		div.side a[title="tdwfb"] {
