@@ -114,6 +114,10 @@
           'om': {
               name: 'Open Media',
               policy: 'https://openmedia.ca/privacy'
+          },
+          'efa': {
+              name: 'Electronic Frontiers America',
+              policy: 'https://www.efa.org.au/about/privacy-policy'
           }
       };
       var referalKeys = Object.keys(referalMap);
