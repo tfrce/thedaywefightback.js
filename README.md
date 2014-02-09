@@ -42,7 +42,7 @@ The widget supports all screen sizes and platforms, if you encounter a bug pleas
 #### Other ways to install the banner:
 
 * [Cloudflare app](https://www.cloudflare.com/apps/the_day_we_fight_back) - Allows you to add the banner with one click if you use Cloudflare.
-* [Wordpress plugin](https://github.com/modemlooper/thedaywefightback.wp) - Adds the banner to a Wordpress site (also available [on Wordpress.org](http://wordpress.org/plugins/tdwfb/)).
+* [Wordpress plugin](https://github.com/modemlooper/thedaywefightback.wp) - Adds the banner to a Wordpress site (also available [at Wordpress.org](http://wordpress.org/plugins/tdwfb/)).
 * [Drupal 7.x plugin](https://github.com/mrjameshamilton/thedaywefightback.drupal) - Adds the banner to a Drupal 7.x site.
 * [Octopress instructions](./OCTOPRESS.md) - Instructions for adding the banner to an Octopress blog
 * [Subreddit instructions](./SUBREDDIT.md) - Add a static banner to your subreddit
