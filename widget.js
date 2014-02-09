@@ -222,14 +222,12 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
           } else {
             iframeContainer.style.height = '350px';
           }
+          var footerOverlay = document.createElement('div');
+          footerOverlay.style.cssText = style.footerOverlay;
+          campaignContainer.appendChild(footerOverlay);
         }
 
         // Append Iframe and campaign container to document
-        var footerOverlay = document.createElement('div');
-
-        footerOverlay.style.cssText = style.footerOverlay;
-
-        campaignContainer.appendChild(footerOverlay);
         campaignContainer.appendChild(iframeContainer);
 
         document.body.appendChild(campaignContainer);
@@ -272,6 +270,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
         var that = this;
 
         if (x > 767) {
+          that.fullSize = true;
           // Setup a close button
           var closeButton = document.createElement('button');
           closeButton.style.cssText = style.closeButton;
@@ -315,6 +314,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
           footerOverlay.onclick = toggleDisplay;
           closeButton.onclick = toggleDisplay;
         } else {
+          that.fullSize = false;
           var mobileCloseButton = document.createElement('button');
           mobileCloseButton.style.cssText = style.mobileCloseButton;
           iframeContainer.appendChild(mobileCloseButton);
@@ -359,25 +359,25 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
 
         var that = this;
 
-        window.onresize = function () {
-          debug('window.onresize()');
-
-          if (window.tdwfbResizeCallback) {
-            clearTimeout(window.tdwfbResizeCallback);
-          }
-
-          window.tdwfbResizeCallback = setTimeout(function () {
-            debug('tdwfbResizeCallback()');
-
-            if (window.tdwfbCampaignContainer) {
-              document.body.removeChild(window.tdwfbCampaignContainer);
-
-              that.show({
-                location: window.tdwfbLocation,
-                widgetConfig: widgetConfig
-              });
+         window.onresize = function(event) {
+            var w = window,
+              d = document,
+              e = d.documentElement,
+              g = d.getElementsByTagName('body')[0],
+              x = w.innerWidth || e.clientWidth || g.clientWidth,
+              y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+           if((that.fullSize && x < 767) || (!that.fullSize && x > 767)) {
+              if(window.tdwfbResizeCallback) {
+                clearTimeout(window.tdwfbResizeCallback);
+              };
+              window.tdwfbResizeCallback = setTimeout(function () {
+                  document.body.removeChild(window.tdwfbCampaignContainer);
+                  that.show({location: window.tdwfbLocation, widgetConfig: widgetConfig});        
+                  windowWidth = x;
+              }, 50);
             }
-          }, 50);
+
+
         };
       }
     }
