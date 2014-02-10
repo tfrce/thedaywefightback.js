@@ -152,6 +152,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
       cookieName: 'thedaywefightback_hasseen',
       styles: {
         banner: {
+          campaignSpacer: 'height: 50px;',
           campaignContainer: 'background: #000; position: fixed; ' +
             'width: 100%; bottom: 0; left: 0; z-index: 100000; padding: 0; ' +
             '-webkit-box-sizing: border-box; -moz-box-sizing: border-box;',
@@ -193,6 +194,13 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
           document.body.appendChild(overlay);
         }
 
+        // Create a spacer to prevent the container from covering up
+        // parts of the containing page when minimized
+        var campaignSpacer = document.createElement('div');
+        window.tdwfbCampaignSpacer = campaignSpacer;
+        campaignSpacer.style.cssText = style.campaignSpacer;
+        campaignSpacer.setAttribute("class", "tdwfb-spacer");
+
         // Create a container
         var campaignContainer = document.createElement('div');
         window.tdwfbCampaignContainer = campaignContainer;
@@ -230,6 +238,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
         // Append Iframe and campaign container to document
         campaignContainer.appendChild(iframeContainer);
 
+        document.body.appendChild(campaignSpacer);
         document.body.appendChild(campaignContainer);
 
         var isoCode = options.location && options.location.country &&
@@ -326,6 +335,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
           mobileCloseButton.onclick = function () {
             setCookie(activeCampaign.cookieName, '{"minimized": true}',
               widgetConfig.cookieTimeout);
+            document.body.removeChild(campaignSpacer);
             document.body.removeChild(campaignContainer);
           };
         }
@@ -374,6 +384,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
                 clearTimeout(window.tdwfbResizeCallback);
               };
               window.tdwfbResizeCallback = setTimeout(function () {
+                  document.body.removeChild(window.tdwfbCampaignSpacer);
                   document.body.removeChild(window.tdwfbCampaignContainer);
                   that.show({location: window.tdwfbLocation, widgetConfig: widgetConfig});        
                   windowWidth = x;
