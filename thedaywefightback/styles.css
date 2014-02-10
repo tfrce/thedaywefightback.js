@@ -560,11 +560,16 @@ font-size:12px;
 	display: none;
 }
 @media (max-height: 60px) {
-	.footer-wrapper {
+	.footer-left {
 		display: none;
 	}
 	.org-logo-slider {
 		display: block;
+	}
+}
+@media (max-width: 767px) {
+	.footer-wrapper {
+		display: none;
 	}
 }
 .placeholder {
