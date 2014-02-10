@@ -125,7 +125,7 @@ $(document).ready( function () {
         });
     }
     if($('#call-count').length > 0) {
-        $.ajax('//dczwo4qqyofa4.cloudfront.net/count', {
+        $.ajax('//dczwo4qqyofa4.cloudfront.net/count?campaign_id=tdwfb', {
             success: function(res, err) {
               var demo = new countUp("call-count", 0, res.count, 0, 2);
             demo.start();
