@@ -560,7 +560,7 @@ font-size:12px;
 	display: none;
 }
 @media (max-height: 60px) {
-	.footer-left {
+	.footer-wrapper {
 		display: none;
 	}
 	.org-logo-slider {
