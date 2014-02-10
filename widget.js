@@ -362,8 +362,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
         });
 
         var that = this;
-
-         window.onresize = function(event) {
+        if (window.addEventListener) window.addEventListener('resize', window.onresize = function(event) {
             var w = window,
               d = document,
               e = d.documentElement,
@@ -380,9 +379,8 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
                   windowWidth = x;
               }, 50);
             }
-
-
-        };
+        }, false);
+         
       }
     }
   };
