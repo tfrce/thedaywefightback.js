@@ -49,14 +49,13 @@
           method: "POST",
           data: data
         }, function(response){
-          $('.international .rightside.top.before').addClass('animate flipOutX');
-          window.setTimeout(function(){
-            $('.international .rightside.top.before').addClass("hidden");
-            $('.international .rightside.top.thanks').removeClass("hidden").addClass("flipInX");
-            ;}, 1000);
-
-
         });
+        // Assume success
+        $('.international .rightside.top.before').addClass('animate flipOutX');
+        window.setTimeout(function(){
+          $('.international .rightside.top.before').addClass("hidden");
+          $('.international .rightside.top.thanks').removeClass("hidden").addClass("flipInX");
+        ;}, 1000);
         return false;
       });
    
