@@ -46,6 +46,7 @@ The widget supports all screen sizes and platforms, if you encounter a bug pleas
 * [Drupal 7.x plugin](https://github.com/mrjameshamilton/thedaywefightback.drupal) - Adds the banner to a Drupal 7.x site.
 * [Octopress instructions](./OCTOPRESS.md) - Instructions for adding the banner to an Octopress blog
 * [Subreddit instructions](./SUBREDDIT.md) - Add a static banner to your subreddit
+* [Joomla plugin](https://github.com/betweenbrain/tdwfb/archive/master.zip) - Adds the banner to a Joomla 2.5/3.2 site.
 
 ## Configuration
 
