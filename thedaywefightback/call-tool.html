@@ -27,7 +27,7 @@
 		<div id="content">
 			<img src="imgs/call-tool-icon.png" />
 			<h2>We’re about to place a call to your phone. We’ll ask for your ZIP code, then connect you to your legislators. After each call, press the star key to connect to your next representative.</h2>
-			<p>If the call doesn’t arrive within 10 seconds, <a href="#">click here to try again</a> or dial <strong>(202) 999-3996</strong>.</p>
+			<p>If the call doesn’t arrive within 10 seconds, <a href="#" onclick="callTwilio();">click here to try again</a> or dial <strong>(202) 999-3996</strong>.</p>
 			
 			<aside>
 				<ol>
@@ -71,9 +71,8 @@
 		}
 	var phoneNumber = getQueryVariable('phoneNumber');
     var url = 'https://call-congress.taskforce.is/create?campaignId=tdwfb&userPhone=' + phoneNumber;
-	setTimeout(function () {
-
-		$.ajax({
+    var callTwilio = function () {
+    	$.ajax({
 	      url: url,
 	      type: 'GET',
 	      dataType: 'jsonp',
@@ -83,7 +82,8 @@
 	      error: function () {
 	      }
 	    });
-	}, 5000)
+    }
+	setTimeout(callTwilio, 5000)
 
 	</script>
 	
