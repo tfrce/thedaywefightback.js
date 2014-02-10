@@ -36,7 +36,7 @@
           return false;
         }
         var rpc = new easyXDM.Rpc({
-            remote: "http://email-congress.herokuapp.com/xdm/cors/"
+            remote: "https://email-congress.herokuapp.com/xdm/cors/"
         },
         {
             remote: {
@@ -45,7 +45,7 @@
         });
 
         rpc.request({
-          url: "http://email-congress.herokuapp.com/signature",
+          url: "https://email-congress.herokuapp.com/signature",
           method: "POST",
           data: data
         }, function(response){
