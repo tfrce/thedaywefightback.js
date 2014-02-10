@@ -567,6 +567,11 @@ font-size:12px;
 		display: block;
 	}
 }
+@media (max-width: 767px) {
+	.footer-wrapper {
+		display: none;
+	}
+}
 .placeholder {
 	color: #ccc;
 }
