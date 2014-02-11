@@ -151,52 +151,53 @@ $(document).ready( function () {
     }
 
     // Animations for the fact text
-
-    $(document).ready(function() {
-
     var timeperslide = 9000; // time between each slide
     var animationdelay = 1300; // time between each slide
     var dividerdelay = 1300; // time between each slide
 
-    $(document).ready(function() {
-        dividerFill();
-        setInterval(function(){
-            var $visibleslide = $(".scrolling-banner-text .animated.flipInX")
-             $visibleslide.removeClass("flipInX").addClass("flipOutX");
-            dividerReset();
+    dividerFill();
 
-            window.setTimeout(function(){
-            $visibleslide.addClass("hidden");
-            $visibleslide.removeClass("flipOutX");
-            var factslides = $visibleslide.parent().children();
-            var $nextslide = factslides.eq((factslides.index($visibleslide) + 1) % factslides.length);
-             $nextslide.removeClass("hidden").addClass("animated").addClass("flipInX");
-            },animationdelay)
-            window.setTimeout(function(){dividerFill();},dividerdelay);
-            
-        },timeperslide);
-    });
+    setInterval(function() {
+      var $visibleslide = $(".scrolling-banner-text .animated.flipInX")
+
+      $visibleslide.removeClass("flipInX").addClass("flipOutX");
+
+      dividerReset();
+
+      window.setTimeout(function() {
+        $visibleslide.addClass("hidden");
+        $visibleslide.removeClass("flipOutX");
+
+        var factslides = $visibleslide.parent().children();
+        var $nextslide = factslides.eq((factslides.index($visibleslide) + 1) % factslides.length);
+
+        $nextslide.removeClass("hidden").addClass("animated").addClass("flipInX");
+      }, animationdelay)
+
+      window.setTimeout(function(){dividerFill();},dividerdelay);
+    }, timeperslide);
+
     function dividerFill() {
-           $('.divider > div').animate({ width: "100%" }, timeperslide - animationdelay - dividerdelay);
+      $('.divider > div').animate({ width: "100%" },
+        timeperslide - animationdelay - dividerdelay);
     }
+
     function dividerReset() {
-            $('.divider > div').css("width", 0);
+      $('.divider > div').css("width", 0);
     }
 
     var greeting = getQueryVariable('greeting');
-    
-    $('.greeting').text(greeting);
-    var src = $('.switch-locale').attr('href')
-    $('.switch-locale').attr('href', src + '?greeting=' + greeting);
-    
-    })
-});
 
+    $('.greeting').text(greeting);
+
+    var src = $('.switch-locale').attr('href')
+
+    $('.switch-locale').attr('href', src + '?greeting=' + greeting);
+});
 
 /* ==========================================================================
    Sharing buttons
    ==========================================================================*/
-
 $( ".fblinkthis" ).click(function() {
     var url = $(this).attr("href");
     window.open(url, "Share on Facebook", "width=650,height=500");
@@ -212,5 +213,3 @@ $( ".gpluslinkthis" ).click(function() {
     window.open(url,"Share on Google Plus","width=500,height=436");
     return false;
 })
-
-
