@@ -152,7 +152,9 @@ $(document).ready( function () {
     var animationdelay = 1300; // time between each slide
     var dividerdelay = 1300; // time between each slide
 
+    setInterval(function() {
     dividerFill();
+    }, 2000);
 
     setInterval(function() {
       var $visibleslide = $(".scrolling-banner-text .animated.flipInX")
@@ -175,12 +177,11 @@ $(document).ready( function () {
     }, timeperslide);
 
     function dividerFill() {
-      $('.divider > div').animate({ width: "100%" },
-        timeperslide - animationdelay - dividerdelay);
+      $('.divider > div').addClass("fill");
     }
 
     function dividerReset() {
-      $('.divider > div').css("width", 0);
+      $('.divider > div').removeClass("fill");
     }
 
     var greeting = getQueryVariable('greeting');
