@@ -47,6 +47,7 @@ The widget supports all screen sizes and platforms, if you encounter a bug pleas
 * [Octopress instructions](./OCTOPRESS.md) - Instructions for adding the banner to an Octopress blog
 * [Subreddit instructions](./SUBREDDIT.md) - Add a static banner to your subreddit
 * [Joomla plugin](https://github.com/betweenbrain/tdwfb/archive/master.zip) - Adds the banner to a Joomla 2.5.x / 3.2.x site.
+* [Concrete5 Plugin](http://www.concrete5.org/marketplace/addons/the-day-we-fight-back/) - Adds the banner automatically to a Concrete5 site.
 
 ## Configuration
 
