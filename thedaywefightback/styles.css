@@ -215,15 +215,25 @@ a:hover {
 .leftsidecontainer .divider {
     background: #fff;
     margin-top: 1.25em;
-    margin-bottom: 1.25em;
+    margin-bottom: 1.45em;
     height: 1px;
 }
+
 .leftsidecontainer .divider div {
   height: 100%;
   width: 0;
   background: #F2C45A;
   z-index:100;
 }
+
+.leftsidecontainer .divider div.fill {
+  width: 100%;
+-webkit-transition: width 6.4s ease-in-out;
+-moz-transition: width 6.4s ease-in-out;
+-o-transition: width 6.4s ease-in-out;
+transition: width 6.4s ease-in-out;
+}
+
 .leftsidecontainer .logotext {
     margin-top:10px;
 }
