@@ -200,7 +200,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
         if(document.getElementById("tdwfb-spacer")){
           document.body.removeChild(document.getElementById("tdwfb-spacer"));
         }
-        
+
         if(document.getElementById("tdwfb-container")){
           document.body.removeChild(document.getElementById("tdwfb-container"));
         }
@@ -355,6 +355,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
         activeCampaign.config = config;
 
         var cookie = getCookie(activeCampaign.cookieName);
+        var that = this;
 
         if (cookie) {
           this.minimized = JSON.parse(cookie).minimized;
@@ -378,28 +379,28 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
                 location: location,
                 widgetConfig: widgetConfig
               });
+              if (window.addEventListener) window.addEventListener('resize', function() {
+                  var w = window,
+                    d = document,
+                    e = d.documentElement,
+                    g = d.getElementsByTagName('body')[0],
+                    x = w.innerWidth || e.clientWidth || g.clientWidth,
+                    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+                 if((that.fullSize && x < 767) || (!that.fullSize && x > 767)) {
+                    if(window.tdwfbResizeCallback) {
+                      clearTimeout(window.tdwfbResizeCallback);
+                    };
+                    window.tdwfbResizeCallback = setTimeout(function () {
+                        that.show({location: window.tdwfbLocation, widgetConfig: widgetConfig});        
+                        windowWidth = x;
+                    }, 50);
+                  }
+              }, false);
             });
           }
         });
 
-        var that = this;
-        if (window.addEventListener) window.addEventListener('resize', function() {
-            var w = window,
-              d = document,
-              e = d.documentElement,
-              g = d.getElementsByTagName('body')[0],
-              x = w.innerWidth || e.clientWidth || g.clientWidth,
-              y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-           if((that.fullSize && x < 767) || (!that.fullSize && x > 767)) {
-              if(window.tdwfbResizeCallback) {
-                clearTimeout(window.tdwfbResizeCallback);
-              };
-              window.tdwfbResizeCallback = setTimeout(function () {
-                  that.show({location: window.tdwfbLocation, widgetConfig: widgetConfig});        
-                  windowWidth = x;
-              }, 50);
-            }
-        }, false);
+        
          
       }
     }
