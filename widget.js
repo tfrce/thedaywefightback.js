@@ -13,20 +13,20 @@
 
   =============================================================================
 
-  @source: https://raw.github.com/tfrce/project-megaphone/gh-pages/widget.js
+  @source: https://raw.github.com/tfrce/thedaywefightback.js/gh-pages/widget.js
 
   @licstart  The following is the entire license notice for the
              JavaScript code in this page.
 
-  Copyright (C) 2013 Taskforce <http://taskforce.is>
+  Copyright (C) 2014 Taskforce <http://taskforce.is>
 
   The JavaScript code in this page is free software: you can
   redistribute it and/or modify it under the terms of the GNU Affero
-  General Public License (GNU GPL) as published by the Free Software
+  General Public License (GNU AGPL) as published by the Free Software
   Foundation, either version 3 of the License, or (at your option) any
   later version.  The code is distributed WITHOUT ANY WARRANTY;
   without even the implied warranty of MERCHANTABILITY or FITNESS FOR
-  A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+  A PARTICULAR PURPOSE.  See the GNU AGPL for more details.
 
   As additional permission under GNU AGPL version 3 section 7, you may
   distribute non-source (e.g., minimized or compacted) forms of that
@@ -119,7 +119,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
 
       window.tdwfbDateCallBackFailSafe = setTimeout(function () {
         // TODO - Potentially better logic for this fallback
-        if (new Date().getDate() === 3) {
+        if (new Date().getDate() === 11) {
           callback({thedaywefightback: true});
         } else {
           callback({thedaywefightback: false});
