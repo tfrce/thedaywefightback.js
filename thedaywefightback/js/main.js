@@ -121,7 +121,7 @@ $(document).ready( function () {
             },
             dataType: 'jsonp',
             cache         : true,
-            jsonpCallback : 'myCallback'
+            jsonpCallback : 'myCallbacka'
         });
     }
     if($('#call-count').length > 0) {
@@ -135,6 +135,7 @@ $(document).ready( function () {
             jsonpCallback : 'ccca'
         });
     }
+    /*
     if($('#signatory-count').length > 0) {
         $.ajax('//dznh7un1y2etk.cloudfront.net/signature_count', {
             success: function(res, err) {
@@ -146,7 +147,7 @@ $(document).ready( function () {
             jsonpCallback : 'cccar'
         });
     }
-
+*/
     // Animations for the fact text
     var timeperslide = 9000; // time between each slide
     var animationdelay = 1300; // time between each slide

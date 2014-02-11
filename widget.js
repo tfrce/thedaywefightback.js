@@ -391,7 +391,13 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
               window.tdwfbLocation = location;
 
               clearTimeout(window.tdwfbLocationCallBackFailSafe);
-              setCookie(activeCampaign.locationCookieName, JSON.stringify(location), widgetConfig.cookieTimeout );
+
+              var cookieLoc = {
+                country: {
+                  iso_code: location.country.iso_code
+                }
+              }
+              setCookie(activeCampaign.locationCookieName, JSON.stringify(cookieLoc), widgetConfig.cookieTimeout );
 
               activeCampaign.show({
                 location: location,
