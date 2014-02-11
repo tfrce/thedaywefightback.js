@@ -196,15 +196,25 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
 
         // Create a spacer to prevent the container from covering up
         // parts of the containing page when minimized
+
+        if(document.getElementById("tdwfb-spacer")){
+          document.body.removeChild(document.getElementById("tdwfb-spacer"));
+        }
+        
+        if(document.getElementById("tdwfb-container")){
+          document.body.removeChild(document.getElementById("tdwfb-container"));
+        }
+
         var campaignSpacer = document.createElement('div');
         window.tdwfbCampaignSpacer = campaignSpacer;
         campaignSpacer.style.cssText = style.campaignSpacer;
+        campaignSpacer.setAttribute("id", "tdwfb-spacer");
         campaignSpacer.setAttribute("class", "tdwfb-spacer");
-
         // Create a container
         var campaignContainer = document.createElement('div');
         window.tdwfbCampaignContainer = campaignContainer;
         campaignContainer.style.cssText = style.campaignContainer;
+        campaignContainer.setAttribute("id", "tdwfb-container");
         campaignContainer.setAttribute("class", "tdwfb-container");
 
         // Create a container for the iframe so we can do padding and
@@ -327,15 +337,16 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
           var mobileCloseButton = document.createElement('button');
           mobileCloseButton.style.cssText = style.mobileCloseButton;
           iframeContainer.appendChild(mobileCloseButton);
-          if (this.minimized) {
-            mobileCloseButton.style.display = 'block';
-          } else {
+          debug(that.minimized);
+          if (that.minimized) {
+
             mobileCloseButton.style.display = 'none';
+          } else {
+            mobileCloseButton.style.display = 'block';
           }
           mobileCloseButton.onclick = function () {
             setCookie(activeCampaign.cookieName, '{"minimized": true}',
               widgetConfig.cookieTimeout);
-            document.body.removeChild(campaignSpacer);
             document.body.removeChild(campaignContainer);
           };
         }
@@ -384,8 +395,6 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
                 clearTimeout(window.tdwfbResizeCallback);
               };
               window.tdwfbResizeCallback = setTimeout(function () {
-                  document.body.removeChild(window.tdwfbCampaignSpacer);
-                  document.body.removeChild(window.tdwfbCampaignContainer);
                   that.show({location: window.tdwfbLocation, widgetConfig: widgetConfig});        
                   windowWidth = x;
               }, 50);
