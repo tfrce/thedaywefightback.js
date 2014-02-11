@@ -125,14 +125,14 @@ $(document).ready( function () {
         });
     }
     if($('#call-count').length > 0) {
-        $.ajax('//dczwo4qqyofa4.cloudfront.net/count?campaign=tdwfb', {
+        $.ajax('https://dznh7un1y2etk.cloudfront.net/call_count', {
             success: function(res, err) {
               var demo = new countUp("call-count", 0, res.count, 0, 2);
             demo.start();
             },
             dataType: 'jsonp',
             cache         : true,
-            jsonpCallback : 'ccca'
+            jsonpCallback : 'callcounter'
         });
     }
     
