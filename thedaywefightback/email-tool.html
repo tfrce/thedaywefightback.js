@@ -168,15 +168,17 @@ I'm also urging you to oppose S. 1631, the so-called FISA Improvements Act. This
 	          return false;
 	        }
 
-			console.log(data);
 			rpc.request({
 			  url: "https://email-congress.herokuapp.com/email",
 			  method: "POST",
 			  data: data
 			}, function(response){
+				window.location = 'thank-you.html';
 			});
 			// Assume success
-			window.location = 'thank-you.html';
+			setTimeout(function () {
+				window.location = 'thank-you.html';
+			}, 5000);
 
 			return false;
 			});

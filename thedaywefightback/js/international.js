@@ -115,7 +115,7 @@
               policy: 'https://openmedia.ca/privacy'
           },
           'efa': {
-              name: 'Electronic Frontiers America',
+              name: 'Electronic Frontiers Australia',
               policy: 'https://www.efa.org.au/about/privacy-policy'
           }
       };
