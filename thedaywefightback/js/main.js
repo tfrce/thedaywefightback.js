@@ -88,9 +88,9 @@ $(document).ready( function () {
             rumbleEl(phoneNumberEl);
         } else {
             if(typeof page !== 'undefined' && page === 'thankyou') {
-              window.location = 'call-tool.html?phoneNumber=' + phoneNumber;
+              window.location = 'https://d1agz031tafz8n.cloudfront.net/thedaywefightback.js/thedaywefightback/call-tool.html?phoneNumber=' + phoneNumber;
             } else {
-              window.open('call-tool.html?phoneNumber=' + phoneNumber, "_blank", "width=786,height=920,scrollbars=yes");
+              window.open('https://d1agz031tafz8n.cloudfront.net/thedaywefightback.js/thedaywefightback/call-tool.html?phoneNumber=' + phoneNumber, "_blank", "width=786,height=920,scrollbars=yes");
             }
         }
         return false;
@@ -104,12 +104,12 @@ $(document).ready( function () {
         if(!isValidEmail(userEmail)){
             rumbleEl(userEmailEl);
         } else {
-            window.open('email-tool.html?email=' + userEmail, "_blank", "width=786,height=920,scrollbars=yes");
+            window.open('https://d1agz031tafz8n.cloudfront.net/thedaywefightback.js/thedaywefightback/email-tool.html?email=' + userEmail, "_blank", "width=786,height=920,scrollbars=yes");
         }
         return false;
     });
     $('.email-instead').on('click', function(ev) {
-        window.open('email-tool.html?email=', "_blank", "width=786,height=920,scrollbars=yes");
+        window.open('https://d1agz031tafz8n.cloudfront.net/thedaywefightback.js/thedaywefightback/email-tool.html?email=', "_blank", "width=786,height=920,scrollbars=yes");
         return false;
     });
     // Call and email counters
