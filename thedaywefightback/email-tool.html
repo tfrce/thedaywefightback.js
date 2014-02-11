@@ -26,7 +26,8 @@
 		<h1><span>Email Congress</span><img src="imgs/email-congress.png"></h1>
 	</header><!-- Form Starts -->
 
-	<form class="send-email">
+	<form class="send-email" method="POST"
+   action="https://email-congress.herokuapp.com/email">
 		<fieldset>
 			<label for="full_name">Your Full Name</label> 
 			<input class="form-control" id="full_name" name="name" placeholder="First Last" type="text"> 
@@ -41,7 +42,6 @@
 			<label for="zip">Your Zip Code</label> 
 			<input class="form-control" id="zip" name="zip" placeholder="123456" type="text">
 		</fieldset>
-
 		
 		<div id="content">
 			<h2>Your Message</h2>
