@@ -169,7 +169,7 @@ var _tdwfb_config = (typeof tdwfb_config  !== 'undefined') ? tdwfb_config  : {};
       locationCookieName: 'thedaywefightback_locationb',
       styles: {
         banner: {
-          campaignSpacer: 'height: 50px;',
+          campaignSpacer: 'height: 50px; clear: both;',
           campaignContainer: 'background: #000; position: fixed; ' +
             'width: 100%; bottom: 0; left: 0; z-index: 100000; padding: 0; ' +
             '-webkit-box-sizing: border-box; -moz-box-sizing: border-box;',
